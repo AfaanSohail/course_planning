@@ -1,0 +1,18 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.env
+.env.*
+!.env.example
+config/local.json
+*.key
+*.pem
+*.mp4
+*.mov
+*.webm
+.DS_Store
+# Model weights/runtime belong outside the submission repository.
+models/
+ollama/
+# Preserve measured JSON/CSV/XML outputs and actual screenshots in Git.
