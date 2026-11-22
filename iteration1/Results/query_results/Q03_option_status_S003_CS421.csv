@@ -1,0 +1,4 @@
+option,optionStatus,conditionType,conditionText,conditionStatus
+prereq/CS421/option/1,not met,CourseChoiceCondition,CS 374 or ECE 374,UNMET / needs review
+prereq/CS421/option/1,not met,CourseChoiceCondition,"One of CS 233, CS 240, CS 340 or ECE 391",met
+prereq/CS421/option/1,not met,CourseChoiceCondition,"one of MATH 225, MATH 257, MATH 415, MATH 416, ASRM 406, or BIOE 210",met

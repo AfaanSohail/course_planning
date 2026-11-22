@@ -1,0 +1,98 @@
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix uca:  <https://example.org/uiuc-course-advisor/ontology#> .
+@prefix shp:  <https://example.org/uiuc-course-advisor/shapes#> .
+
+# SHACL data-quality shapes for the UIUC course KG. They check the ASSERTED triples only (no reasoner needed).
+# Only one direction of each inverse pair is stored, so inverse-path constraints are used where needed.
+# Run:  pyshacl -s RDF_Knowledge_Graph/shapes.ttl RDF_Knowledge_Graph/uiuc_course_kg.ttl
+
+shp:CourseShape a sh:NodeShape ; sh:targetClass uca:Course ;
+  sh:property [ sh:path rdfs:label ; sh:minCount 1 ] ,
+              [ sh:path uca:courseCode ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ; sh:pattern "^[A-Z]+ [0-9]{3}$" ] ,
+              [ sh:path uca:courseNumber ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ] ,
+              [ sh:path uca:inDepartment ; sh:minCount 1 ; sh:maxCount 1 ; sh:class uca:Department ] ,
+              [ sh:path uca:hasPrerequisiteExpression ; sh:maxCount 1 ; sh:class uca:PrerequisiteExpression ] ,
+              [ sh:path uca:crossListedWith ; sh:class uca:Course ] .
+
+shp:DepartmentShape a sh:NodeShape ; sh:targetClass uca:Department ;
+  sh:property [ sh:path uca:subjectCode ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:string ] .
+
+shp:AcademicTermShape a sh:NodeShape ; sh:targetClass uca:AcademicTerm ;
+  sh:property [ sh:path uca:year ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ] ,
+              [ sh:path uca:termName ; sh:minCount 1 ; sh:maxCount 1 ; sh:in ("Fall" "Spring" "Summer" "Winter") ] .
+
+shp:CourseOfferingShape a sh:NodeShape ; sh:targetClass uca:CourseOffering ;
+  sh:property [ sh:path uca:offeredInTerm ; sh:minCount 1 ; sh:maxCount 1 ; sh:class uca:AcademicTerm ] ,
+              [ sh:path [ sh:inversePath uca:hasOffering ] ; sh:minCount 1 ; sh:maxCount 1 ;
+                sh:message "Every offering belongs to exactly one course." ] .
+
+shp:SectionShape a sh:NodeShape ; sh:targetClass uca:Section ;
+  sh:property [ sh:path uca:sectionOf ; sh:minCount 1 ; sh:maxCount 1 ; sh:class uca:CourseOffering ] ,
+              [ sh:path uca:crn ; sh:minCount 1 ; sh:maxCount 1 ] ,
+              [ sh:path uca:sectionType ; sh:minCount 1 ; sh:maxCount 1 ] ,
+              [ sh:path uca:taughtBy ; sh:class uca:Instructor ] .
+
+shp:InstructorShape a sh:NodeShape ; sh:targetClass uca:Instructor ;
+  sh:property [ sh:path uca:instructorName ; sh:minCount 1 ; sh:maxCount 1 ] .
+
+shp:ExpressionShape a sh:NodeShape ; sh:targetClass uca:PrerequisiteExpression ;
+  sh:property [ sh:path uca:hasOption ; sh:minCount 1 ; sh:class uca:PrerequisiteOption ] ,
+              [ sh:path uca:parseStatus ; sh:minCount 1 ; sh:maxCount 1 ; sh:in ("parsed" "needs_review") ] ,
+              [ sh:path uca:prerequisiteSourceText ; sh:minCount 1 ; sh:maxCount 1 ] ,
+              [ sh:path [ sh:inversePath uca:hasPrerequisiteExpression ] ; sh:minCount 1 ; sh:maxCount 1 ;
+                sh:message "Every prerequisite expression belongs to exactly one course." ] .
+
+shp:OptionShape a sh:NodeShape ; sh:targetClass uca:PrerequisiteOption ;
+  sh:property [ sh:path uca:hasCondition ; sh:minCount 1 ] ,
+              [ sh:path [ sh:inversePath uca:hasOption ] ; sh:minCount 1 ; sh:maxCount 1 ] .
+
+shp:CourseConditionShape a sh:NodeShape ; sh:targetClass uca:CourseCondition ;
+  sh:property [ sh:path uca:requiredCourse ; sh:minCount 1 ; sh:maxCount 1 ; sh:class uca:Course ] ,
+              [ sh:path uca:allowsConcurrent ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:boolean ] ,
+              [ sh:path uca:conditionSourceText ; sh:minCount 1 ] .
+
+shp:ChoiceConditionShape a sh:NodeShape ; sh:targetClass uca:CourseChoiceCondition ;
+  sh:property [ sh:path uca:alternativeCourse ; sh:minCount 2 ; sh:class uca:Course ;
+                sh:message "A choice condition needs at least two alternative courses." ] ,
+              [ sh:path uca:allowsConcurrent ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:boolean ] ,
+              [ sh:path uca:conditionSourceText ; sh:minCount 1 ] .
+
+shp:StandingConditionShape a sh:NodeShape ; sh:targetClass uca:StandingCondition ;
+  sh:property [ sh:path uca:minimumStandingRank ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 1 ; sh:maxInclusive 5 ] .
+
+shp:ConsentConditionShape a sh:NodeShape ; sh:targetClass uca:ConsentCondition ;
+  sh:property [ sh:path uca:conditionSourceText ; sh:minCount 1 ] .
+
+shp:OtherConditionShape a sh:NodeShape ; sh:targetClass uca:OtherCondition ;
+  sh:property [ sh:path uca:conditionSourceText ; sh:minCount 1 ] .
+
+shp:DegreeProgramShape a sh:NodeShape ; sh:targetClass uca:DegreeProgram ;
+  sh:property [ sh:path uca:programName ; sh:minCount 1 ] ,
+              [ sh:path uca:programCatalogYear ; sh:minCount 1 ; sh:datatype xsd:integer ] ,
+              [ sh:path uca:totalCreditsRequired ; sh:minCount 1 ; sh:datatype xsd:decimal ] ,
+              [ sh:path uca:hasRequirement ; sh:minCount 1 ] .
+
+shp:RequirementShape a sh:NodeShape ; sh:targetClass uca:CoreRequirement , uca:ElectiveRequirement ;
+  sh:property [ sh:path uca:minCourses ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:nonNegativeInteger ] ,
+              [ sh:path uca:allowsCourse ; sh:minCount 1 ; sh:class uca:Course ;
+                sh:message "Every requirement group needs at least one allowed course." ] ,
+              [ sh:path uca:sourceURL ; sh:minCount 1 ] ,
+              [ sh:path [ sh:inversePath uca:hasRequirement ] ; sh:minCount 1 ; sh:maxCount 1 ] .
+
+shp:StudentShape a sh:NodeShape ; sh:targetClass uca:Student ;
+  sh:property [ sh:path uca:studentIdentifier ; sh:minCount 1 ; sh:maxCount 1 ] ,
+              [ sh:path uca:standingRank ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:integer ; sh:minInclusive 1 ; sh:maxInclusive 5 ] ,
+              [ sh:path rdfs:comment ; sh:minCount 1 ; sh:message "Synthetic students must carry a comment labelling them as synthetic." ] .
+
+shp:CompletionShape a sh:NodeShape ; sh:targetClass uca:CourseCompletion ;
+  sh:property [ sh:path uca:completedCourse ; sh:minCount 1 ; sh:maxCount 1 ; sh:class uca:Course ] ,
+              [ sh:path uca:creditsEarned ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:decimal ] ,
+              [ sh:path uca:completionTerm ; sh:minCount 1 ; sh:maxCount 1 ; sh:class uca:AcademicTerm ] ,
+              [ sh:path uca:allocatedToRequirement ; sh:class uca:DegreeRequirement ] ,
+              [ sh:path [ sh:inversePath uca:hasCompletion ] ; sh:minCount 1 ; sh:maxCount 1 ] .
+
+shp:PlannedEnrollmentShape a sh:NodeShape ; sh:targetClass uca:PlannedEnrollment ;
+  sh:property [ sh:path uca:plannedCourse ; sh:minCount 1 ; sh:maxCount 1 ; sh:class uca:Course ] ,
+              [ sh:path uca:plannedTerm ; sh:minCount 1 ; sh:maxCount 1 ; sh:class uca:AcademicTerm ] .

@@ -1,0 +1,29 @@
+courseCode,option,status,stillRequired
+CS 341,option 1,still blocked,CS 233
+CS 418,option 1,still blocked,"MATH 241 | One of MATH 225, MATH 257, MATH 415, MATH 416, ASRM 406, or BIOE 210"
+CS 440,option 1,still blocked,"one of CS 361, STAT 361, ECE 313, MATH 362, MATH 461, MATH 463, STAT 400 or BIOE 310"
+CS 441,option 1,still blocked,"one of CS 361, STAT 361, ECE 313, BIOE 310, MATH 362, MATH 461, MATH 463 or STAT 400"
+CS 444,option 1,still blocked,"one of CS 361, STAT 361, ECE 313, MATH 362, MATH 461, MATH 463 or STAT 400 | one of MATH 225, MATH 257, MATH 415, MATH 416, ASRM 406, or BIOE 210 | MATH 241"
+CS 445,option 1,still blocked,"CS 225, MATH 225"
+CS 446,option 1,still blocked,"One of MATH 225, MATH 257, MATH 415, MATH 416, ASRM 406 or BIOE 210 | one of CS 361, STAT 361, ECE 313, MATH 362, MATH 461, MATH 463, STAT 400 or BIOE 310"
+CS 447,option 1,still blocked,"CS 374 or ECE 374 | one of MATH 225, MATH 257, MATH 415, MATH 416, ASRM 406 or BIOE 210 | one of CS 361, STAT 361, ECE 313, MATH 362, MATH 461, MATH 463, STAT 400 or BIOE 310"
+CS 463,option 1,still blocked,"one of CS 361, STAT 361, ECE 313, MATH 362, MATH 461, MATH 463 or STAT 400"
+CS 470,option 1,still blocked,"one of CS 361, STAT 361, ECE 313, MATH 362, MATH 461, MATH 463 or STAT 400 | one of MATH 225, MATH 257, MATH 415, MATH 416, ASRM 406, or BIOE 210"
+CS 477,option 1,still blocked,"one of CS 374, ECE 374 or MATH 414"
+ADV 492,option 1,would become satisfiable,
+CS 210,option 1,would become satisfiable,
+CS 211,option 1,would become satisfiable,
+CS 233,option 1,would become satisfiable,
+CS 340,option 1,would become satisfiable,
+CS 374,option 1,would become satisfiable,
+CS 409,option 1,would become satisfiable,
+CS 410,option 1,would become satisfiable,
+CS 411,option 1,would become satisfiable,
+CS 412,option 1,would become satisfiable,
+CS 415,option 1,would become satisfiable,
+CS 452,option 1,would become satisfiable,
+CS 464,option 1,would become satisfiable,
+CS 465,option 1,would become satisfiable,
+CS 466,option 1,would become satisfiable,
+ECE 407,option 1,would become satisfiable,
+ECE 549,option 1,would become satisfiable,

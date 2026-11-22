@@ -1,0 +1,4 @@
+class,instances
+uca:CourseWithPrerequisites,339
+uca:DegreeRequirement,18
+uca:PrerequisiteCondition,511
