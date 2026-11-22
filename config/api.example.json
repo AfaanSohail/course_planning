@@ -1,0 +1,11 @@
+{
+  "provider": "openai_compatible",
+  "base_url": "https://YOUR_PROVIDER/v1",
+  "model": "SET_MODEL_NAME",
+  "api_key_env": "COURSE_LLM_API_KEY",
+  "require_api_key": true,
+  "temperature": 0.0,
+  "max_tokens": 2048,
+  "timeout_seconds": 180,
+  "context_max_chars": 32000
+}
