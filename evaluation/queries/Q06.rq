@@ -1,0 +1,26 @@
+# AI-3001 Iteration 1 - SPARQL queries (Q01-Q15 = CQ01-CQ15, INF1-INF6 = inference demos)
+# Team: Hassan Tariq (24i-2555), Afaan Sohail (24i-0081), Diya Hurmat (24i-0094)
+# Queries marked [needs reasoning] return rows only with OWL2-RL inference enabled.
+BASE <https://example.org/uiuc-course-advisor/resource/>
+PREFIX uca:  <https://example.org/uiuc-course-advisor/ontology#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+
+# CQ06 | S003 progress per requirement group
+# Features: OPTIONAL (left join keeps groups with no allocation), aggregation (COUNT, SUM, GROUP BY)
+SELECT ?requirement ?minCourses ?allocatedCourses ?remainingCourses ?minCredits ?allocatedCredits WHERE {
+  <program/UIUC-BS-CS-2026> uca:hasRequirement ?req .
+  ?req rdfs:label ?requirement .
+  OPTIONAL { ?req uca:minCourses ?minCourses }
+  OPTIONAL { ?req uca:minCredits ?minCredits }
+  { SELECT ?req (COUNT(DISTINCT ?cp) AS ?allocatedCourses) (COALESCE(SUM(?cr), 0) AS ?allocatedCredits) WHERE {
+      <program/UIUC-BS-CS-2026> uca:hasRequirement ?req .
+      OPTIONAL { <student/S003> uca:hasCompletion ?cp . ?cp uca:allocatedToRequirement ?req ; uca:creditsEarned ?cr }
+    } GROUP BY ?req }
+  BIND(IF(BOUND(?minCourses), IF(?minCourses - ?allocatedCourses > 0, ?minCourses - ?allocatedCourses, 0), "n/a")
+       AS ?remainingCourses)
+}
+ORDER BY DESC(?remainingCourses) ?requirement

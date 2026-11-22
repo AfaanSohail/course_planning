@@ -1,0 +1,26 @@
+# AI-3001 Iteration 1 - SPARQL queries (Q01-Q15 = CQ01-CQ15, INF1-INF6 = inference demos)
+# Team: Hassan Tariq (24i-2555), Afaan Sohail (24i-0081), Diya Hurmat (24i-0094)
+# Queries marked [needs reasoning] return rows only with OWL2-RL inference enabled.
+BASE <https://example.org/uiuc-course-advisor/resource/>
+PREFIX uca:  <https://example.org/uiuc-course-advisor/ontology#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+
+# CQ02 | prerequisite tree of CS 421 (AND/OR edges)
+# Features: property path with zero-or-more (*) over a 4-step sequence with alternative, FILTER IN
+SELECT DISTINCT ?fromCode ?option ?edgeType ?toCode ?toIsBaseCourse WHERE {
+  <course/CS421> (uca:hasPrerequisiteExpression/uca:hasOption/uca:hasCondition/(uca:requiredCourse|uca:alternativeCourse))* ?from .
+  ?from uca:hasPrerequisiteExpression/uca:hasOption ?opt .
+  ?opt uca:hasCondition ?k ; rdfs:label ?optLabel .
+  ?k uca:requiredCourse|uca:alternativeCourse ?to ; a ?ct .
+  FILTER(?ct IN (uca:CourseCondition, uca:CourseChoiceCondition))
+  BIND(IF(?ct = uca:CourseCondition, "AND: required course", "OR: one of a group") AS ?edgeType)
+  BIND(STRAFTER(?optLabel, "prerequisite ") AS ?option)
+  ?from uca:courseCode ?fromCode .
+  ?to uca:courseCode ?toCode .
+  BIND(NOT EXISTS { ?to uca:hasPrerequisiteExpression ?e } AS ?toIsBaseCourse)
+}
+ORDER BY ?fromCode ?option ?edgeType ?toCode

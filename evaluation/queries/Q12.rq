@@ -1,0 +1,47 @@
+# AI-3001 Iteration 1 - SPARQL queries (Q01-Q15 = CQ01-CQ15, INF1-INF6 = inference demos)
+# Team: Hassan Tariq (24i-2555), Afaan Sohail (24i-0081), Diya Hurmat (24i-0094)
+# Queries marked [needs reasoning] return rows only with OWL2-RL inference enabled.
+BASE <https://example.org/uiuc-course-advisor/resource/>
+PREFIX uca:  <https://example.org/uiuc-course-advisor/ontology#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+
+# CQ12 | courses blocked only by standing/consent
+# Features: nested subqueries (two-level aggregation), SUM/MAX/GROUP_CONCAT, HAVING, FILTER EXISTS / NOT EXISTS
+SELECT ?studentId ?courseCode (GROUP_CONCAT(?blocking; separator=" | ") AS ?blockingConditions) WHERE {
+  { SELECT ?s ?course ?option (SUM(?uc) AS ?unmetCourse) (SUM(?un) AS ?unmetNonCourse) (SUM(?ot) AS ?other)
+           (GROUP_CONCAT(?ntext; separator=" | ") AS ?nonCourseText) WHERE {
+      ?s a uca:Student .
+      ?course uca:hasOffering/uca:offeredInTerm <term/2026-fa> ;
+              uca:hasPrerequisiteExpression/uca:hasOption ?option .
+      FILTER EXISTS { ?req uca:allowsCourse ?course }
+      FILTER NOT EXISTS { ?s uca:hasCompletion/uca:completedCourse ?course }
+      ?option uca:hasCondition ?k .
+      ?k uca:conditionSourceText ?text .
+      OPTIONAL { ?k a uca:CourseCondition . BIND(true AS ?isCourse) }
+      OPTIONAL { ?k a uca:CourseChoiceCondition . BIND(true AS ?isChoice) }
+      OPTIONAL { ?k a uca:StandingCondition ; uca:minimumStandingRank ?min . BIND(true AS ?isStanding) }
+      OPTIONAL { ?k a uca:ConsentCondition . BIND(true AS ?isConsent) }
+      BIND(IF(BOUND(?isCourse) || BOUND(?isChoice),
+              IF(EXISTS { ?k uca:requiredCourse|uca:alternativeCourse ?rc . ?s uca:hasCompletion/uca:completedCourse ?rc }
+                 || EXISTS { ?k uca:allowsConcurrent true ; uca:requiredCourse|uca:alternativeCourse ?rc .
+                             ?s uca:hasPlannedEnrollment/uca:plannedCourse ?rc }, 1, 0),
+           IF(BOUND(?isStanding), IF(EXISTS { ?s uca:standingRank ?r . FILTER(?r >= ?min) }, 1, 0),
+           IF(BOUND(?isConsent), IF(EXISTS { ?s uca:hasPermissionFor ?course }, 1, 0), 0))) AS ?met)
+      BIND(IF((BOUND(?isCourse) || BOUND(?isChoice)) && ?met = 0, 1, 0) AS ?uc)
+      BIND(IF((BOUND(?isStanding) || BOUND(?isConsent)) && ?met = 0, 1, 0) AS ?un)
+      BIND(IF(!BOUND(?isCourse) && !BOUND(?isChoice) && !BOUND(?isStanding) && !BOUND(?isConsent), 1, 0) AS ?ot)
+      BIND(IF((BOUND(?isStanding) || BOUND(?isConsent)) && ?met = 0, ?text, ?none) AS ?ntext)
+    } GROUP BY ?s ?course ?option }
+  BIND(IF(?unmetCourse = 0 && ?unmetNonCourse > 0 && ?other = 0, ?nonCourseText, ?none) AS ?blocking)
+  BIND(IF(?unmetCourse + ?unmetNonCourse + ?other = 0, 1, 0) AS ?fullyMet)
+  BIND(IF(?unmetCourse = 0 && ?unmetNonCourse > 0 && ?other = 0, 1, 0) AS ?onlyNonCourse)
+  ?s uca:studentIdentifier ?studentId .
+  ?course uca:courseCode ?courseCode .
+}
+GROUP BY ?studentId ?courseCode
+HAVING (MAX(?fullyMet) = 0 && MAX(?onlyNonCourse) = 1)
+ORDER BY ?studentId ?courseCode

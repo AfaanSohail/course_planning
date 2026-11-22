@@ -1,0 +1,44 @@
+# AI-3001 Iteration 1 - SPARQL queries (Q01-Q15 = CQ01-CQ15, INF1-INF6 = inference demos)
+# Team: Hassan Tariq (24i-2555), Afaan Sohail (24i-0081), Diya Hurmat (24i-0094)
+# Queries marked [needs reasoning] return rows only with OWL2-RL inference enabled.
+BASE <https://example.org/uiuc-course-advisor/resource/>
+PREFIX uca:  <https://example.org/uiuc-course-advisor/ontology#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+
+# CQ15 | evidence for S002's planned courses
+# Features: OPTIONAL (several), subquery with aggregation, BIND/IF/COALESCE, EXISTS
+SELECT ?courseCode ?prerequisiteText ?parseStatus ?satisfiedOptions ?requirement ?requirementNote ?source ?unverified WHERE {
+  <student/S002> uca:hasPlannedEnrollment/uca:plannedCourse ?course .
+  ?course uca:courseCode ?courseCode .
+  OPTIONAL { ?course uca:hasPrerequisiteExpression ?e .
+             ?e uca:prerequisiteSourceText ?prerequisiteText ; uca:parseStatus ?parseStatus }
+  OPTIONAL { ?req uca:allowsCourse ?course ; rdfs:label ?requirement .
+             OPTIONAL { ?req uca:requirementNote ?requirementNote } }
+  OPTIONAL { ?course uca:sourceURL ?source }
+  OPTIONAL { SELECT ?course (COUNT(DISTINCT ?option) AS ?sat) WHERE {
+      { SELECT ?course ?option WHERE {
+          BIND(<student/S002> AS ?s)
+          ?s uca:hasPlannedEnrollment/uca:plannedCourse ?course .
+          ?course uca:hasPrerequisiteExpression/uca:hasOption ?option .
+          ?option uca:hasCondition ?k .
+          OPTIONAL { ?k a uca:CourseCondition . BIND(true AS ?isCourse) }
+          OPTIONAL { ?k a uca:CourseChoiceCondition . BIND(true AS ?isChoice) }
+          OPTIONAL { ?k a uca:StandingCondition ; uca:minimumStandingRank ?min . BIND(true AS ?isStanding) }
+          OPTIONAL { ?k a uca:ConsentCondition . BIND(true AS ?isConsent) }
+          BIND(IF(BOUND(?isCourse) || BOUND(?isChoice),
+                  IF(EXISTS { ?k uca:requiredCourse|uca:alternativeCourse ?rc . ?s uca:hasCompletion/uca:completedCourse ?rc }, 1, 0),
+               IF(BOUND(?isStanding), IF(EXISTS { ?s uca:standingRank ?r . FILTER(?r >= ?min) }, 1, 0),
+               IF(BOUND(?isConsent), IF(EXISTS { ?s uca:hasPermissionFor ?course }, 1, 0), 0))) AS ?met)
+        } GROUP BY ?course ?option HAVING (MIN(?met) = 1) }
+    } GROUP BY ?course }
+  BIND(COALESCE(?sat, 0) AS ?satisfiedOptions)
+  BIND(IF(EXISTS { ?course uca:hasPrerequisiteExpression/uca:hasOption/uca:hasCondition ?o . ?o a uca:OtherCondition },
+          "yes: free-text condition needs manual check",
+       IF(COALESCE(?parseStatus = "needs_review", false),
+          "yes: wording such as 'or equivalent' needs manual check", "none")) AS ?unverified)
+}
+ORDER BY ?courseCode ?requirement

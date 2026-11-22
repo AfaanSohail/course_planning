@@ -1,0 +1,29 @@
+# AI-3001 Iteration 1 - SPARQL queries (Q01-Q15 = CQ01-CQ15, INF1-INF6 = inference demos)
+# Team: Hassan Tariq (24i-2555), Afaan Sohail (24i-0081), Diya Hurmat (24i-0094)
+# Queries marked [needs reasoning] return rows only with OWL2-RL inference enabled.
+BASE <https://example.org/uiuc-course-advisor/resource/>
+PREFIX uca:  <https://example.org/uiuc-course-advisor/ontology#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+
+# CQ14 | S004 courses fitting several groups + double-count check
+# Features: BGP, OPTIONAL, EXISTS, aggregation (COUNT DISTINCT, GROUP_CONCAT, GROUP BY, HAVING)
+SELECT ?courseCode (COUNT(DISTINCT ?req) AS ?candidateGroups)
+       (GROUP_CONCAT(DISTINCT ?reqLabel; separator=" | ") AS ?couldCountToward)
+       ?allocatedTo ?violatesDistinctRule WHERE {
+  <student/S004> uca:hasCompletion ?cp .
+  ?cp uca:completedCourse ?course .
+  ?course uca:courseCode ?courseCode .
+  ?req uca:allowsCourse ?course ; rdfs:label ?reqLabel .
+  OPTIONAL { SELECT ?cp (GROUP_CONCAT(?al; separator=" | ") AS ?alloc) WHERE {
+      ?cp uca:allocatedToRequirement ?a . ?a rdfs:label ?al } GROUP BY ?cp }
+  BIND(COALESCE(?alloc, "(not allocated)") AS ?allocatedTo)
+  BIND(EXISTS { ?cp uca:allocatedToRequirement <requirement/UIUC-BS-CS-2026/Elective-Technical> ,
+                                               <requirement/UIUC-BS-CS-2026/Elective-Advanced> } AS ?violatesDistinctRule)
+}
+GROUP BY ?courseCode ?allocatedTo ?violatesDistinctRule
+HAVING (COUNT(DISTINCT ?req) > 1)
+ORDER BY DESC(?violatesDistinctRule) DESC(?candidateGroups) ?courseCode

@@ -1,0 +1,19 @@
+# AI-3001 Iteration 1 - SPARQL queries (Q01-Q15 = CQ01-CQ15, INF1-INF6 = inference demos)
+# Team: Hassan Tariq (24i-2555), Afaan Sohail (24i-0081), Diya Hurmat (24i-0094)
+# Queries marked [needs reasoning] return rows only with OWL2-RL inference enabled.
+BASE <https://example.org/uiuc-course-advisor/resource/>
+PREFIX uca:  <https://example.org/uiuc-course-advisor/ontology#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+
+# Inference: inverse (department hasCourse) [needs reasoning]
+# Features: BGP, inference-dependent
+SELECT ?courseCode ?title WHERE {
+  <department/CS> uca:hasCourse ?course .
+  ?course uca:courseCode ?courseCode .
+  OPTIONAL { ?course uca:courseTitle ?title }
+}
+ORDER BY ?courseCode

@@ -1,0 +1,23 @@
+# AI-3001 Iteration 1 - SPARQL queries (Q01-Q15 = CQ01-CQ15, INF1-INF6 = inference demos)
+# Team: Hassan Tariq (24i-2555), Afaan Sohail (24i-0081), Diya Hurmat (24i-0094)
+# Queries marked [needs reasoning] return rows only with OWL2-RL inference enabled.
+BASE <https://example.org/uiuc-course-advisor/resource/>
+PREFIX uca:  <https://example.org/uiuc-course-advisor/ontology#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+
+# CQ08 | courses >= 2 prerequisite hops upstream of CS 440
+# Features: property path one-or-more (+) after an explicit first hop (= 2+ hops), alternative paths
+SELECT DISTINCT ?upstreamCode ?viaCode ?firstHop WHERE {
+  <course/CS440> uca:hasPrerequisiteExpression/uca:hasOption/uca:hasCondition ?k1 .
+  ?k1 uca:requiredCourse|uca:alternativeCourse ?via .
+  ?via (uca:hasPrerequisiteExpression/uca:hasOption/uca:hasCondition/(uca:requiredCourse|uca:alternativeCourse))+ ?up .
+  BIND(IF(EXISTS { ?k1 a uca:CourseChoiceCondition }, "via one-of group (potential)", "via required course") AS ?firstHop)
+  ?up uca:courseCode ?upstreamCode .
+  ?via uca:courseCode ?viaCode .
+  FILTER(?up != <course/CS440> && ?up != ?via)
+}
+ORDER BY ?upstreamCode ?viaCode
