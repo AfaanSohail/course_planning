@@ -1,0 +1,10 @@
+alias,downstreamCode,mentions,acceptsBothCodes
+ECE 374,CS 421,"ECE 374, CS 374",true
+ECE 374,CS 447,"ECE 374, CS 374",true
+ECE 374,CS 473,"ECE 374, CS 374",true
+ECE 374,CS 475,"ECE 374, CS 374",true
+ECE 374,CS 477,"ECE 374, CS 374",true
+ECE 374,CS 521,"CS 374, ECE 374",true
+ECE 374,CS 581,"ECE 374, CS 374",true
+ECE 374,MATH 412,CS 374,false
+ECE 374,MATH 417,CS 374,false

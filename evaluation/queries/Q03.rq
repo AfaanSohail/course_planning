@@ -1,0 +1,52 @@
+# AI-3001 Iteration 1 - SPARQL queries (Q01-Q15 = CQ01-CQ15, INF1-INF6 = inference demos)
+# Team: Hassan Tariq (24i-2555), Afaan Sohail (24i-0081), Diya Hurmat (24i-0094)
+# Queries marked [needs reasoning] return rows only with OWL2-RL inference enabled.
+BASE <https://example.org/uiuc-course-advisor/resource/>
+PREFIX uca:  <https://example.org/uiuc-course-advisor/ontology#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+
+# CQ03 | which options/conditions of CS 421 S003 meets
+# Features: two subqueries joined on ?option, OPTIONAL, BIND/IF, EXISTS, aggregation (MIN, GROUP BY), STRAFTER
+SELECT ?option ?optionStatus ?conditionType ?conditionText ?conditionStatus WHERE {
+  { SELECT ?option ?k ?type ?met WHERE {
+      BIND(<student/S003> AS ?s) BIND(<course/CS421> AS ?course)
+      ?course uca:hasPrerequisiteExpression/uca:hasOption ?option .
+      ?option uca:hasCondition ?k .
+      ?k a ?type . FILTER(?type IN (uca:CourseCondition, uca:CourseChoiceCondition, uca:StandingCondition,
+                                    uca:ConsentCondition, uca:OtherCondition))
+      OPTIONAL { ?k a uca:CourseCondition . BIND(true AS ?isCourse) }
+      OPTIONAL { ?k a uca:CourseChoiceCondition . BIND(true AS ?isChoice) }
+      OPTIONAL { ?k a uca:StandingCondition ; uca:minimumStandingRank ?min . BIND(true AS ?isStanding) }
+      OPTIONAL { ?k a uca:ConsentCondition . BIND(true AS ?isConsent) }
+      BIND(IF(BOUND(?isCourse) || BOUND(?isChoice),
+              IF(EXISTS { ?k uca:requiredCourse|uca:alternativeCourse ?rc . ?s uca:hasCompletion/uca:completedCourse ?rc }
+                 || EXISTS { ?k uca:allowsConcurrent true ; uca:requiredCourse|uca:alternativeCourse ?rc .
+                             ?s uca:hasPlannedEnrollment/uca:plannedCourse ?rc }, 1, 0),
+           IF(BOUND(?isStanding), IF(EXISTS { ?s uca:standingRank ?r . FILTER(?r >= ?min) }, 1, 0),
+           IF(BOUND(?isConsent), IF(EXISTS { ?s uca:hasPermissionFor ?course }, 1, 0), 0))) AS ?met)
+  } }
+  { SELECT ?option (MIN(?m2) AS ?optMin) WHERE {
+      BIND(<student/S003> AS ?s) BIND(<course/CS421> AS ?course)
+      ?course uca:hasPrerequisiteExpression/uca:hasOption ?option .
+      ?option uca:hasCondition ?k .
+      OPTIONAL { ?k a uca:CourseCondition . BIND(true AS ?isCourse) }
+      OPTIONAL { ?k a uca:CourseChoiceCondition . BIND(true AS ?isChoice) }
+      OPTIONAL { ?k a uca:StandingCondition ; uca:minimumStandingRank ?min . BIND(true AS ?isStanding) }
+      OPTIONAL { ?k a uca:ConsentCondition . BIND(true AS ?isConsent) }
+      BIND(IF(BOUND(?isCourse) || BOUND(?isChoice),
+              IF(EXISTS { ?k uca:requiredCourse|uca:alternativeCourse ?rc . ?s uca:hasCompletion/uca:completedCourse ?rc }
+                 || EXISTS { ?k uca:allowsConcurrent true ; uca:requiredCourse|uca:alternativeCourse ?rc .
+                             ?s uca:hasPlannedEnrollment/uca:plannedCourse ?rc }, 1, 0),
+           IF(BOUND(?isStanding), IF(EXISTS { ?s uca:standingRank ?r . FILTER(?r >= ?min) }, 1, 0),
+           IF(BOUND(?isConsent), IF(EXISTS { ?s uca:hasPermissionFor ?course }, 1, 0), 0))) AS ?m2)
+    } GROUP BY ?option }
+  ?k uca:conditionSourceText ?conditionText .
+  BIND(STRAFTER(STR(?type), "#") AS ?conditionType)
+  BIND(IF(?met = 1, "met", "UNMET / needs review") AS ?conditionStatus)
+  BIND(IF(?optMin = 1, "FULLY MET", "not met") AS ?optionStatus)
+}
+ORDER BY ?option ?conditionType

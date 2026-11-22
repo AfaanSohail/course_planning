@@ -1,0 +1,26 @@
+# AI-3001 Iteration 1 - SPARQL queries (Q01-Q15 = CQ01-CQ15, INF1-INF6 = inference demos)
+# Team: Hassan Tariq (24i-2555), Afaan Sohail (24i-0081), Diya Hurmat (24i-0094)
+# Queries marked [needs reasoning] return rows only with OWL2-RL inference enabled.
+BASE <https://example.org/uiuc-course-advisor/resource/>
+PREFIX uca:  <https://example.org/uiuc-course-advisor/ontology#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+
+# CQ10 | CS 374 cross-listings and dependent courses
+# Features: property paths (alternative + inverse ^), FILTER IN, EXISTS, OPTIONAL, aggregation (GROUP_CONCAT)
+SELECT ?alias ?downstreamCode (GROUP_CONCAT(DISTINCT ?mentionedCode; separator=", ") AS ?mentions)
+       (MAX(?both) AS ?acceptsBothCodes) WHERE {
+  BIND(<course/CS374> AS ?c)
+  ?c uca:crossListedWith|^uca:crossListedWith ?aliasC .
+  ?aliasC uca:courseCode ?alias .
+  ?down uca:hasPrerequisiteExpression/uca:hasOption/uca:hasCondition ?k ; uca:courseCode ?downstreamCode .
+  ?k uca:requiredCourse|uca:alternativeCourse ?m .
+  FILTER(?m IN (?c, ?aliasC))
+  ?m uca:courseCode ?mentionedCode .
+  BIND(EXISTS { ?k uca:alternativeCourse ?c . ?k uca:alternativeCourse ?aliasC } AS ?both)
+}
+GROUP BY ?alias ?downstreamCode
+ORDER BY ?downstreamCode

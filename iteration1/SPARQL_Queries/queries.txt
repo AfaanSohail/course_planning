@@ -1,0 +1,433 @@
+# AI-3001 Iteration 1 - SPARQL queries (Q01-Q15 = CQ01-CQ15, INF1-INF6 = inference demos)
+# Team: Hassan Tariq (24i-2555), Afaan Sohail (24i-0081), Diya Hurmat (24i-0094)
+# Queries marked [needs reasoning] return rows only with OWL2-RL inference enabled.
+BASE <https://example.org/uiuc-course-advisor/resource/>
+PREFIX uca:  <https://example.org/uiuc-course-advisor/ontology#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX owl:  <http://www.w3.org/2002/07/owl#>
+PREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>
+
+### Q01_eligible_offered_courses
+# CQ01 | Fall 2026 courses S002 is prerequisite-eligible for
+# Features: BGP, subquery, OPTIONAL, BIND/IF, EXISTS, aggregation (MIN, COUNT, GROUP BY, HAVING)
+SELECT ?courseCode ?title (COUNT(DISTINCT ?option) AS ?satisfiedOptions) WHERE {
+  { SELECT ?course ?option WHERE {
+      BIND(<student/S002> AS ?s)
+      ?course uca:hasPrerequisiteExpression/uca:hasOption ?option .
+      ?option uca:hasCondition ?k .
+      OPTIONAL { ?k a uca:CourseCondition . BIND(true AS ?isCourse) }
+      OPTIONAL { ?k a uca:CourseChoiceCondition . BIND(true AS ?isChoice) }
+      OPTIONAL { ?k a uca:StandingCondition ; uca:minimumStandingRank ?min . BIND(true AS ?isStanding) }
+      OPTIONAL { ?k a uca:ConsentCondition . BIND(true AS ?isConsent) }
+      BIND(IF(BOUND(?isCourse) || BOUND(?isChoice),
+              IF(EXISTS { ?k uca:requiredCourse|uca:alternativeCourse ?rc . ?s uca:hasCompletion/uca:completedCourse ?rc }
+                 || EXISTS { ?k uca:allowsConcurrent true ; uca:requiredCourse|uca:alternativeCourse ?rc .
+                             ?s uca:hasPlannedEnrollment/uca:plannedCourse ?rc }, 1, 0),
+           IF(BOUND(?isStanding), IF(EXISTS { ?s uca:standingRank ?r . FILTER(?r >= ?min) }, 1, 0),
+           IF(BOUND(?isConsent), IF(EXISTS { ?s uca:hasPermissionFor ?course }, 1, 0), 0))) AS ?met)
+    } GROUP BY ?course ?option HAVING (MIN(?met) = 1) }
+  ?course uca:hasOffering/uca:offeredInTerm <term/2026-fa> ;
+          uca:courseCode ?courseCode .
+  OPTIONAL { ?course uca:courseTitle ?title }
+  FILTER NOT EXISTS { <student/S002> uca:hasCompletion/uca:completedCourse ?course }
+}
+GROUP BY ?courseCode ?title
+ORDER BY ?courseCode
+
+### Q02_prerequisite_tree_CS421
+# CQ02 | prerequisite tree of CS 421 (AND/OR edges)
+# Features: property path with zero-or-more (*) over a 4-step sequence with alternative, FILTER IN
+SELECT DISTINCT ?fromCode ?option ?edgeType ?toCode ?toIsBaseCourse WHERE {
+  <course/CS421> (uca:hasPrerequisiteExpression/uca:hasOption/uca:hasCondition/(uca:requiredCourse|uca:alternativeCourse))* ?from .
+  ?from uca:hasPrerequisiteExpression/uca:hasOption ?opt .
+  ?opt uca:hasCondition ?k ; rdfs:label ?optLabel .
+  ?k uca:requiredCourse|uca:alternativeCourse ?to ; a ?ct .
+  FILTER(?ct IN (uca:CourseCondition, uca:CourseChoiceCondition))
+  BIND(IF(?ct = uca:CourseCondition, "AND: required course", "OR: one of a group") AS ?edgeType)
+  BIND(STRAFTER(?optLabel, "prerequisite ") AS ?option)
+  ?from uca:courseCode ?fromCode .
+  ?to uca:courseCode ?toCode .
+  BIND(NOT EXISTS { ?to uca:hasPrerequisiteExpression ?e } AS ?toIsBaseCourse)
+}
+ORDER BY ?fromCode ?option ?edgeType ?toCode
+
+### Q03_option_status_S003_CS421
+# CQ03 | which options/conditions of CS 421 S003 meets
+# Features: two subqueries joined on ?option, OPTIONAL, BIND/IF, EXISTS, aggregation (MIN, GROUP BY), STRAFTER
+SELECT ?option ?optionStatus ?conditionType ?conditionText ?conditionStatus WHERE {
+  { SELECT ?option ?k ?type ?met WHERE {
+      BIND(<student/S003> AS ?s) BIND(<course/CS421> AS ?course)
+      ?course uca:hasPrerequisiteExpression/uca:hasOption ?option .
+      ?option uca:hasCondition ?k .
+      ?k a ?type . FILTER(?type IN (uca:CourseCondition, uca:CourseChoiceCondition, uca:StandingCondition,
+                                    uca:ConsentCondition, uca:OtherCondition))
+      OPTIONAL { ?k a uca:CourseCondition . BIND(true AS ?isCourse) }
+      OPTIONAL { ?k a uca:CourseChoiceCondition . BIND(true AS ?isChoice) }
+      OPTIONAL { ?k a uca:StandingCondition ; uca:minimumStandingRank ?min . BIND(true AS ?isStanding) }
+      OPTIONAL { ?k a uca:ConsentCondition . BIND(true AS ?isConsent) }
+      BIND(IF(BOUND(?isCourse) || BOUND(?isChoice),
+              IF(EXISTS { ?k uca:requiredCourse|uca:alternativeCourse ?rc . ?s uca:hasCompletion/uca:completedCourse ?rc }
+                 || EXISTS { ?k uca:allowsConcurrent true ; uca:requiredCourse|uca:alternativeCourse ?rc .
+                             ?s uca:hasPlannedEnrollment/uca:plannedCourse ?rc }, 1, 0),
+           IF(BOUND(?isStanding), IF(EXISTS { ?s uca:standingRank ?r . FILTER(?r >= ?min) }, 1, 0),
+           IF(BOUND(?isConsent), IF(EXISTS { ?s uca:hasPermissionFor ?course }, 1, 0), 0))) AS ?met)
+  } }
+  { SELECT ?option (MIN(?m2) AS ?optMin) WHERE {
+      BIND(<student/S003> AS ?s) BIND(<course/CS421> AS ?course)
+      ?course uca:hasPrerequisiteExpression/uca:hasOption ?option .
+      ?option uca:hasCondition ?k .
+      OPTIONAL { ?k a uca:CourseCondition . BIND(true AS ?isCourse) }
+      OPTIONAL { ?k a uca:CourseChoiceCondition . BIND(true AS ?isChoice) }
+      OPTIONAL { ?k a uca:StandingCondition ; uca:minimumStandingRank ?min . BIND(true AS ?isStanding) }
+      OPTIONAL { ?k a uca:ConsentCondition . BIND(true AS ?isConsent) }
+      BIND(IF(BOUND(?isCourse) || BOUND(?isChoice),
+              IF(EXISTS { ?k uca:requiredCourse|uca:alternativeCourse ?rc . ?s uca:hasCompletion/uca:completedCourse ?rc }
+                 || EXISTS { ?k uca:allowsConcurrent true ; uca:requiredCourse|uca:alternativeCourse ?rc .
+                             ?s uca:hasPlannedEnrollment/uca:plannedCourse ?rc }, 1, 0),
+           IF(BOUND(?isStanding), IF(EXISTS { ?s uca:standingRank ?r . FILTER(?r >= ?min) }, 1, 0),
+           IF(BOUND(?isConsent), IF(EXISTS { ?s uca:hasPermissionFor ?course }, 1, 0), 0))) AS ?m2)
+    } GROUP BY ?option }
+  ?k uca:conditionSourceText ?conditionText .
+  BIND(STRAFTER(STR(?type), "#") AS ?conditionType)
+  BIND(IF(?met = 1, "met", "UNMET / needs review") AS ?conditionStatus)
+  BIND(IF(?optMin = 1, "FULLY MET", "not met") AS ?optionStatus)
+}
+ORDER BY ?option ?conditionType
+
+### Q04_downstream_if_S002_completes_CS225
+# CQ04 | courses that open up if S002 completes CS 225
+# Features: BGP, OPTIONAL, BIND/IF with hypothetical fact, EXISTS, aggregation (MIN, GROUP_CONCAT, GROUP BY)
+SELECT ?courseCode ?option (IF(MIN(?met) = 1, "would become satisfiable", "still blocked") AS ?status)
+       (GROUP_CONCAT(?unmet; separator=" | ") AS ?stillRequired) WHERE {
+  BIND(<student/S002> AS ?s) BIND(<course/CS225> AS ?added)
+  ?course uca:hasPrerequisiteExpression/uca:hasOption ?opt ; uca:courseCode ?courseCode .
+  ?opt uca:hasCondition ?k ; rdfs:label ?optLabel .
+  FILTER EXISTS { ?opt uca:hasCondition/(uca:requiredCourse|uca:alternativeCourse) ?added }
+  ?k uca:conditionSourceText ?text .
+  OPTIONAL { ?k a uca:CourseCondition . BIND(true AS ?isCourse) }
+  OPTIONAL { ?k a uca:CourseChoiceCondition . BIND(true AS ?isChoice) }
+  OPTIONAL { ?k a uca:StandingCondition ; uca:minimumStandingRank ?min . BIND(true AS ?isStanding) }
+  OPTIONAL { ?k a uca:ConsentCondition . BIND(true AS ?isConsent) }
+  BIND(IF(BOUND(?isCourse) || BOUND(?isChoice),
+          IF(EXISTS { ?k uca:requiredCourse|uca:alternativeCourse ?added }
+             || EXISTS { ?k uca:requiredCourse|uca:alternativeCourse ?rc . ?s uca:hasCompletion/uca:completedCourse ?rc }, 1, 0),
+       IF(BOUND(?isStanding), IF(EXISTS { ?s uca:standingRank ?r . FILTER(?r >= ?min) }, 1, 0),
+       IF(BOUND(?isConsent), IF(EXISTS { ?s uca:hasPermissionFor ?course }, 1, 0), 0))) AS ?met)
+  BIND(IF(?met = 0, ?text, ?none) AS ?unmet)
+  BIND(STRAFTER(?optLabel, "prerequisite ") AS ?option)
+  FILTER NOT EXISTS { ?s uca:hasCompletion/uca:completedCourse ?course }
+}
+GROUP BY ?courseCode ?option
+ORDER BY ?status ?courseCode
+
+### Q05_eligible_courses_for_unmet_requirements_S002
+# CQ05 | eligible courses that serve S002's unmet requirement groups
+# Features: UNION, subqueries, OPTIONAL, aggregation (COUNT, MIN, GROUP BY, HAVING), FILTER, property paths
+SELECT DISTINCT ?courseCode ?requirement ?eligibilityBasis WHERE {
+  {
+    { SELECT ?course WHERE {
+        BIND(<student/S002> AS ?s)
+        ?course uca:hasPrerequisiteExpression/uca:hasOption ?option .
+        ?option uca:hasCondition ?k .
+        OPTIONAL { ?k a uca:CourseCondition . BIND(true AS ?isCourse) }
+        OPTIONAL { ?k a uca:CourseChoiceCondition . BIND(true AS ?isChoice) }
+        OPTIONAL { ?k a uca:StandingCondition ; uca:minimumStandingRank ?min . BIND(true AS ?isStanding) }
+        OPTIONAL { ?k a uca:ConsentCondition . BIND(true AS ?isConsent) }
+        BIND(IF(BOUND(?isCourse) || BOUND(?isChoice),
+                IF(EXISTS { ?k uca:requiredCourse|uca:alternativeCourse ?rc . ?s uca:hasCompletion/uca:completedCourse ?rc }
+                   || EXISTS { ?k uca:allowsConcurrent true ; uca:requiredCourse|uca:alternativeCourse ?rc .
+                               ?s uca:hasPlannedEnrollment/uca:plannedCourse ?rc }, 1, 0),
+             IF(BOUND(?isStanding), IF(EXISTS { ?s uca:standingRank ?r . FILTER(?r >= ?min) }, 1, 0),
+             IF(BOUND(?isConsent), IF(EXISTS { ?s uca:hasPermissionFor ?course }, 1, 0), 0))) AS ?met)
+      } GROUP BY ?course ?option HAVING (MIN(?met) = 1) }
+    BIND("prerequisite option satisfied" AS ?eligibilityBasis)
+  } UNION {
+    ?course a uca:Course .
+    FILTER NOT EXISTS { ?course uca:hasPrerequisiteExpression ?e }
+    BIND("no recorded prerequisite" AS ?eligibilityBasis)
+  }
+  ?course uca:hasOffering/uca:offeredInTerm <term/2026-fa> ; uca:courseCode ?courseCode .
+  FILTER NOT EXISTS { <student/S002> uca:hasCompletion/uca:completedCourse ?course }
+  ?req uca:allowsCourse ?course ; rdfs:label ?requirement ; uca:minCourses ?minCourses .
+  { SELECT ?req (COUNT(DISTINCT ?cp) AS ?allocated) WHERE {
+      <program/UIUC-BS-CS-2026> uca:hasRequirement ?req .
+      OPTIONAL { <student/S002> uca:hasCompletion ?cp . ?cp uca:allocatedToRequirement ?req }
+    } GROUP BY ?req }
+  FILTER(?allocated < ?minCourses)
+}
+ORDER BY ?requirement ?courseCode
+
+### Q06_requirement_progress_S003
+# CQ06 | S003 progress per requirement group
+# Features: OPTIONAL (left join keeps groups with no allocation), aggregation (COUNT, SUM, GROUP BY)
+SELECT ?requirement ?minCourses ?allocatedCourses ?remainingCourses ?minCredits ?allocatedCredits WHERE {
+  <program/UIUC-BS-CS-2026> uca:hasRequirement ?req .
+  ?req rdfs:label ?requirement .
+  OPTIONAL { ?req uca:minCourses ?minCourses }
+  OPTIONAL { ?req uca:minCredits ?minCredits }
+  { SELECT ?req (COUNT(DISTINCT ?cp) AS ?allocatedCourses) (COALESCE(SUM(?cr), 0) AS ?allocatedCredits) WHERE {
+      <program/UIUC-BS-CS-2026> uca:hasRequirement ?req .
+      OPTIONAL { <student/S003> uca:hasCompletion ?cp . ?cp uca:allocatedToRequirement ?req ; uca:creditsEarned ?cr }
+    } GROUP BY ?req }
+  BIND(IF(BOUND(?minCourses), IF(?minCourses - ?allocatedCourses > 0, ?minCourses - ?allocatedCourses, 0), "n/a")
+       AS ?remainingCourses)
+}
+ORDER BY DESC(?remainingCourses) ?requirement
+
+### Q07_upper_level_courses_needing_standing_or_consent
+# CQ07 | 300/400-level CS/MATH/ECE/STAT courses needing standing or consent
+# Features: BGP, VALUES, FILTER (numeric range, IN), property path, STRAFTER
+SELECT DISTINCT ?courseCode ?title ?conditionType ?conditionText WHERE {
+  VALUES ?type { uca:StandingCondition uca:ConsentCondition }
+  ?course uca:courseNumber ?n ;
+          uca:courseCode ?courseCode ;
+          uca:courseTitle ?title ;
+          uca:inDepartment/uca:subjectCode ?subject ;
+          uca:hasOffering/uca:offeredInTerm <term/2026-fa> ;
+          uca:hasPrerequisiteExpression/uca:hasOption/uca:hasCondition ?k .
+  ?k a ?type ; uca:conditionSourceText ?conditionText .
+  FILTER(?n >= 300 && ?n < 500)
+  FILTER(?subject IN ("CS", "MATH", "ECE", "STAT"))
+  BIND(STRAFTER(STR(?type), "#") AS ?conditionType)
+}
+ORDER BY ?courseCode
+
+### Q08_upstream_two_or_more_hops_CS440
+# CQ08 | courses >= 2 prerequisite hops upstream of CS 440
+# Features: property path one-or-more (+) after an explicit first hop (= 2+ hops), alternative paths
+SELECT DISTINCT ?upstreamCode ?viaCode ?firstHop WHERE {
+  <course/CS440> uca:hasPrerequisiteExpression/uca:hasOption/uca:hasCondition ?k1 .
+  ?k1 uca:requiredCourse|uca:alternativeCourse ?via .
+  ?via (uca:hasPrerequisiteExpression/uca:hasOption/uca:hasCondition/(uca:requiredCourse|uca:alternativeCourse))+ ?up .
+  BIND(IF(EXISTS { ?k1 a uca:CourseChoiceCondition }, "via one-of group (potential)", "via required course") AS ?firstHop)
+  ?up uca:courseCode ?upstreamCode .
+  ?via uca:courseCode ?viaCode .
+  FILTER(?up != <course/CS440> && ?up != ?via)
+}
+ORDER BY ?upstreamCode ?viaCode
+
+### Q09_requirement_groups_with_multiple_choices
+# CQ09 | requirement groups with more than one allowed course
+# Features: BGP, OPTIONAL, aggregation (COUNT DISTINCT, GROUP BY, HAVING), BIND/IF
+SELECT ?requirement (COUNT(DISTINCT ?course) AS ?allowedCourses)
+       (COUNT(DISTINCT ?offered) AS ?offeredFall2026) WHERE {
+  <program/UIUC-BS-CS-2026> uca:hasRequirement ?req .
+  ?req rdfs:label ?requirement ; uca:allowsCourse ?course .
+  OPTIONAL { ?course uca:hasOffering/uca:offeredInTerm <term/2026-fa> . BIND(?course AS ?offered) }
+}
+GROUP BY ?requirement
+HAVING (COUNT(DISTINCT ?course) > 1)
+ORDER BY DESC(?allowedCourses)
+
+### Q10_crosslisted_aliases_and_downstream_CS374
+# CQ10 | CS 374 cross-listings and dependent courses
+# Features: property paths (alternative + inverse ^), FILTER IN, EXISTS, OPTIONAL, aggregation (GROUP_CONCAT)
+SELECT ?alias ?downstreamCode (GROUP_CONCAT(DISTINCT ?mentionedCode; separator=", ") AS ?mentions)
+       (MAX(?both) AS ?acceptsBothCodes) WHERE {
+  BIND(<course/CS374> AS ?c)
+  ?c uca:crossListedWith|^uca:crossListedWith ?aliasC .
+  ?aliasC uca:courseCode ?alias .
+  ?down uca:hasPrerequisiteExpression/uca:hasOption/uca:hasCondition ?k ; uca:courseCode ?downstreamCode .
+  ?k uca:requiredCourse|uca:alternativeCourse ?m .
+  FILTER(?m IN (?c, ?aliasC))
+  ?m uca:courseCode ?mentionedCode .
+  BIND(EXISTS { ?k uca:alternativeCourse ?c . ?k uca:alternativeCourse ?aliasC } AS ?both)
+}
+GROUP BY ?alias ?downstreamCode
+ORDER BY ?downstreamCode
+
+### Q11_department_counts_for_advanced_electives_INFERENCE
+# CQ11 | per department: advanced electives offered Fall 2026 [needs reasoning]
+# Features: aggregation (COUNT, GROUP BY), ORDER BY DESC, multi-hop over INFERRED properties
+SELECT ?department (COUNT(DISTINCT ?course) AS ?advancedElectivesOfferedFall2026) WHERE {
+  ?dept uca:hasCourse ?course ; uca:subjectCode ?department .
+  ?course uca:maySatisfyRequirement <requirement/UIUC-BS-CS-2026/Elective-Advanced> ;
+          uca:scheduledInTerm <term/2026-fa> .
+}
+GROUP BY ?department
+ORDER BY DESC(?advancedElectivesOfferedFall2026) ?department
+
+### Q12_blocked_only_by_noncourse_conditions
+# CQ12 | courses blocked only by standing/consent
+# Features: nested subqueries (two-level aggregation), SUM/MAX/GROUP_CONCAT, HAVING, FILTER EXISTS / NOT EXISTS
+SELECT ?studentId ?courseCode (GROUP_CONCAT(?blocking; separator=" | ") AS ?blockingConditions) WHERE {
+  { SELECT ?s ?course ?option (SUM(?uc) AS ?unmetCourse) (SUM(?un) AS ?unmetNonCourse) (SUM(?ot) AS ?other)
+           (GROUP_CONCAT(?ntext; separator=" | ") AS ?nonCourseText) WHERE {
+      ?s a uca:Student .
+      ?course uca:hasOffering/uca:offeredInTerm <term/2026-fa> ;
+              uca:hasPrerequisiteExpression/uca:hasOption ?option .
+      FILTER EXISTS { ?req uca:allowsCourse ?course }
+      FILTER NOT EXISTS { ?s uca:hasCompletion/uca:completedCourse ?course }
+      ?option uca:hasCondition ?k .
+      ?k uca:conditionSourceText ?text .
+      OPTIONAL { ?k a uca:CourseCondition . BIND(true AS ?isCourse) }
+      OPTIONAL { ?k a uca:CourseChoiceCondition . BIND(true AS ?isChoice) }
+      OPTIONAL { ?k a uca:StandingCondition ; uca:minimumStandingRank ?min . BIND(true AS ?isStanding) }
+      OPTIONAL { ?k a uca:ConsentCondition . BIND(true AS ?isConsent) }
+      BIND(IF(BOUND(?isCourse) || BOUND(?isChoice),
+              IF(EXISTS { ?k uca:requiredCourse|uca:alternativeCourse ?rc . ?s uca:hasCompletion/uca:completedCourse ?rc }
+                 || EXISTS { ?k uca:allowsConcurrent true ; uca:requiredCourse|uca:alternativeCourse ?rc .
+                             ?s uca:hasPlannedEnrollment/uca:plannedCourse ?rc }, 1, 0),
+           IF(BOUND(?isStanding), IF(EXISTS { ?s uca:standingRank ?r . FILTER(?r >= ?min) }, 1, 0),
+           IF(BOUND(?isConsent), IF(EXISTS { ?s uca:hasPermissionFor ?course }, 1, 0), 0))) AS ?met)
+      BIND(IF((BOUND(?isCourse) || BOUND(?isChoice)) && ?met = 0, 1, 0) AS ?uc)
+      BIND(IF((BOUND(?isStanding) || BOUND(?isConsent)) && ?met = 0, 1, 0) AS ?un)
+      BIND(IF(!BOUND(?isCourse) && !BOUND(?isChoice) && !BOUND(?isStanding) && !BOUND(?isConsent), 1, 0) AS ?ot)
+      BIND(IF((BOUND(?isStanding) || BOUND(?isConsent)) && ?met = 0, ?text, ?none) AS ?ntext)
+    } GROUP BY ?s ?course ?option }
+  BIND(IF(?unmetCourse = 0 && ?unmetNonCourse > 0 && ?other = 0, ?nonCourseText, ?none) AS ?blocking)
+  BIND(IF(?unmetCourse + ?unmetNonCourse + ?other = 0, 1, 0) AS ?fullyMet)
+  BIND(IF(?unmetCourse = 0 && ?unmetNonCourse > 0 && ?other = 0, 1, 0) AS ?onlyNonCourse)
+  ?s uca:studentIdentifier ?studentId .
+  ?course uca:courseCode ?courseCode .
+}
+GROUP BY ?studentId ?courseCode
+HAVING (MAX(?fullyMet) = 0 && MAX(?onlyNonCourse) = 1)
+ORDER BY ?studentId ?courseCode
+
+### Q13_what_if_S002_adds_CS225
+# CQ13 | what-if: courses eligible only after adding CS 225 (S002)
+# Features: VALUES (scenarios), subquery, EXISTS, aggregation (COUNT, SAMPLE, GROUP_CONCAT, HAVING)
+SELECT ?courseCode ?title (GROUP_CONCAT(DISTINCT ?scenario; separator=", ") AS ?eligibleIn) WHERE {
+  { SELECT ?scenario ?course ?option WHERE {
+      VALUES ?scenario { "baseline" "plus CS 225" }
+      BIND(<student/S002> AS ?s)
+      ?course uca:hasPrerequisiteExpression/uca:hasOption ?option .
+      ?option uca:hasCondition ?k .
+      OPTIONAL { ?k a uca:CourseCondition . BIND(true AS ?isCourse) }
+      OPTIONAL { ?k a uca:CourseChoiceCondition . BIND(true AS ?isChoice) }
+      OPTIONAL { ?k a uca:StandingCondition ; uca:minimumStandingRank ?min . BIND(true AS ?isStanding) }
+      OPTIONAL { ?k a uca:ConsentCondition . BIND(true AS ?isConsent) }
+      BIND(IF(BOUND(?isCourse) || BOUND(?isChoice),
+              IF(EXISTS { ?k uca:requiredCourse|uca:alternativeCourse ?rc . ?s uca:hasCompletion/uca:completedCourse ?rc }
+                 || (?scenario = "plus CS 225" && EXISTS { ?k uca:requiredCourse|uca:alternativeCourse <course/CS225> }), 1, 0),
+           IF(BOUND(?isStanding), IF(EXISTS { ?s uca:standingRank ?r . FILTER(?r >= ?min) }, 1, 0),
+           IF(BOUND(?isConsent), IF(EXISTS { ?s uca:hasPermissionFor ?course }, 1, 0), 0))) AS ?met)
+    } GROUP BY ?scenario ?course ?option HAVING (MIN(?met) = 1) }
+  ?course uca:courseCode ?courseCode .
+  OPTIONAL { ?course uca:courseTitle ?title }
+  FILTER NOT EXISTS { <student/S002> uca:hasCompletion/uca:completedCourse ?course }
+  FILTER(?course != <course/CS225>)
+}
+GROUP BY ?courseCode ?title
+HAVING (COUNT(DISTINCT ?scenario) = 1 && SAMPLE(?scenario) = "plus CS 225")
+ORDER BY ?courseCode
+
+### Q14_multi_group_completions_and_double_counting_S004
+# CQ14 | S004 courses fitting several groups + double-count check
+# Features: BGP, OPTIONAL, EXISTS, aggregation (COUNT DISTINCT, GROUP_CONCAT, GROUP BY, HAVING)
+SELECT ?courseCode (COUNT(DISTINCT ?req) AS ?candidateGroups)
+       (GROUP_CONCAT(DISTINCT ?reqLabel; separator=" | ") AS ?couldCountToward)
+       ?allocatedTo ?violatesDistinctRule WHERE {
+  <student/S004> uca:hasCompletion ?cp .
+  ?cp uca:completedCourse ?course .
+  ?course uca:courseCode ?courseCode .
+  ?req uca:allowsCourse ?course ; rdfs:label ?reqLabel .
+  OPTIONAL { SELECT ?cp (GROUP_CONCAT(?al; separator=" | ") AS ?alloc) WHERE {
+      ?cp uca:allocatedToRequirement ?a . ?a rdfs:label ?al } GROUP BY ?cp }
+  BIND(COALESCE(?alloc, "(not allocated)") AS ?allocatedTo)
+  BIND(EXISTS { ?cp uca:allocatedToRequirement <requirement/UIUC-BS-CS-2026/Elective-Technical> ,
+                                               <requirement/UIUC-BS-CS-2026/Elective-Advanced> } AS ?violatesDistinctRule)
+}
+GROUP BY ?courseCode ?allocatedTo ?violatesDistinctRule
+HAVING (COUNT(DISTINCT ?req) > 1)
+ORDER BY DESC(?violatesDistinctRule) DESC(?candidateGroups) ?courseCode
+
+### Q15_evidence_for_S002_planned_courses
+# CQ15 | evidence for S002's planned courses
+# Features: OPTIONAL (several), subquery with aggregation, BIND/IF/COALESCE, EXISTS
+SELECT ?courseCode ?prerequisiteText ?parseStatus ?satisfiedOptions ?requirement ?requirementNote ?source ?unverified WHERE {
+  <student/S002> uca:hasPlannedEnrollment/uca:plannedCourse ?course .
+  ?course uca:courseCode ?courseCode .
+  OPTIONAL { ?course uca:hasPrerequisiteExpression ?e .
+             ?e uca:prerequisiteSourceText ?prerequisiteText ; uca:parseStatus ?parseStatus }
+  OPTIONAL { ?req uca:allowsCourse ?course ; rdfs:label ?requirement .
+             OPTIONAL { ?req uca:requirementNote ?requirementNote } }
+  OPTIONAL { ?course uca:sourceURL ?source }
+  OPTIONAL { SELECT ?course (COUNT(DISTINCT ?option) AS ?sat) WHERE {
+      { SELECT ?course ?option WHERE {
+          BIND(<student/S002> AS ?s)
+          ?s uca:hasPlannedEnrollment/uca:plannedCourse ?course .
+          ?course uca:hasPrerequisiteExpression/uca:hasOption ?option .
+          ?option uca:hasCondition ?k .
+          OPTIONAL { ?k a uca:CourseCondition . BIND(true AS ?isCourse) }
+          OPTIONAL { ?k a uca:CourseChoiceCondition . BIND(true AS ?isChoice) }
+          OPTIONAL { ?k a uca:StandingCondition ; uca:minimumStandingRank ?min . BIND(true AS ?isStanding) }
+          OPTIONAL { ?k a uca:ConsentCondition . BIND(true AS ?isConsent) }
+          BIND(IF(BOUND(?isCourse) || BOUND(?isChoice),
+                  IF(EXISTS { ?k uca:requiredCourse|uca:alternativeCourse ?rc . ?s uca:hasCompletion/uca:completedCourse ?rc }, 1, 0),
+               IF(BOUND(?isStanding), IF(EXISTS { ?s uca:standingRank ?r . FILTER(?r >= ?min) }, 1, 0),
+               IF(BOUND(?isConsent), IF(EXISTS { ?s uca:hasPermissionFor ?course }, 1, 0), 0))) AS ?met)
+        } GROUP BY ?course ?option HAVING (MIN(?met) = 1) }
+    } GROUP BY ?course }
+  BIND(COALESCE(?sat, 0) AS ?satisfiedOptions)
+  BIND(IF(EXISTS { ?course uca:hasPrerequisiteExpression/uca:hasOption/uca:hasCondition ?o . ?o a uca:OtherCondition },
+          "yes: free-text condition needs manual check",
+       IF(COALESCE(?parseStatus = "needs_review", false),
+          "yes: wording such as 'or equivalent' needs manual check", "none")) AS ?unverified)
+}
+ORDER BY ?courseCode ?requirement
+
+### INF1_inverse_department_hasCourse
+# Inference: inverse (department hasCourse) [needs reasoning]
+# Features: BGP, inference-dependent
+SELECT ?courseCode ?title WHERE {
+  <department/CS> uca:hasCourse ?course .
+  ?course uca:courseCode ?courseCode .
+  OPTIONAL { ?course uca:courseTitle ?title }
+}
+ORDER BY ?courseCode
+
+### INF2_property_chain_and_transitivity_CS421
+# Inference: property chain + transitivity (CS 421 prerequisite path) [needs reasoning]
+# Features: BGP over inferred transitive property, OPTIONAL, BIND/EXISTS
+SELECT ?prereqCode ?direct WHERE {
+  <course/CS421> uca:hasPrerequisitePath ?p .
+  ?p uca:courseCode ?prereqCode .
+  BIND(EXISTS { <course/CS421> uca:hasPrerequisiteCandidate ?p } AS ?direct)
+}
+ORDER BY DESC(?direct) ?prereqCode
+
+### INF3_property_chain_hasCompletedCourse
+# Inference: property chain (student hasCompletedCourse) [needs reasoning]
+# Features: BGP, aggregation (COUNT, GROUP BY)
+SELECT ?studentId (COUNT(DISTINCT ?course) AS ?completedCourses)
+       (GROUP_CONCAT(DISTINCT ?code; separator=", ") AS ?courses) WHERE {
+  ?s uca:hasCompletedCourse ?course ; uca:studentIdentifier ?studentId .
+  ?course uca:courseCode ?code .
+}
+GROUP BY ?studentId
+ORDER BY ?studentId
+
+### INF4_symmetric_crosslisting
+# Inference: symmetric (crossListedWith) [needs reasoning]
+# Features: BGP, FILTER (NOT IN). Lists links FROM courses outside the five parsed subjects TO CS courses.
+SELECT ?courseCode ?crossListedWithCode WHERE {
+  ?c uca:crossListedWith ?x ; uca:inDepartment/uca:subjectCode ?subj ; uca:courseCode ?courseCode .
+  ?x uca:courseCode ?crossListedWithCode ; uca:inDepartment/uca:subjectCode ?xsubj .
+  FILTER(?subj NOT IN ("CS", "ECE", "MATH", "STAT", "PHYS"))
+  FILTER(?xsubj = "CS")
+}
+ORDER BY ?courseCode
+
+### INF5_class_inference_subclass_and_equivalentClass
+# Inference: subClassOf + equivalentClass [needs reasoning]
+# Features: VALUES, aggregation (COUNT, GROUP BY), OPTIONAL
+SELECT ?class (COUNT(DISTINCT ?x) AS ?instances) WHERE {
+  VALUES ?class { uca:DegreeRequirement uca:PrerequisiteCondition uca:CourseWithPrerequisites }
+  OPTIONAL { ?x a ?class }
+}
+GROUP BY ?class
+ORDER BY ?class
+
+### INF6_property_chain_scheduledInTerm_and_inverse_maySatisfy
+# Inference: property chain + inverse (scheduledInTerm, maySatisfyRequirement) [needs reasoning]
+# Features: BGP over two inferred properties, OPTIONAL
+SELECT ?courseCode ?title WHERE {
+  ?course uca:maySatisfyRequirement <requirement/UIUC-BS-CS-2026/Elective-TeamProject> ;
+          uca:scheduledInTerm <term/2026-fa> ;
+          uca:courseCode ?courseCode .
+  OPTIONAL { ?course uca:courseTitle ?title }
+}
+ORDER BY ?courseCode

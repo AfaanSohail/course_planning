@@ -1,0 +1,607 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix uca: <https://example.org/uiuc-course-advisor/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://example.org/uiuc-course-advisor/ontology> a owl:Ontology ;
+    rdfs:label "University Course Planning and Prerequisite Advisory Ontology"@en ;
+    dcterms:creator "Afaan Sohail (24i-0081)",
+        "Diya Hurmat (24i-0094)",
+        "Hassan Tariq (24i-2555)" ;
+    rdfs:comment "Revision 1.3 adds CourseChoiceCondition, the mentionsCourse super-property (requiredCourse, alternativeCourse), the defined class CourseWithPrerequisites and an AllDisjointClasses axiom over the structural classes. It lets catalog prerequisite text of the form 'A or B; one of C, D; E' (an AND of OR-groups) be stored without multiplying it out into many options."@en,
+        "T-Box schema for course catalogs, nested AND/OR prerequisites, degree requirement groups, course offerings, sections and student evidence. No real UIUC course instances are asserted in this file."@en ;
+    owl:versionIRI <https://example.org/uiuc-course-advisor/ontology/1.3> ;
+    owl:versionInfo "1.3 - AI-3001 Iteration 1 final (UIUC BS Computer Science); 2026-11-14" .
+
+uca:CoreRequirement a owl:Class ;
+    rdfs:label "CoreRequirement"@en ;
+    rdfs:comment "A degree requirement for compulsory/core courses." ;
+    rdfs:subClassOf uca:DegreeRequirement ;
+    owl:disjointWith uca:ElectiveRequirement .
+
+uca:CourseWithPrerequisites a owl:Class ;
+    rdfs:label "CourseWithPrerequisites"@en ;
+    rdfs:comment "Defined class: a Course that has at least one PrerequisiteExpression. Membership is INFERRED by the reasoner (owl:equivalentClass), never asserted in the A-Box." ;
+    owl:equivalentClass [ a owl:Class ;
+            owl:intersectionOf ( uca:Course [ a owl:Restriction ;
+                        owl:onProperty uca:hasPrerequisiteExpression ;
+                        owl:someValuesFrom uca:PrerequisiteExpression ] ) ] .
+
+uca:allocatedToRequirement a owl:ObjectProperty ;
+    rdfs:label "allocatedToRequirement"@en ;
+    rdfs:comment "Explicit degree-audit assignment; enforce no-double-count constraints in application logic." ;
+    rdfs:domain uca:CourseCompletion ;
+    rdfs:range uca:DegreeRequirement .
+
+uca:allowsConcurrent a owl:DatatypeProperty ;
+    rdfs:label "allowsConcurrent"@en ;
+    rdfs:comment "True if this course or choice condition accepts concurrent registration ('credit or concurrent registration in ...'); no automatic completion is assumed." ;
+    rdfs:domain uca:PrerequisiteCondition ;
+    rdfs:range xsd:boolean .
+
+uca:allowsCourse a owl:ObjectProperty ;
+    rdfs:label "allowsCourse"@en ;
+    rdfs:comment "Course permitted to satisfy requirement, subject to catalog rules." ;
+    rdfs:domain uca:DegreeRequirement ;
+    rdfs:range uca:Course ;
+    owl:inverseOf uca:maySatisfyRequirement .
+
+uca:buildingName a owl:DatatypeProperty ;
+    rdfs:label "buildingName"@en ;
+    rdfs:comment "Building name from the catalog; may be blank for online sections." ;
+    rdfs:domain uca:Section ;
+    rdfs:range xsd:string .
+
+uca:completionTerm a owl:ObjectProperty ;
+    rdfs:label "completionTerm"@en ;
+    rdfs:comment "Term in which a course was completed, if known." ;
+    rdfs:domain uca:CourseCompletion ;
+    rdfs:range uca:AcademicTerm .
+
+uca:conditionSourceText a owl:DatatypeProperty ;
+    rdfs:label "conditionSourceText"@en ;
+    rdfs:comment "Original condition clause for auditability." ;
+    rdfs:domain uca:PrerequisiteCondition ;
+    rdfs:range xsd:string .
+
+uca:courseCode a owl:DatatypeProperty ;
+    rdfs:label "courseCode"@en ;
+    rdfs:comment "Canonical code, for example CS 225." ;
+    rdfs:domain uca:Course ;
+    rdfs:range xsd:string .
+
+uca:courseCreditsMax a owl:DatatypeProperty ;
+    rdfs:label "courseCreditsMax"@en ;
+    rdfs:comment "Upper bound of credit hours (or fixed value)." ;
+    rdfs:domain uca:Course ;
+    rdfs:range xsd:decimal .
+
+uca:courseCreditsMin a owl:DatatypeProperty ;
+    rdfs:label "courseCreditsMin"@en ;
+    rdfs:comment "Lower bound of credit hours (or fixed value)." ;
+    rdfs:domain uca:Course ;
+    rdfs:range xsd:decimal .
+
+uca:courseDescription a owl:DatatypeProperty ;
+    rdfs:label "courseDescription"@en ;
+    rdfs:comment "Original human-readable catalog course description." ;
+    rdfs:domain uca:Course ;
+    rdfs:range xsd:string .
+
+uca:courseNumber a owl:DatatypeProperty ;
+    rdfs:label "courseNumber"@en ;
+    rdfs:comment "Numeric course number." ;
+    rdfs:domain uca:Course ;
+    rdfs:range xsd:integer .
+
+uca:courseTitle a owl:DatatypeProperty ;
+    rdfs:label "courseTitle"@en ;
+    rdfs:comment "Catalog course title." ;
+    rdfs:domain uca:Course ;
+    rdfs:range xsd:string .
+
+uca:creditsEarned a owl:DatatypeProperty ;
+    rdfs:label "creditsEarned"@en ;
+    rdfs:comment "Credits earned from this completion." ;
+    rdfs:domain uca:CourseCompletion ;
+    rdfs:range xsd:decimal .
+
+uca:crn a owl:DatatypeProperty ;
+    rdfs:label "crn"@en ;
+    rdfs:comment "Course registration number if available in a separate section-level source." ;
+    rdfs:domain uca:Section ;
+    rdfs:range xsd:string .
+
+uca:crossListedWith a owl:ObjectProperty,
+        owl:SymmetricProperty ;
+    rdfs:label "crossListedWith"@en ;
+    rdfs:comment "Symmetric Same-as catalog link; does not imply OWL sameAs or transferable credits." ;
+    rdfs:domain uca:Course ;
+    rdfs:range uca:Course .
+
+uca:endTime a owl:DatatypeProperty ;
+    rdfs:label "endTime"@en ;
+    rdfs:comment "End time as printed (string, because ARRANGED/blank values occur)." ;
+    rdfs:domain uca:Section ;
+    rdfs:range xsd:string .
+
+uca:enrollmentStatus a owl:DatatypeProperty ;
+    rdfs:label "enrollmentStatus"@en ;
+    rdfs:comment "Enrollment Status column (Open, Closed, CrossListOpen ...), observed snapshot only." ;
+    rdfs:domain uca:Section ;
+    rdfs:range xsd:string .
+
+uca:gradeAwarded a owl:DatatypeProperty ;
+    rdfs:label "gradeAwarded"@en ;
+    rdfs:comment "Grade from transcript, if known." ;
+    rdfs:domain uca:CourseCompletion ;
+    rdfs:range xsd:string .
+
+uca:hasCompletedCourse a owl:ObjectProperty ;
+    rdfs:label "hasCompletedCourse"@en ;
+    rdfs:comment "Derived from a completion record; does not establish passing grade/degree applicability." ;
+    rdfs:domain uca:Student ;
+    rdfs:range uca:Course ;
+    owl:propertyChainAxiom ( uca:hasCompletion uca:completedCourse ) .
+
+uca:hasDegreeAttribute a owl:DatatypeProperty ;
+    rdfs:label "hasDegreeAttribute"@en ;
+    rdfs:comment "Catalog degree/gen-ed attribute text, preserved verbatim." ;
+    rdfs:domain uca:Course ;
+    rdfs:range xsd:string .
+
+uca:hasPermissionFor a owl:ObjectProperty ;
+    rdfs:label "hasPermissionFor"@en ;
+    rdfs:comment "Documented approval/consent for a course." ;
+    rdfs:domain uca:Student ;
+    rdfs:range uca:Course .
+
+uca:hasPlannedEnrollment a owl:ObjectProperty ;
+    rdfs:label "hasPlannedEnrollment"@en ;
+    rdfs:comment "Student intends to enroll in a term." ;
+    rdfs:domain uca:Student ;
+    rdfs:range uca:PlannedEnrollment .
+
+uca:hasPrerequisiteCandidate a owl:ObjectProperty ;
+    rdfs:label "hasPrerequisiteCandidate"@en ;
+    rdfs:comment "Derived: a course mentioned anywhere in the prerequisite alternatives (chain hasPrerequisiteExpression o hasOption o hasCondition o mentionsCourse). NOT a universal mandatory prerequisite." ;
+    rdfs:domain uca:Course ;
+    rdfs:range uca:Course ;
+    rdfs:subPropertyOf uca:hasPrerequisitePath ;
+    owl:propertyChainAxiom ( uca:hasPrerequisiteExpression uca:hasOption uca:hasCondition uca:mentionsCourse ) .
+
+uca:hasRequirement a owl:ObjectProperty ;
+    rdfs:label "hasRequirement"@en ;
+    rdfs:comment "Program includes a core/elective requirement bucket." ;
+    rdfs:domain uca:DegreeProgram ;
+    rdfs:range uca:DegreeRequirement ;
+    owl:inverseOf uca:belongsToProgram .
+
+uca:hasSection a owl:ObjectProperty ;
+    rdfs:label "hasSection"@en ;
+    rdfs:comment "Section linked to its offering when section data exists." ;
+    rdfs:domain uca:CourseOffering ;
+    rdfs:range uca:Section ;
+    owl:inverseOf uca:sectionOf .
+
+uca:inDepartment a owl:ObjectProperty ;
+    rdfs:label "inDepartment"@en ;
+    rdfs:comment "Subject/department code identifies the course owner, not a meeting." ;
+    rdfs:domain uca:Course ;
+    rdfs:range uca:Department ;
+    owl:inverseOf uca:hasCourse .
+
+uca:instructorName a owl:DatatypeProperty ;
+    rdfs:label "instructorName"@en ;
+    rdfs:comment "Instructor name as printed in the catalog (e.g. \"Kim, G\")." ;
+    rdfs:domain uca:Instructor ;
+    rdfs:range xsd:string .
+
+uca:meetingDays a owl:DatatypeProperty ;
+    rdfs:label "meetingDays"@en ;
+    rdfs:comment "Days-of-week string from the catalog (e.g. MWF, TR, ARRANGED)." ;
+    rdfs:domain uca:Section ;
+    rdfs:range xsd:string .
+
+uca:minCourses a owl:DatatypeProperty ;
+    rdfs:label "minCourses"@en ;
+    rdfs:comment "Minimum courses to allocate to this group, if applicable." ;
+    rdfs:domain uca:DegreeRequirement ;
+    rdfs:range xsd:nonNegativeInteger .
+
+uca:minCredits a owl:DatatypeProperty ;
+    rdfs:label "minCredits"@en ;
+    rdfs:comment "Minimum awarded credits to allocate to this group, if applicable." ;
+    rdfs:domain uca:DegreeRequirement ;
+    rdfs:range xsd:decimal .
+
+uca:minTechnicalGPA a owl:DatatypeProperty ;
+    rdfs:label "minTechnicalGPA"@en ;
+    rdfs:comment "Minimum technical GPA (CS and Math courses for this program)." ;
+    rdfs:domain uca:DegreeProgram ;
+    rdfs:range xsd:decimal .
+
+uca:minUpperDivisionCredits a owl:DatatypeProperty ;
+    rdfs:label "minUpperDivisionCredits"@en ;
+    rdfs:comment "Minimum upper-division (300/400-level) credit hours." ;
+    rdfs:domain uca:DegreeProgram ;
+    rdfs:range xsd:decimal .
+
+uca:minimumGrade a owl:DatatypeProperty ;
+    rdfs:label "minimumGrade"@en ;
+    rdfs:comment "Raw minimum grade string, if explicit." ;
+    rdfs:domain uca:CourseCondition ;
+    rdfs:range xsd:string .
+
+uca:minimumStandingRank a owl:DatatypeProperty ;
+    rdfs:label "minimumStandingRank"@en ;
+    rdfs:comment "Standing/year rank. Fixed encoding: 1=Freshman, 2=Sophomore, 3=Junior, 4=Senior, 5=Graduate. A requirement such as \"Junior, Senior or Graduate\" is stored as minimumStandingRank 3." ;
+    rdfs:domain uca:StandingCondition ;
+    rdfs:range xsd:integer .
+
+uca:parseStatus a owl:DatatypeProperty ;
+    rdfs:label "parseStatus"@en ;
+    rdfs:comment "parsed, needs_review, unknown; NOT OWL reasoning result." ;
+    rdfs:domain uca:PrerequisiteExpression ;
+    rdfs:range xsd:string .
+
+uca:plannedCourse a owl:ObjectProperty ;
+    rdfs:label "plannedCourse"@en ;
+    rdfs:comment "Course planned but not yet completed." ;
+    rdfs:domain uca:PlannedEnrollment ;
+    rdfs:range uca:Course .
+
+uca:plannedTerm a owl:ObjectProperty ;
+    rdfs:label "plannedTerm"@en ;
+    rdfs:comment "Term for planned enrollment." ;
+    rdfs:domain uca:PlannedEnrollment ;
+    rdfs:range uca:AcademicTerm .
+
+uca:prerequisiteSourceText a owl:DatatypeProperty ;
+    rdfs:label "prerequisiteSourceText"@en ;
+    rdfs:comment "Original prerequisite prose, retained for explanations." ;
+    rdfs:domain uca:PrerequisiteExpression ;
+    rdfs:range xsd:string .
+
+uca:programCatalogYear a owl:DatatypeProperty ;
+    rdfs:label "programCatalogYear"@en ;
+    rdfs:comment "Year/version to which degree rules apply." ;
+    rdfs:domain uca:DegreeProgram ;
+    rdfs:range xsd:integer .
+
+uca:programName a owl:DatatypeProperty ;
+    rdfs:label "programName"@en ;
+    rdfs:comment "Degree title." ;
+    rdfs:domain uca:DegreeProgram ;
+    rdfs:range xsd:string .
+
+uca:requirementNote a owl:DatatypeProperty ;
+    rdfs:label "requirementNote"@en ;
+    rdfs:comment "Verbatim or condensed catalog policy for this group (letter-grade rule, caps, substitution, permission, distinct-from-other-group rules) that cannot be reduced to minCourses/minCredits." ;
+    rdfs:domain uca:DegreeRequirement ;
+    rdfs:range xsd:string .
+
+uca:roomNumber a owl:DatatypeProperty ;
+    rdfs:label "roomNumber"@en ;
+    rdfs:comment "Room from the catalog; may be blank." ;
+    rdfs:domain uca:Section ;
+    rdfs:range xsd:string .
+
+uca:scheduledInTerm a owl:ObjectProperty ;
+    rdfs:label "scheduledInTerm"@en ;
+    rdfs:comment "Derived by hasOffering followed by offeredInTerm; historical only for the catalog snapshot." ;
+    rdfs:domain uca:Course ;
+    rdfs:range uca:AcademicTerm ;
+    owl:propertyChainAxiom ( uca:hasOffering uca:offeredInTerm ) .
+
+uca:sectionCode a owl:DatatypeProperty ;
+    rdfs:label "sectionCode"@en ;
+    rdfs:comment "Section label if section data exists." ;
+    rdfs:domain uca:Section ;
+    rdfs:range xsd:string .
+
+uca:sectionType a owl:DatatypeProperty ;
+    rdfs:label "sectionType"@en ;
+    rdfs:comment "Meeting type from the catalog Type column (Lecture, Discussion/Recitation, Laboratory, Online ...)." ;
+    rdfs:domain uca:Section ;
+    rdfs:range xsd:string .
+
+uca:sourceURL a owl:DatatypeProperty ;
+    rdfs:label "sourceURL"@en ;
+    rdfs:comment "Link to catalog or official degree-program source; provenance property." ;
+    rdfs:range xsd:anyURI .
+
+uca:standingRank a owl:DatatypeProperty ;
+    rdfs:label "standingRank"@en ;
+    rdfs:comment "Standing/year rank. Fixed encoding: 1=Freshman, 2=Sophomore, 3=Junior, 4=Senior, 5=Graduate. A requirement such as \"Junior, Senior or Graduate\" is stored as minimumStandingRank 3." ;
+    rdfs:domain uca:Student ;
+    rdfs:range xsd:integer .
+
+uca:startTime a owl:DatatypeProperty ;
+    rdfs:label "startTime"@en ;
+    rdfs:comment "Start time as printed (string, because ARRANGED/blank values occur)." ;
+    rdfs:domain uca:Section ;
+    rdfs:range xsd:string .
+
+uca:studentIdentifier a owl:DatatypeProperty ;
+    rdfs:label "studentIdentifier"@en ;
+    rdfs:comment "Pseudonymous student reference; avoid real records in demos." ;
+    rdfs:domain uca:Student ;
+    rdfs:range xsd:string .
+
+uca:subjectCode a owl:DatatypeProperty ;
+    rdfs:label "subjectCode"@en ;
+    rdfs:comment "Academic subject code, e.g. CS." ;
+    rdfs:domain uca:Department ;
+    rdfs:range xsd:string .
+
+uca:taughtBy a owl:ObjectProperty ;
+    rdfs:label "taughtBy"@en ;
+    rdfs:comment "Instructor(s) listed for a section." ;
+    rdfs:domain uca:Section ;
+    rdfs:range uca:Instructor ;
+    owl:inverseOf uca:teaches .
+
+uca:termName a owl:DatatypeProperty ;
+    rdfs:label "termName"@en ;
+    rdfs:comment "Fall, Spring, Summer, or Winter." ;
+    rdfs:domain uca:AcademicTerm ;
+    rdfs:range xsd:string .
+
+uca:totalCreditsRequired a owl:DatatypeProperty ;
+    rdfs:label "totalCreditsRequired"@en ;
+    rdfs:comment "Minimum total credit hours required for graduation." ;
+    rdfs:domain uca:DegreeProgram ;
+    rdfs:range xsd:decimal .
+
+uca:year a owl:DatatypeProperty ;
+    rdfs:label "year"@en ;
+    rdfs:comment "Calendar year of academic term." ;
+    rdfs:domain uca:AcademicTerm ;
+    rdfs:range xsd:integer .
+
+uca:CourseChoiceCondition a owl:Class ;
+    rdfs:label "CourseChoiceCondition"@en ;
+    rdfs:comment "A prerequisite condition satisfied by ANY ONE of its alternativeCourse values (catalog wording 'A or B' / 'one of A, B, C'). Used inside an option, so an option stays an AND of conditions while each group keeps its OR." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty uca:alternativeCourse ;
+            owl:someValuesFrom uca:Course ],
+        uca:PrerequisiteCondition ;
+    owl:disjointWith uca:ConsentCondition,
+        uca:CourseCondition,
+        uca:OtherCondition,
+        uca:StandingCondition .
+
+uca:ElectiveRequirement a owl:Class ;
+    rdfs:label "ElectiveRequirement"@en ;
+    rdfs:comment "A degree requirement for electives chosen from an allowed course set." ;
+    rdfs:subClassOf uca:DegreeRequirement .
+
+uca:alternativeCourse a owl:ObjectProperty ;
+    rdfs:label "alternativeCourse"@en ;
+    rdfs:comment "One acceptable course of a CourseChoiceCondition; completing any one satisfies it." ;
+    rdfs:domain uca:CourseChoiceCondition ;
+    rdfs:range uca:Course ;
+    rdfs:subPropertyOf uca:mentionsCourse .
+
+uca:hasCompletion a owl:ObjectProperty ;
+    rdfs:label "hasCompletion"@en ;
+    rdfs:comment "Student has completion/transcript record." ;
+    rdfs:domain uca:Student ;
+    rdfs:range uca:CourseCompletion .
+
+uca:hasCourse a owl:ObjectProperty ;
+    rdfs:label "hasCourse"@en ;
+    rdfs:comment "Inverse of inDepartment." ;
+    rdfs:domain uca:Department ;
+    rdfs:range uca:Course .
+
+uca:hasOffering a owl:ObjectProperty ;
+    rdfs:label "hasOffering"@en ;
+    rdfs:comment "Connects the catalog course to a year/term offering." ;
+    rdfs:domain uca:Course ;
+    rdfs:range uca:CourseOffering ;
+    owl:inverseOf uca:offeringOf .
+
+uca:hasPrerequisitePath a owl:ObjectProperty,
+        owl:TransitiveProperty ;
+    rdfs:label "hasPrerequisitePath"@en ;
+    rdfs:comment "Transitive reachability across possible prerequisite-course mentions; NOT itself eligibility." ;
+    rdfs:domain uca:Course ;
+    rdfs:range uca:Course .
+
+uca:maySatisfyRequirement a owl:ObjectProperty ;
+    rdfs:label "maySatisfyRequirement"@en ;
+    rdfs:comment "Inverse of allowsCourse; eligibility for allocation, not proof of fulfilment." ;
+    rdfs:domain uca:Course ;
+    rdfs:range uca:DegreeRequirement .
+
+uca:sectionOf a owl:ObjectProperty ;
+    rdfs:label "sectionOf"@en ;
+    rdfs:comment "Inverse of hasSection." ;
+    rdfs:domain uca:Section ;
+    rdfs:range uca:CourseOffering .
+
+uca:teaches a owl:ObjectProperty ;
+    rdfs:label "teaches"@en ;
+    rdfs:comment "Inverse of taughtBy." ;
+    rdfs:domain uca:Instructor ;
+    rdfs:range uca:Section .
+
+uca:belongsToProgram a owl:ObjectProperty ;
+    rdfs:label "belongsToProgram"@en ;
+    rdfs:comment "Inverse of hasRequirement." ;
+    rdfs:domain uca:DegreeRequirement ;
+    rdfs:range uca:DegreeProgram .
+
+uca:hasCondition a owl:ObjectProperty ;
+    rdfs:label "hasCondition"@en ;
+    rdfs:comment "AND: all conditions inside this option must be satisfied." ;
+    rdfs:domain uca:PrerequisiteOption ;
+    rdfs:range uca:PrerequisiteCondition .
+
+uca:hasOption a owl:ObjectProperty ;
+    rdfs:label "hasOption"@en ;
+    rdfs:comment "OR: at least one fully satisfied option is needed." ;
+    rdfs:domain uca:PrerequisiteExpression ;
+    rdfs:range uca:PrerequisiteOption .
+
+uca:hasPrerequisiteExpression a owl:ObjectProperty ;
+    rdfs:label "hasPrerequisiteExpression"@en ;
+    rdfs:comment "Expression associated with the target course." ;
+    rdfs:domain uca:Course ;
+    rdfs:range uca:PrerequisiteExpression .
+
+uca:offeredInTerm a owl:ObjectProperty ;
+    rdfs:label "offeredInTerm"@en ;
+    rdfs:comment "Term in which this offering is observed." ;
+    rdfs:domain uca:CourseOffering ;
+    rdfs:range uca:AcademicTerm .
+
+uca:offeringOf a owl:ObjectProperty ;
+    rdfs:label "offeringOf"@en ;
+    rdfs:comment "Inverse of hasOffering." ;
+    rdfs:domain uca:CourseOffering ;
+    rdfs:range uca:Course .
+
+uca:requiredCourse a owl:ObjectProperty ;
+    rdfs:label "requiredCourse"@en ;
+    rdfs:comment "The single course a CourseCondition requires. Sub-property of mentionsCourse." ;
+    rdfs:domain uca:CourseCondition ;
+    rdfs:range uca:Course ;
+    rdfs:subPropertyOf uca:mentionsCourse .
+
+uca:ConsentCondition a owl:Class ;
+    rdfs:label "ConsentCondition"@en ;
+    rdfs:comment "Permission/consent requirement that must be checked explicitly." ;
+    rdfs:subClassOf uca:PrerequisiteCondition ;
+    owl:disjointWith uca:OtherCondition .
+
+uca:CourseCondition a owl:Class ;
+    rdfs:label "CourseCondition"@en ;
+    rdfs:comment "A prerequisite course, with optional concurrency flag and grade requirement." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty uca:requiredCourse ;
+            owl:someValuesFrom uca:Course ],
+        [ a owl:Restriction ;
+            owl:onClass uca:Course ;
+            owl:onProperty uca:requiredCourse ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        uca:PrerequisiteCondition ;
+    owl:disjointWith uca:ConsentCondition,
+        uca:OtherCondition,
+        uca:StandingCondition .
+
+uca:Instructor a owl:Class ;
+    rdfs:label "Instructor"@en ;
+    rdfs:comment "A person who teaches one or more sections; populated from the catalog Instructors column." .
+
+uca:StandingCondition a owl:Class ;
+    rdfs:label "StandingCondition"@en ;
+    rdfs:comment "A standing/year restriction that cannot be reduced to a course code." ;
+    rdfs:subClassOf uca:PrerequisiteCondition ;
+    owl:disjointWith uca:ConsentCondition,
+        uca:OtherCondition .
+
+uca:completedCourse a owl:ObjectProperty ;
+    rdfs:label "completedCourse"@en ;
+    rdfs:comment "Course linked to one completion record." ;
+    rdfs:domain uca:CourseCompletion ;
+    rdfs:range uca:Course .
+
+uca:mentionsCourse a owl:ObjectProperty ;
+    rdfs:label "mentionsCourse"@en ;
+    rdfs:comment "Any course referenced by a prerequisite condition (required or one alternative). Super-property of requiredCourse and alternativeCourse." ;
+    rdfs:domain uca:PrerequisiteCondition ;
+    rdfs:range uca:Course .
+
+uca:Department a owl:Class ;
+    rdfs:label "Department"@en ;
+    rdfs:comment "Academic subject or department offering courses." .
+
+uca:OtherCondition a owl:Class ;
+    rdfs:label "OtherCondition"@en ;
+    rdfs:comment "Any unsupported or free-text condition kept for review rather than silently ignored." ;
+    rdfs:subClassOf uca:PrerequisiteCondition .
+
+uca:PlannedEnrollment a owl:Class ;
+    rdfs:label "PlannedEnrollment"@en ;
+    rdfs:comment "A proposed course enrollment in a target term, separate from a completed course." .
+
+uca:PrerequisiteOption a owl:Class ;
+    rdfs:label "PrerequisiteOption"@en ;
+    rdfs:comment "One permissible alternative: ALL conditions linked by hasCondition must hold (AND)." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty uca:hasCondition ;
+            owl:someValuesFrom uca:PrerequisiteCondition ] .
+
+uca:PrerequisiteExpression a owl:Class ;
+    rdfs:label "PrerequisiteExpression"@en ;
+    rdfs:comment "Complete prerequisite expression for a course. Its options are OR alternatives." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty uca:hasOption ;
+            owl:someValuesFrom uca:PrerequisiteOption ] .
+
+uca:CourseCompletion a owl:Class ;
+    rdfs:label "CourseCompletion"@en ;
+    rdfs:comment "Student-specific evidence that a course was completed, optionally with grade and credits." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass uca:Course ;
+            owl:onProperty uca:completedCourse ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onProperty uca:completedCourse ;
+            owl:someValuesFrom uca:Course ] .
+
+uca:CourseOffering a owl:Class ;
+    rdfs:label "CourseOffering"@en ;
+    rdfs:comment "One course offered in one academic term; may have one or more sections if source data allows." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass uca:Course ;
+            owl:onProperty uca:offeringOf ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onClass uca:AcademicTerm ;
+            owl:onProperty uca:offeredInTerm ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ] .
+
+uca:Student a owl:Class ;
+    rdfs:label "Student"@en ;
+    rdfs:comment "A student whose transcript and permissions are available for planning." .
+
+uca:AcademicTerm a owl:Class ;
+    rdfs:label "AcademicTerm"@en ;
+    rdfs:comment "An academic term with year and season, identified independently of offerings." ;
+    owl:disjointWith uca:Course .
+
+uca:DegreeProgram a owl:Class ;
+    rdfs:label "DegreeProgram"@en ;
+    rdfs:comment "A declared degree plan and catalog version." .
+
+uca:DegreeRequirement a owl:Class ;
+    rdfs:label "DegreeRequirement"@en ;
+    rdfs:comment "A requirement bucket/group in a degree program; groups normally all need fulfilment." ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onProperty uca:belongsToProgram ;
+            owl:someValuesFrom uca:DegreeProgram ] .
+
+uca:PrerequisiteCondition a owl:Class ;
+    rdfs:label "PrerequisiteCondition"@en ;
+    rdfs:comment "Abstract prerequisite condition, specialized into course/standing/consent/other." .
+
+uca:Section a owl:Class ;
+    rdfs:label "Section"@en ;
+    rdfs:comment "A section/meeting row of a course offering (catalog CRN + Type). One Section per CRN and meeting type, because a CRN may list several meeting rows. The chosen catalog CSV is section-level, so this class is populated." .
+
+uca:Course a owl:Class ;
+    rdfs:label "Course"@en ;
+    rdfs:comment "Unique academic course, not a section or offering. URI is subject plus course number." ;
+    owl:disjointWith uca:CourseOffering,
+        uca:Section,
+        uca:Student .
+
+[] a owl:AllDisjointClasses ;
+    owl:members ( uca:Course uca:Department uca:AcademicTerm uca:CourseOffering uca:Section uca:DegreeProgram uca:DegreeRequirement uca:PrerequisiteExpression uca:PrerequisiteOption uca:PrerequisiteCondition uca:CourseCompletion uca:PlannedEnrollment ) .
+
