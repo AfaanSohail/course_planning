@@ -1,12 +1,13 @@
-"""Day 2: bounded prerequisite chains with intermediate entities and AND/OR structure.
+"""Day 3: prerequisite chains and recorded degree-requirement allocation reasoning.
 
-Eligibility, reverse unlock and degree progress are integrated on later days.
+Eligibility and reverse unlock are integrated on later days.
 """
 from __future__ import annotations
 from collections import deque
+from decimal import Decimal
 from time import perf_counter
-from rdflib.namespace import RDF
-from .kg import KG, UCA
+from rdflib.namespace import RDF, RDFS
+from .kg import KG, UCA, RES
 
 
 class Reasoner:
@@ -20,7 +21,7 @@ class Reasoner:
 
     def reason(self, template, **kwargs):
         started = perf_counter()
-        methods = {"prerequisite_chain": self.chain}
+        methods = {"prerequisite_chain": self.chain, "degree_progress": self.progress}
         if template not in methods:
             raise ValueError(f"Unknown template {template}; choose {list(methods)}")
         result = methods[template](**kwargs)
@@ -98,4 +99,46 @@ class Reasoner:
                     for cond in kg.objects(opt, UCA.hasCondition)]}
                 for opt in kg.objects(expr, UCA.hasOption)]})
         return result
+
+    def progress(self, student, program="UIUC-BS-CS-2026"):
+        kg, s, prog = self.kg, self.kg.resource("student", student), self.kg.resource("program", program)
+        reqs = kg.objects(prog, UCA.hasRequirement)
+        if (s, RDF.type, UCA.Student) not in kg.explicit or not reqs:
+            return self.result("Insufficient evidence: unknown student or program.", unmet=["unknown_entity"])
+        rows, paths, conflicts = [], [], []
+        technical = RES[f"requirement/{program}/Elective-Technical"]
+        advanced = RES[f"requirement/{program}/Elective-Advanced"]
+        for cp in kg.objects(s, UCA.hasCompletion):
+            allocated = set(kg.objects(cp, UCA.allocatedToRequirement))
+            if {technical, advanced} <= allocated:
+                conflicts.append({"completion": str(cp), "rule": "technical/advanced electives must be distinct",
+                                  "requirements": [str(technical), str(advanced)]})
+        for req in reqs:
+            allocated = [cp for cp in kg.objects(s, UCA.hasCompletion) if req in kg.objects(cp, UCA.allocatedToRequirement)]
+            credits = sum((Decimal(str(kg.value(cp, UCA.creditsEarned, 0))) for cp in allocated), Decimal(0))
+            minimum, min_credits = kg.value(req, UCA.minCourses), kg.value(req, UCA.minCredits)
+            remaining = max(0, int(minimum) - len(allocated)) if minimum is not None else None
+            rem_credits = max(Decimal(0), Decimal(str(min_credits)) - credits) if min_credits is not None else None
+            invalid = []
+            for cp in allocated:
+                paths.append([kg.edge(s, UCA.hasCompletion, cp), kg.edge(cp, UCA.allocatedToRequirement, req),
+                              dict(kg.edge(prog, UCA.hasRequirement, req), direction="reverse")])
+                for c in kg.objects(cp, UCA.completedCourse):
+                    paths.append([kg.edge(s, UCA.hasCompletion, cp), kg.edge(cp, UCA.completedCourse, c)])
+                    if (req, UCA.allowsCourse, c) not in kg.explicit:
+                        invalid.append(kg.code(c))
+            rows.append({"requirement": str(kg.value(req, RDFS.label, req)), "iri": str(req),
+                         "minCourses": int(minimum) if minimum is not None else None,
+                         "allocatedCourses": len(allocated), "remainingCourses": remaining,
+                         "minCredits": float(min_credits) if min_credits is not None else None,
+                         "allocatedCredits": float(credits), "remainingCredits": float(rem_credits) if rem_credits is not None else None,
+                         "encoded_thresholds_met": remaining in (None, 0) and rem_credits in (None, 0),
+                         "invalid_allocations": invalid,
+                         "note": str(kg.value(req, UCA.requirementNote, ""))})
+        return self.result(f"Recorded degree allocations for synthetic student {student}; not a certified graduation audit.",
+                           paths, "unmet" if conflicts or any(not r["encoded_thresholds_met"] for r in rows) else "satisfied",
+                           unmet=[r for r in rows if not r["encoded_thresholds_met"]], requirements=rows,
+                           conflicts=conflicts, warnings=["Focus areas are alternatives; do not require every focus area.",
+                           "GPA, grades, special permissions and prose credit restrictions need an adviser audit.",
+                           "Recorded allocations are counted and validated, not automatically optimized."])
 
