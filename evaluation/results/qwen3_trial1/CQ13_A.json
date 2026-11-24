@@ -1,0 +1,68 @@
+{
+  "question": "How does the set of satisfiable prerequisite options and course recommendations change when one planned completion is hypothetically added to a student's transcript? Instance: synthetic student S002 hypothetically adds CS 225; Fall 2026.",
+  "answer": "As a university course-planning adviser, I must clarify that **no retrieval tools or course graph are available** to me in this scenario. I do not have access to a database of courses, prerequisites, or student transcripts—especially not for a synthetic student like S002, or for a future semester like Fall 2026.\n\nTherefore, I **cannot** determine how the set of satisfiable prerequisite options and course recommendations would change if CS 225 were hypothetically added to student S002’s transcript in Fall 2026.\n\n---\n\n### Why this is not possible to answer with certainty:\n\n1. **No course data is available**  \n   I do not have access to the university’s course catalog, prerequisite rules, or any metadata about which courses depend on which others.\n\n2. **No student transcript data**  \n   I do not have any information about S002’s current academic history, prior course completions, or current course load.\n\n3. **Future semester is hypothetical**  \n   Fall 2026 is not in the present. Course availability, prerequisites, and academic policies may change over time, and no data exists about what will be offered then.\n\n4. **Prerequisite logic is not defined**  \n   Without knowing the actual prerequisite structure (e.g., \"CS 225 requires CS 110 and MATH 101\"), I cannot evaluate how adding CS 225 would affect other course eligibility.\n\n---\n\n### What I *can* say:\n\n- If CS 225 were completed and recorded on a student’s transcript, it might **unlock** eligibility for courses that require CS 225 as a prerequisite.\n- It might **allow** the student to take higher-level courses (e.g., CS 300, CS 450) that depend on CS 225.\n- It might **remove** the need to retake or satisfy prerequisites for courses that already require CS 225.\n- However, **without knowing the actual prerequisite structure**, I cannot say which courses would be affected or how the recommendations would change.\n\n---\n\n### Conclusion:\n\n> ❌ I cannot determine how the set of satisfiable prerequisite options and course recommendations would change when CS 225 is hypothetically added to student S002’s transcript in Fall 2026.  \n> ✅ This is due to a lack of access to course prerequisites, student history, and future academic offerings.\n\nTo answer this question accurately, I would need:\n- The university’s official course prerequisite rules.\n- The student’s current transcript (or academic history).\n- A course graph or dependency model (e.g., which courses require which others).\n\nWithout these, the question remains **hypothetical and unanswerable** with confidence.\n\nLet me know if you'd like to build a model or scenario based on hypothetical prerequisite rules.",
+  "evidence": [],
+  "mode": "baseline",
+  "llm_called": true,
+  "completion": {
+    "answer": "As a university course-planning adviser, I must clarify that **no retrieval tools or course graph are available** to me in this scenario. I do not have access to a database of courses, prerequisites, or student transcripts—especially not for a synthetic student like S002, or for a future semester like Fall 2026.\n\nTherefore, I **cannot** determine how the set of satisfiable prerequisite options and course recommendations would change if CS 225 were hypothetically added to student S002’s transcript in Fall 2026.\n\n---\n\n### Why this is not possible to answer with certainty:\n\n1. **No course data is available**  \n   I do not have access to the university’s course catalog, prerequisite rules, or any metadata about which courses depend on which others.\n\n2. **No student transcript data**  \n   I do not have any information about S002’s current academic history, prior course completions, or current course load.\n\n3. **Future semester is hypothetical**  \n   Fall 2026 is not in the present. Course availability, prerequisites, and academic policies may change over time, and no data exists about what will be offered then.\n\n4. **Prerequisite logic is not defined**  \n   Without knowing the actual prerequisite structure (e.g., \"CS 225 requires CS 110 and MATH 101\"), I cannot evaluate how adding CS 225 would affect other course eligibility.\n\n---\n\n### What I *can* say:\n\n- If CS 225 were completed and recorded on a student’s transcript, it might **unlock** eligibility for courses that require CS 225 as a prerequisite.\n- It might **allow** the student to take higher-level courses (e.g., CS 300, CS 450) that depend on CS 225.\n- It might **remove** the need to retake or satisfy prerequisites for courses that already require CS 225.\n- However, **without knowing the actual prerequisite structure**, I cannot say which courses would be affected or how the recommendations would change.\n\n---\n\n### Conclusion:\n\n> ❌ I cannot determine how the set of satisfiable prerequisite options and course recommendations would change when CS 225 is hypothetically added to student S002’s transcript in Fall 2026.  \n> ✅ This is due to a lack of access to course prerequisites, student history, and future academic offerings.\n\nTo answer this question accurately, I would need:\n- The university’s official course prerequisite rules.\n- The student’s current transcript (or academic history).\n- A course graph or dependency model (e.g., which courses require which others).\n\nWithout these, the question remains **hypothetical and unanswerable** with confidence.\n\nLet me know if you'd like to build a model or scenario based on hypothetical prerequisite rules.",
+    "request": {
+      "model": "course-planning-qwen3",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a university course-planning adviser. Answer the question accurately and\nexplain your reasoning. State uncertainty and missing information. Do not invent\nstudent transcripts or claim to have evidence you have not been given.\nThis condition has no retrieval tools or attached course graph.\n"
+        },
+        {
+          "role": "user",
+          "content": "How does the set of satisfiable prerequisite options and course recommendations change when one planned completion is hypothetically added to a student's transcript? Instance: synthetic student S002 hypothetically adds CS 225; Fall 2026."
+        }
+      ],
+      "temperature": 0.0,
+      "max_tokens": 2048,
+      "stream": false
+    },
+    "raw": {
+      "id": "chatcmpl-987",
+      "object": "chat.completion",
+      "created": 1795543830,
+      "model": "course-planning-qwen3",
+      "system_fingerprint": "fp_ollama",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "As a university course-planning adviser, I must clarify that **no retrieval tools or course graph are available** to me in this scenario. I do not have access to a database of courses, prerequisites, or student transcripts—especially not for a synthetic student like S002, or for a future semester like Fall 2026.\n\nTherefore, I **cannot** determine how the set of satisfiable prerequisite options and course recommendations would change if CS 225 were hypothetically added to student S002’s transcript in Fall 2026.\n\n---\n\n### Why this is not possible to answer with certainty:\n\n1. **No course data is available**  \n   I do not have access to the university’s course catalog, prerequisite rules, or any metadata about which courses depend on which others.\n\n2. **No student transcript data**  \n   I do not have any information about S002’s current academic history, prior course completions, or current course load.\n\n3. **Future semester is hypothetical**  \n   Fall 2026 is not in the present. Course availability, prerequisites, and academic policies may change over time, and no data exists about what will be offered then.\n\n4. **Prerequisite logic is not defined**  \n   Without knowing the actual prerequisite structure (e.g., \"CS 225 requires CS 110 and MATH 101\"), I cannot evaluate how adding CS 225 would affect other course eligibility.\n\n---\n\n### What I *can* say:\n\n- If CS 225 were completed and recorded on a student’s transcript, it might **unlock** eligibility for courses that require CS 225 as a prerequisite.\n- It might **allow** the student to take higher-level courses (e.g., CS 300, CS 450) that depend on CS 225.\n- It might **remove** the need to retake or satisfy prerequisites for courses that already require CS 225.\n- However, **without knowing the actual prerequisite structure**, I cannot say which courses would be affected or how the recommendations would change.\n\n---\n\n### Conclusion:\n\n> ❌ I cannot determine how the set of satisfiable prerequisite options and course recommendations would change when CS 225 is hypothetically added to student S002’s transcript in Fall 2026.  \n> ✅ This is due to a lack of access to course prerequisites, student history, and future academic offerings.\n\nTo answer this question accurately, I would need:\n- The university’s official course prerequisite rules.\n- The student’s current transcript (or academic history).\n- A course graph or dependency model (e.g., which courses require which others).\n\nWithout these, the question remains **hypothetical and unanswerable** with confidence.\n\nLet me know if you'd like to build a model or scenario based on hypothetical prerequisite rules."
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 117,
+        "prompt_tokens_details": {
+          "cached_tokens": 61
+        },
+        "completion_tokens": 597,
+        "total_tokens": 714
+      }
+    },
+    "runtime_ms": 122315.12110005133,
+    "finish_reason": "stop",
+    "truncated": false
+  },
+  "config": {
+    "provider": "ollama",
+    "base_url": "http://localhost:11434/v1",
+    "model": "course-planning-qwen3",
+    "api_key_env": "COURSE_LLM_API_KEY",
+    "require_api_key": false,
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "timeout_seconds": 600,
+    "context_max_chars": 32000
+  },
+  "cq": "CQ13",
+  "condition": "A",
+  "recorded_utc": "2026-11-24T18:10:30.599071+00:00"
+}

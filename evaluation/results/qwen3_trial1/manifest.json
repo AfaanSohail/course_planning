@@ -1,0 +1,44 @@
+{
+  "config": {
+    "provider": "ollama",
+    "base_url": "http://localhost:11434/v1",
+    "model": "course-planning-qwen3",
+    "api_key_env": "COURSE_LLM_API_KEY",
+    "require_api_key": false,
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "timeout_seconds": 600,
+    "context_max_chars": 32000
+  },
+  "graph_sha256": "ac0352a0246d3e67fae34d3fd27f3847bb9a3d7897478f19e865478f2a1ea2a8",
+  "cqs_sha256": "d5a6320578ffe9659176d3fda434ea91a3e16b4a0fe85efd4da7a8b45073a1c7",
+  "prompt_hashes": {
+    "baseline.txt": "dfba3eb88bf82940c353af0541c6719e591aaad499e52eaab9b0e27f6aeb8553",
+    "grounded.txt": "ca2a6327d74081b3629b37acb65e4d1477682fd290845538ada66c7890f2f342"
+  },
+  "model_identity": {
+    "provider": "ollama",
+    "runtime_version": "0.40.18",
+    "requested_model": "course-planning-qwen3",
+    "name": "course-planning-qwen3:latest",
+    "digest": "49dae85e3c0fa2bb7e051e99cd9e114ce759af87000515f827821ae0260115ef",
+    "details": {
+      "parent_model": "qwen3:4b-instruct",
+      "format": "gguf",
+      "family": "qwen3",
+      "families": [
+        "qwen3"
+      ],
+      "parameter_size": "4.0B",
+      "quantization_level": "Q4_K_M",
+      "context_length": 262144,
+      "embedding_length": 2560,
+      "runner": "llamacpp"
+    },
+    "model_digest_verified": true
+  },
+  "started_utc": "2026-11-24T17:52:37.942014+00:00",
+  "python": "3.13.5",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "commit": "27706929cf4b5cf83a4cd9a267689045f83c721d"
+}
