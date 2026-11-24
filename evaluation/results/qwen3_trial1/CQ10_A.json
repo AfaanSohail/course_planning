@@ -1,0 +1,68 @@
+{
+  "question": "For a selected course, which cross-listed course codes and downstream prerequisites reference its codes, and are any substitutions still subject to explicit policy? Instance: CS 374.",
+  "answer": "I cannot provide specific information about cross-listed course codes, downstream prerequisites, or substitution policies for a course such as CS 374—particularly without access to a university’s official course catalog, course prerequisites database, or current academic policy documents.\n\nHere’s why:\n\n1. **No Retrieval Tools or Course Graph Access**: You’ve indicated that no retrieval tools or attached course graph are available. This means I cannot query a database or system that contains real-time, institution-specific course relationships (e.g., which courses cross-list CS 374, what prerequisites follow it, or whether substitutions are allowed).\n\n2. **Lack of Explicit Policy Data**: Substitution policies (e.g., whether a student can substitute one course for another in a requirement) are typically defined in academic policy documents, which vary by university, department, and even academic year. Without access to such documents, I cannot confirm whether substitutions are still subject to explicit policy.\n\n3. **Course-Specific Information Is Not Generalizable**: Even if CS 374 existed in a university’s curriculum, its cross-lists, downstream prerequisites, and substitution rules would depend on the institution (e.g., University of Illinois, University of California, etc.), and may have changed over time.\n\nTherefore, I must state:\n\n> ❌ I do not have access to the course catalog, prerequisite structure, or academic policy documents for any university.  \n> ❌ I cannot verify cross-listed course codes, downstream prerequisites, or substitution policies for CS 374 or any other course.  \n> ❌ I cannot confirm whether substitutions are still subject to explicit policy without official documentation.\n\n✅ To answer your question accurately, you would need to consult:\n- The official course catalog of the university offering CS 374.\n- The department’s academic policy or prerequisite guide.\n- The course syllabus or course description for CS 374.\n\nIf you provide the university name or a specific academic program, I may be able to guide you toward where to find such information—but I cannot retrieve or interpret it on your behalf.\n\nLet me know if you'd like help drafting a query to your university’s academic office or course catalog.",
+  "evidence": [],
+  "mode": "baseline",
+  "llm_called": true,
+  "completion": {
+    "answer": "I cannot provide specific information about cross-listed course codes, downstream prerequisites, or substitution policies for a course such as CS 374—particularly without access to a university’s official course catalog, course prerequisites database, or current academic policy documents.\n\nHere’s why:\n\n1. **No Retrieval Tools or Course Graph Access**: You’ve indicated that no retrieval tools or attached course graph are available. This means I cannot query a database or system that contains real-time, institution-specific course relationships (e.g., which courses cross-list CS 374, what prerequisites follow it, or whether substitutions are allowed).\n\n2. **Lack of Explicit Policy Data**: Substitution policies (e.g., whether a student can substitute one course for another in a requirement) are typically defined in academic policy documents, which vary by university, department, and even academic year. Without access to such documents, I cannot confirm whether substitutions are still subject to explicit policy.\n\n3. **Course-Specific Information Is Not Generalizable**: Even if CS 374 existed in a university’s curriculum, its cross-lists, downstream prerequisites, and substitution rules would depend on the institution (e.g., University of Illinois, University of California, etc.), and may have changed over time.\n\nTherefore, I must state:\n\n> ❌ I do not have access to the course catalog, prerequisite structure, or academic policy documents for any university.  \n> ❌ I cannot verify cross-listed course codes, downstream prerequisites, or substitution policies for CS 374 or any other course.  \n> ❌ I cannot confirm whether substitutions are still subject to explicit policy without official documentation.\n\n✅ To answer your question accurately, you would need to consult:\n- The official course catalog of the university offering CS 374.\n- The department’s academic policy or prerequisite guide.\n- The course syllabus or course description for CS 374.\n\nIf you provide the university name or a specific academic program, I may be able to guide you toward where to find such information—but I cannot retrieve or interpret it on your behalf.\n\nLet me know if you'd like help drafting a query to your university’s academic office or course catalog.",
+    "request": {
+      "model": "course-planning-qwen3",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a university course-planning adviser. Answer the question accurately and\nexplain your reasoning. State uncertainty and missing information. Do not invent\nstudent transcripts or claim to have evidence you have not been given.\nThis condition has no retrieval tools or attached course graph.\n"
+        },
+        {
+          "role": "user",
+          "content": "For a selected course, which cross-listed course codes and downstream prerequisites reference its codes, and are any substitutions still subject to explicit policy? Instance: CS 374."
+        }
+      ],
+      "temperature": 0.0,
+      "max_tokens": 2048,
+      "stream": false
+    },
+    "raw": {
+      "id": "chatcmpl-398",
+      "object": "chat.completion",
+      "created": 1795543608,
+      "model": "course-planning-qwen3",
+      "system_fingerprint": "fp_ollama",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "I cannot provide specific information about cross-listed course codes, downstream prerequisites, or substitution policies for a course such as CS 374—particularly without access to a university’s official course catalog, course prerequisites database, or current academic policy documents.\n\nHere’s why:\n\n1. **No Retrieval Tools or Course Graph Access**: You’ve indicated that no retrieval tools or attached course graph are available. This means I cannot query a database or system that contains real-time, institution-specific course relationships (e.g., which courses cross-list CS 374, what prerequisites follow it, or whether substitutions are allowed).\n\n2. **Lack of Explicit Policy Data**: Substitution policies (e.g., whether a student can substitute one course for another in a requirement) are typically defined in academic policy documents, which vary by university, department, and even academic year. Without access to such documents, I cannot confirm whether substitutions are still subject to explicit policy.\n\n3. **Course-Specific Information Is Not Generalizable**: Even if CS 374 existed in a university’s curriculum, its cross-lists, downstream prerequisites, and substitution rules would depend on the institution (e.g., University of Illinois, University of California, etc.), and may have changed over time.\n\nTherefore, I must state:\n\n> ❌ I do not have access to the course catalog, prerequisite structure, or academic policy documents for any university.  \n> ❌ I cannot verify cross-listed course codes, downstream prerequisites, or substitution policies for CS 374 or any other course.  \n> ❌ I cannot confirm whether substitutions are still subject to explicit policy without official documentation.\n\n✅ To answer your question accurately, you would need to consult:\n- The official course catalog of the university offering CS 374.\n- The department’s academic policy or prerequisite guide.\n- The course syllabus or course description for CS 374.\n\nIf you provide the university name or a specific academic program, I may be able to guide you toward where to find such information—but I cannot retrieve or interpret it on your behalf.\n\nLet me know if you'd like help drafting a query to your university’s academic office or course catalog."
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 102,
+        "prompt_tokens_details": {
+          "cached_tokens": 61
+        },
+        "completion_tokens": 444,
+        "total_tokens": 546
+      }
+    },
+    "runtime_ms": 90466.19480010122,
+    "finish_reason": "stop",
+    "truncated": false
+  },
+  "config": {
+    "provider": "ollama",
+    "base_url": "http://localhost:11434/v1",
+    "model": "course-planning-qwen3",
+    "api_key_env": "COURSE_LLM_API_KEY",
+    "require_api_key": false,
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "timeout_seconds": 600,
+    "context_max_chars": 32000
+  },
+  "cq": "CQ10",
+  "condition": "A",
+  "recorded_utc": "2026-11-24T18:06:48.651011+00:00"
+}

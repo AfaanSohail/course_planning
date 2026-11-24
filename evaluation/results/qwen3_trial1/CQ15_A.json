@@ -1,0 +1,68 @@
+{
+  "question": "What catalog wording, degree requirement and prerequisite-option evidence s upports each recommendation, and which conditions remain unverified? Instance: synthetic student S002's planned courses; Fall 2026.",
+  "answer": "I cannot provide the catalog wording, degree requirement, prerequisite-option evidence, or any specific recommendations for a synthetic student (S002) in Fall 2026—because no such student transcript, course catalog, degree plan, or institutional data has been provided or attached.\n\nAs a university course-planning adviser, I can only offer accurate, evidence-based guidance if I have access to:\n\n- The official university course catalog (with catalog wording and degree requirements)\n- The student’s academic record or planned course schedule (e.g., course codes, credits, prerequisites)\n- Degree program requirements (e.g., major, minor, general education, core courses)\n- Prerequisite and co-requisite policies (e.g., \"must complete MATH 101 before enrolling in MATH 200\")\n\nSince no such data is available—no transcript, no catalog excerpt, no degree plan, and no student instance (S002) has been provided—I cannot verify or retrieve any catalog wording, degree requirement, or prerequisite evidence.\n\n**Therefore, the following remain unverified:**\n\n- Catalog wording for any course or requirement\n- Degree requirement structure (e.g., total credits, core courses, electives)\n- Prerequisite-option policies (e.g., \"must have completed X before enrolling in Y\")\n- Whether student S002’s course plan satisfies degree requirements\n- Whether any course sequences or prerequisites are properly aligned\n\n**Conclusion:**\n\nThere is no evidence or data provided to support any recommendation for student S002 in Fall 2026. All claims about catalog wording, degree requirements, or prerequisites would be speculative without access to the actual course catalog, student transcript, or institutional policy documents.\n\n👉 **Next step:** Please provide the student’s academic plan (e.g., course list), the university’s current course catalog, or the degree program requirements. With that, I can analyze and support each recommendation with accurate, verifiable evidence.\n\nUntil then, I cannot make any definitive claims or offer verified reasoning.",
+  "evidence": [],
+  "mode": "baseline",
+  "llm_called": true,
+  "completion": {
+    "answer": "I cannot provide the catalog wording, degree requirement, prerequisite-option evidence, or any specific recommendations for a synthetic student (S002) in Fall 2026—because no such student transcript, course catalog, degree plan, or institutional data has been provided or attached.\n\nAs a university course-planning adviser, I can only offer accurate, evidence-based guidance if I have access to:\n\n- The official university course catalog (with catalog wording and degree requirements)\n- The student’s academic record or planned course schedule (e.g., course codes, credits, prerequisites)\n- Degree program requirements (e.g., major, minor, general education, core courses)\n- Prerequisite and co-requisite policies (e.g., \"must complete MATH 101 before enrolling in MATH 200\")\n\nSince no such data is available—no transcript, no catalog excerpt, no degree plan, and no student instance (S002) has been provided—I cannot verify or retrieve any catalog wording, degree requirement, or prerequisite evidence.\n\n**Therefore, the following remain unverified:**\n\n- Catalog wording for any course or requirement\n- Degree requirement structure (e.g., total credits, core courses, electives)\n- Prerequisite-option policies (e.g., \"must have completed X before enrolling in Y\")\n- Whether student S002’s course plan satisfies degree requirements\n- Whether any course sequences or prerequisites are properly aligned\n\n**Conclusion:**\n\nThere is no evidence or data provided to support any recommendation for student S002 in Fall 2026. All claims about catalog wording, degree requirements, or prerequisites would be speculative without access to the actual course catalog, student transcript, or institutional policy documents.\n\n👉 **Next step:** Please provide the student’s academic plan (e.g., course list), the university’s current course catalog, or the degree program requirements. With that, I can analyze and support each recommendation with accurate, verifiable evidence.\n\nUntil then, I cannot make any definitive claims or offer verified reasoning.",
+    "request": {
+      "model": "course-planning-qwen3",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a university course-planning adviser. Answer the question accurately and\nexplain your reasoning. State uncertainty and missing information. Do not invent\nstudent transcripts or claim to have evidence you have not been given.\nThis condition has no retrieval tools or attached course graph.\n"
+        },
+        {
+          "role": "user",
+          "content": "What catalog wording, degree requirement and prerequisite-option evidence s upports each recommendation, and which conditions remain unverified? Instance: synthetic student S002's planned courses; Fall 2026."
+        }
+      ],
+      "temperature": 0.0,
+      "max_tokens": 2048,
+      "stream": false
+    },
+    "raw": {
+      "id": "chatcmpl-400",
+      "object": "chat.completion",
+      "created": 1795543914,
+      "model": "course-planning-qwen3",
+      "system_fingerprint": "fp_ollama",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "I cannot provide the catalog wording, degree requirement, prerequisite-option evidence, or any specific recommendations for a synthetic student (S002) in Fall 2026—because no such student transcript, course catalog, degree plan, or institutional data has been provided or attached.\n\nAs a university course-planning adviser, I can only offer accurate, evidence-based guidance if I have access to:\n\n- The official university course catalog (with catalog wording and degree requirements)\n- The student’s academic record or planned course schedule (e.g., course codes, credits, prerequisites)\n- Degree program requirements (e.g., major, minor, general education, core courses)\n- Prerequisite and co-requisite policies (e.g., \"must complete MATH 101 before enrolling in MATH 200\")\n\nSince no such data is available—no transcript, no catalog excerpt, no degree plan, and no student instance (S002) has been provided—I cannot verify or retrieve any catalog wording, degree requirement, or prerequisite evidence.\n\n**Therefore, the following remain unverified:**\n\n- Catalog wording for any course or requirement\n- Degree requirement structure (e.g., total credits, core courses, electives)\n- Prerequisite-option policies (e.g., \"must have completed X before enrolling in Y\")\n- Whether student S002’s course plan satisfies degree requirements\n- Whether any course sequences or prerequisites are properly aligned\n\n**Conclusion:**\n\nThere is no evidence or data provided to support any recommendation for student S002 in Fall 2026. All claims about catalog wording, degree requirements, or prerequisites would be speculative without access to the actual course catalog, student transcript, or institutional policy documents.\n\n👉 **Next step:** Please provide the student’s academic plan (e.g., course list), the university’s current course catalog, or the degree program requirements. With that, I can analyze and support each recommendation with accurate, verifiable evidence.\n\nUntil then, I cannot make any definitive claims or offer verified reasoning."
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 108,
+        "prompt_tokens_details": {
+          "cached_tokens": 61
+        },
+        "completion_tokens": 416,
+        "total_tokens": 524
+      }
+    },
+    "runtime_ms": 83591.06709994376,
+    "finish_reason": "stop",
+    "truncated": false
+  },
+  "config": {
+    "provider": "ollama",
+    "base_url": "http://localhost:11434/v1",
+    "model": "course-planning-qwen3",
+    "api_key_env": "COURSE_LLM_API_KEY",
+    "require_api_key": false,
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "timeout_seconds": 600,
+    "context_max_chars": 32000
+  },
+  "cq": "CQ15",
+  "condition": "A",
+  "recorded_utc": "2026-11-24T18:11:54.193837+00:00"
+}

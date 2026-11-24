@@ -1,0 +1,68 @@
+{
+  "question": "If a student completes one additional course, which downstream courses may become available and what other conditions would still have to hold? Instance: synthetic student S002 hypothetically completes CS 225; Fall 2026.",
+  "answer": "As a university course-planning adviser, I can provide a structured explanation of how course availability typically works in academic systems—based on standard university policies and course prerequisites—**but I cannot access or retrieve specific course data, student transcripts, or institutional course graphs** in real time or from any external database.\n\nTherefore, I cannot definitively say which downstream courses become available *for a specific student* (like synthetic student S002) after completing CS 225 in Fall 2026, **without knowing**:\n\n- The university’s official course prerequisites and dependency structure.\n- The specific course catalog or course offering schedule for Fall 2026.\n- The student’s academic major, intended degree, or program of study.\n- Whether CS 225 is a prerequisite for other courses (e.g., CS 300, CS 450, etc.).\n- Whether there are co-requisites, credit limits, or program-specific requirements.\n\n---\n\n### General Reasoning (Hypothetical Example)\n\nSuppose CS 225 is a foundational course in computer science (e.g., \"Data Structures and Algorithms\"). Then, **downstream courses** that may become available after completing CS 225 might include:\n\n- CS 300: Advanced Data Structures\n- CS 350: Algorithms and Complexity\n- CS 400: Software Engineering\n- CS 450: Artificial Intelligence (if prerequisites are met)\n- CS 470: Systems Programming\n\nThese are **hypothetical** and depend on the university’s course design.\n\n---\n\n### Conditions That Would Still Have to Hold (Even After CS 225)\n\nFor a student to be eligible for downstream courses, **additional conditions** must be satisfied:\n\n1. **Major or program requirements**  \n   → The student must be enrolled in a program (e.g., Computer Science, Engineering) that includes these downstream courses.\n\n2. **Credit limits and degree progression**  \n   → The student must have completed enough credits to be eligible for upper-level courses.\n\n3. **Prerequisite fulfillment**  \n   → Some downstream courses may require CS 225 *and* another course (e.g., CS 101 or MATH 120).\n\n4. **Academic standing**  \n   → The student must maintain a minimum GPA or be in good academic standing.\n\n5. **Course scheduling**  \n   → The downstream course must be offered in Fall 2026 or a later term.\n\n6. **Enrollment policies**  \n   → Some courses may have limited enrollment or require approval (e.g., research, capstone).\n\n---\n\n### Important Limitation\n\n> ❌ **I cannot confirm which downstream courses are actually available** for student S002 or any student, because:\n> - I do not have access to the university’s course catalog or student records.\n> - The course dependency structure is not provided.\n> - The student’s major, academic plan, or program of study is not specified.\n\n---\n\n### Conclusion\n\n✅ **In general**, completing CS 225 may open access to advanced computer science courses such as CS 300, CS 350, or CS 450—**if** those courses have CS 225 as a prerequisite and the student is in a relevant program.\n\n❌ **But without knowing the university’s course catalog, student’s major, or academic plan**, I **cannot definitively identify** which downstream courses become available.\n\n---\n\n📌 **Recommendation**:  \nTo get accurate information, the student (or adviser) should consult:\n- The university’s official course catalog or academic plan.\n- The course prerequisites page for CS 225 and related courses.\n- The academic advisor or program coordinator.\n\nLet me know if you'd like to simulate a hypothetical course dependency graph or build one based on a known curriculum.",
+  "evidence": [],
+  "mode": "baseline",
+  "llm_called": true,
+  "completion": {
+    "answer": "As a university course-planning adviser, I can provide a structured explanation of how course availability typically works in academic systems—based on standard university policies and course prerequisites—**but I cannot access or retrieve specific course data, student transcripts, or institutional course graphs** in real time or from any external database.\n\nTherefore, I cannot definitively say which downstream courses become available *for a specific student* (like synthetic student S002) after completing CS 225 in Fall 2026, **without knowing**:\n\n- The university’s official course prerequisites and dependency structure.\n- The specific course catalog or course offering schedule for Fall 2026.\n- The student’s academic major, intended degree, or program of study.\n- Whether CS 225 is a prerequisite for other courses (e.g., CS 300, CS 450, etc.).\n- Whether there are co-requisites, credit limits, or program-specific requirements.\n\n---\n\n### General Reasoning (Hypothetical Example)\n\nSuppose CS 225 is a foundational course in computer science (e.g., \"Data Structures and Algorithms\"). Then, **downstream courses** that may become available after completing CS 225 might include:\n\n- CS 300: Advanced Data Structures\n- CS 350: Algorithms and Complexity\n- CS 400: Software Engineering\n- CS 450: Artificial Intelligence (if prerequisites are met)\n- CS 470: Systems Programming\n\nThese are **hypothetical** and depend on the university’s course design.\n\n---\n\n### Conditions That Would Still Have to Hold (Even After CS 225)\n\nFor a student to be eligible for downstream courses, **additional conditions** must be satisfied:\n\n1. **Major or program requirements**  \n   → The student must be enrolled in a program (e.g., Computer Science, Engineering) that includes these downstream courses.\n\n2. **Credit limits and degree progression**  \n   → The student must have completed enough credits to be eligible for upper-level courses.\n\n3. **Prerequisite fulfillment**  \n   → Some downstream courses may require CS 225 *and* another course (e.g., CS 101 or MATH 120).\n\n4. **Academic standing**  \n   → The student must maintain a minimum GPA or be in good academic standing.\n\n5. **Course scheduling**  \n   → The downstream course must be offered in Fall 2026 or a later term.\n\n6. **Enrollment policies**  \n   → Some courses may have limited enrollment or require approval (e.g., research, capstone).\n\n---\n\n### Important Limitation\n\n> ❌ **I cannot confirm which downstream courses are actually available** for student S002 or any student, because:\n> - I do not have access to the university’s course catalog or student records.\n> - The course dependency structure is not provided.\n> - The student’s major, academic plan, or program of study is not specified.\n\n---\n\n### Conclusion\n\n✅ **In general**, completing CS 225 may open access to advanced computer science courses such as CS 300, CS 350, or CS 450—**if** those courses have CS 225 as a prerequisite and the student is in a relevant program.\n\n❌ **But without knowing the university’s course catalog, student’s major, or academic plan**, I **cannot definitively identify** which downstream courses become available.\n\n---\n\n📌 **Recommendation**:  \nTo get accurate information, the student (or adviser) should consult:\n- The university’s official course catalog or academic plan.\n- The course prerequisites page for CS 225 and related courses.\n- The academic advisor or program coordinator.\n\nLet me know if you'd like to simulate a hypothetical course dependency graph or build one based on a known curriculum.",
+    "request": {
+      "model": "course-planning-qwen3",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a university course-planning adviser. Answer the question accurately and\nexplain your reasoning. State uncertainty and missing information. Do not invent\nstudent transcripts or claim to have evidence you have not been given.\nThis condition has no retrieval tools or attached course graph.\n"
+        },
+        {
+          "role": "user",
+          "content": "If a student completes one additional course, which downstream courses may become available and what other conditions would still have to hold? Instance: synthetic student S002 hypothetically completes CS 225; Fall 2026."
+        }
+      ],
+      "temperature": 0.0,
+      "max_tokens": 2048,
+      "stream": false
+    },
+    "raw": {
+      "id": "chatcmpl-160",
+      "object": "chat.completion",
+      "created": 1795543243,
+      "model": "course-planning-qwen3",
+      "system_fingerprint": "fp_ollama",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "As a university course-planning adviser, I can provide a structured explanation of how course availability typically works in academic systems—based on standard university policies and course prerequisites—**but I cannot access or retrieve specific course data, student transcripts, or institutional course graphs** in real time or from any external database.\n\nTherefore, I cannot definitively say which downstream courses become available *for a specific student* (like synthetic student S002) after completing CS 225 in Fall 2026, **without knowing**:\n\n- The university’s official course prerequisites and dependency structure.\n- The specific course catalog or course offering schedule for Fall 2026.\n- The student’s academic major, intended degree, or program of study.\n- Whether CS 225 is a prerequisite for other courses (e.g., CS 300, CS 450, etc.).\n- Whether there are co-requisites, credit limits, or program-specific requirements.\n\n---\n\n### General Reasoning (Hypothetical Example)\n\nSuppose CS 225 is a foundational course in computer science (e.g., \"Data Structures and Algorithms\"). Then, **downstream courses** that may become available after completing CS 225 might include:\n\n- CS 300: Advanced Data Structures\n- CS 350: Algorithms and Complexity\n- CS 400: Software Engineering\n- CS 450: Artificial Intelligence (if prerequisites are met)\n- CS 470: Systems Programming\n\nThese are **hypothetical** and depend on the university’s course design.\n\n---\n\n### Conditions That Would Still Have to Hold (Even After CS 225)\n\nFor a student to be eligible for downstream courses, **additional conditions** must be satisfied:\n\n1. **Major or program requirements**  \n   → The student must be enrolled in a program (e.g., Computer Science, Engineering) that includes these downstream courses.\n\n2. **Credit limits and degree progression**  \n   → The student must have completed enough credits to be eligible for upper-level courses.\n\n3. **Prerequisite fulfillment**  \n   → Some downstream courses may require CS 225 *and* another course (e.g., CS 101 or MATH 120).\n\n4. **Academic standing**  \n   → The student must maintain a minimum GPA or be in good academic standing.\n\n5. **Course scheduling**  \n   → The downstream course must be offered in Fall 2026 or a later term.\n\n6. **Enrollment policies**  \n   → Some courses may have limited enrollment or require approval (e.g., research, capstone).\n\n---\n\n### Important Limitation\n\n> ❌ **I cannot confirm which downstream courses are actually available** for student S002 or any student, because:\n> - I do not have access to the university’s course catalog or student records.\n> - The course dependency structure is not provided.\n> - The student’s major, academic plan, or program of study is not specified.\n\n---\n\n### Conclusion\n\n✅ **In general**, completing CS 225 may open access to advanced computer science courses such as CS 300, CS 350, or CS 450—**if** those courses have CS 225 as a prerequisite and the student is in a relevant program.\n\n❌ **But without knowing the university’s course catalog, student’s major, or academic plan**, I **cannot definitively identify** which downstream courses become available.\n\n---\n\n📌 **Recommendation**:  \nTo get accurate information, the student (or adviser) should consult:\n- The university’s official course catalog or academic plan.\n- The course prerequisites page for CS 225 and related courses.\n- The academic advisor or program coordinator.\n\nLet me know if you'd like to simulate a hypothetical course dependency graph or build one based on a known curriculum."
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 114,
+        "prompt_tokens_details": {
+          "cached_tokens": 61
+        },
+        "completion_tokens": 802,
+        "total_tokens": 916
+      }
+    },
+    "runtime_ms": 219201.94429997355,
+    "finish_reason": "stop",
+    "truncated": false
+  },
+  "config": {
+    "provider": "ollama",
+    "base_url": "http://localhost:11434/v1",
+    "model": "course-planning-qwen3",
+    "api_key_env": "COURSE_LLM_API_KEY",
+    "require_api_key": false,
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "timeout_seconds": 600,
+    "context_max_chars": 32000
+  },
+  "cq": "CQ04",
+  "condition": "A",
+  "recorded_utc": "2026-11-24T18:00:43.063728+00:00"
+}
