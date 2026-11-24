@@ -1,6 +1,6 @@
-"""Day 3: prerequisite chains and recorded degree-requirement allocation reasoning.
+"""Day 4: evidence-labelled chains, eligibility, unlocks and degree progress.
 
-Eligibility and reverse unlock are integrated on later days.
+Eligibility and hypothetical unlocks support independent SPARQL validation.
 """
 from __future__ import annotations
 from collections import deque
@@ -21,7 +21,8 @@ class Reasoner:
 
     def reason(self, template, **kwargs):
         started = perf_counter()
-        methods = {"prerequisite_chain": self.chain, "degree_progress": self.progress}
+        methods = {"prerequisite_chain": self.chain, "degree_progress": self.progress,
+                   "eligibility": self.eligibility, "reverse_unlock": self.unlock}
         if template not in methods:
             raise ValueError(f"Unknown template {template}; choose {list(methods)}")
         result = methods[template](**kwargs)
@@ -141,4 +142,148 @@ class Reasoner:
                            conflicts=conflicts, warnings=["Focus areas are alternatives; do not require every focus area.",
                            "GPA, grades, special permissions and prose credit restrictions need an adviser audit.",
                            "Recorded allocations are counted and validated, not automatically optimized."])
+
+    def completions(self, student):
+        return {c for cp in self.kg.objects(student, UCA.hasCompletion)
+                for c in self.kg.objects(cp, UCA.completedCourse)}
+
+
+    def eligibility(self, student, course, term="2026-fa", added=None, concurrent=True):
+        kg = self.kg
+        s, c = kg.resource("student", student), kg.resource("course", course)
+        t = kg.resource("term", term)
+        if (s, RDF.type, UCA.Student) not in kg.explicit or c not in kg.courses:
+            return self.result("Insufficient evidence: unknown student or course.", unmet=["unknown_entity"])
+        done = self.completions(s)
+        assumptions = {kg.resource("course", a) for a in (added or [])}
+        if any(a not in kg.courses for a in assumptions):
+            return self.result("Insufficient evidence: unknown hypothetical course.", unmet=["unknown_assumption"])
+        plans = {x for plan in kg.objects(s, UCA.hasPlannedEnrollment)
+                 if t in kg.objects(plan, UCA.plannedTerm) for x in kg.objects(plan, UCA.plannedCourse)}
+        paths, options, warnings = [], [], []
+        exprs = kg.objects(c, UCA.hasPrerequisiteExpression)
+        for expr in exprs:
+            if str(kg.value(expr, UCA.parseStatus, "unknown")) != "parsed":
+                warnings.append("Prerequisite parsing needs review; verdict covers encoded conditions only.")
+            for opt in kg.objects(expr, UCA.hasOption):
+                conditions = []
+                for cond in kg.objects(opt, UCA.hasCondition):
+                    base = [kg.edge(c, UCA.hasPrerequisiteExpression, expr), kg.edge(expr, UCA.hasOption, opt),
+                            kg.edge(opt, UCA.hasCondition, cond)]
+                    types = set(kg.objects(cond, RDF.type))
+                    candidates = set(kg.objects(cond, UCA.requiredCourse) + kg.objects(cond, UCA.alternativeCourse))
+                    met, basis, support = False, "unverified", []
+                    if types & {UCA.CourseCondition, UCA.CourseChoiceCondition}:
+                        allow = kg.value(cond, UCA.allowsConcurrent)
+                        may_plan = concurrent and allow is not None and allow.toPython() is True
+                        matches = candidates & (done | assumptions | (plans if may_plan else set()))
+                        met = bool(matches)
+                        for match in sorted(matches, key=str):
+                            prop = UCA.requiredCourse if match in kg.objects(cond, UCA.requiredCourse) else UCA.alternativeCourse
+                            paths.append(base + [kg.edge(cond, prop, match)])
+                            if match in done:
+                                basis = "completed"
+                                for cp in kg.objects(s, UCA.hasCompletion):
+                                    if match in kg.objects(cp, UCA.completedCourse):
+                                        support += [kg.edge(s, UCA.hasCompletion, cp), kg.edge(cp, UCA.completedCourse, match)]
+                            elif match in assumptions:
+                                basis = "hypothetical completion (assumption, not a stored fact)"
+                            else:
+                                basis = "concurrent plan in target term"
+                                support.append(kg.edge(cond, UCA.allowsConcurrent, allow))
+                                for plan in kg.objects(s, UCA.hasPlannedEnrollment):
+                                    if match in kg.objects(plan, UCA.plannedCourse) and t in kg.objects(plan, UCA.plannedTerm):
+                                        paths.append([kg.edge(s, UCA.hasPlannedEnrollment, plan), kg.edge(plan, UCA.plannedCourse, match)])
+                                        support.append(kg.edge(plan, UCA.plannedTerm, t))
+                        if not met:
+                            for match in sorted(candidates, key=str):
+                                prop = UCA.requiredCourse if match in kg.objects(cond, UCA.requiredCourse) else UCA.alternativeCourse
+                                paths.append(base + [kg.edge(cond, prop, match)])
+                    elif UCA.StandingCondition in types:
+                        rank, minimum = kg.value(s, UCA.standingRank), kg.value(cond, UCA.minimumStandingRank)
+                        met = rank is not None and minimum is not None and int(rank) >= int(minimum)
+                        basis = "standing comparison"
+                        if rank is not None:
+                            support.append(kg.edge(s, UCA.standingRank, rank))
+                        if minimum is not None:
+                            support.append(kg.edge(cond, UCA.minimumStandingRank, minimum))
+                    elif UCA.ConsentCondition in types:
+                        met = (s, UCA.hasPermissionFor, c) in kg.explicit
+                        basis = "explicit course permission" if met else "permission not recorded"
+                        if met:
+                            support.append(kg.edge(s, UCA.hasPermissionFor, c))
+                    else:
+                        basis = "free text or unknown condition; needs manual review"
+                    paths.append(base)
+                    paths.extend([[edge] for edge in support])
+                    conditions.append({"condition": str(cond), "text": str(kg.value(cond, UCA.conditionSourceText, "")),
+                                       "met": met, "basis": basis, "status": "inferred",
+                                       "candidates": sorted(kg.code(x) for x in candidates)})
+                # A malformed empty option must not silently authorize registration.
+                options.append({"option": str(opt), "met": bool(conditions) and all(x["met"] for x in conditions),
+                                "conditions": conditions})
+        has_offering = False
+        for offering in kg.objects(c, UCA.hasOffering):
+            if t in kg.objects(offering, UCA.offeredInTerm):
+                has_offering = True
+                paths.append([kg.edge(c, UCA.hasOffering, offering), kg.edge(offering, UCA.offeredInTerm, t)])
+        catalog_known = bool(kg.objects(c, UCA.sourceURL)) and bool(kg.objects(c, UCA.courseTitle))
+        ok = any(o["met"] for o in options) if exprs else catalog_known
+        unmet = [{"option": o["option"], "conditions": [x for x in o["conditions"] if not x["met"]]}
+                 for o in options if not o["met"]]
+        if not exprs and not catalog_known:
+            unmet = ["stub_course: no catalog prerequisite evidence"]
+        if not exprs and catalog_known:
+            paths.extend([[kg.edge(c, RDF.type, UCA.Course)]])
+            warnings.append("No recorded prerequisite; this is a snapshot closed-world result, not unconditional permission.")
+        return self.result(f"{kg.code(c)}: encoded prerequisites {'satisfied' if ok else 'unmet or unverified'} for {student}.",
+                           paths, "satisfied" if ok else "unmet", unmet=unmet, options=options,
+                           assumptions=sorted(kg.code(x) for x in assumptions), warnings=sorted(set(warnings)),
+                           offered_in_term=has_offering, already_completed=c in done,
+                           registration_ready=ok and has_offering and c not in done,
+                           has_recorded_prerequisites=bool(exprs), student_is_synthetic=True)
+
+
+    def unlock(self, student, course, term="2026-fa", concurrent=True):
+        kg, added = self.kg, self.kg.resource("course", course)
+        s = kg.resource("student", student)
+        if added not in kg.courses or (s, RDF.type, UCA.Student) not in kg.explicit:
+            return self.result("Insufficient evidence: unknown student or course.", unmet=["unknown_entity"])
+        dependants, paths = [], []
+        # Multi-hop relevance does not imply immediate eligibility: test each target independently.
+        for target in kg.courses:
+            if target == added or added not in self.reachable(target):
+                continue
+            before = self.eligibility(student, target, term=term, concurrent=concurrent)
+            after = self.eligibility(student, target, term=term, added=[course], concurrent=concurrent)
+            if after["already_completed"]:
+                continue
+            chain = self._path_to(target, added)
+            paths.extend([chain] if chain else [])
+            paths.extend(before["paths"])
+            paths.extend(after["paths"])
+            direct = any(x[0] == added for x in self.adj.get(target, []))
+            dependants.append({"course": kg.code(target), "direct": direct,
+                               "newly_satisfied": before["verdict"] != "satisfied" and after["verdict"] == "satisfied",
+                               "offered_in_term": after["offered_in_term"], "dependency_path_truncated": not bool(chain),
+                               "before": before["verdict"], "after": after["verdict"], "unmet": after["unmet"],
+                               "options_after": after["options"]})
+        return self.result(f"Hypothetical impact of completing {kg.code(added)} for {student}.", paths,
+                           "satisfied" if dependants else "no_path", dependants=dependants,
+                           assumptions=[kg.code(added)], warnings=["Hypothetical completion is not added to the KG."])
+
+
+    def _path_to(self, source, destination):
+        queue, seen = deque([(source, [], 0)]), {source}
+        while queue:
+            node, path, depth = queue.popleft()
+            if node == destination:
+                return path
+            if depth >= self.max_depth:
+                continue
+            for target, edges, *_ in self.adj.get(node, []):
+                if target not in seen:
+                    seen.add(target)
+                    queue.append((target, path + edges, depth + 1))
+        return []
 

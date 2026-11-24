@@ -1,0 +1,1273 @@
+{
+  "answer": "Recorded degree allocations for synthetic student S004; not a certified graduation audit.",
+  "paths": [
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS124>",
+        "status": "explicit",
+        "id": "E1f4d9787d5a9d93e"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS124>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical>",
+        "status": "explicit",
+        "id": "E900848ab860f04c7"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/program/UIUC-BS-CS-2026>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical>",
+        "status": "explicit",
+        "id": "E7f88e8e4ecbba150",
+        "direction": "reverse"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS124>",
+        "status": "explicit",
+        "id": "E1f4d9787d5a9d93e"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS124>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/CS124>",
+        "status": "explicit",
+        "id": "E8518acfad50a3d5a"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS128>",
+        "status": "explicit",
+        "id": "E2ba43ce7816ce8ed"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS128>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical>",
+        "status": "explicit",
+        "id": "E70d407852c353517"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/program/UIUC-BS-CS-2026>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical>",
+        "status": "explicit",
+        "id": "E7f88e8e4ecbba150",
+        "direction": "reverse"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS128>",
+        "status": "explicit",
+        "id": "E2ba43ce7816ce8ed"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS128>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/CS128>",
+        "status": "explicit",
+        "id": "E827c5a260b39e6e0"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS173>",
+        "status": "explicit",
+        "id": "Efe5af3425389f000"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS173>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical>",
+        "status": "explicit",
+        "id": "E83b753efd353f151"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/program/UIUC-BS-CS-2026>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical>",
+        "status": "explicit",
+        "id": "E7f88e8e4ecbba150",
+        "direction": "reverse"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS173>",
+        "status": "explicit",
+        "id": "Efe5af3425389f000"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS173>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/CS173>",
+        "status": "explicit",
+        "id": "E17c561e19fd80dd7"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS222>",
+        "status": "explicit",
+        "id": "Ed156767299bbc165"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS222>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical>",
+        "status": "explicit",
+        "id": "Ec84c32686d2245fa"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/program/UIUC-BS-CS-2026>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical>",
+        "status": "explicit",
+        "id": "E7f88e8e4ecbba150",
+        "direction": "reverse"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS222>",
+        "status": "explicit",
+        "id": "Ed156767299bbc165"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS222>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/CS222>",
+        "status": "explicit",
+        "id": "Ec599d88ecafc3d6e"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS225>",
+        "status": "explicit",
+        "id": "Ee8ab81ebe7db80f2"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS225>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical>",
+        "status": "explicit",
+        "id": "E6be4c841217461d7"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/program/UIUC-BS-CS-2026>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical>",
+        "status": "explicit",
+        "id": "E7f88e8e4ecbba150",
+        "direction": "reverse"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS225>",
+        "status": "explicit",
+        "id": "Ee8ab81ebe7db80f2"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS225>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/CS225>",
+        "status": "explicit",
+        "id": "E91bafd2c64c63bdb"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS233>",
+        "status": "explicit",
+        "id": "E1f43719950c7aac9"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS233>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical>",
+        "status": "explicit",
+        "id": "Eb50aeafcacf5d1e7"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/program/UIUC-BS-CS-2026>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical>",
+        "status": "explicit",
+        "id": "E7f88e8e4ecbba150",
+        "direction": "reverse"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS233>",
+        "status": "explicit",
+        "id": "E1f43719950c7aac9"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS233>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/CS233>",
+        "status": "explicit",
+        "id": "Ecd019d8f8e1a1438"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS341>",
+        "status": "explicit",
+        "id": "Eb58b09c2dfd9d542"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS341>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical>",
+        "status": "explicit",
+        "id": "Ec3d1b57dbdbf81d2"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/program/UIUC-BS-CS-2026>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical>",
+        "status": "explicit",
+        "id": "E7f88e8e4ecbba150",
+        "direction": "reverse"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS341>",
+        "status": "explicit",
+        "id": "Eb58b09c2dfd9d542"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS341>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/CS341>",
+        "status": "explicit",
+        "id": "E83650a98ac44f357"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS357>",
+        "status": "explicit",
+        "id": "E2cf7047a530e1c18"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS357>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical>",
+        "status": "explicit",
+        "id": "E68f57fae173afca1"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/program/UIUC-BS-CS-2026>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical>",
+        "status": "explicit",
+        "id": "E7f88e8e4ecbba150",
+        "direction": "reverse"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS357>",
+        "status": "explicit",
+        "id": "E2cf7047a530e1c18"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS357>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/CS357>",
+        "status": "explicit",
+        "id": "E7c0868d2f69e6759"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS361>",
+        "status": "explicit",
+        "id": "E4230845309da5dff"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS361>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical>",
+        "status": "explicit",
+        "id": "E35e3c9f93573ac31"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/program/UIUC-BS-CS-2026>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical>",
+        "status": "explicit",
+        "id": "E7f88e8e4ecbba150",
+        "direction": "reverse"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS361>",
+        "status": "explicit",
+        "id": "E4230845309da5dff"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS361>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/CS361>",
+        "status": "explicit",
+        "id": "Ea776a8ac2edbaa8d"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS374>",
+        "status": "explicit",
+        "id": "E6746ebb03e22202d"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS374>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical>",
+        "status": "explicit",
+        "id": "E138e783d57c0aa57"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/program/UIUC-BS-CS-2026>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical>",
+        "status": "explicit",
+        "id": "E7f88e8e4ecbba150",
+        "direction": "reverse"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS374>",
+        "status": "explicit",
+        "id": "E6746ebb03e22202d"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS374>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/CS374>",
+        "status": "explicit",
+        "id": "Ef2fe4113c70dae09"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH221>",
+        "status": "explicit",
+        "id": "Ec13355730b38864c"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH221>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CalculusI>",
+        "status": "explicit",
+        "id": "E6467ab501ec14337"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/program/UIUC-BS-CS-2026>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CalculusI>",
+        "status": "explicit",
+        "id": "E30ad2b1266063264",
+        "direction": "reverse"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH221>",
+        "status": "explicit",
+        "id": "Ec13355730b38864c"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH221>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/MATH221>",
+        "status": "explicit",
+        "id": "E382d0fd9e8c36f63"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/ENG100>",
+        "status": "explicit",
+        "id": "Efda1540547d46089"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/ENG100>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-ENG100>",
+        "status": "explicit",
+        "id": "Ef552768ae75888f5"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/program/UIUC-BS-CS-2026>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-ENG100>",
+        "status": "explicit",
+        "id": "E1c7da24880049bfa",
+        "direction": "reverse"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/ENG100>",
+        "status": "explicit",
+        "id": "Efda1540547d46089"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/ENG100>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/ENG100>",
+        "status": "explicit",
+        "id": "Ebd4ab08815add3c4"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS210>",
+        "status": "explicit",
+        "id": "Ed5bb655acd1d8194"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS210>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-EthicsProfessional>",
+        "status": "explicit",
+        "id": "Ea6e6db01a2d69fc1"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/program/UIUC-BS-CS-2026>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-EthicsProfessional>",
+        "status": "explicit",
+        "id": "E4d64db03e0fc23bf",
+        "direction": "reverse"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS210>",
+        "status": "explicit",
+        "id": "Ed5bb655acd1d8194"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS210>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/CS210>",
+        "status": "explicit",
+        "id": "Eedc2c5e5b2fc1850"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH257>",
+        "status": "explicit",
+        "id": "E0d452c6516a36882"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH257>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-LinearAlgebra>",
+        "status": "explicit",
+        "id": "E849381179fbb91e5"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/program/UIUC-BS-CS-2026>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-LinearAlgebra>",
+        "status": "explicit",
+        "id": "Efd746d6d2828f178",
+        "direction": "reverse"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH257>",
+        "status": "explicit",
+        "id": "E0d452c6516a36882"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH257>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/MATH257>",
+        "status": "explicit",
+        "id": "E1cde967d4f71e398"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH231>",
+        "status": "explicit",
+        "id": "E354f0edefaa772bf"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH231>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-MathScienceFixed>",
+        "status": "explicit",
+        "id": "Ebae8d15b8a338800"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/program/UIUC-BS-CS-2026>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-MathScienceFixed>",
+        "status": "explicit",
+        "id": "Efb63e74b9ef779e2",
+        "direction": "reverse"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH231>",
+        "status": "explicit",
+        "id": "E354f0edefaa772bf"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH231>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/MATH231>",
+        "status": "explicit",
+        "id": "E622da44fa36b5a88"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH241>",
+        "status": "explicit",
+        "id": "E6cc355ad68557d5f"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH241>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-MathScienceFixed>",
+        "status": "explicit",
+        "id": "E3dd911d37abf2940"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/program/UIUC-BS-CS-2026>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-MathScienceFixed>",
+        "status": "explicit",
+        "id": "Efb63e74b9ef779e2",
+        "direction": "reverse"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH241>",
+        "status": "explicit",
+        "id": "E6cc355ad68557d5f"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH241>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/MATH241>",
+        "status": "explicit",
+        "id": "E5ce4c6faf1ee9ecd"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/PHYS211>",
+        "status": "explicit",
+        "id": "Eafd90c61ad895675"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/PHYS211>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-MathScienceFixed>",
+        "status": "explicit",
+        "id": "E8e495dfa41a94728"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/program/UIUC-BS-CS-2026>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-MathScienceFixed>",
+        "status": "explicit",
+        "id": "Efb63e74b9ef779e2",
+        "direction": "reverse"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/PHYS211>",
+        "status": "explicit",
+        "id": "Eafd90c61ad895675"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/PHYS211>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/PHYS211>",
+        "status": "explicit",
+        "id": "E53b1ae3dafe86461"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/PHYS212>",
+        "status": "explicit",
+        "id": "E773d6cab61237387"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/PHYS212>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-MathScienceFixed>",
+        "status": "explicit",
+        "id": "Eeea6f0e0016c3ff0"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/program/UIUC-BS-CS-2026>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-MathScienceFixed>",
+        "status": "explicit",
+        "id": "Efb63e74b9ef779e2",
+        "direction": "reverse"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/PHYS212>",
+        "status": "explicit",
+        "id": "E773d6cab61237387"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/PHYS212>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/PHYS212>",
+        "status": "explicit",
+        "id": "E915a6bfc0f180b8d"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS411>",
+        "status": "explicit",
+        "id": "E28efd07b332a59f1"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS411>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Elective-Advanced>",
+        "status": "explicit",
+        "id": "E90de2396a943af94"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/program/UIUC-BS-CS-2026>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Elective-Advanced>",
+        "status": "explicit",
+        "id": "E6cc7b8d030d9dae6",
+        "direction": "reverse"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS411>",
+        "status": "explicit",
+        "id": "E28efd07b332a59f1"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS411>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/CS411>",
+        "status": "explicit",
+        "id": "Efbcc1dd7896449ad"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS411>",
+        "status": "explicit",
+        "id": "E28efd07b332a59f1"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS411>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Elective-Technical>",
+        "status": "explicit",
+        "id": "E0a5091300b1dad78"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/program/UIUC-BS-CS-2026>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Elective-Technical>",
+        "status": "explicit",
+        "id": "E740a0cec09b55e1b",
+        "direction": "reverse"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS411>",
+        "status": "explicit",
+        "id": "E28efd07b332a59f1"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS411>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/CS411>",
+        "status": "explicit",
+        "id": "Efbcc1dd7896449ad"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS440>",
+        "status": "explicit",
+        "id": "E05e610c1ab9264a9"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS440>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Elective-Technical>",
+        "status": "explicit",
+        "id": "Edafa48567cb53515"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/program/UIUC-BS-CS-2026>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Elective-Technical>",
+        "status": "explicit",
+        "id": "E740a0cec09b55e1b",
+        "direction": "reverse"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS440>",
+        "status": "explicit",
+        "id": "E05e610c1ab9264a9"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS440>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/CS440>",
+        "status": "explicit",
+        "id": "Ea0f976de0a33238f"
+      }
+    ]
+  ],
+  "verdict": "unmet",
+  "unmet": [
+    {
+      "requirement": "CS technical core (11 courses, 35 hours)",
+      "iri": "https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical",
+      "minCourses": 11,
+      "allocatedCourses": 10,
+      "remainingCourses": 1,
+      "minCredits": 35.0,
+      "allocatedCredits": 32.0,
+      "remainingCredits": 3.0,
+      "encoded_thresholds_met": false,
+      "invalid_allocations": [],
+      "note": "Technical GPA of 2.0 is required for CS and Math courses."
+    },
+    {
+      "requirement": "Advanced electives (min 2 courses, 6 hours)",
+      "iri": "https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Elective-Advanced",
+      "minCourses": 2,
+      "allocatedCourses": 1,
+      "remainingCourses": 1,
+      "minCredits": 6.0,
+      "allocatedCredits": 3.0,
+      "remainingCredits": 3.0,
+      "encoded_thresholds_met": false,
+      "invalid_allocations": [],
+      "note": "At least 2 advanced elective courses (6+ credit hours) taken for a letter grade, distinct from courses used as technical electives, chosen from CS 397 or 400-level courses in ANY area at UIUC. A maximum of 6 credit hours of CS 397 may be used across technical and advanced electives. Allowed courses are generated from catalog data by rule R4."
+    },
+    {
+      "requirement": "Focus area: Algorithms and Models of Computation",
+      "iri": "https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Elective-Focus-Algorithms-Models-of-Computation",
+      "minCourses": 3,
+      "allocatedCourses": 0,
+      "remainingCourses": 3,
+      "minCredits": null,
+      "allocatedCredits": 0.0,
+      "remainingCredits": null,
+      "encoded_thresholds_met": false,
+      "invalid_allocations": [],
+      "note": "At least 3 of the CS technical electives must come from a SINGLE focus area (satisfy at least one of the 8 focus-area groups); the team project course may count as one of them. CS 498 and CS 598 special topics may be included by department approval."
+    },
+    {
+      "requirement": "Focus area: Distributed Systems, Networking, and Security",
+      "iri": "https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Elective-Focus-Distributed-Networking-Security",
+      "minCourses": 3,
+      "allocatedCourses": 0,
+      "remainingCourses": 3,
+      "minCredits": null,
+      "allocatedCredits": 0.0,
+      "remainingCredits": null,
+      "encoded_thresholds_met": false,
+      "invalid_allocations": [],
+      "note": "At least 3 of the CS technical electives must come from a SINGLE focus area (satisfy at least one of the 8 focus-area groups); the team project course may count as one of them. CS 498 and CS 598 special topics may be included by department approval."
+    },
+    {
+      "requirement": "Focus area: Human and Social Impact",
+      "iri": "https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Elective-Focus-Human-and-Social-Impact",
+      "minCourses": 3,
+      "allocatedCourses": 0,
+      "remainingCourses": 3,
+      "minCredits": null,
+      "allocatedCredits": 0.0,
+      "remainingCredits": null,
+      "encoded_thresholds_met": false,
+      "invalid_allocations": [],
+      "note": "At least 3 of the CS technical electives must come from a SINGLE focus area (satisfy at least one of the 8 focus-area groups); the team project course may count as one of them. CS 498 and CS 598 special topics may be included by department approval."
+    },
+    {
+      "requirement": "Focus area: Intelligence and Big Data",
+      "iri": "https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Elective-Focus-Intelligence-and-Big-Data",
+      "minCourses": 3,
+      "allocatedCourses": 0,
+      "remainingCourses": 3,
+      "minCredits": null,
+      "allocatedCredits": 0.0,
+      "remainingCredits": null,
+      "encoded_thresholds_met": false,
+      "invalid_allocations": [],
+      "note": "At least 3 of the CS technical electives must come from a SINGLE focus area (satisfy at least one of the 8 focus-area groups); the team project course may count as one of them. CS 498 and CS 598 special topics may be included by department approval."
+    },
+    {
+      "requirement": "Focus area: Machines",
+      "iri": "https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Elective-Focus-Machines",
+      "minCourses": 3,
+      "allocatedCourses": 0,
+      "remainingCourses": 3,
+      "minCredits": null,
+      "allocatedCredits": 0.0,
+      "remainingCredits": null,
+      "encoded_thresholds_met": false,
+      "invalid_allocations": [],
+      "note": "At least 3 of the CS technical electives must come from a SINGLE focus area (satisfy at least one of the 8 focus-area groups); the team project course may count as one of them. CS 498 and CS 598 special topics may be included by department approval."
+    },
+    {
+      "requirement": "Focus area: Media",
+      "iri": "https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Elective-Focus-Media",
+      "minCourses": 3,
+      "allocatedCourses": 0,
+      "remainingCourses": 3,
+      "minCredits": null,
+      "allocatedCredits": 0.0,
+      "remainingCredits": null,
+      "encoded_thresholds_met": false,
+      "invalid_allocations": [],
+      "note": "At least 3 of the CS technical electives must come from a SINGLE focus area (satisfy at least one of the 8 focus-area groups); the team project course may count as one of them. CS 498 and CS 598 special topics may be included by department approval."
+    },
+    {
+      "requirement": "Focus area: Scientific, Parallel, and High Performance Computing",
+      "iri": "https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Elective-Focus-Scientific-Parallel-HPC",
+      "minCourses": 3,
+      "allocatedCourses": 0,
+      "remainingCourses": 3,
+      "minCredits": null,
+      "allocatedCredits": 0.0,
+      "remainingCredits": null,
+      "encoded_thresholds_met": false,
+      "invalid_allocations": [],
+      "note": "At least 3 of the CS technical electives must come from a SINGLE focus area (satisfy at least one of the 8 focus-area groups); the team project course may count as one of them. CS 498 and CS 598 special topics may be included by department approval."
+    },
+    {
+      "requirement": "Focus area: Software Foundations",
+      "iri": "https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Elective-Focus-Software-Foundations",
+      "minCourses": 3,
+      "allocatedCourses": 0,
+      "remainingCourses": 3,
+      "minCredits": null,
+      "allocatedCredits": 0.0,
+      "remainingCredits": null,
+      "encoded_thresholds_met": false,
+      "invalid_allocations": [],
+      "note": "At least 3 of the CS technical electives must come from a SINGLE focus area (satisfy at least one of the 8 focus-area groups); the team project course may count as one of them. CS 498 and CS 598 special topics may be included by department approval."
+    },
+    {
+      "requirement": "Science elective (one Natural Science & Technology course)",
+      "iri": "https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Elective-Science",
+      "minCourses": 1,
+      "allocatedCourses": 0,
+      "remainingCourses": 1,
+      "minCredits": 3.0,
+      "allocatedCredits": 0.0,
+      "remainingCredits": 3.0,
+      "encoded_thresholds_met": false,
+      "invalid_allocations": [],
+      "note": "Must come from the Natural Science & Technology (NST) list, in addition to courses used for General Education, and be allowed for credit by Grainger Engineering. Exceptions: ASTR 100, PHYS 101, PHYS 102, CHEM 101. The NST list is a separate catalog list and is NOT yet loaded: add allowsCourse links from it."
+    },
+    {
+      "requirement": "Team project course (at least 1 of the technical electives)",
+      "iri": "https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Elective-TeamProject",
+      "minCourses": 1,
+      "allocatedCourses": 0,
+      "remainingCourses": 1,
+      "minCredits": null,
+      "allocatedCredits": 0.0,
+      "remainingCredits": null,
+      "encoded_thresholds_met": false,
+      "invalid_allocations": [],
+      "note": "At least one CS course used as a technical elective must come from this list. CS 425 only counts for the 4 hour section."
+    },
+    {
+      "requirement": "Technical electives (min 6 courses, 18 hours)",
+      "iri": "https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Elective-Technical",
+      "minCourses": 6,
+      "allocatedCourses": 2,
+      "remainingCourses": 4,
+      "minCredits": 18.0,
+      "allocatedCredits": 6.0,
+      "remainingCredits": 12.0,
+      "encoded_thresholds_met": false,
+      "invalid_allocations": [],
+      "note": "At least 6 additional technical electives totalling at least 18 credit hours, chosen from CS 397 and CS 400-level courses, not including CS 400, CS 401, CS 402, CS 403 or CS 491. CS 500-level courses only with special permission from the CS Academic Office. CS 397 and CS 499 count with a cumulative maximum of 6 credits as technical electives. One \"CS-like\" course in another department may count as a CS 400-level course with CS Academic Office permission; non-CS technical electives are not considered in focus areas. Allowed courses are generated from catalog data by rule R4."
+    }
+  ],
+  "requirements": [
+    {
+      "requirement": "CS technical core (11 courses, 35 hours)",
+      "iri": "https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical",
+      "minCourses": 11,
+      "allocatedCourses": 10,
+      "remainingCourses": 1,
+      "minCredits": 35.0,
+      "allocatedCredits": 32.0,
+      "remainingCredits": 3.0,
+      "encoded_thresholds_met": false,
+      "invalid_allocations": [],
+      "note": "Technical GPA of 2.0 is required for CS and Math courses."
+    },
+    {
+      "requirement": "Calculus I: MATH 221 (MATH 220 may be substituted)",
+      "iri": "https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CalculusI",
+      "minCourses": 1,
+      "allocatedCourses": 1,
+      "remainingCourses": 0,
+      "minCredits": 4.0,
+      "allocatedCredits": 4.0,
+      "remainingCredits": 0.0,
+      "encoded_thresholds_met": true,
+      "invalid_allocations": [],
+      "note": "MATH 220 is appropriate for students with no calculus background; 4 of 5 credit hours count toward the degree."
+    },
+    {
+      "requirement": "Orientation: ENG 100",
+      "iri": "https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-ENG100",
+      "minCourses": 1,
+      "allocatedCourses": 1,
+      "remainingCourses": 0,
+      "minCredits": 1.0,
+      "allocatedCredits": 1.0,
+      "remainingCredits": 0.0,
+      "encoded_thresholds_met": true,
+      "invalid_allocations": [],
+      "note": "External transfer students take ENG 300 instead."
+    },
+    {
+      "requirement": "Ethical and professional issues: CS 210 or CS 211",
+      "iri": "https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-EthicsProfessional",
+      "minCourses": 1,
+      "allocatedCourses": 1,
+      "remainingCourses": 0,
+      "minCredits": 2.0,
+      "allocatedCredits": 2.0,
+      "remainingCredits": 0.0,
+      "encoded_thresholds_met": true,
+      "invalid_allocations": [],
+      "note": "CS 210 (2 or 3 hours) or CS 211. If CS 211 is chosen it also satisfies the campus Advanced Composition requirement."
+    },
+    {
+      "requirement": "Linear algebra: MATH 257, MATH 415 or MATH 416",
+      "iri": "https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-LinearAlgebra",
+      "minCourses": 1,
+      "allocatedCourses": 1,
+      "remainingCourses": 0,
+      "minCredits": 3.0,
+      "allocatedCredits": 3.0,
+      "remainingCredits": 0.0,
+      "encoded_thresholds_met": true,
+      "invalid_allocations": [],
+      "note": ""
+    },
+    {
+      "requirement": "Required calculus and physics: MATH 231, MATH 241, PHYS 211, PHYS 212",
+      "iri": "https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-MathScienceFixed",
+      "minCourses": 4,
+      "allocatedCourses": 4,
+      "remainingCourses": 0,
+      "minCredits": 15.0,
+      "allocatedCredits": 15.0,
+      "remainingCredits": 0.0,
+      "encoded_thresholds_met": true,
+      "invalid_allocations": [],
+      "note": ""
+    },
+    {
+      "requirement": "Advanced electives (min 2 courses, 6 hours)",
+      "iri": "https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Elective-Advanced",
+      "minCourses": 2,
+      "allocatedCourses": 1,
+      "remainingCourses": 1,
+      "minCredits": 6.0,
+      "allocatedCredits": 3.0,
+      "remainingCredits": 3.0,
+      "encoded_thresholds_met": false,
+      "invalid_allocations": [],
+      "note": "At least 2 advanced elective courses (6+ credit hours) taken for a letter grade, distinct from courses used as technical electives, chosen from CS 397 or 400-level courses in ANY area at UIUC. A maximum of 6 credit hours of CS 397 may be used across technical and advanced electives. Allowed courses are generated from catalog data by rule R4."
+    },
+    {
+      "requirement": "Focus area: Algorithms and Models of Computation",
+      "iri": "https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Elective-Focus-Algorithms-Models-of-Computation",
+      "minCourses": 3,
+      "allocatedCourses": 0,
+      "remainingCourses": 3,
+      "minCredits": null,
+      "allocatedCredits": 0.0,
+      "remainingCredits": null,
+      "encoded_thresholds_met": false,
+      "invalid_allocations": [],
+      "note": "At least 3 of the CS technical electives must come from a SINGLE focus area (satisfy at least one of the 8 focus-area groups); the team project course may count as one of them. CS 498 and CS 598 special topics may be included by department approval."
+    },
+    {
+      "requirement": "Focus area: Distributed Systems, Networking, and Security",
+      "iri": "https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Elective-Focus-Distributed-Networking-Security",
+      "minCourses": 3,
+      "allocatedCourses": 0,
+      "remainingCourses": 3,
+      "minCredits": null,
+      "allocatedCredits": 0.0,
+      "remainingCredits": null,
+      "encoded_thresholds_met": false,
+      "invalid_allocations": [],
+      "note": "At least 3 of the CS technical electives must come from a SINGLE focus area (satisfy at least one of the 8 focus-area groups); the team project course may count as one of them. CS 498 and CS 598 special topics may be included by department approval."
+    },
+    {
+      "requirement": "Focus area: Human and Social Impact",
+      "iri": "https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Elective-Focus-Human-and-Social-Impact",
+      "minCourses": 3,
+      "allocatedCourses": 0,
+      "remainingCourses": 3,
+      "minCredits": null,
+      "allocatedCredits": 0.0,
+      "remainingCredits": null,
+      "encoded_thresholds_met": false,
+      "invalid_allocations": [],
+      "note": "At least 3 of the CS technical electives must come from a SINGLE focus area (satisfy at least one of the 8 focus-area groups); the team project course may count as one of them. CS 498 and CS 598 special topics may be included by department approval."
+    },
+    {
+      "requirement": "Focus area: Intelligence and Big Data",
+      "iri": "https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Elective-Focus-Intelligence-and-Big-Data",
+      "minCourses": 3,
+      "allocatedCourses": 0,
+      "remainingCourses": 3,
+      "minCredits": null,
+      "allocatedCredits": 0.0,
+      "remainingCredits": null,
+      "encoded_thresholds_met": false,
+      "invalid_allocations": [],
+      "note": "At least 3 of the CS technical electives must come from a SINGLE focus area (satisfy at least one of the 8 focus-area groups); the team project course may count as one of them. CS 498 and CS 598 special topics may be included by department approval."
+    },
+    {
+      "requirement": "Focus area: Machines",
+      "iri": "https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Elective-Focus-Machines",
+      "minCourses": 3,
+      "allocatedCourses": 0,
+      "remainingCourses": 3,
+      "minCredits": null,
+      "allocatedCredits": 0.0,
+      "remainingCredits": null,
+      "encoded_thresholds_met": false,
+      "invalid_allocations": [],
+      "note": "At least 3 of the CS technical electives must come from a SINGLE focus area (satisfy at least one of the 8 focus-area groups); the team project course may count as one of them. CS 498 and CS 598 special topics may be included by department approval."
+    },
+    {
+      "requirement": "Focus area: Media",
+      "iri": "https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Elective-Focus-Media",
+      "minCourses": 3,
+      "allocatedCourses": 0,
+      "remainingCourses": 3,
+      "minCredits": null,
+      "allocatedCredits": 0.0,
+      "remainingCredits": null,
+      "encoded_thresholds_met": false,
+      "invalid_allocations": [],
+      "note": "At least 3 of the CS technical electives must come from a SINGLE focus area (satisfy at least one of the 8 focus-area groups); the team project course may count as one of them. CS 498 and CS 598 special topics may be included by department approval."
+    },
+    {
+      "requirement": "Focus area: Scientific, Parallel, and High Performance Computing",
+      "iri": "https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Elective-Focus-Scientific-Parallel-HPC",
+      "minCourses": 3,
+      "allocatedCourses": 0,
+      "remainingCourses": 3,
+      "minCredits": null,
+      "allocatedCredits": 0.0,
+      "remainingCredits": null,
+      "encoded_thresholds_met": false,
+      "invalid_allocations": [],
+      "note": "At least 3 of the CS technical electives must come from a SINGLE focus area (satisfy at least one of the 8 focus-area groups); the team project course may count as one of them. CS 498 and CS 598 special topics may be included by department approval."
+    },
+    {
+      "requirement": "Focus area: Software Foundations",
+      "iri": "https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Elective-Focus-Software-Foundations",
+      "minCourses": 3,
+      "allocatedCourses": 0,
+      "remainingCourses": 3,
+      "minCredits": null,
+      "allocatedCredits": 0.0,
+      "remainingCredits": null,
+      "encoded_thresholds_met": false,
+      "invalid_allocations": [],
+      "note": "At least 3 of the CS technical electives must come from a SINGLE focus area (satisfy at least one of the 8 focus-area groups); the team project course may count as one of them. CS 498 and CS 598 special topics may be included by department approval."
+    },
+    {
+      "requirement": "Science elective (one Natural Science & Technology course)",
+      "iri": "https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Elective-Science",
+      "minCourses": 1,
+      "allocatedCourses": 0,
+      "remainingCourses": 1,
+      "minCredits": 3.0,
+      "allocatedCredits": 0.0,
+      "remainingCredits": 3.0,
+      "encoded_thresholds_met": false,
+      "invalid_allocations": [],
+      "note": "Must come from the Natural Science & Technology (NST) list, in addition to courses used for General Education, and be allowed for credit by Grainger Engineering. Exceptions: ASTR 100, PHYS 101, PHYS 102, CHEM 101. The NST list is a separate catalog list and is NOT yet loaded: add allowsCourse links from it."
+    },
+    {
+      "requirement": "Team project course (at least 1 of the technical electives)",
+      "iri": "https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Elective-TeamProject",
+      "minCourses": 1,
+      "allocatedCourses": 0,
+      "remainingCourses": 1,
+      "minCredits": null,
+      "allocatedCredits": 0.0,
+      "remainingCredits": null,
+      "encoded_thresholds_met": false,
+      "invalid_allocations": [],
+      "note": "At least one CS course used as a technical elective must come from this list. CS 425 only counts for the 4 hour section."
+    },
+    {
+      "requirement": "Technical electives (min 6 courses, 18 hours)",
+      "iri": "https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Elective-Technical",
+      "minCourses": 6,
+      "allocatedCourses": 2,
+      "remainingCourses": 4,
+      "minCredits": 18.0,
+      "allocatedCredits": 6.0,
+      "remainingCredits": 12.0,
+      "encoded_thresholds_met": false,
+      "invalid_allocations": [],
+      "note": "At least 6 additional technical electives totalling at least 18 credit hours, chosen from CS 397 and CS 400-level courses, not including CS 400, CS 401, CS 402, CS 403 or CS 491. CS 500-level courses only with special permission from the CS Academic Office. CS 397 and CS 499 count with a cumulative maximum of 6 credits as technical electives. One \"CS-like\" course in another department may count as a CS 400-level course with CS Academic Office permission; non-CS technical electives are not considered in focus areas. Allowed courses are generated from catalog data by rule R4."
+    }
+  ],
+  "conflicts": [
+    {
+      "completion": "https://example.org/uiuc-course-advisor/resource/completion/S004/CS411",
+      "rule": "technical/advanced electives must be distinct",
+      "requirements": [
+        "https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Elective-Technical",
+        "https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Elective-Advanced"
+      ]
+    }
+  ],
+  "warnings": [
+    "Focus areas are alternatives; do not require every focus area.",
+    "GPA, grades, special permissions and prose credit restrictions need an adviser audit.",
+    "Recorded allocations are counted and validated, not automatically optimized."
+  ],
+  "template": "degree_progress",
+  "graph_sha256": "ac0352a0246d3e67fae34d3fd27f3847bb9a3d7897478f19e865478f2a1ea2a8",
+  "runtime_ms": 6.4479740000251695,
+  "predictions": [],
+  "knowledge_type": "verified traversal and application rules"
+}

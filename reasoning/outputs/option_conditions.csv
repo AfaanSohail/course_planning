@@ -1,0 +1,13 @@
+student,condition,query,expected_met,actual_met,exact_match
+S001,https://example.org/uiuc-course-advisor/resource/prereq/CS421/option/1/condition/1,Q03,False,False,True
+S001,https://example.org/uiuc-course-advisor/resource/prereq/CS421/option/1/condition/2,Q03,False,False,True
+S001,https://example.org/uiuc-course-advisor/resource/prereq/CS421/option/1/condition/3,Q03,False,False,True
+S002,https://example.org/uiuc-course-advisor/resource/prereq/CS421/option/1/condition/1,Q03,False,False,True
+S002,https://example.org/uiuc-course-advisor/resource/prereq/CS421/option/1/condition/2,Q03,False,False,True
+S002,https://example.org/uiuc-course-advisor/resource/prereq/CS421/option/1/condition/3,Q03,False,False,True
+S003,https://example.org/uiuc-course-advisor/resource/prereq/CS421/option/1/condition/1,Q03,True,True,True
+S003,https://example.org/uiuc-course-advisor/resource/prereq/CS421/option/1/condition/2,Q03,False,False,True
+S003,https://example.org/uiuc-course-advisor/resource/prereq/CS421/option/1/condition/3,Q03,True,True,True
+S004,https://example.org/uiuc-course-advisor/resource/prereq/CS421/option/1/condition/1,Q03,True,True,True
+S004,https://example.org/uiuc-course-advisor/resource/prereq/CS421/option/1/condition/2,Q03,True,True,True
+S004,https://example.org/uiuc-course-advisor/resource/prereq/CS421/option/1/condition/3,Q03,True,True,True

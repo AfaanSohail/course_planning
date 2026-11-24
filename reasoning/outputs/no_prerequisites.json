@@ -1,0 +1,47 @@
+{
+  "answer": "CS 100: encoded prerequisites satisfied for S001.",
+  "paths": [
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/course/CS100>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasOffering>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/offering/CS100/2026-fa>",
+        "status": "explicit",
+        "id": "E2cffa6a24fc02353"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/offering/CS100/2026-fa>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#offeredInTerm>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/term/2026-fa>",
+        "status": "explicit",
+        "id": "Ee28fd256be9cd697"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/course/CS100>",
+        "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+        "o": "<https://example.org/uiuc-course-advisor/ontology#Course>",
+        "status": "explicit",
+        "id": "E60187afa72ff72d0"
+      }
+    ]
+  ],
+  "verdict": "satisfied",
+  "unmet": [],
+  "options": [],
+  "assumptions": [],
+  "warnings": [
+    "No recorded prerequisite; this is a snapshot closed-world result, not unconditional permission."
+  ],
+  "offered_in_term": true,
+  "already_completed": false,
+  "registration_ready": true,
+  "has_recorded_prerequisites": false,
+  "student_is_synthetic": true,
+  "template": "eligibility",
+  "graph_sha256": "ac0352a0246d3e67fae34d3fd27f3847bb9a3d7897478f19e865478f2a1ea2a8",
+  "runtime_ms": 0.23271599997087833,
+  "predictions": [],
+  "knowledge_type": "verified traversal and application rules"
+}

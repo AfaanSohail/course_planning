@@ -1,0 +1,446 @@
+{
+  "answer": "Possible prerequisite chains for CHEM 202.",
+  "paths": [
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/course/CHEM202>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasPrerequisiteExpression>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/prereq/CHEM202>",
+        "status": "explicit",
+        "id": "E3064265074790688"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CHEM202>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasOption>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/prereq/CHEM202/option/1>",
+        "status": "explicit",
+        "id": "E4b5caed359766cd8"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CHEM202/option/1>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCondition>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/prereq/CHEM202/option/1/condition/1>",
+        "status": "explicit",
+        "id": "E994a3deeb4593a7d"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CHEM202/option/1/condition/1>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#alternativeCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/MATH220>",
+        "status": "explicit",
+        "id": "E6827e7eddac1d0b0"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/course/MATH220>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasPrerequisiteExpression>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/prereq/MATH220>",
+        "status": "explicit",
+        "id": "E54d7f0d3ad250cea"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/prereq/MATH220>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasOption>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/prereq/MATH220/option/1>",
+        "status": "explicit",
+        "id": "E338bff734fa11ad7"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/prereq/MATH220/option/1>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCondition>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/prereq/MATH220/option/1/condition/1>",
+        "status": "explicit",
+        "id": "E5509b9e310adafc1"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/prereq/MATH220/option/1/condition/1>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#requiredCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/MATH115>",
+        "status": "explicit",
+        "id": "Ef284a7015791734f"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/course/MATH115>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasPrerequisiteExpression>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/prereq/MATH115>",
+        "status": "explicit",
+        "id": "E79c137ae20c36eae"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/prereq/MATH115>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasOption>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/prereq/MATH115/option/1>",
+        "status": "explicit",
+        "id": "E3631fb97862f72ea"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/prereq/MATH115/option/1>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCondition>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/prereq/MATH115/option/1/condition/1>",
+        "status": "explicit",
+        "id": "E232c32275556d8ed"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/prereq/MATH115/option/1/condition/1>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#requiredCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/MATH112>",
+        "status": "explicit",
+        "id": "E109b9fc54b7e8d94"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/course/CHEM202>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasPrerequisiteExpression>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/prereq/CHEM202>",
+        "status": "explicit",
+        "id": "E3064265074790688"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CHEM202>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasOption>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/prereq/CHEM202/option/1>",
+        "status": "explicit",
+        "id": "E4b5caed359766cd8"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CHEM202/option/1>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCondition>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/prereq/CHEM202/option/1/condition/1>",
+        "status": "explicit",
+        "id": "E994a3deeb4593a7d"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CHEM202/option/1/condition/1>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#alternativeCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/MATH221>",
+        "status": "explicit",
+        "id": "E178dcd22812da253"
+      }
+    ],
+    [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/course/CHEM202>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasPrerequisiteExpression>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/prereq/CHEM202>",
+        "status": "explicit",
+        "id": "E3064265074790688"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CHEM202>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasOption>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/prereq/CHEM202/option/1>",
+        "status": "explicit",
+        "id": "E4b5caed359766cd8"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CHEM202/option/1>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCondition>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/prereq/CHEM202/option/1/condition/2>",
+        "status": "explicit",
+        "id": "E9c4009c9db7f8b6b"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CHEM202/option/1/condition/2>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#requiredCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/CHEM203>",
+        "status": "explicit",
+        "id": "E7c3969d1b6594843"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/course/CHEM203>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasPrerequisiteExpression>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/prereq/CHEM203>",
+        "status": "explicit",
+        "id": "E02cb6f3734d532e5"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CHEM203>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasOption>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/prereq/CHEM203/option/1>",
+        "status": "explicit",
+        "id": "E4d3db11612acd961"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CHEM203/option/1>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCondition>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/prereq/CHEM203/option/1/condition/1>",
+        "status": "explicit",
+        "id": "E80311751e9d98d36"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CHEM203/option/1/condition/1>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#requiredCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/CHEM202>",
+        "status": "explicit",
+        "id": "E46bd904491a7efa9"
+      }
+    ]
+  ],
+  "verdict": "satisfied",
+  "unmet": [],
+  "branches": [
+    {
+      "courses": [
+        {
+          "course": "CHEM 202"
+        },
+        {
+          "course": "MATH 220",
+          "option": "https://example.org/uiuc-course-advisor/resource/prereq/CHEM202/option/1",
+          "condition": "https://example.org/uiuc-course-advisor/resource/prereq/CHEM202/option/1/condition/1"
+        },
+        {
+          "course": "MATH 115",
+          "option": "https://example.org/uiuc-course-advisor/resource/prereq/MATH220/option/1",
+          "condition": "https://example.org/uiuc-course-advisor/resource/prereq/MATH220/option/1/condition/1"
+        },
+        {
+          "course": "MATH 112",
+          "option": "https://example.org/uiuc-course-advisor/resource/prereq/MATH115/option/1",
+          "condition": "https://example.org/uiuc-course-advisor/resource/prereq/MATH115/option/1/condition/1"
+        }
+      ],
+      "stop": "root",
+      "course_hops": 3
+    },
+    {
+      "courses": [
+        {
+          "course": "CHEM 202"
+        },
+        {
+          "course": "MATH 221",
+          "option": "https://example.org/uiuc-course-advisor/resource/prereq/CHEM202/option/1",
+          "condition": "https://example.org/uiuc-course-advisor/resource/prereq/CHEM202/option/1/condition/1"
+        }
+      ],
+      "stop": "root",
+      "course_hops": 1
+    },
+    {
+      "courses": [
+        {
+          "course": "CHEM 202"
+        },
+        {
+          "course": "CHEM 203",
+          "option": "https://example.org/uiuc-course-advisor/resource/prereq/CHEM202/option/1",
+          "condition": "https://example.org/uiuc-course-advisor/resource/prereq/CHEM202/option/1/condition/2"
+        },
+        {
+          "course": "CHEM 202",
+          "option": "https://example.org/uiuc-course-advisor/resource/prereq/CHEM203/option/1",
+          "condition": "https://example.org/uiuc-course-advisor/resource/prereq/CHEM203/option/1/condition/1"
+        }
+      ],
+      "stop": "cycle",
+      "course_hops": 2
+    }
+  ],
+  "expression_tree": {
+    "https://example.org/uiuc-course-advisor/resource/course/CHEM202": [
+      {
+        "expression": "https://example.org/uiuc-course-advisor/resource/prereq/CHEM202",
+        "parseStatus": "parsed",
+        "operator": "OR",
+        "options": [
+          {
+            "option": "https://example.org/uiuc-course-advisor/resource/prereq/CHEM202/option/1",
+            "operator": "AND",
+            "conditions": [
+              {
+                "condition": "https://example.org/uiuc-course-advisor/resource/prereq/CHEM202/option/1/condition/1",
+                "types": [
+                  "https://example.org/uiuc-course-advisor/ontology#CourseChoiceCondition"
+                ],
+                "text": "Credit or concurrent registration in MATH 220 or MATH 221",
+                "required": [],
+                "one_of": [
+                  "MATH 220",
+                  "MATH 221"
+                ]
+              },
+              {
+                "condition": "https://example.org/uiuc-course-advisor/resource/prereq/CHEM202/option/1/condition/2",
+                "types": [
+                  "https://example.org/uiuc-course-advisor/ontology#CourseCondition"
+                ],
+                "text": "concurrent registration in CHEM 203",
+                "required": [
+                  "CHEM 203"
+                ],
+                "one_of": []
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "https://example.org/uiuc-course-advisor/resource/course/MATH220": [
+      {
+        "expression": "https://example.org/uiuc-course-advisor/resource/prereq/MATH220",
+        "parseStatus": "parsed",
+        "operator": "OR",
+        "options": [
+          {
+            "option": "https://example.org/uiuc-course-advisor/resource/prereq/MATH220/option/1",
+            "operator": "AND",
+            "conditions": [
+              {
+                "condition": "https://example.org/uiuc-course-advisor/resource/prereq/MATH220/option/1/condition/1",
+                "types": [
+                  "https://example.org/uiuc-course-advisor/ontology#CourseCondition"
+                ],
+                "text": "An adequate ALEKS placement score as described at http://math.illinois.edu/ALEKS/, demonstrating knowledge of topics of MATH 115",
+                "required": [
+                  "MATH 115"
+                ],
+                "one_of": []
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "https://example.org/uiuc-course-advisor/resource/course/MATH115": [
+      {
+        "expression": "https://example.org/uiuc-course-advisor/resource/prereq/MATH115",
+        "parseStatus": "parsed",
+        "operator": "OR",
+        "options": [
+          {
+            "option": "https://example.org/uiuc-course-advisor/resource/prereq/MATH115/option/1",
+            "operator": "AND",
+            "conditions": [
+              {
+                "condition": "https://example.org/uiuc-course-advisor/resource/prereq/MATH115/option/1/condition/1",
+                "types": [
+                  "https://example.org/uiuc-course-advisor/ontology#CourseCondition"
+                ],
+                "text": "MATH 112",
+                "required": [
+                  "MATH 112"
+                ],
+                "one_of": []
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "https://example.org/uiuc-course-advisor/resource/course/MATH112": [
+      {
+        "expression": "https://example.org/uiuc-course-advisor/resource/prereq/MATH112",
+        "parseStatus": "needs_review",
+        "operator": "OR",
+        "options": [
+          {
+            "option": "https://example.org/uiuc-course-advisor/resource/prereq/MATH112/option/1",
+            "operator": "AND",
+            "conditions": [
+              {
+                "condition": "https://example.org/uiuc-course-advisor/resource/prereq/MATH112/option/1/condition/1",
+                "types": [
+                  "https://example.org/uiuc-course-advisor/ontology#OtherCondition"
+                ],
+                "text": "1.5 units of high school algebra and 1 unit of high school geometry",
+                "required": [],
+                "one_of": []
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "https://example.org/uiuc-course-advisor/resource/course/MATH221": [
+      {
+        "expression": "https://example.org/uiuc-course-advisor/resource/prereq/MATH221",
+        "parseStatus": "needs_review",
+        "operator": "OR",
+        "options": [
+          {
+            "option": "https://example.org/uiuc-course-advisor/resource/prereq/MATH221/option/1",
+            "operator": "AND",
+            "conditions": [
+              {
+                "condition": "https://example.org/uiuc-course-advisor/resource/prereq/MATH221/option/1/condition/1",
+                "types": [
+                  "https://example.org/uiuc-course-advisor/ontology#OtherCondition"
+                ],
+                "text": "An adequate ALEKS placement score as described at http://math.illinois.edu/ALEKS/",
+                "required": [],
+                "one_of": []
+              },
+              {
+                "condition": "https://example.org/uiuc-course-advisor/resource/prereq/MATH221/option/1/condition/2",
+                "types": [
+                  "https://example.org/uiuc-course-advisor/ontology#OtherCondition"
+                ],
+                "text": "either one year of high school calculus or a minimum score of 2 on the AB Calculus AP exam",
+                "required": [],
+                "one_of": []
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "https://example.org/uiuc-course-advisor/resource/course/CHEM203": [
+      {
+        "expression": "https://example.org/uiuc-course-advisor/resource/prereq/CHEM203",
+        "parseStatus": "parsed",
+        "operator": "OR",
+        "options": [
+          {
+            "option": "https://example.org/uiuc-course-advisor/resource/prereq/CHEM203/option/1",
+            "operator": "AND",
+            "conditions": [
+              {
+                "condition": "https://example.org/uiuc-course-advisor/resource/prereq/CHEM203/option/1/condition/1",
+                "types": [
+                  "https://example.org/uiuc-course-advisor/ontology#CourseCondition"
+                ],
+                "text": "Concurrent registration or credit in CHEM 202",
+                "required": [
+                  "CHEM 202"
+                ],
+                "one_of": []
+              }
+            ]
+          },
+          {
+            "option": "https://example.org/uiuc-course-advisor/resource/prereq/CHEM203/option/2",
+            "operator": "AND",
+            "conditions": [
+              {
+                "condition": "https://example.org/uiuc-course-advisor/resource/prereq/CHEM203/option/2/condition/1",
+                "types": [
+                  "https://example.org/uiuc-course-advisor/ontology#ConsentCondition"
+                ],
+                "text": "consent of instructor",
+                "required": [],
+                "one_of": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "truncated": false,
+  "reachable": [
+    "CHEM 203",
+    "MATH 112",
+    "MATH 115",
+    "MATH 220",
+    "MATH 221"
+  ],
+  "warnings": [
+    "Paths show possible prerequisites, not a claim that every alternative is compulsory."
+  ],
+  "template": "prerequisite_chain",
+  "graph_sha256": "ac0352a0246d3e67fae34d3fd27f3847bb9a3d7897478f19e865478f2a1ea2a8",
+  "runtime_ms": 0.5968140000049971,
+  "predictions": [],
+  "knowledge_type": "verified traversal and application rules"
+}
