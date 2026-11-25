@@ -1,0 +1,22 @@
+[
+  {
+    "path": "report/screenshots/afaan_day5_chain.png",
+    "caption": "Actual Day 5 prerequisite-chain execution for CS421, showing the input, graph hash, path validation and a stored-edge excerpt. Full paths are in reasoning/outputs/day5/chain.json.",
+    "iteration": 2
+  },
+  {
+    "path": "report/screenshots/afaan_day5_eligibility.png",
+    "caption": "Actual Day 5 eligibility execution for synthetic S003 and CS421 in Fall 2026, showing met and unmet AND/OR conditions. Full evidence is in reasoning/outputs/day5/eligibility.json.",
+    "iteration": 2
+  },
+  {
+    "path": "report/screenshots/afaan_day5_unlock.png",
+    "caption": "Actual Day 5 hypothetical reverse-unlock execution for synthetic S002 completing CS225, with concurrent-plan credit disabled to match the what-if protocol. Full assumptions and blockers are in reasoning/outputs/day5/unlock.json.",
+    "iteration": 2
+  },
+  {
+    "path": "report/screenshots/afaan_day5_degree.png",
+    "caption": "Actual Day 5 recorded degree-progress execution for synthetic S003, showing count/credit shortfalls and graph evidence. This is not a certified graduation audit. Full groups are in reasoning/outputs/day5/degree.json.",
+    "iteration": 2
+  }
+]
