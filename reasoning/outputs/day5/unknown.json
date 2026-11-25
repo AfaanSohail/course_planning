@@ -1,0 +1,28 @@
+{
+  "case": "unknown",
+  "input": {
+    "template": "prerequisite_chain",
+    "course": "ZZZZ999"
+  },
+  "recorded_utc": "2026-11-25T12:03:29.721931+00:00",
+  "source_sha256": {
+    "kg.py": "dcf7f559ea2aee89d066fd943edbf65c24776db36e4cb101da2d65e3d62015d2",
+    "engine.py": "f7d1717da5f56e406439a4d127f506e14719d617822fc0021f17996319c3a17a",
+    "examples.py": "1df9f46f637c7f4e3f697892d9077537da2c2cf66b1acc470b3ad361e69371ab"
+  },
+  "all_paths_valid": true,
+  "explicit_graph_unchanged": true,
+  "result": {
+    "answer": "Unknown course: no catalog evidence.",
+    "paths": [],
+    "verdict": "no_path",
+    "unmet": [
+      "unknown_course"
+    ],
+    "template": "prerequisite_chain",
+    "graph_sha256": "ac0352a0246d3e67fae34d3fd27f3847bb9a3d7897478f19e865478f2a1ea2a8",
+    "runtime_ms": 0.17771800003174576,
+    "predictions": [],
+    "knowledge_type": "verified traversal and application rules"
+  }
+}
