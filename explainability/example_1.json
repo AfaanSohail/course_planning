@@ -2757,20 +2757,21 @@
         "has_recorded_prerequisites": true,
         "student_is_synthetic": true,
         "template": "eligibility",
-        "graph_sha256": "ac0352a0246d3e67fae34d3fd27f3847bb9a3d7897478f19e865478f2a1ea2a8",
-        "runtime_ms": 1.2727149996862863,
+        "graph_sha256": "42e292220366f5d6b77c0d6f25b4c1e2ce927bf5af61f1b57e250e0ab2fb4872",
+        "runtime_ms": 2.759800001513213,
         "predictions": [],
         "knowledge_type": "verified traversal and application rules"
       }
     ],
     "sufficient": true,
     "limitations": [],
-    "graph_sha256": "ac0352a0246d3e67fae34d3fd27f3847bb9a3d7897478f19e865478f2a1ea2a8",
+    "graph_sha256": "42e292220366f5d6b77c0d6f25b4c1e2ce927bf5af61f1b57e250e0ab2fb4872",
     "query": "# AI-3001 Iteration 1 - SPARQL queries (Q01-Q15 = CQ01-CQ15, INF1-INF6 = inference demos)\n# Team: Hassan Tariq (24i-2555), Afaan Sohail (24i-0081), Diya Hurmat (24i-0094)\n# Queries marked [needs reasoning] return rows only with OWL2-RL inference enabled.\nBASE <https://example.org/uiuc-course-advisor/resource/>\nPREFIX uca:  <https://example.org/uiuc-course-advisor/ontology#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl:  <http://www.w3.org/2002/07/owl#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n\n# CQ03 | which options/conditions of CS 421 S003 meets\n# Features: two subqueries joined on ?option, OPTIONAL, BIND/IF, EXISTS, aggregation (MIN, GROUP BY), STRAFTER\nSELECT ?option ?optionStatus ?conditionType ?conditionText ?conditionStatus WHERE {\n  { SELECT ?option ?k ?type ?met WHERE {\n      BIND(<student/S003> AS ?s) BIND(<course/CS421> AS ?course)\n      ?course uca:hasPrerequisiteExpression/uca:hasOption ?option .\n      ?option uca:hasCondition ?k .\n      ?k a ?type . FILTER(?type IN (uca:CourseCondition, uca:CourseChoiceCondition, uca:StandingCondition,\n                                    uca:ConsentCondition, uca:OtherCondition))\n      OPTIONAL { ?k a uca:CourseCondition . BIND(true AS ?isCourse) }\n      OPTIONAL { ?k a uca:CourseChoiceCondition . BIND(true AS ?isChoice) }\n      OPTIONAL { ?k a uca:StandingCondition ; uca:minimumStandingRank ?min . BIND(true AS ?isStanding) }\n      OPTIONAL { ?k a uca:ConsentCondition . BIND(true AS ?isConsent) }\n      BIND(IF(BOUND(?isCourse) || BOUND(?isChoice),\n              IF(EXISTS { ?k uca:requiredCourse|uca:alternativeCourse ?rc . ?s uca:hasCompletion/uca:completedCourse ?rc }\n                 || EXISTS { ?k uca:allowsConcurrent true ; uca:requiredCourse|uca:alternativeCourse ?rc .\n                             ?s uca:hasPlannedEnrollment/uca:plannedCourse ?rc }, 1, 0),\n           IF(BOUND(?isStanding), IF(EXISTS { ?s uca:standingRank ?r . FILTER(?r >= ?min) }, 1, 0),\n           IF(BOUND(?isConsent), IF(EXISTS { ?s uca:hasPermissionFor ?course }, 1, 0), 0))) AS ?met)\n  } }\n  { SELECT ?option (MIN(?m2) AS ?optMin) WHERE {\n      BIND(<student/S003> AS ?s) BIND(<course/CS421> AS ?course)\n      ?course uca:hasPrerequisiteExpression/uca:hasOption ?option .\n      ?option uca:hasCondition ?k .\n      OPTIONAL { ?k a uca:CourseCondition . BIND(true AS ?isCourse) }\n      OPTIONAL { ?k a uca:CourseChoiceCondition . BIND(true AS ?isChoice) }\n      OPTIONAL { ?k a uca:StandingCondition ; uca:minimumStandingRank ?min . BIND(true AS ?isStanding) }\n      OPTIONAL { ?k a uca:ConsentCondition . BIND(true AS ?isConsent) }\n      BIND(IF(BOUND(?isCourse) || BOUND(?isChoice),\n              IF(EXISTS { ?k uca:requiredCourse|uca:alternativeCourse ?rc . ?s uca:hasCompletion/uca:completedCourse ?rc }\n                 || EXISTS { ?k uca:allowsConcurrent true ; uca:requiredCourse|uca:alternativeCourse ?rc .\n                             ?s uca:hasPlannedEnrollment/uca:plannedCourse ?rc }, 1, 0),\n           IF(BOUND(?isStanding), IF(EXISTS { ?s uca:standingRank ?r . FILTER(?r >= ?min) }, 1, 0),\n           IF(BOUND(?isConsent), IF(EXISTS { ?s uca:hasPermissionFor ?course }, 1, 0), 0))) AS ?m2)\n    } GROUP BY ?option }\n  ?k uca:conditionSourceText ?conditionText .\n  BIND(STRAFTER(STR(?type), \"#\") AS ?conditionType)\n  BIND(IF(?met = 1, \"met\", \"UNMET / needs review\") AS ?conditionStatus)\n  BIND(IF(?optMin = 1, \"FULLY MET\", \"not met\") AS ?optionStatus)\n}\nORDER BY ?option ?conditionType\n",
     "query_uses_closure": false
   },
   "llm_called": false,
   "config": {
+    "provider": "openai_compatible",
     "base_url": "http://localhost:11434/v1",
     "model": "SET_MODEL_NAME",
     "api_key_env": "COURSE_LLM_API_KEY",

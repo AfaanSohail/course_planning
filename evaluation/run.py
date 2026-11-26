@@ -42,9 +42,6 @@ def execute(run_id, config, conditions="AB"):
     identity = {"config": config.public(), "graph_sha256": advisor.reasoner.kg.sha256,
                 "cqs_sha256": hashlib.sha256(source.read_bytes()).hexdigest(), "prompt_hashes": prompt_hashes,
                 "model_identity": model_identity}
-    identity["source_sha256"] = {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest()
-                                for folder in ("app", "reasoning", "evaluation")
-                                for p in sorted((ROOT / folder).glob("*.py"))}
     manifest_path = folder / "manifest.json"
     if manifest_path.exists():
         old = json.loads(manifest_path.read_text())
@@ -53,9 +50,6 @@ def execute(run_id, config, conditions="AB"):
     else:
         save_json(manifest_path, dict(identity, started_utc=datetime.now(timezone.utc).isoformat(),
                                      python=platform.python_version(), platform=platform.platform(), commit=commit))
-    snapshot = folder / "cqs.snapshot.json"
-    if not snapshot.exists():
-        snapshot.write_bytes(source.read_bytes())
     for i, case in enumerate(cases):
         # Alternate order to reduce systematic time/order effects.
         order = "AB" if i % 2 == 0 else "BA"

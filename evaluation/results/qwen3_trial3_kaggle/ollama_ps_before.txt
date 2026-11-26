@@ -1,2 +1,0 @@
-NAME                               ID              SIZE      PROCESSOR    CONTEXT    RUNNER      UNTIL              
-course-planning-qwen3-v2:latest    16ea59a13663    5.1 GB    100% GPU     16384      llamacpp    4 minutes from now    

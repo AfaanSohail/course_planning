@@ -1,3 +1,0 @@
-.......................................                                  [100%]
-- generated xml file: /kaggle/working/course_planning/evaluation/results/qwen3_trial3_kaggle/tests.xml -
-39 passed in 6.75s

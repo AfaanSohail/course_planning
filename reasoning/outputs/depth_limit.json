@@ -1019,7 +1019,7 @@
   ],
   "template": "prerequisite_chain",
   "graph_sha256": "ac0352a0246d3e67fae34d3fd27f3847bb9a3d7897478f19e865478f2a1ea2a8",
-  "runtime_ms": 1.6927819997363258,
+  "runtime_ms": 7.887179000022115,
   "predictions": [],
   "knowledge_type": "verified traversal and application rules"
 }

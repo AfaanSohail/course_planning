@@ -31,4 +31,4 @@ if __name__ == "__main__":
     p = argparse.ArgumentParser()
     p.add_argument("input", type=Path); p.add_argument("output", type=Path)
     a = p.parse_args(); a.output.parent.mkdir(parents=True, exist_ok=True)
-    a.output.write_text(format_answer(json.loads(a.input.read_text())), encoding="utf-8")
+    a.output.write_text(format_answer(json.loads(a.input.read_text(encoding="utf-8"))), encoding="utf-8")
