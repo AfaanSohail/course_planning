@@ -1,17 +1,11 @@
-# Explainability — Diya Hurmat
+# Explainability records
+
+Run commands from the repository root. Existing example_1 through example_5 records contain actual KG retrieval or insufficient-evidence results. They are not LLM answers unless llm_called is true. A retrieval-only record does not satisfy the requirement for three generated system answers.
 
 ```bash
 python -m scripts.retrieval_examples
-python -m scripts.inference_examples
-python -m explainability.format app/answer.json explainability/live_answer.md
 ```
 
-Three retrieved-context examples are supplied for eligibility, inferred elective counts and degree progress. They contain real KG output and explicitly pending LLM prose. After a live run, format three grounded raw answers (for example CQ03_B, CQ06_B and CQ11_B) with the same command and include them in the report. A retrieval-only record does not satisfy the requirement for three **LLM system answers**; the final report gate requires live B artifacts.
+The formatter separates stored RDF, OWL-inferred triples, computed query/application conclusions and generated prose. It preserves complete query rows, traces and provenance without treating valid edge IDs as proof that a sentence is correct. Option C produces no predictions.
 
-Explicit facts are checked against the input TTL. An inferred edge is absent there and present in the computed OWL RL closure. Computed option verdicts, counts, missing-condition conclusions and allocations are application/query results, not new RDF triples. Generated text is the actual model output only. Option C produces no predictions. Hypothetical completion assumptions remain labelled separately and are never inserted as evidence.
-
-Each JSON keeps full paths and actual SPARQL. The formatter exports them without changing the LLM response. The report uses concise selections and points to the complete machine-readable artifacts. `reasoning/outputs/inference_examples.json` independently records three concrete deductions with their actual stored premises and schema axioms; those are suitable for the live symbolic-inference explanation.
-
-## How to explain this in the viva
-
-Choose one cited edge, show it in the explicit TTL, then choose an inferred edge and show its absence from the stored graph and presence in closure. Explain its recorded premise chain. Finally identify the LLM sentence as generated prose, whose correctness still needs checking. Explain why a 'missing completion' result is an absence check over the snapshot rather than an explicitly stored negative triple.
+Actual LLM answers and final evaluation artifacts should be committed separately by their assigned members. Retain original response bytes and human-review evidence when importing a completed run. For the viva, explain the distinction between an application verdict and an official registration or degree decision.
