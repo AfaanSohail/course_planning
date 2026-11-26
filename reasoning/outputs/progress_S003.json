@@ -924,7 +924,7 @@
   ],
   "template": "degree_progress",
   "graph_sha256": "ac0352a0246d3e67fae34d3fd27f3847bb9a3d7897478f19e865478f2a1ea2a8",
-  "runtime_ms": 3.6873079998258618,
+  "runtime_ms": 3.580769999985023,
   "predictions": [],
   "knowledge_type": "verified traversal and application rules"
 }

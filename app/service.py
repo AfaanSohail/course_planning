@@ -6,18 +6,6 @@ from reasoning.kg import ROOT
 from .config import Config
 from .llm import LLMClient
 from .retrieval import retrieve
-from .context_guidance import guidance_for
-
-
-def citation_ids(answer):
-    """Inspect individual/grouped row citations without claiming semantic support."""
-    ids = []
-    for group in re.findall(r"\[([^\]\n]+)\]", answer):
-        for start, end in re.findall(r"\bR(\d+)\s*[-–]\s*R?(\d+)\b", group):
-            if 0 <= int(end) - int(start) <= 1000:
-                ids.extend(f"R{i}" for i in range(int(start), int(end) + 1))
-        ids.extend(re.findall(r"\b(?:E[0-9a-f]+|R\d+)\b", group))
-    return list(dict.fromkeys(ids))
 
 
 def context_for(retrieval, max_chars):
@@ -26,26 +14,12 @@ def context_for(retrieval, max_chars):
     records = [{"id": f"R{i}", "values": row} for i, row in enumerate(retrieval["rows"], 1)]
     context = {"question": retrieval["question"], "intent": retrieval["intent"], "rows": records,
                "limitations": retrieval["limitations"], "graph_sha256": retrieval["graph_sha256"],
-               "evidence": [], "reasoning": [], "omitted_evidence": 0, "omitted_traces": 0,
-               "result_guide": guidance_for(retrieval),
-               "recorded_completed_courses": retrieval.get("recorded_completed_courses", [])}
+               "evidence": [], "reasoning": [], "omitted_evidence": 0, "omitted_traces": 0}
     if len(json.dumps(context)) > max_chars:
         return None
     # Prioritize concise application conclusions, retaining paths in the evidence array.
     for trace in retrieval["reasoning"]:
         concise = {k: v for k, v in trace.items() if k not in {"paths", "expression_tree", "branches", "runtime_ms"}}
-        if "requirements" in concise:
-            concise["requirements"] = [{k: v for k, v in row.items() if k != "note"}
-                                       for row in concise["requirements"]]
-            concise["full_policy_notes_in_artifact"] = True
-        if "dependants" in concise:
-            # A large what-if trace previously vanished entirely when it exceeded
-            # the budget. Keep its conclusion/assumptions before optional detail.
-            concise = {k: v for k, v in concise.items() if k != "dependants"}
-            concise["hypothetical_policy"] = "Assumptions are evaluated in memory, without storing them as verified completions."
-            concise["newly_satisfied"] = [d["course"] for d in trace["dependants"] if d["newly_satisfied"]]
-            concise["downstream_course_count"] = len(trace["dependants"])
-            concise["full_dependant_details_in_artifact"] = True
         trial = dict(context, reasoning=context["reasoning"] + [concise])
         if len(json.dumps(trial)) <= max_chars:
             context = trial
@@ -89,7 +63,7 @@ class Advisor:
         messages = [{"role": "system", "content": (ROOT / "prompts/grounded.txt").read_text()},
                     {"role": "user", "content": question + "\n\nCONTEXT:\n" + json.dumps(context, ensure_ascii=False)}]
         completion = self.client.complete(messages)
-        used = citation_ids(completion["answer"])
+        used = re.findall(r"\[(E[0-9a-f]+|R\d+)\]", completion["answer"])
         available = {e["id"] for e in context["evidence"]} | {r["id"] for r in context["rows"]}
         invalid = sorted(set(used) - available)
         result.update(answer=completion["answer"], llm_called=True, completion=completion,

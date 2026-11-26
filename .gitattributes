@@ -1,6 +1,0 @@
-# Preserve immutable experimental bytes and their reviewer SHA256 on every OS.
-evaluation/results/**/CQ*.json -text
-evaluation/results/**/cqs.snapshot.json -text
-evaluation/results/**/manifest.json -text
-evaluation/results/**/grades.csv -text
-prompts/*.txt text eol=lf

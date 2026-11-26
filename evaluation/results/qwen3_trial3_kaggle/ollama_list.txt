@@ -1,3 +1,0 @@
-NAME                               ID              SIZE      MODIFIED               
-course-planning-qwen3-v2:latest    16ea59a13663    2.5 GB    Less than a second ago    
-qwen3:4b-instruct                  0edcdef34593    2.5 GB    Less than a second ago    
