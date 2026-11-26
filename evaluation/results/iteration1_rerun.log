@@ -1,0 +1,230 @@
+{
+  "generated_utc": "2026-11-21T12:07:09.463943+00:00",
+  "graph_sha256": "ac0352a0246d3e67fae34d3fd27f3847bb9a3d7897478f19e865478f2a1ea2a8",
+  "explicit_triples": 28638,
+  "schema_triples": 561,
+  "abox_triples": 28077,
+  "owlrl_closure_triples": 63055,
+  "schema_counts": {
+    "classes": 22,
+    "object_properties": 32,
+    "datatype_properties": 39
+  },
+  "entities": {
+    "Course": 588,
+    "CourseOffering": 501,
+    "Section": 1035,
+    "Instructor": 208,
+    "Department": 48,
+    "PrerequisiteExpression": 339,
+    "PrerequisiteOption": 369,
+    "CourseCondition": 255,
+    "CourseChoiceCondition": 161,
+    "StandingCondition": 6,
+    "ConsentCondition": 56,
+    "OtherCondition": 33,
+    "Student": 4,
+    "CourseCompletion": 46,
+    "PlannedEnrollment": 12,
+    "CoreRequirement": 6,
+    "ElectiveRequirement": 12
+  },
+  "rebuild_isomorphic": true,
+  "shacl_conforms": true,
+  "parse_status": {
+    "needs_review": 61,
+    "parsed": 278
+  },
+  "queries": [
+    {
+      "query": "Q01",
+      "name": "Q01_eligible_offered_courses",
+      "rows": 15,
+      "original_saved_rows": 15,
+      "exact_csv_value_match": true,
+      "match_after_uri_and_concat_normalization": true,
+      "uses_closure": false
+    },
+    {
+      "query": "Q02",
+      "name": "Q02_prerequisite_tree_CS421",
+      "rows": 79,
+      "original_saved_rows": 79,
+      "exact_csv_value_match": true,
+      "match_after_uri_and_concat_normalization": true,
+      "uses_closure": false
+    },
+    {
+      "query": "Q03",
+      "name": "Q03_option_status_S003_CS421",
+      "rows": 3,
+      "original_saved_rows": 3,
+      "exact_csv_value_match": false,
+      "match_after_uri_and_concat_normalization": true,
+      "uses_closure": false
+    },
+    {
+      "query": "Q04",
+      "name": "Q04_downstream_if_S002_completes_CS225",
+      "rows": 28,
+      "original_saved_rows": 28,
+      "exact_csv_value_match": false,
+      "match_after_uri_and_concat_normalization": true,
+      "uses_closure": false
+    },
+    {
+      "query": "Q05",
+      "name": "Q05_eligible_courses_for_unmet_requirements_S002",
+      "rows": 126,
+      "original_saved_rows": 126,
+      "exact_csv_value_match": true,
+      "match_after_uri_and_concat_normalization": true,
+      "uses_closure": false
+    },
+    {
+      "query": "Q06",
+      "name": "Q06_requirement_progress_S003",
+      "rows": 18,
+      "original_saved_rows": 18,
+      "exact_csv_value_match": true,
+      "match_after_uri_and_concat_normalization": true,
+      "uses_closure": false
+    },
+    {
+      "query": "Q07",
+      "name": "Q07_upper_level_courses_needing_standing_or_consent",
+      "rows": 27,
+      "original_saved_rows": 27,
+      "exact_csv_value_match": true,
+      "match_after_uri_and_concat_normalization": true,
+      "uses_closure": false
+    },
+    {
+      "query": "Q08",
+      "name": "Q08_upstream_two_or_more_hops_CS440",
+      "rows": 56,
+      "original_saved_rows": 56,
+      "exact_csv_value_match": true,
+      "match_after_uri_and_concat_normalization": true,
+      "uses_closure": false
+    },
+    {
+      "query": "Q09",
+      "name": "Q09_requirement_groups_with_multiple_choices",
+      "rows": 17,
+      "original_saved_rows": 17,
+      "exact_csv_value_match": true,
+      "match_after_uri_and_concat_normalization": true,
+      "uses_closure": false
+    },
+    {
+      "query": "Q10",
+      "name": "Q10_crosslisted_aliases_and_downstream_CS374",
+      "rows": 9,
+      "original_saved_rows": 9,
+      "exact_csv_value_match": false,
+      "match_after_uri_and_concat_normalization": true,
+      "uses_closure": false
+    },
+    {
+      "query": "Q11",
+      "name": "Q11_department_counts_for_advanced_electives_INFERENCE",
+      "rows": 16,
+      "original_saved_rows": 16,
+      "exact_csv_value_match": true,
+      "match_after_uri_and_concat_normalization": true,
+      "uses_closure": true
+    },
+    {
+      "query": "Q12",
+      "name": "Q12_blocked_only_by_noncourse_conditions",
+      "rows": 83,
+      "original_saved_rows": 83,
+      "exact_csv_value_match": false,
+      "match_after_uri_and_concat_normalization": true,
+      "uses_closure": false
+    },
+    {
+      "query": "Q13",
+      "name": "Q13_what_if_S002_adds_CS225",
+      "rows": 17,
+      "original_saved_rows": 17,
+      "exact_csv_value_match": true,
+      "match_after_uri_and_concat_normalization": true,
+      "uses_closure": false
+    },
+    {
+      "query": "Q14",
+      "name": "Q14_multi_group_completions_and_double_counting_S004",
+      "rows": 4,
+      "original_saved_rows": 4,
+      "exact_csv_value_match": false,
+      "match_after_uri_and_concat_normalization": true,
+      "uses_closure": false
+    },
+    {
+      "query": "Q15",
+      "name": "Q15_evidence_for_S002_planned_courses",
+      "rows": 3,
+      "original_saved_rows": 3,
+      "exact_csv_value_match": true,
+      "match_after_uri_and_concat_normalization": true,
+      "uses_closure": false
+    },
+    {
+      "query": "INF1",
+      "name": "INF1_inverse_department_hasCourse",
+      "rows": 146,
+      "original_saved_rows": 146,
+      "exact_csv_value_match": true,
+      "match_after_uri_and_concat_normalization": true,
+      "uses_closure": true
+    },
+    {
+      "query": "INF2",
+      "name": "INF2_property_chain_and_transitivity_CS421",
+      "rows": 38,
+      "original_saved_rows": 38,
+      "exact_csv_value_match": true,
+      "match_after_uri_and_concat_normalization": true,
+      "uses_closure": true
+    },
+    {
+      "query": "INF3",
+      "name": "INF3_property_chain_hasCompletedCourse",
+      "rows": 4,
+      "original_saved_rows": 4,
+      "exact_csv_value_match": false,
+      "match_after_uri_and_concat_normalization": true,
+      "uses_closure": true
+    },
+    {
+      "query": "INF4",
+      "name": "INF4_symmetric_crosslisting",
+      "rows": 17,
+      "original_saved_rows": 17,
+      "exact_csv_value_match": true,
+      "match_after_uri_and_concat_normalization": true,
+      "uses_closure": true
+    },
+    {
+      "query": "INF5",
+      "name": "INF5_class_inference_subclass_and_equivalentClass",
+      "rows": 3,
+      "original_saved_rows": 3,
+      "exact_csv_value_match": false,
+      "match_after_uri_and_concat_normalization": true,
+      "uses_closure": true
+    },
+    {
+      "query": "INF6",
+      "name": "INF6_property_chain_scheduledInTerm_and_inverse_maySatisfy",
+      "rows": 8,
+      "original_saved_rows": 8,
+      "exact_csv_value_match": true,
+      "match_after_uri_and_concat_normalization": true,
+      "uses_closure": true
+    }
+  ],
+  "note": "SHACL may report deliberately seeded synthetic test violations; inspect report."
+}

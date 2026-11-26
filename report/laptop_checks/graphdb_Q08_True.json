@@ -1,0 +1,801 @@
+{
+  "query": "# AI-3001 Iteration 1 - SPARQL queries (Q01-Q15 = CQ01-CQ15, INF1-INF6 = inference demos)\n# Team: Hassan Tariq (24i-2555), Afaan Sohail (24i-0081), Diya Hurmat (24i-0094)\n# Queries marked [needs reasoning] return rows only with OWL2-RL inference enabled.\nBASE <https://example.org/uiuc-course-advisor/resource/>\nPREFIX uca:  <https://example.org/uiuc-course-advisor/ontology#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl:  <http://www.w3.org/2002/07/owl#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n\n# CQ08 | courses >= 2 prerequisite hops upstream of CS 440\n# Features: property path one-or-more (+) after an explicit first hop (= 2+ hops), alternative paths\nSELECT DISTINCT ?upstreamCode ?viaCode ?firstHop WHERE {\n  <course/CS440> uca:hasPrerequisiteExpression/uca:hasOption/uca:hasCondition ?k1 .\n  ?k1 uca:requiredCourse|uca:alternativeCourse ?via .\n  ?via (uca:hasPrerequisiteExpression/uca:hasOption/uca:hasCondition/(uca:requiredCourse|uca:alternativeCourse))+ ?up .\n  BIND(IF(EXISTS { ?k1 a uca:CourseChoiceCondition }, \"via one-of group (potential)\", \"via required course\") AS ?firstHop)\n  ?up uca:courseCode ?upstreamCode .\n  ?via uca:courseCode ?viaCode .\n  FILTER(?up != <course/CS440> && ?up != ?via)\n}\nORDER BY ?upstreamCode ?viaCode\n",
+  "inference": true,
+  "result": {
+    "head": {
+      "vars": [
+        "upstreamCode",
+        "viaCode",
+        "firstHop"
+      ]
+    },
+    "results": {
+      "bindings": [
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "BIOE 210"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "BIOE 310"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via one-of group (potential)"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "CS 101"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "BIOE 310"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via one-of group (potential)"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "CS 101"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "ECE 313"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via one-of group (potential)"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "CS 124"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "BIOE 310"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via one-of group (potential)"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "CS 124"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "CS 225"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via required course"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "CS 125"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "CS 225"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via required course"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "CS 126"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "CS 225"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via required course"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "CS 128"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "CS 225"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via required course"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "CS 173"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "CS 225"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via required course"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "CS 374"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "CS 225"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via required course"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "CS 413"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "CS 225"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via required course"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "ECE 120"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "CS 225"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via required course"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "ECE 220"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "CS 225"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via required course"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 112"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "BIOE 310"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via one-of group (potential)"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 112"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "CS 225"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via required course"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 112"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "CS 361"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via one-of group (potential)"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 112"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "ECE 313"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via one-of group (potential)"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 112"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "MATH 461"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via one-of group (potential)"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 112"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "STAT 400"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via one-of group (potential)"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 115"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "BIOE 310"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via one-of group (potential)"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 115"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "CS 225"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via required course"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 115"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "CS 361"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via one-of group (potential)"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 115"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "ECE 313"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via one-of group (potential)"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 115"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "MATH 461"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via one-of group (potential)"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 115"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "STAT 400"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via one-of group (potential)"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 213"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "CS 225"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via required course"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 220"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "BIOE 310"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via one-of group (potential)"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 220"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "CS 225"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via required course"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 220"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "CS 361"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via one-of group (potential)"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 220"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "ECE 313"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via one-of group (potential)"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 220"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "MATH 461"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via one-of group (potential)"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 220"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "STAT 400"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via one-of group (potential)"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 221"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "BIOE 310"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via one-of group (potential)"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 221"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "CS 225"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via required course"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 221"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "CS 361"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via one-of group (potential)"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 221"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "ECE 313"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via one-of group (potential)"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 221"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "MATH 461"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via one-of group (potential)"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 221"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "STAT 400"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via one-of group (potential)"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 231"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "BIOE 310"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via one-of group (potential)"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 231"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "CS 225"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via required course"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 231"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "ECE 313"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via one-of group (potential)"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 231"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "MATH 461"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via one-of group (potential)"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 231"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "STAT 400"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via one-of group (potential)"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 241"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "BIOE 310"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via one-of group (potential)"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 241"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "CS 225"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via required course"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 241"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "ECE 313"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via one-of group (potential)"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 241"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "MATH 461"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via one-of group (potential)"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 257"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "BIOE 310"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via one-of group (potential)"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 257"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "ECE 313"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via one-of group (potential)"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 314"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "CS 225"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via required course"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 314"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "ECE 313"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via one-of group (potential)"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 347"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "CS 225"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via required course"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 347"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "ECE 313"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via one-of group (potential)"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 412"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "CS 225"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via required course"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 413"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "CS 225"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via required course"
+          }
+        },
+        {
+          "upstreamCode": {
+            "type": "literal",
+            "value": "MATH 416"
+          },
+          "viaCode": {
+            "type": "literal",
+            "value": "ECE 313"
+          },
+          "firstHop": {
+            "type": "literal",
+            "value": "via one-of group (potential)"
+          }
+        }
+      ]
+    }
+  }
+}

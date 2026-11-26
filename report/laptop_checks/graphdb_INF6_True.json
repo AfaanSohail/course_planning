@@ -1,0 +1,96 @@
+{
+  "query": "# AI-3001 Iteration 1 - SPARQL queries (Q01-Q15 = CQ01-CQ15, INF1-INF6 = inference demos)\n# Team: Hassan Tariq (24i-2555), Afaan Sohail (24i-0081), Diya Hurmat (24i-0094)\n# Queries marked [needs reasoning] return rows only with OWL2-RL inference enabled.\nBASE <https://example.org/uiuc-course-advisor/resource/>\nPREFIX uca:  <https://example.org/uiuc-course-advisor/ontology#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl:  <http://www.w3.org/2002/07/owl#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n\n# Inference: property chain + inverse (scheduledInTerm, maySatisfyRequirement) [needs reasoning]\n# Features: BGP over two inferred properties, OPTIONAL\nSELECT ?courseCode ?title WHERE {\n  ?course uca:maySatisfyRequirement <requirement/UIUC-BS-CS-2026/Elective-TeamProject> ;\n          uca:scheduledInTerm <term/2026-fa> ;\n          uca:courseCode ?courseCode .\n  OPTIONAL { ?course uca:courseTitle ?title }\n}\nORDER BY ?courseCode",
+  "inference": true,
+  "result": {
+    "head": {
+      "vars": [
+        "courseCode",
+        "title"
+      ]
+    },
+    "results": {
+      "bindings": [
+        {
+          "courseCode": {
+            "type": "literal",
+            "value": "CS 411"
+          },
+          "title": {
+            "type": "literal",
+            "value": "Database Systems"
+          }
+        },
+        {
+          "courseCode": {
+            "type": "literal",
+            "value": "CS 415"
+          },
+          "title": {
+            "type": "literal",
+            "value": "Game Development"
+          }
+        },
+        {
+          "courseCode": {
+            "type": "literal",
+            "value": "CS 417"
+          },
+          "title": {
+            "type": "literal",
+            "value": "Introduction to Extended Reality"
+          }
+        },
+        {
+          "courseCode": {
+            "type": "literal",
+            "value": "CS 425"
+          },
+          "title": {
+            "type": "literal",
+            "value": "Distributed Systems"
+          }
+        },
+        {
+          "courseCode": {
+            "type": "literal",
+            "value": "CS 427"
+          },
+          "title": {
+            "type": "literal",
+            "value": "Software Engineering I"
+          }
+        },
+        {
+          "courseCode": {
+            "type": "literal",
+            "value": "CS 437"
+          },
+          "title": {
+            "type": "literal",
+            "value": "Topics in Internet of Things"
+          }
+        },
+        {
+          "courseCode": {
+            "type": "literal",
+            "value": "CS 465"
+          },
+          "title": {
+            "type": "literal",
+            "value": "User Interface Design"
+          }
+        },
+        {
+          "courseCode": {
+            "type": "literal",
+            "value": "CS 497"
+          },
+          "title": {
+            "type": "literal",
+            "value": "CS Team Project"
+          }
+        }
+      ]
+    }
+  }
+}

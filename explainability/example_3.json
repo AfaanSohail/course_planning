@@ -12134,8 +12134,8 @@
           "Recorded allocations are counted and validated, not automatically optimized."
         ],
         "template": "degree_progress",
-        "graph_sha256": "42e292220366f5d6b77c0d6f25b4c1e2ce927bf5af61f1b57e250e0ab2fb4872",
-        "runtime_ms": 13.881300001230557,
+        "graph_sha256": "ac0352a0246d3e67fae34d3fd27f3847bb9a3d7897478f19e865478f2a1ea2a8",
+        "runtime_ms": 4.204775000289374,
         "predictions": [],
         "knowledge_type": "verified traversal and application rules"
       }
@@ -12146,13 +12146,12 @@
       "GPA, grades, special permissions and prose credit restrictions need an adviser audit.",
       "Recorded allocations are counted and validated, not automatically optimized."
     ],
-    "graph_sha256": "42e292220366f5d6b77c0d6f25b4c1e2ce927bf5af61f1b57e250e0ab2fb4872",
+    "graph_sha256": "ac0352a0246d3e67fae34d3fd27f3847bb9a3d7897478f19e865478f2a1ea2a8",
     "query": "# AI-3001 Iteration 1 - SPARQL queries (Q01-Q15 = CQ01-CQ15, INF1-INF6 = inference demos)\n# Team: Hassan Tariq (24i-2555), Afaan Sohail (24i-0081), Diya Hurmat (24i-0094)\n# Queries marked [needs reasoning] return rows only with OWL2-RL inference enabled.\nBASE <https://example.org/uiuc-course-advisor/resource/>\nPREFIX uca:  <https://example.org/uiuc-course-advisor/ontology#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl:  <http://www.w3.org/2002/07/owl#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n\n# CQ06 | S003 progress per requirement group\n# Features: OPTIONAL (left join keeps groups with no allocation), aggregation (COUNT, SUM, GROUP BY)\nSELECT ?requirement ?minCourses ?allocatedCourses ?remainingCourses ?minCredits ?allocatedCredits WHERE {\n  <program/UIUC-BS-CS-2026> uca:hasRequirement ?req .\n  ?req rdfs:label ?requirement .\n  OPTIONAL { ?req uca:minCourses ?minCourses }\n  OPTIONAL { ?req uca:minCredits ?minCredits }\n  { SELECT ?req (COUNT(DISTINCT ?cp) AS ?allocatedCourses) (COALESCE(SUM(?cr), 0) AS ?allocatedCredits) WHERE {\n      <program/UIUC-BS-CS-2026> uca:hasRequirement ?req .\n      OPTIONAL { <student/S003> uca:hasCompletion ?cp . ?cp uca:allocatedToRequirement ?req ; uca:creditsEarned ?cr }\n    } GROUP BY ?req }\n  BIND(IF(BOUND(?minCourses), IF(?minCourses - ?allocatedCourses > 0, ?minCourses - ?allocatedCourses, 0), \"n/a\")\n       AS ?remainingCourses)\n}\nORDER BY DESC(?remainingCourses) ?requirement\n",
     "query_uses_closure": false
   },
   "llm_called": false,
   "config": {
-    "provider": "openai_compatible",
     "base_url": "http://localhost:11434/v1",
     "model": "SET_MODEL_NAME",
     "api_key_env": "COURSE_LLM_API_KEY",

@@ -1,0 +1,61 @@
+{
+  "course": "AI-3001 Knowledge Representation & Reasoning",
+  "instructor": "Ms. Mehreen Javaid",
+  "project": "course_planning",
+  "repository_url": "https://github.com/AfaanSohail/course_planning",
+  "members": [
+    {
+      "name": "Afaan Sohail",
+      "roll": "24i-0081",
+      "github": "AfaanSohail",
+      "planned_scope": "reasoning",
+      "verified_commit_urls": [
+        "https://github.com/AfaanSohail/course_planning/commit/0aa8217bce33e7e5eef186ea98e027a566dd02b9",
+        "https://github.com/AfaanSohail/course_planning/commit/cbc7fdd3741d5034e8357eaed801cdae85a0fe1e",
+        "https://github.com/AfaanSohail/course_planning/commit/734e226671d6f71b22433115af831b82e2eb2bcb"
+      ]
+    },
+    {
+      "name": "Hassan Tariq",
+      "roll": "24i-2555",
+      "github": "hassan-cpp",
+      "planned_scope": "app and prompts",
+      "verified_commit_urls": [
+        "https://github.com/AfaanSohail/course_planning/commit/5697732e26f19400970422e2909425c12eb590ea",
+        "https://github.com/AfaanSohail/course_planning/commit/1831b6393403628a33a80285663cbf07cbc06f1f",
+        "https://github.com/AfaanSohail/course_planning/commit/27706929cf4b5cf83a4cd9a267689045f83c721d"
+      ]
+    },
+    {
+      "name": "Diya Hurmat",
+      "roll": "24i-0094",
+      "github": "Diya22466",
+      "planned_scope": "evaluation, explainability and report",
+      "verified_commit_urls": [
+        "https://github.com/AfaanSohail/course_planning/commit/6379dfc8f7f6fe403a1f9720758d124c1734083e",
+        "https://github.com/AfaanSohail/course_planning/commit/ff143e2643d6090f91a2dbd6bb168050e5bba850",
+        "https://github.com/AfaanSohail/course_planning/commit/c3e3cc04a1713bdf0fa57e546d7524d78d2e3f75"
+      ]
+    }
+  ],
+  "instructor_github": "PENDING: ask instructor",
+  "final_commit_hash": "PENDING: immutable submission source commit",
+  "demo_video_url": "PENDING: record and upload actual demo",
+  "llm_run_id": "qwen3_trial3_kaggle",
+  "clean_machine_verified": true,
+  "contribution_note": "Representative commits were inspected on GitHub main. Planned scopes remain distinct from individually verified work; the final source commit and video are pending. ChatGPT was used to assist with code, documentation and prompts, and to cite external code, datasets, ontologies, prompts, libraries, tutorials and other resources. Trial 3 grading entries were prepared with tool assistance. Reviewer names and equal assignments were supplied by the team. Source commits establish development contributions separately from grading assignments.",
+  "explainability_cqs": [
+    "CQ03",
+    "CQ08",
+    "CQ11"
+  ],
+  "grading_reviewers": [
+    "Hassan Tariq",
+    "Diya Hurmat"
+  ],
+  "review_laptop_verified": true,
+  "clean_machine_evidence": "evaluation/results/qwen3_trial3_kaggle/tests.xml",
+  "clean_machine_scope": "Kaggle isolated Python 3.12 environment. Review laptop remains separately unverified.",
+  "review_laptop_evidence": "report/laptop_checks/readiness.json",
+  "review_laptop_scope": "Functional checks passed on the ThinkPad: fresh environment tests, GraphDB multi-hop/inference queries, Protege ontology loading, fresh local Qwen3 response and insufficient-evidence handling. CPU inference is slow."
+}
