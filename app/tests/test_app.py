@@ -100,7 +100,7 @@ def test_local_model_digest_is_recorded(monkeypatch):
 
 
 def test_runtime_guide_counts_and_preserves_branches():
-    from app.service import guidance_for
+    from app.context_guidance import guidance_for
     r={'intent':'Q04','rows':[{'courseCode':'X 1','status':'still blocked'},
                              {'courseCode':'Y 2','status':'would become satisfiable'}]}
     g=guidance_for(r)
