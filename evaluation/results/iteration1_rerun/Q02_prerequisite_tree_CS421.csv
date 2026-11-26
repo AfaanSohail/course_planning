@@ -1,0 +1,80 @@
+fromCode,option,edgeType,toCode,toIsBaseCourse
+ASRM 210,option 1,AND: required course,MATH 231,false
+ASRM 406,option 1,AND: required course,MATH 241,false
+ASRM 406,option 1,OR: one of a group,ASRM 210,false
+ASRM 406,option 1,OR: one of a group,FIN 221,false
+ASRM 406,option 1,OR: one of a group,MATH 210,true
+BIOE 210,option 1,AND: required course,MATH 231,false
+BIOE 210,option 1,OR: one of a group,CS 101,false
+BIOE 210,option 1,OR: one of a group,CS 124,false
+CS 101,option 1,OR: one of a group,MATH 220,false
+CS 101,option 1,OR: one of a group,MATH 221,false
+CS 101,option 1,OR: one of a group,MATH 231,false
+CS 101,option 1,OR: one of a group,MATH 241,false
+CS 124,option 1,AND: required course,MATH 112,false
+CS 128,option 1,OR: one of a group,CS 124,false
+CS 128,option 1,OR: one of a group,CS 125,true
+CS 173,option 1,OR: one of a group,CS 124,false
+CS 173,option 1,OR: one of a group,CS 125,true
+CS 173,option 1,OR: one of a group,ECE 220,false
+CS 173,option 1,OR: one of a group,MATH 220,false
+CS 173,option 1,OR: one of a group,MATH 221,false
+CS 225,option 1,OR: one of a group,CS 126,true
+CS 225,option 1,OR: one of a group,CS 128,false
+CS 225,option 1,OR: one of a group,CS 173,false
+CS 225,option 1,OR: one of a group,CS 413,true
+CS 225,option 1,OR: one of a group,ECE 220,false
+CS 225,option 1,OR: one of a group,MATH 213,false
+CS 225,option 1,OR: one of a group,MATH 314,false
+CS 225,option 1,OR: one of a group,MATH 347,true
+CS 225,option 1,OR: one of a group,MATH 412,false
+CS 225,option 1,OR: one of a group,MATH 413,false
+CS 233,option 1,AND: required course,CS 225,false
+CS 233,option 1,OR: one of a group,CS 125,true
+CS 233,option 1,OR: one of a group,CS 128,false
+CS 233,option 1,OR: one of a group,CS 173,false
+CS 233,option 1,OR: one of a group,MATH 213,false
+CS 340,option 1,AND: required course,CS 128,false
+CS 340,option 1,AND: required course,CS 225,false
+CS 374,option 1,AND: required course,CS 225,false
+CS 374,option 1,OR: one of a group,CS 173,false
+CS 374,option 1,OR: one of a group,MATH 213,false
+CS 421,option 1,OR: one of a group,ASRM 406,false
+CS 421,option 1,OR: one of a group,BIOE 210,false
+CS 421,option 1,OR: one of a group,CS 233,false
+CS 421,option 1,OR: one of a group,CS 240,true
+CS 421,option 1,OR: one of a group,CS 340,false
+CS 421,option 1,OR: one of a group,CS 374,false
+CS 421,option 1,OR: one of a group,ECE 374,true
+CS 421,option 1,OR: one of a group,ECE 391,false
+CS 421,option 1,OR: one of a group,MATH 225,false
+CS 421,option 1,OR: one of a group,MATH 257,false
+CS 421,option 1,OR: one of a group,MATH 415,false
+CS 421,option 1,OR: one of a group,MATH 416,false
+ECE 220,option 1,AND: required course,ECE 120,false
+ECE 391,option 1,OR: one of a group,CS 233,false
+ECE 391,option 1,OR: one of a group,ECE 220,false
+FIN 221,option 1,OR: one of a group,ECON 102,true
+FIN 221,option 1,OR: one of a group,ECON 103,true
+MATH 115,option 1,AND: required course,MATH 112,false
+MATH 213,option 1,OR: one of a group,MATH 220,false
+MATH 213,option 1,OR: one of a group,MATH 221,false
+MATH 220,option 1,AND: required course,MATH 115,false
+MATH 225,option 1,OR: one of a group,MATH 220,false
+MATH 225,option 1,OR: one of a group,MATH 221,false
+MATH 231,option 1,OR: one of a group,MATH 220,false
+MATH 231,option 1,OR: one of a group,MATH 221,false
+MATH 241,option 1,AND: required course,MATH 231,false
+MATH 257,option 1,AND: required course,CS 101,false
+MATH 257,option 1,OR: one of a group,MATH 220,false
+MATH 257,option 1,OR: one of a group,MATH 221,false
+MATH 314,option 1,AND: required course,MATH 241,false
+MATH 412,option 1,OR: one of a group,CS 374,false
+MATH 412,option 1,OR: one of a group,MATH 314,false
+MATH 412,option 1,OR: one of a group,MATH 347,true
+MATH 413,option 1,OR: one of a group,MATH 314,false
+MATH 413,option 1,OR: one of a group,MATH 347,true
+MATH 415,option 1,AND: required course,MATH 241,false
+MATH 416,option 1,AND: required course,MATH 241,false
+MATH 416,option 1,OR: one of a group,MATH 314,false
+MATH 416,option 1,OR: one of a group,MATH 347,true

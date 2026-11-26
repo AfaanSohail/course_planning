@@ -58,6 +58,11 @@ def retrieve(question, reasoner):
                                            for c in kg.objects(plan, UCA.plannedCourse)])
         for target in sorted(set(targets), key=str):
             result["reasoning"].append(reasoner.reason("eligibility", student=student, course=target, term=term, concurrent=intent != "Q15"))
+    if student:
+        node = kg.resource("student", student)
+        result["recorded_completed_courses"] = sorted({kg.code(c)
+            for completion in kg.objects(node, UCA.hasCompletion)
+            for c in kg.objects(completion, UCA.completedCourse)})
     evidence = {}
 
     def add(edge):

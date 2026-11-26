@@ -1,0 +1,68 @@
+{
+  "question": "If a student completes one additional course, which downstream courses may become available and what other conditions would still have to hold? Instance: synthetic student S002 hypothetically completes CS 225; Fall 2026.",
+  "answer": "No downstream courses become available, and no additional conditions are triggered.\n\nReasoning:  \nThe scenario specifies only that a student completes CS 225 in Fall 2026. However, no course prerequisites, downstream dependencies, or availability rules are provided in the query or context. Without explicit information about course prerequisites, co-requisites, or academic pathways (e.g., \"CS 225 is required for CS 330\"), it is impossible to determine which downstream courses may become available.\n\nAdditionally, even if CS 225 were a prerequisite for another course, the absence of a stated dependency or course structure means we cannot infer downstream availability.\n\nTherefore, based on the given information:\n\n- No downstream courses are known to become available.\n- No conditions beyond the completion of CS 225 are specified or verifiable.\n- The student’s academic pathway, degree requirements, or university policy are not provided.\n\nConclusion:  \nWithout explicit prerequisite or dependency rules, downstream course availability cannot be determined. The condition \"a student completes one additional course\" does not trigger any known downstream outcomes in this context.\n\n> ⚠️ Uncertainty: Missing course dependency data.  \n> ⚠️ Missing academic policy or curriculum structure.  \n> ⚠️ No evidence of CS 225 being a prerequisite for any downstream course.  \n\nThus, no downstream courses are identified, and no additional conditions are known to hold.",
+  "evidence": [],
+  "mode": "baseline",
+  "llm_called": true,
+  "completion": {
+    "answer": "No downstream courses become available, and no additional conditions are triggered.\n\nReasoning:  \nThe scenario specifies only that a student completes CS 225 in Fall 2026. However, no course prerequisites, downstream dependencies, or availability rules are provided in the query or context. Without explicit information about course prerequisites, co-requisites, or academic pathways (e.g., \"CS 225 is required for CS 330\"), it is impossible to determine which downstream courses may become available.\n\nAdditionally, even if CS 225 were a prerequisite for another course, the absence of a stated dependency or course structure means we cannot infer downstream availability.\n\nTherefore, based on the given information:\n\n- No downstream courses are known to become available.\n- No conditions beyond the completion of CS 225 are specified or verifiable.\n- The student’s academic pathway, degree requirements, or university policy are not provided.\n\nConclusion:  \nWithout explicit prerequisite or dependency rules, downstream course availability cannot be determined. The condition \"a student completes one additional course\" does not trigger any known downstream outcomes in this context.\n\n> ⚠️ Uncertainty: Missing course dependency data.  \n> ⚠️ Missing academic policy or curriculum structure.  \n> ⚠️ No evidence of CS 225 being a prerequisite for any downstream course.  \n\nThus, no downstream courses are identified, and no additional conditions are known to hold.",
+    "request": {
+      "model": "course-planning-qwen3-v2",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a university course-planning adviser. Answer the question accurately and\nexplain your reasoning. State uncertainty and missing information. Do not invent\nstudent transcripts or claim to have evidence you have not been given.\nThis condition has no retrieval tools or attached course graph.\n\nAnswer concisely. Prefer compact tables or lists; avoid repeating the question, evidence list and conclusion. Preserve requested-set completeness and prerequisite alternatives.\n"
+        },
+        {
+          "role": "user",
+          "content": "If a student completes one additional course, which downstream courses may become available and what other conditions would still have to hold? Instance: synthetic student S002 hypothetically completes CS 225; Fall 2026."
+        }
+      ],
+      "temperature": 0.0,
+      "max_tokens": 4096,
+      "stream": false
+    },
+    "raw": {
+      "id": "chatcmpl-879",
+      "object": "chat.completion",
+      "created": 1795703922,
+      "model": "course-planning-qwen3-v2",
+      "system_fingerprint": "fp_ollama",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "No downstream courses become available, and no additional conditions are triggered.\n\nReasoning:  \nThe scenario specifies only that a student completes CS 225 in Fall 2026. However, no course prerequisites, downstream dependencies, or availability rules are provided in the query or context. Without explicit information about course prerequisites, co-requisites, or academic pathways (e.g., \"CS 225 is required for CS 330\"), it is impossible to determine which downstream courses may become available.\n\nAdditionally, even if CS 225 were a prerequisite for another course, the absence of a stated dependency or course structure means we cannot infer downstream availability.\n\nTherefore, based on the given information:\n\n- No downstream courses are known to become available.\n- No conditions beyond the completion of CS 225 are specified or verifiable.\n- The student’s academic pathway, degree requirements, or university policy are not provided.\n\nConclusion:  \nWithout explicit prerequisite or dependency rules, downstream course availability cannot be determined. The condition \"a student completes one additional course\" does not trigger any known downstream outcomes in this context.\n\n> ⚠️ Uncertainty: Missing course dependency data.  \n> ⚠️ Missing academic policy or curriculum structure.  \n> ⚠️ No evidence of CS 225 being a prerequisite for any downstream course.  \n\nThus, no downstream courses are identified, and no additional conditions are known to hold."
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 143,
+        "prompt_tokens_details": {
+          "cached_tokens": 90
+        },
+        "completion_tokens": 293,
+        "total_tokens": 436
+      }
+    },
+    "runtime_ms": 6298.323556000014,
+    "finish_reason": "stop",
+    "truncated": false
+  },
+  "config": {
+    "provider": "ollama",
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "course-planning-qwen3-v2",
+    "api_key_env": "COURSE_LLM_API_KEY",
+    "require_api_key": false,
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "timeout_seconds": 1800,
+    "context_max_chars": 24000
+  },
+  "cq": "CQ04",
+  "condition": "A",
+  "recorded_utc": "2026-11-26T14:38:42.555881+00:00"
+}

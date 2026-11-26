@@ -1,0 +1,127 @@
+courseCode,requirement,eligibilityBasis
+AE 482,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+ASRM 402,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+ASRM 451,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+ASRM 453,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+CS 407,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+CS 413,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+CS 427,"Advanced electives (min 2 courses, 6 hours)",prerequisite option satisfied
+CS 439,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+CS 468,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+CS 481,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+CS 483,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+CS 498,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+CSE 401,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+CSE 408,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+CSE 414,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+CSE 422,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+CSE 423,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+CSE 426,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+CSE 427,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+CSE 428,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+CSE 440,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+CSE 441,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+CSE 448,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+CSE 485,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+ECE 410,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+ECE 414,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+ECE 415,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+ECE 419,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+ECE 422,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+ECE 424,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+ECE 428,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+ECE 435,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+ECE 438,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+ECE 448,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+ECE 449,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+ECE 478,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+ECE 491,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+ECE 493,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+ECE 494,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+ECE 498,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+MATH 439,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+MATH 450,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+MATH 463,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+MATH 464,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+MATH 473,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+MATH 475,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+ME 445,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+PHIL 419,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+PHIL 420,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+PHYS 466,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+PHYS 496,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+STAT 400,"Advanced electives (min 2 courses, 6 hours)",prerequisite option satisfied
+STAT 408,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+TAM 413,"Advanced electives (min 2 courses, 6 hours)",no recorded prerequisite
+CS 225,"CS technical core (11 courses, 35 hours)",prerequisite option satisfied
+CS 233,"CS technical core (11 courses, 35 hours)",prerequisite option satisfied
+CS 361,"CS technical core (11 courses, 35 hours)",prerequisite option satisfied
+CS 407,Focus area: Algorithms and Models of Computation,no recorded prerequisite
+CS 413,Focus area: Algorithms and Models of Computation,no recorded prerequisite
+CS 481,Focus area: Algorithms and Models of Computation,no recorded prerequisite
+CS 571,Focus area: Algorithms and Models of Computation,no recorded prerequisite
+CS 407,"Focus area: Distributed Systems, Networking, and Security",no recorded prerequisite
+CS 439,"Focus area: Distributed Systems, Networking, and Security",no recorded prerequisite
+CS 483,"Focus area: Distributed Systems, Networking, and Security",no recorded prerequisite
+CS 468,Focus area: Human and Social Impact,no recorded prerequisite
+CS 543,Focus area: Intelligence and Big Data,no recorded prerequisite
+CS 468,Focus area: Media,no recorded prerequisite
+CS 483,"Focus area: Scientific, Parallel, and High Performance Computing",no recorded prerequisite
+CS 556,"Focus area: Scientific, Parallel, and High Performance Computing",no recorded prerequisite
+CS 407,Focus area: Software Foundations,no recorded prerequisite
+CS 427,Focus area: Software Foundations,prerequisite option satisfied
+MATH 241,"Required calculus and physics: MATH 231, MATH 241, PHYS 211, PHYS 212",prerequisite option satisfied
+PHYS 212,"Required calculus and physics: MATH 231, MATH 241, PHYS 211, PHYS 212",prerequisite option satisfied
+ACES 102,Science elective (one Natural Science & Technology course),no recorded prerequisite
+ANSC 207,Science elective (one Natural Science & Technology course),no recorded prerequisite
+ANTH 143,Science elective (one Natural Science & Technology course),no recorded prerequisite
+ANTH 241,Science elective (one Natural Science & Technology course),no recorded prerequisite
+ANTH 246,Science elective (one Natural Science & Technology course),no recorded prerequisite
+ASTR 121,Science elective (one Natural Science & Technology course),no recorded prerequisite
+ASTR 122,Science elective (one Natural Science & Technology course),no recorded prerequisite
+ASTR 150,Science elective (one Natural Science & Technology course),no recorded prerequisite
+ASTR 200,Science elective (one Natural Science & Technology course),no recorded prerequisite
+ASTR 330,Science elective (one Natural Science & Technology course),no recorded prerequisite
+ATMS 100,Science elective (one Natural Science & Technology course),no recorded prerequisite
+ATMS 120,Science elective (one Natural Science & Technology course),no recorded prerequisite
+ATMS 140,Science elective (one Natural Science & Technology course),no recorded prerequisite
+CPSC 112,Science elective (one Natural Science & Technology course),no recorded prerequisite
+CPSC 199,Science elective (one Natural Science & Technology course),no recorded prerequisite
+ECE 101,Science elective (one Natural Science & Technology course),no recorded prerequisite
+ESE 103,Science elective (one Natural Science & Technology course),no recorded prerequisite
+ESE 117,Science elective (one Natural Science & Technology course),no recorded prerequisite
+ESE 118,Science elective (one Natural Science & Technology course),no recorded prerequisite
+ESE 120,Science elective (one Natural Science & Technology course),no recorded prerequisite
+ESE 140,Science elective (one Natural Science & Technology course),no recorded prerequisite
+ESE 143,Science elective (one Natural Science & Technology course),no recorded prerequisite
+ESE 208,Science elective (one Natural Science & Technology course),no recorded prerequisite
+FSHN 101,Science elective (one Natural Science & Technology course),no recorded prerequisite
+FSHN 120,Science elective (one Natural Science & Technology course),no recorded prerequisite
+GEOL 100,Science elective (one Natural Science & Technology course),no recorded prerequisite
+GEOL 117,Science elective (one Natural Science & Technology course),no recorded prerequisite
+GEOL 118,Science elective (one Natural Science & Technology course),no recorded prerequisite
+GEOL 143,Science elective (one Natural Science & Technology course),no recorded prerequisite
+GGIS 100,Science elective (one Natural Science & Technology course),no recorded prerequisite
+GGIS 103,Science elective (one Natural Science & Technology course),no recorded prerequisite
+GLBL 118,Science elective (one Natural Science & Technology course),no recorded prerequisite
+HDFS 143,Science elective (one Natural Science & Technology course),no recorded prerequisite
+HK 150,Science elective (one Natural Science & Technology course),no recorded prerequisite
+IB 100,Science elective (one Natural Science & Technology course),no recorded prerequisite
+IB 108,Science elective (one Natural Science & Technology course),no recorded prerequisite
+IB 110,Science elective (one Natural Science & Technology course),no recorded prerequisite
+IB 150,Science elective (one Natural Science & Technology course),no recorded prerequisite
+MCB 100,Science elective (one Natural Science & Technology course),no recorded prerequisite
+MSE 101,Science elective (one Natural Science & Technology course),no recorded prerequisite
+NRES 100,Science elective (one Natural Science & Technology course),no recorded prerequisite
+NRES 103,Science elective (one Natural Science & Technology course),no recorded prerequisite
+PHYS 212,Science elective (one Natural Science & Technology course),prerequisite option satisfied
+SHS 280,Science elective (one Natural Science & Technology course),no recorded prerequisite
+CS 427,Team project course (at least 1 of the technical electives),prerequisite option satisfied
+CS 407,"Technical electives (min 6 courses, 18 hours)",no recorded prerequisite
+CS 413,"Technical electives (min 6 courses, 18 hours)",no recorded prerequisite
+CS 427,"Technical electives (min 6 courses, 18 hours)",prerequisite option satisfied
+CS 439,"Technical electives (min 6 courses, 18 hours)",no recorded prerequisite
+CS 468,"Technical electives (min 6 courses, 18 hours)",no recorded prerequisite
+CS 481,"Technical electives (min 6 courses, 18 hours)",no recorded prerequisite
+CS 483,"Technical electives (min 6 courses, 18 hours)",no recorded prerequisite
+CS 498,"Technical electives (min 6 courses, 18 hours)",no recorded prerequisite

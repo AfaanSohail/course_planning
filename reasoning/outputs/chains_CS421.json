@@ -32611,7 +32611,7 @@
   ],
   "template": "prerequisite_chain",
   "graph_sha256": "ac0352a0246d3e67fae34d3fd27f3847bb9a3d7897478f19e865478f2a1ea2a8",
-  "runtime_ms": 7.504456999981812,
+  "runtime_ms": 7.935669999824313,
   "predictions": [],
   "knowledge_type": "verified traversal and application rules"
 }

@@ -1,5 +1,5 @@
 {
-  "generated_utc": "2026-11-24T13:12:27.010150+00:00",
+  "generated_utc": "2026-11-21T12:12:36.077075+00:00",
   "graph_sha256": "ac0352a0246d3e67fae34d3fd27f3847bb9a3d7897478f19e865478f2a1ea2a8",
   "python": "3.11.7",
   "courses_with_prerequisites": 339,
@@ -18,7 +18,7 @@
   "truncated_course_traces": 0,
   "max_depth": 32,
   "max_paths": 20000,
-  "runtime_seconds": 11.202387851999958,
+  "runtime_seconds": 12.406906367000374,
   "negative_cases": {
     "unknown_course": "no_path",
     "no_prerequisites": "satisfied",

@@ -1,0 +1,33 @@
+Final report blocked by missing evidence:
+- demo_video_url
+- final_commit_hash
+- clean_machine_verified
+- actual commit links for Afaan Sohail
+- actual commit links for Hassan Tariq
+- actual commit links for Diya Hurmat
+- complete human-reviewed ten-question A/B results
+- comparison.csv
+- live explainability answer CQ03
+- live explainability answer CQ06
+- live explainability answer CQ11
+- real LLM call CQ01_A
+- real LLM call CQ01_B
+- real LLM call CQ02_A
+- real LLM call CQ02_B
+- real LLM call CQ03_A
+- real LLM call CQ03_B
+- real LLM call CQ04_A
+- real LLM call CQ04_B
+- real LLM call CQ06_A
+- real LLM call CQ06_B
+- real LLM call CQ08_A
+- real LLM call CQ08_B
+- real LLM call CQ10_A
+- real LLM call CQ10_B
+- real LLM call CQ11_A
+- real LLM call CQ11_B
+- real LLM call CQ13_A
+- real LLM call CQ13_B
+- real LLM call CQ15_A
+- real LLM call CQ15_B
+- at least three actual Iteration 2 execution screenshots
