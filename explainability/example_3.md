@@ -1886,13 +1886,13 @@ These conclusions are computed; they are not asserted RDF triples.
         "Recorded allocations are counted and validated, not automatically optimized."
       ],
       "template": "degree_progress",
-      "graph_sha256": "42e292220366f5d6b77c0d6f25b4c1e2ce927bf5af61f1b57e250e0ab2fb4872",
-      "runtime_ms": 13.881300001230557,
+      "graph_sha256": "ac0352a0246d3e67fae34d3fd27f3847bb9a3d7897478f19e865478f2a1ea2a8",
+      "runtime_ms": 4.204775000289374,
       "predictions": [],
       "knowledge_type": "verified traversal and application rules"
     }
   ],
-  "graph_sha256": "42e292220366f5d6b77c0d6f25b4c1e2ce927bf5af61f1b57e250e0ab2fb4872"
+  "graph_sha256": "ac0352a0246d3e67fae34d3fd27f3847bb9a3d7897478f19e865478f2a1ea2a8"
 }
 ```
 

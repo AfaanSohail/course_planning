@@ -17,5 +17,5 @@ if __name__ == "__main__":
     for i,q in enumerate(QUESTIONS,1):
         result=advisor.answer(q,retrieve_only=i<=3)
         save_json(ROOT/f"explainability/example_{i}.json",result)
-        (ROOT/f"explainability/example_{i}.md").write_text(format_answer(result), encoding="utf-8")
+        (ROOT/f"explainability/example_{i}.md").write_text(format_answer(result))
         print(i,result["mode"],len(result["evidence"]))
