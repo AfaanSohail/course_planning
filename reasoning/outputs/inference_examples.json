@@ -1,0 +1,109 @@
+[
+  {
+    "name": "inverse_department",
+    "conclusion": {
+      "s": "<https://example.org/uiuc-course-advisor/resource/department/CS>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#hasCourse>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/course/CS421>",
+      "status": "inferred",
+      "id": "Ea108fedc4fcc53b5"
+    },
+    "premises": [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/course/CS421>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#inDepartment>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/department/CS>",
+        "status": "explicit",
+        "id": "Ef4e0d7aa0bb3047a"
+      }
+    ],
+    "rule": "inDepartment owl:inverseOf hasCourse",
+    "schema_axioms": [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/ontology#inDepartment>",
+        "p": "<http://www.w3.org/2002/07/owl#inverseOf>",
+        "o": "<https://example.org/uiuc-course-advisor/ontology#hasCourse>",
+        "status": "explicit",
+        "id": "E50779dd0a2255c70"
+      }
+    ],
+    "absent_from_explicit": true,
+    "present_in_closure": true
+  },
+  {
+    "name": "completion_chain",
+    "conclusion": {
+      "s": "<https://example.org/uiuc-course-advisor/resource/student/S003>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletedCourse>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/course/CS124>",
+      "status": "inferred",
+      "id": "E146b0e269c1d202f"
+    },
+    "premises": [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S003>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S003/CS124>",
+        "status": "explicit",
+        "id": "E56dffea2c9c123fc"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S003/CS124>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/CS124>",
+        "status": "explicit",
+        "id": "E29313bf6239657f0"
+      }
+    ],
+    "rule": "hasCompletion o completedCourse -> hasCompletedCourse",
+    "schema_axioms": [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/ontology#hasCompletedCourse>",
+        "p": "<http://www.w3.org/2002/07/owl#propertyChainAxiom>",
+        "o": "_:n270f04aa17c84dee86b0e3bab0f4c3e5b5",
+        "status": "explicit",
+        "id": "Eee6e50089daaf028"
+      }
+    ],
+    "absent_from_explicit": true,
+    "present_in_closure": true
+  },
+  {
+    "name": "offering_chain",
+    "conclusion": {
+      "s": "<https://example.org/uiuc-course-advisor/resource/course/CS421>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#scheduledInTerm>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/term/2026-fa>",
+      "status": "inferred",
+      "id": "E0c17de53a889a68e"
+    },
+    "premises": [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/course/CS421>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasOffering>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/offering/CS421/2026-fa>",
+        "status": "explicit",
+        "id": "Ed57e791826b2ab8c"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/offering/CS421/2026-fa>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#offeredInTerm>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/term/2026-fa>",
+        "status": "explicit",
+        "id": "Ef42b1a939fe7a663"
+      }
+    ],
+    "rule": "hasOffering o offeredInTerm -> scheduledInTerm",
+    "schema_axioms": [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/ontology#scheduledInTerm>",
+        "p": "<http://www.w3.org/2002/07/owl#propertyChainAxiom>",
+        "o": "_:n270f04aa17c84dee86b0e3bab0f4c3e5b11",
+        "status": "explicit",
+        "id": "E300d704d006e15f4"
+      }
+    ],
+    "absent_from_explicit": true,
+    "present_in_closure": true
+  }
+]
