@@ -1,0 +1,33 @@
+﻿============================= test session starts =============================
+platform win32 -- Python 3.12.10, pytest-7.4.0, pluggy-1.7.0 -- D:\Semester 5\KRR\Iteration 2\course_planning_iteration2_bundle\iteration2_solution\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: D:\Semester 5\KRR\Iteration 2\course_planning_iteration2_bundle\iteration2_solution
+configfile: pytest.ini
+testpaths: reasoning/tests, app/tests, evaluation/tests
+collecting ... collected 23 items
+
+reasoning/tests/test_engine.py::test_and_inside_or_between PASSED        [  4%]
+reasoning/tests/test_engine.py::test_concurrency_requires_target_term PASSED [  8%]
+reasoning/tests/test_engine.py::test_cycles_depth_and_edge_provenance PASSED [ 13%]
+reasoning/tests/test_engine.py::test_unknown_stub_and_free_text PASSED   [ 17%]
+reasoning/tests/test_engine.py::test_hypothetical_does_not_change_graph PASSED [ 21%]
+reasoning/tests/test_engine.py::test_progress_and_distinct_electives PASSED [ 26%]
+reasoning/tests/test_engine.py::test_path_limit_and_option_structure PASSED [ 30%]
+app/tests/test_app.py::test_linking_and_unseen_codes PASSED              [ 34%]
+app/tests/test_app.py::test_downstream_blockers_distinct_from_hypothetical_set_change PASSED [ 39%]
+app/tests/test_app.py::test_missing_evidence_never_calls_llm[What is the weather for CS 421?] PASSED [ 43%]
+app/tests/test_app.py::test_missing_evidence_never_calls_llm[Can S999 take CS 421 in Fall 2026?] PASSED [ 47%]
+app/tests/test_app.py::test_missing_evidence_never_calls_llm[Can S003 take CS 999 in Fall 2026?] PASSED [ 52%]
+app/tests/test_app.py::test_missing_evidence_never_calls_llm[Can S003 take CS 421 in Fall 2027?] PASSED [ 56%]
+app/tests/test_app.py::test_missing_evidence_never_calls_llm[Can a student take CS 421?] PASSED [ 60%]
+app/tests/test_app.py::test_missing_evidence_never_calls_llm[Can S003 take CS 421 or CS 225?] PASSED [ 65%]
+app/tests/test_app.py::test_baseline_isolation PASSED                    [ 69%]
+app/tests/test_app.py::test_grounded_passes_real_context_and_labels PASSED [ 73%]
+app/tests/test_app.py::test_oversized_rows_abstain PASSED                [ 78%]
+app/tests/test_app.py::test_unconfigured_provider_is_error PASSED        [ 82%]
+app/tests/test_app.py::test_local_model_digest_is_recorded PASSED        [ 86%]
+evaluation/tests/test_report.py::test_final_report_rejects_pending_submission PASSED [ 91%]
+evaluation/tests/test_score.py::test_unreviewed_is_not_accuracy PASSED   [ 95%]
+evaluation/tests/test_score.py::test_changed_answers_and_duplicate_grades_rejected PASSED [100%]
+
+============================= 23 passed in 1.88s ==============================

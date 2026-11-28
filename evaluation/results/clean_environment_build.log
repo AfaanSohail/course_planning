@@ -1,0 +1,6 @@
+abox_catalog.ttl: 26,948 triples
+abox_degree_requirements.ttl: 323 triples
+abox_requirement_links.ttl: 344 triples
+abox_students_synthetic.ttl: 462 triples
+uiuc_course_kg.ttl: 28,638 triples (including ontology)
+Reference comparison: exact RDF graph match (isomorphic, including OWL blank nodes).

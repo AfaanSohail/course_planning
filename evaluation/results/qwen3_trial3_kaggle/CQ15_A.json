@@ -1,0 +1,68 @@
+{
+  "question": "What catalog wording, degree requirement and prerequisite-option evidence s upports each recommendation, and which conditions remain unverified? Instance: synthetic student S002's planned courses; Fall 2026.",
+  "answer": "No catalog wording, degree requirement, or prerequisite-option evidence is available for student S002's planned courses in Fall 2026. No course data, transcripts, or institutional records have been provided to support any recommendations, verify prerequisites, or confirm degree requirements.\n\nTherefore, all claims—regarding catalog wording, degree requirements, or prerequisite options—remain unverified. No instance of a student (e.g., S002) or course schedule has been presented or accessible for analysis.\n\n**Unverified conditions:**\n- Catalog wording for any course or requirement\n- Degree requirement alignment (e.g., major, minor, graduation criteria)\n- Prerequisite options for specific courses\n- Course sequencing or academic plan validity\n\n**Conclusion:**  \nNo evidence is available to support any recommendation for student S002 in Fall 2026. All conditions remain unverified due to lack of input data.",
+  "evidence": [],
+  "mode": "baseline",
+  "llm_called": true,
+  "completion": {
+    "answer": "No catalog wording, degree requirement, or prerequisite-option evidence is available for student S002's planned courses in Fall 2026. No course data, transcripts, or institutional records have been provided to support any recommendations, verify prerequisites, or confirm degree requirements.\n\nTherefore, all claims—regarding catalog wording, degree requirements, or prerequisite options—remain unverified. No instance of a student (e.g., S002) or course schedule has been presented or accessible for analysis.\n\n**Unverified conditions:**\n- Catalog wording for any course or requirement\n- Degree requirement alignment (e.g., major, minor, graduation criteria)\n- Prerequisite options for specific courses\n- Course sequencing or academic plan validity\n\n**Conclusion:**  \nNo evidence is available to support any recommendation for student S002 in Fall 2026. All conditions remain unverified due to lack of input data.",
+    "request": {
+      "model": "course-planning-qwen3-v2",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a university course-planning adviser. Answer the question accurately and\nexplain your reasoning. State uncertainty and missing information. Do not invent\nstudent transcripts or claim to have evidence you have not been given.\nThis condition has no retrieval tools or attached course graph.\n\nAnswer concisely. Prefer compact tables or lists; avoid repeating the question, evidence list and conclusion. Preserve requested-set completeness and prerequisite alternatives.\n"
+        },
+        {
+          "role": "user",
+          "content": "What catalog wording, degree requirement and prerequisite-option evidence s upports each recommendation, and which conditions remain unverified? Instance: synthetic student S002's planned courses; Fall 2026."
+        }
+      ],
+      "temperature": 0.0,
+      "max_tokens": 4096,
+      "stream": false
+    },
+    "raw": {
+      "id": "chatcmpl-568",
+      "object": "chat.completion",
+      "created": 1795704124,
+      "model": "course-planning-qwen3-v2",
+      "system_fingerprint": "fp_ollama",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "No catalog wording, degree requirement, or prerequisite-option evidence is available for student S002's planned courses in Fall 2026. No course data, transcripts, or institutional records have been provided to support any recommendations, verify prerequisites, or confirm degree requirements.\n\nTherefore, all claims—regarding catalog wording, degree requirements, or prerequisite options—remain unverified. No instance of a student (e.g., S002) or course schedule has been presented or accessible for analysis.\n\n**Unverified conditions:**\n- Catalog wording for any course or requirement\n- Degree requirement alignment (e.g., major, minor, graduation criteria)\n- Prerequisite options for specific courses\n- Course sequencing or academic plan validity\n\n**Conclusion:**  \nNo evidence is available to support any recommendation for student S002 in Fall 2026. All conditions remain unverified due to lack of input data."
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 137,
+        "prompt_tokens_details": {
+          "cached_tokens": 90
+        },
+        "completion_tokens": 186,
+        "total_tokens": 323
+      }
+    },
+    "runtime_ms": 4066.8232640000497,
+    "finish_reason": "stop",
+    "truncated": false
+  },
+  "config": {
+    "provider": "ollama",
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "course-planning-qwen3-v2",
+    "api_key_env": "COURSE_LLM_API_KEY",
+    "require_api_key": false,
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "timeout_seconds": 1800,
+    "context_max_chars": 24000
+  },
+  "cq": "CQ15",
+  "condition": "A",
+  "recorded_utc": "2026-11-26T14:42:04.970879+00:00"
+}

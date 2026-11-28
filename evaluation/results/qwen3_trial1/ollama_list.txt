@@ -1,0 +1,4 @@
+﻿NAME                            ID              SIZE      MODIFIED    
+course-planning-qwen3:latest    49dae85e3c0f    2.5 GB    4 hours ago    
+qwen3:4b-instruct               0edcdef34593    2.5 GB    4 hours ago    
+ollama version is 0.40.18

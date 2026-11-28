@@ -1,0 +1,300 @@
+{
+  "run_id": "qwen3_trial3_kaggle",
+  "manifest": {
+    "config": {
+      "provider": "ollama",
+      "base_url": "http://127.0.0.1:11434/v1",
+      "model": "course-planning-qwen3-v2",
+      "api_key_env": "COURSE_LLM_API_KEY",
+      "require_api_key": false,
+      "temperature": 0.0,
+      "max_tokens": 4096,
+      "timeout_seconds": 1800,
+      "context_max_chars": 24000
+    },
+    "graph_sha256": "ac0352a0246d3e67fae34d3fd27f3847bb9a3d7897478f19e865478f2a1ea2a8",
+    "cqs_sha256": "8fb76ed1d227a693a92d7650399f0ac935bc64ec6eb5710e2c8125f973d7a2d6",
+    "prompt_hashes": {
+      "baseline.txt": "fbe1333788c212a448ca96ee83a24b421d66aac88834322a46caa9fc40a3c33c",
+      "grounded.txt": "36c85468abc6c263b635152d16005817390822e71886a6d33195424f9231993a"
+    },
+    "model_identity": {
+      "provider": "ollama",
+      "runtime_version": "0.40.18",
+      "requested_model": "course-planning-qwen3-v2",
+      "name": "course-planning-qwen3-v2:latest",
+      "digest": "16ea59a13663d9124a91b91701862c0f171cbda5c00ca6a226aaee0a265cf3b6",
+      "details": {
+        "parent_model": "qwen3:4b-instruct",
+        "format": "gguf",
+        "family": "qwen3",
+        "families": [
+          "qwen3"
+        ],
+        "parameter_size": "4.0B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 262144,
+        "embedding_length": 2560,
+        "runner": "llamacpp"
+      },
+      "model_digest_verified": true
+    },
+    "source_sha256": {
+      "app/__init__.py": "550e068cf64aa837e602fc7f990aff9f96879e92d7e23d1ce9e3fc22fec45626",
+      "app/__main__.py": "c089ff971a7795755079d0565b3dfd3c98ec108b2ec877b27579eb9f9d0aac57",
+      "app/config.py": "a46473b29485242d85a93ee60ccffa36f9c5c88e79b77f05c2a297c6aff30070",
+      "app/context_guidance.py": "00f367c09d33e53d8fbf0500aa9bc6c36d40534f09f257b255eb5385f81e98fe",
+      "app/linking.py": "eed8c99aca72a784650ad17068af12c2337283ad5571dd78c97910293131b027",
+      "app/llm.py": "3d9f975e98fa0f4e9bf26c9bd8aeae7d7941820053cf23ca927f0b1413eb3a36",
+      "app/retrieval.py": "360ba4d462c44d7166bbb62d4709ebd341cb26aac70eebebe9c073c48a2b4c92",
+      "app/service.py": "f3b31b769a72bb9299e036067b81d2f70041f99f9f5bab778968b5a091d843a2",
+      "reasoning/__init__.py": "f99fbcf150c1ff74eb1374c3822637af76b00efb7dc309b980e18490f3a9f966",
+      "reasoning/__main__.py": "15832ce511e498ba5a7b21ee0ed23bac23fcfe710f6174c9abe36203240da148",
+      "reasoning/engine.py": "196c755b4ae95e102686071ef12e7c9a3700b15fdb9f0839f291d1c85a987f5d",
+      "reasoning/evaluate.py": "a7819f5511a71c07ed5b3fa2515c47745f11b5dcd26aaec710aa62f14f2662ae",
+      "reasoning/examples.py": "1df9f46f637c7f4e3f697892d9077537da2c2cf66b1acc470b3ad361e69371ab",
+      "reasoning/kg.py": "dcf7f559ea2aee89d066fd943edbf65c24776db36e4cb101da2d65e3d62015d2",
+      "evaluation/__init__.py": "86dd8235757b900bc91e347dba44db67f5fba047a7e5444f076972f84ca8720b",
+      "evaluation/prepare.py": "216976db2fbd6a0336699ff9de2d816677f17de23c1e542ff6e70e79b6c389a7",
+      "evaluation/queries.py": "0702cc578153d429b614911932476b3f08b8b20b0132addba92ac3866b70b17b",
+      "evaluation/run.py": "4666e3bd9640fdc6334c3ca3b85ba4587584f5afc6639e305b73e128d0ecd181",
+      "evaluation/score.py": "9a1cf4daa8c17335f9590d4a3212a2f6b32c9f5257ca28b1b124a6a35d1162e4"
+    },
+    "started_utc": "2026-11-26T14:36:26.490093+00:00",
+    "python": "3.12.15",
+    "platform": "Linux-6.18.55+-x86_64-with-glibc2.39",
+    "commit": "PENDING: not a Git checkout"
+  },
+  "case_count": 10,
+  "response_records": 20,
+  "llm_calls_recorded": 20,
+  "checks": [
+    {
+      "cq": "CQ01",
+      "condition": "A",
+      "llm_called": true,
+      "finish_reason": "stop",
+      "truncated": false,
+      "unknown_citation_ids": [],
+      "issues": [],
+      "raw_sha256": "06c270b28c82de1aec76f07210a8122da288f87d29bc2923b1ce1a47b5fd48e0",
+      "review_complete": true
+    },
+    {
+      "cq": "CQ01",
+      "condition": "B",
+      "llm_called": true,
+      "finish_reason": "stop",
+      "truncated": false,
+      "unknown_citation_ids": [],
+      "issues": [],
+      "raw_sha256": "cb643ed42c5ffb47ff84361123ac1100d794b67e91f4978b440e1a579c0a7ca1",
+      "review_complete": true
+    },
+    {
+      "cq": "CQ02",
+      "condition": "A",
+      "llm_called": true,
+      "finish_reason": "stop",
+      "truncated": false,
+      "unknown_citation_ids": [],
+      "issues": [],
+      "raw_sha256": "f5011bc806dbf6ced7cc8ce143430537dae1fb3efbfee83123a01d1948580ff5",
+      "review_complete": true
+    },
+    {
+      "cq": "CQ02",
+      "condition": "B",
+      "llm_called": true,
+      "finish_reason": "stop",
+      "truncated": false,
+      "unknown_citation_ids": [],
+      "issues": [],
+      "raw_sha256": "e4d1b88c8fb39cee2daf79a0ff72db380456049ffed719d9ae3d47e67636a799",
+      "review_complete": true
+    },
+    {
+      "cq": "CQ03",
+      "condition": "A",
+      "llm_called": true,
+      "finish_reason": "stop",
+      "truncated": false,
+      "unknown_citation_ids": [],
+      "issues": [],
+      "raw_sha256": "75f4deb835ac6aa9d90fb3b39a835c7f1f1d99a8865c2220ceb84e557747ef07",
+      "review_complete": true
+    },
+    {
+      "cq": "CQ03",
+      "condition": "B",
+      "llm_called": true,
+      "finish_reason": "stop",
+      "truncated": false,
+      "unknown_citation_ids": [],
+      "issues": [],
+      "raw_sha256": "defb35840e4fc8b79278ebbd39fddc710f1fa74f0d6fef9a1cee9ec4361a09dc",
+      "review_complete": true
+    },
+    {
+      "cq": "CQ04",
+      "condition": "A",
+      "llm_called": true,
+      "finish_reason": "stop",
+      "truncated": false,
+      "unknown_citation_ids": [],
+      "issues": [],
+      "raw_sha256": "4afd182f471f4d53b9b19c81609d24f3eca1bc2c51b601d08c1188d06ba0c2c2",
+      "review_complete": true
+    },
+    {
+      "cq": "CQ04",
+      "condition": "B",
+      "llm_called": true,
+      "finish_reason": "stop",
+      "truncated": false,
+      "unknown_citation_ids": [],
+      "issues": [],
+      "raw_sha256": "26db219d85c87569df89b68b7d41c51bc488daacd9b9d8422a2d5a9015f43720",
+      "review_complete": true
+    },
+    {
+      "cq": "CQ06",
+      "condition": "A",
+      "llm_called": true,
+      "finish_reason": "stop",
+      "truncated": false,
+      "unknown_citation_ids": [],
+      "issues": [],
+      "raw_sha256": "41562c3496cef87c6cd488f1bf29b70fadfb86255bdb575c757babdb380b5ee2",
+      "review_complete": true
+    },
+    {
+      "cq": "CQ06",
+      "condition": "B",
+      "llm_called": true,
+      "finish_reason": "stop",
+      "truncated": false,
+      "unknown_citation_ids": [],
+      "issues": [],
+      "raw_sha256": "42344b24576b375fb26ff5d95c0138e2b4f0dd3fb9fab123f2b9db1acee818dc",
+      "review_complete": true
+    },
+    {
+      "cq": "CQ08",
+      "condition": "A",
+      "llm_called": true,
+      "finish_reason": "stop",
+      "truncated": false,
+      "unknown_citation_ids": [],
+      "issues": [],
+      "raw_sha256": "b6d687d57a15c196e09155d1d4188ac6264e60a935bab59a1026cb1ec4e1d297",
+      "review_complete": true
+    },
+    {
+      "cq": "CQ08",
+      "condition": "B",
+      "llm_called": true,
+      "finish_reason": "stop",
+      "truncated": false,
+      "unknown_citation_ids": [],
+      "issues": [],
+      "raw_sha256": "11abbb9a5f37990a0bc47d1bf7b6fc80984ff0b608ce3ec07046d0f7638386a7",
+      "review_complete": true
+    },
+    {
+      "cq": "CQ10",
+      "condition": "A",
+      "llm_called": true,
+      "finish_reason": "stop",
+      "truncated": false,
+      "unknown_citation_ids": [],
+      "issues": [],
+      "raw_sha256": "f351a2d2ebdb1becc13a3177d5372addf9fbd76940f5f86baaaf0b5998c5e89a",
+      "review_complete": true
+    },
+    {
+      "cq": "CQ10",
+      "condition": "B",
+      "llm_called": true,
+      "finish_reason": "stop",
+      "truncated": false,
+      "unknown_citation_ids": [],
+      "issues": [],
+      "raw_sha256": "fec92113ddca969ba7a1de106ab2a6105309d5c7abbec4beefafa9df83d66a4a",
+      "review_complete": true
+    },
+    {
+      "cq": "CQ11",
+      "condition": "A",
+      "llm_called": true,
+      "finish_reason": "stop",
+      "truncated": false,
+      "unknown_citation_ids": [],
+      "issues": [],
+      "raw_sha256": "a9b8f0d06e64f092cd3fc43bcfc424428f8921fabe6293cfbfde7dd0c250a05a",
+      "review_complete": true
+    },
+    {
+      "cq": "CQ11",
+      "condition": "B",
+      "llm_called": true,
+      "finish_reason": "stop",
+      "truncated": false,
+      "unknown_citation_ids": [],
+      "issues": [],
+      "raw_sha256": "8e7e4e64ee207aa95265ac2a85d7d4e22873d8fcee3a0aef7784a343f2648cc4",
+      "review_complete": true
+    },
+    {
+      "cq": "CQ13",
+      "condition": "A",
+      "llm_called": true,
+      "finish_reason": "stop",
+      "truncated": false,
+      "unknown_citation_ids": [],
+      "issues": [],
+      "raw_sha256": "27fd91fc17900ab3e5610c32e7465ba632b92d46df2a7943f596948722f1a466",
+      "review_complete": true
+    },
+    {
+      "cq": "CQ13",
+      "condition": "B",
+      "llm_called": true,
+      "finish_reason": "stop",
+      "truncated": false,
+      "unknown_citation_ids": [],
+      "issues": [],
+      "raw_sha256": "4e6d886c0fd465db19741028f070342d5e5979ec75c903c827a290dcb0763d48",
+      "review_complete": true
+    },
+    {
+      "cq": "CQ15",
+      "condition": "A",
+      "llm_called": true,
+      "finish_reason": "stop",
+      "truncated": false,
+      "unknown_citation_ids": [],
+      "issues": [],
+      "raw_sha256": "247cfbf99b8c0c08730b6d72d2d7e483f833a209215f1af180419149a0c2e534",
+      "review_complete": true
+    },
+    {
+      "cq": "CQ15",
+      "condition": "B",
+      "llm_called": true,
+      "finish_reason": "stop",
+      "truncated": false,
+      "unknown_citation_ids": [],
+      "issues": [],
+      "raw_sha256": "d10db5a1c97a5568ee05f0a1623bb4d2f2b3779a3a2b1d4db69e288ca0264596",
+      "review_complete": true
+    }
+  ],
+  "integrity_findings": [],
+  "distinct_evidence_edges_checked": 4679,
+  "invalid_evidence_edges": 0,
+  "complete_human_reviews": 20,
+  "truncated_responses": [],
+  "records_with_unknown_citations": [],
+  "note": "Internal consistency of supplied records does not independently prove provider execution or semantic correctness."
+}
