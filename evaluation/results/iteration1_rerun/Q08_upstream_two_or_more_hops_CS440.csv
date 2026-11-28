@@ -1,0 +1,57 @@
+upstreamCode,viaCode,firstHop
+BIOE 210,BIOE 310,via one-of group (potential)
+CS 101,BIOE 310,via one-of group (potential)
+CS 101,ECE 313,via one-of group (potential)
+CS 124,BIOE 310,via one-of group (potential)
+CS 124,CS 225,via required course
+CS 125,CS 225,via required course
+CS 126,CS 225,via required course
+CS 128,CS 225,via required course
+CS 173,CS 225,via required course
+CS 374,CS 225,via required course
+CS 413,CS 225,via required course
+ECE 120,CS 225,via required course
+ECE 220,CS 225,via required course
+MATH 112,BIOE 310,via one-of group (potential)
+MATH 112,CS 225,via required course
+MATH 112,CS 361,via one-of group (potential)
+MATH 112,ECE 313,via one-of group (potential)
+MATH 112,MATH 461,via one-of group (potential)
+MATH 112,STAT 400,via one-of group (potential)
+MATH 115,BIOE 310,via one-of group (potential)
+MATH 115,CS 225,via required course
+MATH 115,CS 361,via one-of group (potential)
+MATH 115,ECE 313,via one-of group (potential)
+MATH 115,MATH 461,via one-of group (potential)
+MATH 115,STAT 400,via one-of group (potential)
+MATH 213,CS 225,via required course
+MATH 220,BIOE 310,via one-of group (potential)
+MATH 220,CS 225,via required course
+MATH 220,CS 361,via one-of group (potential)
+MATH 220,ECE 313,via one-of group (potential)
+MATH 220,MATH 461,via one-of group (potential)
+MATH 220,STAT 400,via one-of group (potential)
+MATH 221,BIOE 310,via one-of group (potential)
+MATH 221,CS 225,via required course
+MATH 221,CS 361,via one-of group (potential)
+MATH 221,ECE 313,via one-of group (potential)
+MATH 221,MATH 461,via one-of group (potential)
+MATH 221,STAT 400,via one-of group (potential)
+MATH 231,BIOE 310,via one-of group (potential)
+MATH 231,CS 225,via required course
+MATH 231,ECE 313,via one-of group (potential)
+MATH 231,MATH 461,via one-of group (potential)
+MATH 231,STAT 400,via one-of group (potential)
+MATH 241,BIOE 310,via one-of group (potential)
+MATH 241,CS 225,via required course
+MATH 241,ECE 313,via one-of group (potential)
+MATH 241,MATH 461,via one-of group (potential)
+MATH 257,BIOE 310,via one-of group (potential)
+MATH 257,ECE 313,via one-of group (potential)
+MATH 314,CS 225,via required course
+MATH 314,ECE 313,via one-of group (potential)
+MATH 347,CS 225,via required course
+MATH 347,ECE 313,via one-of group (potential)
+MATH 412,CS 225,via required course
+MATH 413,CS 225,via required course
+MATH 416,ECE 313,via one-of group (potential)

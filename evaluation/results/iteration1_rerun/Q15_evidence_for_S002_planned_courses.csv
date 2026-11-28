@@ -1,0 +1,4 @@
+courseCode,prerequisiteText,parseStatus,satisfiedOptions,requirement,requirementNote,source,unverified
+CS 225,"CS 126 or CS 128 or ECE 220; One of CS 173, CS 413, MATH 213, MATH 314, MATH 347, MATH 412, or MATH 413.",parsed,1,"CS technical core (11 courses, 35 hours)",Technical GPA of 2.0 is required for CS and Math courses.,https://discovery.cs.illinois.edu/dataset/course-catalog/,none
+MATH 241,MATH 231.,parsed,1,"Required calculus and physics: MATH 231, MATH 241, PHYS 211, PHYS 212",,https://discovery.cs.illinois.edu/dataset/course-catalog/,none
+MATH 257,MATH 220 or MATH 221; CS 101 or equivalent programming experience.,needs_review,0,"Linear algebra: MATH 257, MATH 415 or MATH 416",,https://discovery.cs.illinois.edu/dataset/course-catalog/,yes: wording such as 'or equivalent' needs manual check
