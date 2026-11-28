@@ -1,5 +1,25 @@
 [
   {
+    "path": "iteration1/Visualization/GraphDB_G01.png",
+    "caption": "Archived Iteration 1 screenshot: GraphDB repository Project_uiuc configured with the OWL2-RL ruleset. Supplied in the original archive; not a current execution screenshot.",
+    "iteration": 1
+  },
+  {
+    "path": "iteration1/Visualization/Protege_P01.png",
+    "caption": "Archived Iteration 1 screenshot: Prot\u00e9g\u00e9 active ontology, version 1.3, header and ontology metrics. Supplied in the original archive; not a current execution screenshot.",
+    "iteration": 1
+  },
+  {
+    "path": "iteration1/Visualization/GraphDB_G05.png",
+    "caption": "Archived Iteration 1 screenshot: GraphDB class-relationship chord visualization for the course KG. Supplied in the original archive; displayed link statistics belong to that archived run.",
+    "iteration": 1
+  },
+  {
+    "path": "iteration1/Visualization/GraphDB_G08.png",
+    "caption": "Archived Iteration 1 screenshot: the inference-dependent Q11 department aggregate and displayed GraphDB results. The new local execution is preserved separately in the current query-results CSV.",
+    "iteration": 1
+  },
+  {
     "path": "report/screenshots/afaan_day5_chain.png",
     "caption": "Actual Day 5 prerequisite-chain execution for CS421, showing the input, graph hash, path validation and a stored-edge excerpt. Full paths are in reasoning/outputs/day5/chain.json.",
     "iteration": 2
@@ -18,5 +38,23 @@
     "path": "report/screenshots/afaan_day5_degree.png",
     "caption": "Actual Day 5 recorded degree-progress execution for synthetic S003, showing count/credit shortfalls and graph evidence. This is not a certified graduation audit. Full groups are in reasoning/outputs/day5/degree.json.",
     "iteration": 2
+  },
+  {
+    "path": "report/screenshots/comparison.png",
+    "caption": "Actual desktop comparison viewer showing the twenty recorded trial 3 grading decisions in ten paired rows, with generated A/B totals. Full questions, expected results and responses remain in comparison.csv.",
+    "iteration": 2,
+    "category": "comparison"
+  },
+  {
+    "path": "report/screenshots/insufficient_evidence.png",
+    "caption": "Actual laptop execution of the weather question for CS 421. The app returns insufficient_evidence with llm_called=false; no weather answer is invented.",
+    "iteration": 2,
+    "category": "insufficient_evidence"
+  },
+  {
+    "path": "report/screenshots/grounded_app.png",
+    "caption": "Actual desktop viewer showing a fresh local Qwen3 4B answer to the MATH 241 eligibility question, retrieved condition rows and RDF evidence. The separate CPU readiness profile uses a smaller context/output budget than the recorded Kaggle experiment. Full response: report/live_grounded.json.",
+    "iteration": 2,
+    "category": "grounded_app"
   }
 ]
