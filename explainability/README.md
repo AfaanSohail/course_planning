@@ -1,11 +1,13 @@
 # Explainability records
 
-Run commands from the repository root. Existing example_1 through example_5 records contain actual KG retrieval or insufficient-evidence results. They are not LLM answers unless llm_called is true. A retrieval-only record does not satisfy the requirement for three generated system answers.
+The selected trial 3 examples are live_eligibility.md (CQ03), live_multihop.md (CQ08), and live_inference.md (CQ11). These contain actual LLM answers, stored/inferred evidence and query provenance. Full raw answers are under evaluation/results/qwen3_trial3_kaggle. The live_progress.md example explicitly records CQ06's incomplete answer for error analysis.
 
 ```bash
-python -m scripts.retrieval_examples
+python -m explainability.format evaluation/results/qwen3_trial3_kaggle/CQ03_B.json explainability/live_eligibility.md
+python -m explainability.format evaluation/results/qwen3_trial3_kaggle/CQ08_B.json explainability/live_multihop.md
+python -m explainability.format evaluation/results/qwen3_trial3_kaggle/CQ11_B.json explainability/live_inference.md
 ```
 
-The formatter separates stored RDF, OWL-inferred triples, computed query/application conclusions and generated prose. It preserves complete query rows, traces and provenance without treating valid edge IDs as proof that a sentence is correct. Option C produces no predictions.
+Stored triples, OWL-inferred triples, computed query/application conclusions and LLM-generated prose have distinct labels. Option C produces no predictions. A valid edge does not prove a generated sentence is correct.
 
-Actual LLM answers and final evaluation artifacts should be committed separately by their assigned members. Retain original response bytes and human-review evidence when importing a completed run. For the viva, explain the distinction between an application verdict and an official registration or degree decision.
+For the viva, trace one cited result to its query and full graph evidence. Explain how the multi-hop rows preserve potential branches and why an absent completion is not a stored negative fact.

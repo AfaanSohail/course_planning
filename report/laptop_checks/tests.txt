@@ -1,0 +1,3 @@
+.......................................                                  [100%]
+- generated xml file: /home/afaan-sohail/Afaan/KRR/Proj/iter2/iteration2_solution/report/laptop_checks/tests.xml -
+39 passed in 12.63s

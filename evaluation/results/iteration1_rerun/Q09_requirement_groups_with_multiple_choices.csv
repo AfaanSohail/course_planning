@@ -1,0 +1,18 @@
+requirement,allowedCourses,offeredFall2026
+"Advanced electives (min 2 courses, 6 hours)",225,192
+"Technical electives (min 6 courses, 18 hours)",66,47
+Science elective (one Natural Science & Technology course),53,53
+Focus area: Intelligence and Big Data,34,21
+"Focus area: Distributed Systems, Networking, and Security",23,17
+Focus area: Algorithms and Models of Computation,21,11
+Focus area: Human and Social Impact,21,15
+Focus area: Software Foundations,19,10
+Focus area: Media,17,10
+Focus area: Machines,16,6
+Team project course (at least 1 of the technical electives),13,8
+"Focus area: Scientific, Parallel, and High Performance Computing",12,5
+"CS technical core (11 courses, 35 hours)",11,11
+"Required calculus and physics: MATH 231, MATH 241, PHYS 211, PHYS 212",4,4
+"Linear algebra: MATH 257, MATH 415 or MATH 416",3,3
+Calculus I: MATH 221 (MATH 220 may be substituted),2,2
+Ethical and professional issues: CS 210 or CS 211,2,2

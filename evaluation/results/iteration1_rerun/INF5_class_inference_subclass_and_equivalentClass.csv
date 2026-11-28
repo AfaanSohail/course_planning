@@ -1,0 +1,4 @@
+class,instances
+https://example.org/uiuc-course-advisor/ontology#CourseWithPrerequisites,339
+https://example.org/uiuc-course-advisor/ontology#DegreeRequirement,18
+https://example.org/uiuc-course-advisor/ontology#PrerequisiteCondition,511
