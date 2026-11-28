@@ -1,6 +1,6 @@
-# Iteration 2 report: multi-hop reasoning
+# Iteration 2 report: reasoning and KG-grounded architecture
 
-This is Afaan Sohail's reasoning section for the consolidated team report. Application architecture, LLM evaluation, final submission metadata and the other members' sections are integrated separately.
+This report integrates Afaan Sohail's reasoning section and Hassan Tariq's application architecture and KG-grounded generation section. LLM evaluation, explainability records and final submission metadata are integrated separately.
 
 ## Purpose and scope
 
@@ -19,6 +19,18 @@ Eligibility checks recorded completions, same-term concurrent plans only where a
 Reverse unlock search finds courses that can reach a proposed completion, evaluates each before and after the hypothetical addition, and identifies those whose encoded eligibility changes. Indirect reachability alone does not make a downstream course immediately available. The original what-if queries omit concurrent-plan credit, so that comparison uses the same policy. Hypothetical completions appear only as assumptions and are never inserted into the RDF evidence.
 
 Degree-progress reasoning follows student → completion → allocated requirement → program, using a reverse traversal of the stored program → requirement edge. It reports allocated counts and credits, unmet encoded thresholds, invalid memberships and technical/advanced-elective double-counting conflicts. It inspects existing allocations rather than optimizing a new assignment. Focus-area alternatives and prose-only policies prevent a per-group numeric summary from constituting a graduation decision.
+
+## Architecture and KG-grounded generation
+
+The pipeline is question → entity/intent linking → parameterized SPARQL and Python reasoning → context construction → the configured LLM → generated answer and inspectable graph evidence (diagram source: [architecture.mmd](architecture.mmd)). It runs locally from the supplied Turtle graph; GraphDB remains available for the required live ontology/inference walkthrough and optional endpoint checks. The app does not require a live GraphDB server to retrieve its graph evidence.
+
+Entity linking recognizes course codes, synthetic student IDs and terms. Intent rules select generic query families without consulting the evaluation question file or stored answers. Unknown, ambiguous or unsupported requests receive an insufficient-evidence response. Valid unseen combinations of known entities run against the graph. The scope of natural-language coverage is the implemented templates; arbitrary questions and multi-turn reference resolution remain limitations.
+
+The application uses KG-RAG with SPARQL-generated context, informed by external-memory grounding in Lewis et al. (2020). It preserves relationships as in graph-oriented retrieval, but does not implement the community-index construction or global summarization procedure in Edge et al. (2024). Retrieved records, original query text, reasoning traces, graph hash and evidence edge IDs remain inspectable. OWL-inferred triples are labelled separately by testing membership in the explicit graph and its computed closure.
+
+The grounding prompt restricts the model to the supplied context and asks it to cite edge or result-row IDs, preserve alternative branches and state missing evidence. The LLM remains capable of unsupported prose: prompts and citation-ID checks do not establish semantic correctness. Invalid citations are retained for scoring. Every query row is included or the system abstains if the result table alone exceeds its context budget. Additional evidence and traces may be omitted from the prompt with explicit omitted counts; the full output artifact keeps them. Character budgets approximate model tokens, and length-truncated answers are flagged.
+
+The selected free local configuration uses Qwen3 4B Instruct through Ollama's compatible chat API (Qwen Team; Ollama documentation). Both A and B use the same locally created model, temperature and output budget. The harness records and checks the actual Ollama model digest and runtime version across runs; actual settings and prompt hashes are retained with the experiment. Local inference has no paid API calls, but requires suitable RAM, downloaded model weights and execution time. The selected experiment contains actual model outputs; suitability remains limited by the recorded errors.
 
 ## Reasoning evaluation protocol and interpretation
 
@@ -79,5 +91,9 @@ Hypothetical completions are evaluated in memory and are never recorded as verif
 - Xiong, W., Hoang, T. & Wang, W. Y. (2017). *DeepPath: A Reinforcement Learning Method for Knowledge Graph Reasoning*. EMNLP, 564–573. https://doi.org/10.18653/v1/D17-1060
 - Das, R. et al. (2018). *Go for a Walk and Arrive at the Answer: Reasoning Over Paths in Knowledge Bases using Reinforcement Learning*. ICLR. https://arxiv.org/abs/1711.05851
 - Hogan, A. et al. (2021). *Knowledge Graphs*. ACM Computing Surveys 54(4), Article 71. https://doi.org/10.1145/3447772
+- Lewis, P. et al. (2020). *Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks*. NeurIPS. https://arxiv.org/abs/2005.11401
+- Edge, D. et al. (2024; revised 2025). *From Local to Global: A Graph RAG Approach to Query-Focused Summarization*. https://arxiv.org/abs/2404.16130
 - Harris, S. & Seaborne, A. (eds., 2013). *SPARQL 1.1 Query Language*. W3C. https://www.w3.org/TR/sparql11-query/
 - W3C (2012). *OWL 2 Web Ontology Language Profiles (Second Edition)*. https://www.w3.org/TR/owl2-profiles/
+- Qwen Team. *Qwen3 official repository and model releases*. https://github.com/QwenLM/Qwen3
+- Ollama. *OpenAI-compatible API and selected model entry*. https://docs.ollama.com/api/openai-compatibility ; https://ollama.com/library/qwen3:4b-instruct
