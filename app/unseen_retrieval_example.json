@@ -1,0 +1,3274 @@
+{
+  "question": "Can S004 take CS 425 in Fall 2026?",
+  "answer": "Retrieval only; no LLM response generated.",
+  "evidence": [
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/course/CS425>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#hasPrerequisiteExpression>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425>",
+      "status": "explicit",
+      "id": "E1a98709116c63a8e"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#hasOption>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425/option/1>",
+      "status": "explicit",
+      "id": "E66249c24e6dcf9af"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425/option/1>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#hasCondition>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425/option/1/condition/1>",
+      "status": "explicit",
+      "id": "Ee5090e5183a8d38b"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425/option/1/condition/1>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#alternativeCourse>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/course/CS341>",
+      "status": "explicit",
+      "id": "Ee5f5f59f4c2199e6"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS341>",
+      "status": "explicit",
+      "id": "Eb58b09c2dfd9d542"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS341>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/course/CS341>",
+      "status": "explicit",
+      "id": "E83650a98ac44f357"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/course/CS425>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#hasOffering>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/offering/CS425/2026-fa>",
+      "status": "explicit",
+      "id": "Ea322659268f0dbe4"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/offering/CS425/2026-fa>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#offeredInTerm>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/term/2026-fa>",
+      "status": "explicit",
+      "id": "E4427dc768f2b1bc6"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/course/CS425>",
+      "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+      "o": "<https://example.org/uiuc-course-advisor/ontology#Course>",
+      "status": "explicit",
+      "id": "Ed7a87ad5ed7305ed"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/course/CS425>",
+      "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+      "o": "\"CS 425 Distributed Systems\"",
+      "status": "explicit",
+      "id": "E7bc4885e5ee7a3bc"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/course/CS425>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#courseCode>",
+      "o": "\"CS 425\"",
+      "status": "explicit",
+      "id": "E46000ff82e0c560f"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/course/CS425>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#courseCreditsMax>",
+      "o": "\"4.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+      "status": "explicit",
+      "id": "Ee7141dcf07c814ec"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/course/CS425>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#courseCreditsMin>",
+      "o": "\"3.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+      "status": "explicit",
+      "id": "Eea0b62e219f730cc"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/course/CS425>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#courseDescription>",
+      "o": "\"Protocols, specification techniques, global states and their determination, reliable broadcast, transactions and commitment, security, and real-time systems. Same as ECE 428. 3 or 4 undergraduate hours. 3 or 4 graduate hours. Prerequisite: Credit or concurrent enrollment in one of CS 240, CS 241, CS 340, CS 341 or ECE 391.\"",
+      "status": "explicit",
+      "id": "Eae3583ded950f9e2"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/course/CS425>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#courseNumber>",
+      "o": "\"425\"^^<http://www.w3.org/2001/XMLSchema#integer>",
+      "status": "explicit",
+      "id": "Ee94f8824255c34bf"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/course/CS425>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#courseTitle>",
+      "o": "\"Distributed Systems\"",
+      "status": "explicit",
+      "id": "E24c496c99f666da5"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/course/CS425>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#crossListedWith>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/course/ECE428>",
+      "status": "explicit",
+      "id": "E18e2a014c444dcd9"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/course/CS425>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#inDepartment>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/department/CS>",
+      "status": "explicit",
+      "id": "Efcea5f8517b1cc1a"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/course/CS425>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#sourceURL>",
+      "o": "\"https://discovery.cs.illinois.edu/dataset/course-catalog/\"^^<http://www.w3.org/2001/XMLSchema#anyURI>",
+      "status": "explicit",
+      "id": "Ee7b5e85a695b4954"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425>",
+      "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+      "o": "<https://example.org/uiuc-course-advisor/ontology#PrerequisiteExpression>",
+      "status": "explicit",
+      "id": "Ec502ec06ca38560f"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425>",
+      "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+      "o": "\"Prerequisites of CS 425\"",
+      "status": "explicit",
+      "id": "E86cfd0b8859501c5"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#parseStatus>",
+      "o": "\"parsed\"",
+      "status": "explicit",
+      "id": "Ed768f00fb3380135"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#prerequisiteSourceText>",
+      "o": "\"Credit or concurrent enrollment in one of CS 240, CS 241, CS 340, CS 341 or ECE 391.\"",
+      "status": "explicit",
+      "id": "E064aff264fd7c0c0"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425/option/1>",
+      "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+      "o": "<https://example.org/uiuc-course-advisor/ontology#PrerequisiteOption>",
+      "status": "explicit",
+      "id": "Ed785f6245668f524"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425/option/1>",
+      "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+      "o": "\"CS 425 prerequisite option 1\"",
+      "status": "explicit",
+      "id": "E865b87ff692a1275"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425/option/1/condition/1>",
+      "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+      "o": "<https://example.org/uiuc-course-advisor/ontology#CourseChoiceCondition>",
+      "status": "explicit",
+      "id": "Ec0a01609ba71dc78"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425/option/1/condition/1>",
+      "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+      "o": "\"CS 425 opt 1 cond 1: one of CS 240, CS 241, CS 340, CS 341, ECE 391\"",
+      "status": "explicit",
+      "id": "Ef28ae9abaf4f2979"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425/option/1/condition/1>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#allowsConcurrent>",
+      "o": "\"true\"^^<http://www.w3.org/2001/XMLSchema#boolean>",
+      "status": "explicit",
+      "id": "E6bce1c29eada477e"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425/option/1/condition/1>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#alternativeCourse>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/course/CS240>",
+      "status": "explicit",
+      "id": "Ef5c67079ba765a66"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425/option/1/condition/1>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#alternativeCourse>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/course/CS241>",
+      "status": "explicit",
+      "id": "E045cf21be075509c"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425/option/1/condition/1>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#alternativeCourse>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/course/CS340>",
+      "status": "explicit",
+      "id": "Ef5ae3537f787fc9e"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425/option/1/condition/1>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#alternativeCourse>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/course/ECE391>",
+      "status": "explicit",
+      "id": "E973e6ffd6e861e4e"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425/option/1/condition/1>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#conditionSourceText>",
+      "o": "\"Credit or concurrent enrollment in one of CS 240, CS 241, CS 340, CS 341 or ECE 391\"",
+      "status": "explicit",
+      "id": "E27ae2c56f286bd9b"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/offering/CS425/2026-fa>",
+      "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+      "o": "<https://example.org/uiuc-course-advisor/ontology#CourseOffering>",
+      "status": "explicit",
+      "id": "E3911e821eb0816f4"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/offering/CS425/2026-fa>",
+      "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+      "o": "\"CS 425 (Fall 2026)\"",
+      "status": "explicit",
+      "id": "E64fec73ef8f0ab7b"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+      "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+      "o": "<https://example.org/uiuc-course-advisor/ontology#Student>",
+      "status": "explicit",
+      "id": "Eb7cd4ec3a97e52e2"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+      "p": "<http://www.w3.org/2000/01/rdf-schema#comment>",
+      "o": "\"SYNTHETIC test persona created by the team to exercise transcript-based competency questions. Not a real student; the source dataset contains no student records.\"",
+      "status": "explicit",
+      "id": "Ee44505002ee6f329"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+      "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+      "o": "\"Synthetic persona S004 (senior)\"",
+      "status": "explicit",
+      "id": "E413a3cc6aa8a817c"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS124>",
+      "status": "explicit",
+      "id": "E1f4d9787d5a9d93e"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS128>",
+      "status": "explicit",
+      "id": "E2ba43ce7816ce8ed"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS173>",
+      "status": "explicit",
+      "id": "Efe5af3425389f000"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS210>",
+      "status": "explicit",
+      "id": "Ed5bb655acd1d8194"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS222>",
+      "status": "explicit",
+      "id": "Ed156767299bbc165"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS225>",
+      "status": "explicit",
+      "id": "Ee8ab81ebe7db80f2"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS233>",
+      "status": "explicit",
+      "id": "E1f43719950c7aac9"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS357>",
+      "status": "explicit",
+      "id": "E2cf7047a530e1c18"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS361>",
+      "status": "explicit",
+      "id": "E4230845309da5dff"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS374>",
+      "status": "explicit",
+      "id": "E6746ebb03e22202d"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS411>",
+      "status": "explicit",
+      "id": "E28efd07b332a59f1"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS440>",
+      "status": "explicit",
+      "id": "E05e610c1ab9264a9"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/ENG100>",
+      "status": "explicit",
+      "id": "Efda1540547d46089"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH221>",
+      "status": "explicit",
+      "id": "Ec13355730b38864c"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH231>",
+      "status": "explicit",
+      "id": "E354f0edefaa772bf"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH241>",
+      "status": "explicit",
+      "id": "E6cc355ad68557d5f"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH257>",
+      "status": "explicit",
+      "id": "E0d452c6516a36882"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/PHYS211>",
+      "status": "explicit",
+      "id": "Eafd90c61ad895675"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/PHYS212>",
+      "status": "explicit",
+      "id": "E773d6cab61237387"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/STAT400>",
+      "status": "explicit",
+      "id": "E9bd026965fd56357"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#hasPlannedEnrollment>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/plan/S004/CS421/2026-fa>",
+      "status": "explicit",
+      "id": "E89e452210b471c70"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#hasPlannedEnrollment>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/plan/S004/CS425/2026-fa>",
+      "status": "explicit",
+      "id": "E2bc3ba47b3f9c949"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#hasPlannedEnrollment>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/plan/S004/CS446/2026-fa>",
+      "status": "explicit",
+      "id": "Ee2e4d814facc9afb"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#standingRank>",
+      "o": "\"4\"^^<http://www.w3.org/2001/XMLSchema#integer>",
+      "status": "explicit",
+      "id": "Eb1debccc3f958948"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#studentIdentifier>",
+      "o": "\"S004\"",
+      "status": "explicit",
+      "id": "Ede198562d921d740"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS124>",
+      "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+      "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+      "status": "explicit",
+      "id": "E51a5fc9a09ddb65f"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS124>",
+      "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+      "o": "\"S004 completed CS 124\"",
+      "status": "explicit",
+      "id": "Edf88138d79181f49"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS124>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical>",
+      "status": "explicit",
+      "id": "E900848ab860f04c7"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS124>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/course/CS124>",
+      "status": "explicit",
+      "id": "E8518acfad50a3d5a"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS124>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/term/2024-fa>",
+      "status": "explicit",
+      "id": "Edadf5d69a986665e"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS124>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+      "o": "\"3.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+      "status": "explicit",
+      "id": "Ebcb4bb7d7e5064b6"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS124>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+      "o": "\"A\"",
+      "status": "explicit",
+      "id": "Eb37a4cf0ee97d252"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS128>",
+      "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+      "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+      "status": "explicit",
+      "id": "E804b4ae77a54903f"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS128>",
+      "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+      "o": "\"S004 completed CS 128\"",
+      "status": "explicit",
+      "id": "E2826ab55dee924fd"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS128>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical>",
+      "status": "explicit",
+      "id": "E70d407852c353517"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS128>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/course/CS128>",
+      "status": "explicit",
+      "id": "E827c5a260b39e6e0"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS128>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/term/2024-fa>",
+      "status": "explicit",
+      "id": "Ebf069a44217409fc"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS128>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+      "o": "\"3.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+      "status": "explicit",
+      "id": "E3cbfcd7012d1b1f9"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS128>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+      "o": "\"A\"",
+      "status": "explicit",
+      "id": "E971f81cf1497fbd6"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS173>",
+      "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+      "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+      "status": "explicit",
+      "id": "E8e44b625c0d4e5a3"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS173>",
+      "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+      "o": "\"S004 completed CS 173\"",
+      "status": "explicit",
+      "id": "E479a107e0a5cdbc0"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS173>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical>",
+      "status": "explicit",
+      "id": "E83b753efd353f151"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS173>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/course/CS173>",
+      "status": "explicit",
+      "id": "E17c561e19fd80dd7"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS173>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/term/2024-fa>",
+      "status": "explicit",
+      "id": "E85613c330b667c4d"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS173>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+      "o": "\"3.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+      "status": "explicit",
+      "id": "E4b24cf5df3a56302"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS173>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+      "o": "\"A\"",
+      "status": "explicit",
+      "id": "E2432c0913745ea21"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS210>",
+      "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+      "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+      "status": "explicit",
+      "id": "E46f838d8414d7b0b"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS210>",
+      "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+      "o": "\"S004 completed CS 210\"",
+      "status": "explicit",
+      "id": "E88ed1455bb65e6c4"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS210>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-EthicsProfessional>",
+      "status": "explicit",
+      "id": "Ea6e6db01a2d69fc1"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS210>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/course/CS210>",
+      "status": "explicit",
+      "id": "Eedc2c5e5b2fc1850"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS210>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/term/2025-fa>",
+      "status": "explicit",
+      "id": "Eacd5cc8820803555"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS210>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+      "o": "\"2.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+      "status": "explicit",
+      "id": "E2b3f8eb87ae037a0"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS210>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+      "o": "\"A\"",
+      "status": "explicit",
+      "id": "Ed71e77790d1c6103"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS222>",
+      "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+      "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+      "status": "explicit",
+      "id": "E44762dcd997b0a1d"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS222>",
+      "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+      "o": "\"S004 completed CS 222\"",
+      "status": "explicit",
+      "id": "E48bb89ba54fd69b8"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS222>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical>",
+      "status": "explicit",
+      "id": "Ec84c32686d2245fa"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS222>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/course/CS222>",
+      "status": "explicit",
+      "id": "Ec599d88ecafc3d6e"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS222>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/term/2025-sp>",
+      "status": "explicit",
+      "id": "Ea914bef9b62a72b7"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS222>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+      "o": "\"1.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+      "status": "explicit",
+      "id": "Ec7d8cd5960b665ff"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS222>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+      "o": "\"A\"",
+      "status": "explicit",
+      "id": "E2d7e7c8172d1e7fe"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS225>",
+      "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+      "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+      "status": "explicit",
+      "id": "E12411a2aca128ee5"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS225>",
+      "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+      "o": "\"S004 completed CS 225\"",
+      "status": "explicit",
+      "id": "E914f386b1af815bf"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS225>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical>",
+      "status": "explicit",
+      "id": "E6be4c841217461d7"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS225>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/course/CS225>",
+      "status": "explicit",
+      "id": "E91bafd2c64c63bdb"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS225>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/term/2025-sp>",
+      "status": "explicit",
+      "id": "Eb8adbb4746813be9"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS225>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+      "o": "\"4.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+      "status": "explicit",
+      "id": "Ef14705dc5b1d103c"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS225>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+      "o": "\"A\"",
+      "status": "explicit",
+      "id": "E4b8dbf908b312e12"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS233>",
+      "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+      "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+      "status": "explicit",
+      "id": "E534cf176c4fe5daf"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS233>",
+      "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+      "o": "\"S004 completed CS 233\"",
+      "status": "explicit",
+      "id": "E2e38f9c2f14d4ddc"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS233>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical>",
+      "status": "explicit",
+      "id": "Eb50aeafcacf5d1e7"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS233>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/course/CS233>",
+      "status": "explicit",
+      "id": "Ecd019d8f8e1a1438"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS233>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/term/2025-fa>",
+      "status": "explicit",
+      "id": "Ec9bc574b90756869"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS233>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+      "o": "\"4.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+      "status": "explicit",
+      "id": "E2bf1b47186fd3491"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS233>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+      "o": "\"B+\"",
+      "status": "explicit",
+      "id": "E3252aa292bc760fc"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS341>",
+      "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+      "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+      "status": "explicit",
+      "id": "E49fe62c0e26c267a"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS341>",
+      "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+      "o": "\"S004 completed CS 341\"",
+      "status": "explicit",
+      "id": "E1a6c9af13c172b11"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS341>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical>",
+      "status": "explicit",
+      "id": "Ec3d1b57dbdbf81d2"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS341>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/term/2026-sp>",
+      "status": "explicit",
+      "id": "E91ccd44c2b95ec3e"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS341>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+      "o": "\"4.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+      "status": "explicit",
+      "id": "Ec5c6e040e1e24b7f"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS341>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+      "o": "\"B\"",
+      "status": "explicit",
+      "id": "Ea3a7b008ff2d8b90"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS357>",
+      "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+      "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+      "status": "explicit",
+      "id": "E173b3edd1e204129"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS357>",
+      "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+      "o": "\"S004 completed CS 357\"",
+      "status": "explicit",
+      "id": "E8bdd476a1d9a8474"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS357>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical>",
+      "status": "explicit",
+      "id": "E68f57fae173afca1"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS357>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/course/CS357>",
+      "status": "explicit",
+      "id": "E7c0868d2f69e6759"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS357>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/term/2026-sp>",
+      "status": "explicit",
+      "id": "Ed6c70d831fdadb3a"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS357>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+      "o": "\"3.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+      "status": "explicit",
+      "id": "Eefe068760b654901"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS357>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+      "o": "\"A-\"",
+      "status": "explicit",
+      "id": "Ea5171589ecdba7d8"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS361>",
+      "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+      "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+      "status": "explicit",
+      "id": "Ed11b95f52088c52d"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS361>",
+      "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+      "o": "\"S004 completed CS 361\"",
+      "status": "explicit",
+      "id": "E9dd7acd12756166b"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS361>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical>",
+      "status": "explicit",
+      "id": "E35e3c9f93573ac31"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS361>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/course/CS361>",
+      "status": "explicit",
+      "id": "Ea776a8ac2edbaa8d"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS361>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/term/2026-sp>",
+      "status": "explicit",
+      "id": "E283888e2ff15ad20"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS361>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+      "o": "\"3.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+      "status": "explicit",
+      "id": "E137737a2f85b1f64"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS361>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+      "o": "\"B+\"",
+      "status": "explicit",
+      "id": "E5581c7c88f575f1e"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS374>",
+      "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+      "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+      "status": "explicit",
+      "id": "Ef8e56b7ef9561c02"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS374>",
+      "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+      "o": "\"S004 completed CS 374\"",
+      "status": "explicit",
+      "id": "E5612f8bf36bbe7d3"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS374>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical>",
+      "status": "explicit",
+      "id": "E138e783d57c0aa57"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS374>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/course/CS374>",
+      "status": "explicit",
+      "id": "Ef2fe4113c70dae09"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS374>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/term/2026-sp>",
+      "status": "explicit",
+      "id": "E18e9a6fee1e471f2"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS374>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+      "o": "\"4.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+      "status": "explicit",
+      "id": "Ef552a20a9d412616"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS374>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+      "o": "\"B\"",
+      "status": "explicit",
+      "id": "Ebfecd56efa4e9ab8"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS411>",
+      "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+      "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+      "status": "explicit",
+      "id": "E748ec08957359660"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS411>",
+      "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+      "o": "\"S004 completed CS 411\"",
+      "status": "explicit",
+      "id": "E572b35c803b4a572"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS411>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Elective-Advanced>",
+      "status": "explicit",
+      "id": "E90de2396a943af94"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS411>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Elective-Technical>",
+      "status": "explicit",
+      "id": "E0a5091300b1dad78"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS411>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/course/CS411>",
+      "status": "explicit",
+      "id": "Efbcc1dd7896449ad"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS411>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/term/2026-sp>",
+      "status": "explicit",
+      "id": "E8adb700860eff39a"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS411>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+      "o": "\"3.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+      "status": "explicit",
+      "id": "E6e22ab2890920aa0"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS411>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+      "o": "\"A\"",
+      "status": "explicit",
+      "id": "E8b13a0fbca94d14a"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS440>",
+      "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+      "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+      "status": "explicit",
+      "id": "Efa762c35b2b14c20"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS440>",
+      "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+      "o": "\"S004 completed CS 440\"",
+      "status": "explicit",
+      "id": "Ebd7c2ce065713cac"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS440>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Elective-Technical>",
+      "status": "explicit",
+      "id": "Edafa48567cb53515"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS440>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/course/CS440>",
+      "status": "explicit",
+      "id": "Ea0f976de0a33238f"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS440>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/term/2026-sp>",
+      "status": "explicit",
+      "id": "E3ebfadadc101c6b5"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS440>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+      "o": "\"3.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+      "status": "explicit",
+      "id": "E2adeea5bb8fdb408"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS440>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+      "o": "\"A-\"",
+      "status": "explicit",
+      "id": "Eab443fbe161084cd"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/ENG100>",
+      "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+      "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+      "status": "explicit",
+      "id": "E293cfa6dbcbeb2ee"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/ENG100>",
+      "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+      "o": "\"S004 completed ENG 100\"",
+      "status": "explicit",
+      "id": "Ecea02daca8496fc9"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/ENG100>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-ENG100>",
+      "status": "explicit",
+      "id": "Ef552768ae75888f5"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/ENG100>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/course/ENG100>",
+      "status": "explicit",
+      "id": "Ebd4ab08815add3c4"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/ENG100>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/term/2024-fa>",
+      "status": "explicit",
+      "id": "Ed4c298a5a42bdfb0"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/ENG100>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+      "o": "\"1.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+      "status": "explicit",
+      "id": "E829628552dd04f04"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/ENG100>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+      "o": "\"A\"",
+      "status": "explicit",
+      "id": "E5ce0c693a3e950ca"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH221>",
+      "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+      "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+      "status": "explicit",
+      "id": "E0dbd7e7820fe0758"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH221>",
+      "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+      "o": "\"S004 completed MATH 221\"",
+      "status": "explicit",
+      "id": "Ea9b885abc83903e9"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH221>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CalculusI>",
+      "status": "explicit",
+      "id": "E6467ab501ec14337"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH221>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/course/MATH221>",
+      "status": "explicit",
+      "id": "E382d0fd9e8c36f63"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH221>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/term/2024-fa>",
+      "status": "explicit",
+      "id": "Ec9667cae17bd4872"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH221>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+      "o": "\"4.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+      "status": "explicit",
+      "id": "Eb5756e3289a7aa4c"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH221>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+      "o": "\"A\"",
+      "status": "explicit",
+      "id": "E9a6fa8fa3a78554b"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH231>",
+      "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+      "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+      "status": "explicit",
+      "id": "Eb9566272f766d521"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH231>",
+      "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+      "o": "\"S004 completed MATH 231\"",
+      "status": "explicit",
+      "id": "E01c926621949f215"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH231>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-MathScienceFixed>",
+      "status": "explicit",
+      "id": "Ebae8d15b8a338800"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH231>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/course/MATH231>",
+      "status": "explicit",
+      "id": "E622da44fa36b5a88"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH231>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/term/2025-sp>",
+      "status": "explicit",
+      "id": "E3ff9562b44050fce"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH231>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+      "o": "\"3.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+      "status": "explicit",
+      "id": "E075519fb8f2834ef"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH231>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+      "o": "\"A\"",
+      "status": "explicit",
+      "id": "Eb51da35efb129746"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH241>",
+      "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+      "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+      "status": "explicit",
+      "id": "Ee44ffc262ef7643c"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH241>",
+      "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+      "o": "\"S004 completed MATH 241\"",
+      "status": "explicit",
+      "id": "Eb020bde9c59fe827"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH241>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-MathScienceFixed>",
+      "status": "explicit",
+      "id": "E3dd911d37abf2940"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH241>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/course/MATH241>",
+      "status": "explicit",
+      "id": "E5ce4c6faf1ee9ecd"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH241>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/term/2025-fa>",
+      "status": "explicit",
+      "id": "Eda8693bbd45dca4e"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH241>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+      "o": "\"4.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+      "status": "explicit",
+      "id": "E2b0ef32cff340d9f"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH241>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+      "o": "\"B+\"",
+      "status": "explicit",
+      "id": "E22c87e5ff0c1e239"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH257>",
+      "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+      "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+      "status": "explicit",
+      "id": "Ec28bf793e364432f"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH257>",
+      "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+      "o": "\"S004 completed MATH 257\"",
+      "status": "explicit",
+      "id": "Ef27edea15765a817"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH257>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-LinearAlgebra>",
+      "status": "explicit",
+      "id": "E849381179fbb91e5"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH257>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/course/MATH257>",
+      "status": "explicit",
+      "id": "E1cde967d4f71e398"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH257>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/term/2025-fa>",
+      "status": "explicit",
+      "id": "E66962e91af99d441"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH257>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+      "o": "\"3.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+      "status": "explicit",
+      "id": "Ee48b0b20e6855ead"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH257>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+      "o": "\"A\"",
+      "status": "explicit",
+      "id": "E8b44d914afdbe3cd"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/PHYS211>",
+      "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+      "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+      "status": "explicit",
+      "id": "E02db727aec86f928"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/PHYS211>",
+      "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+      "o": "\"S004 completed PHYS 211\"",
+      "status": "explicit",
+      "id": "E293b0e5c69a2eeb4"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/PHYS211>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-MathScienceFixed>",
+      "status": "explicit",
+      "id": "E8e495dfa41a94728"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/PHYS211>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/course/PHYS211>",
+      "status": "explicit",
+      "id": "E53b1ae3dafe86461"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/PHYS211>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/term/2025-sp>",
+      "status": "explicit",
+      "id": "Ebb3707582ad2000a"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/PHYS211>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+      "o": "\"4.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+      "status": "explicit",
+      "id": "Ec842c0b043e957e8"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/PHYS211>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+      "o": "\"A-\"",
+      "status": "explicit",
+      "id": "E60ac0e1c3f837149"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/PHYS212>",
+      "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+      "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+      "status": "explicit",
+      "id": "Ec0d2d4cf3c98fdcb"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/PHYS212>",
+      "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+      "o": "\"S004 completed PHYS 212\"",
+      "status": "explicit",
+      "id": "E01c7412f80141c29"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/PHYS212>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-MathScienceFixed>",
+      "status": "explicit",
+      "id": "Eeea6f0e0016c3ff0"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/PHYS212>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/course/PHYS212>",
+      "status": "explicit",
+      "id": "E915a6bfc0f180b8d"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/PHYS212>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/term/2025-fa>",
+      "status": "explicit",
+      "id": "E27f6ec086c501c7c"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/PHYS212>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+      "o": "\"4.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+      "status": "explicit",
+      "id": "E44b90912ae13fae4"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/PHYS212>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+      "o": "\"B\"",
+      "status": "explicit",
+      "id": "E1f258605b623c075"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/STAT400>",
+      "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+      "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+      "status": "explicit",
+      "id": "Ebcd623d34348f0e7"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/STAT400>",
+      "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+      "o": "\"S004 completed STAT 400\"",
+      "status": "explicit",
+      "id": "Ea800c94b38c4a4d3"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/STAT400>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/course/STAT400>",
+      "status": "explicit",
+      "id": "Ef45b66650854186d"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/STAT400>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/term/2026-sp>",
+      "status": "explicit",
+      "id": "E53a773c1677bc9cd"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/STAT400>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+      "o": "\"4.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+      "status": "explicit",
+      "id": "E14c1ee5d324bdac0"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/STAT400>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+      "o": "\"A\"",
+      "status": "explicit",
+      "id": "E062992bd31a1b570"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/plan/S004/CS421/2026-fa>",
+      "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+      "o": "<https://example.org/uiuc-course-advisor/ontology#PlannedEnrollment>",
+      "status": "explicit",
+      "id": "E1bf2198d71d2f486"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/plan/S004/CS421/2026-fa>",
+      "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+      "o": "\"S004 plans CS 421 in Fall 2026\"",
+      "status": "explicit",
+      "id": "E8dcb2f8b6a9512ea"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/plan/S004/CS421/2026-fa>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#plannedCourse>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/course/CS421>",
+      "status": "explicit",
+      "id": "Ed26f0fa2e0b64afe"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/plan/S004/CS421/2026-fa>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#plannedTerm>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/term/2026-fa>",
+      "status": "explicit",
+      "id": "E6208ed1f2c00ddb1"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/plan/S004/CS425/2026-fa>",
+      "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+      "o": "<https://example.org/uiuc-course-advisor/ontology#PlannedEnrollment>",
+      "status": "explicit",
+      "id": "E1289ce95361a2f82"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/plan/S004/CS425/2026-fa>",
+      "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+      "o": "\"S004 plans CS 425 in Fall 2026\"",
+      "status": "explicit",
+      "id": "E1858f8eb90049d1a"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/plan/S004/CS425/2026-fa>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#plannedCourse>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/course/CS425>",
+      "status": "explicit",
+      "id": "Ec4d660b8f30f2f2c"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/plan/S004/CS425/2026-fa>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#plannedTerm>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/term/2026-fa>",
+      "status": "explicit",
+      "id": "E5cb28f2ecc24b1e8"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/plan/S004/CS446/2026-fa>",
+      "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+      "o": "<https://example.org/uiuc-course-advisor/ontology#PlannedEnrollment>",
+      "status": "explicit",
+      "id": "E41c7ec17f454f676"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/plan/S004/CS446/2026-fa>",
+      "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+      "o": "\"S004 plans CS 446 in Fall 2026\"",
+      "status": "explicit",
+      "id": "E8e4edc584308c5ff"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/plan/S004/CS446/2026-fa>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#plannedCourse>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/course/CS446>",
+      "status": "explicit",
+      "id": "E4ee801fee3beb6eb"
+    },
+    {
+      "s": "<https://example.org/uiuc-course-advisor/resource/plan/S004/CS446/2026-fa>",
+      "p": "<https://example.org/uiuc-course-advisor/ontology#plannedTerm>",
+      "o": "<https://example.org/uiuc-course-advisor/resource/term/2026-fa>",
+      "status": "explicit",
+      "id": "E1d871b8a2d0f9944"
+    }
+  ],
+  "mode": "retrieval_only",
+  "retrieval": {
+    "question": "Can S004 take CS 425 in Fall 2026?",
+    "intent": "Q03",
+    "entities": {
+      "courses": [
+        "CS425"
+      ],
+      "students": [
+        "S004"
+      ],
+      "terms": [
+        "2026-fa"
+      ]
+    },
+    "rows": [
+      {
+        "option": "https://example.org/uiuc-course-advisor/resource/prereq/CS425/option/1",
+        "optionStatus": "FULLY MET",
+        "conditionType": "CourseChoiceCondition",
+        "conditionText": "Credit or concurrent enrollment in one of CS 240, CS 241, CS 340, CS 341 or ECE 391",
+        "conditionStatus": "met"
+      }
+    ],
+    "evidence": [
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/course/CS425>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasPrerequisiteExpression>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425>",
+        "status": "explicit",
+        "id": "E1a98709116c63a8e"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasOption>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425/option/1>",
+        "status": "explicit",
+        "id": "E66249c24e6dcf9af"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425/option/1>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCondition>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425/option/1/condition/1>",
+        "status": "explicit",
+        "id": "Ee5090e5183a8d38b"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425/option/1/condition/1>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#alternativeCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/CS341>",
+        "status": "explicit",
+        "id": "Ee5f5f59f4c2199e6"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS341>",
+        "status": "explicit",
+        "id": "Eb58b09c2dfd9d542"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS341>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/CS341>",
+        "status": "explicit",
+        "id": "E83650a98ac44f357"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/course/CS425>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasOffering>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/offering/CS425/2026-fa>",
+        "status": "explicit",
+        "id": "Ea322659268f0dbe4"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/offering/CS425/2026-fa>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#offeredInTerm>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/term/2026-fa>",
+        "status": "explicit",
+        "id": "E4427dc768f2b1bc6"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/course/CS425>",
+        "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+        "o": "<https://example.org/uiuc-course-advisor/ontology#Course>",
+        "status": "explicit",
+        "id": "Ed7a87ad5ed7305ed"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/course/CS425>",
+        "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+        "o": "\"CS 425 Distributed Systems\"",
+        "status": "explicit",
+        "id": "E7bc4885e5ee7a3bc"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/course/CS425>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#courseCode>",
+        "o": "\"CS 425\"",
+        "status": "explicit",
+        "id": "E46000ff82e0c560f"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/course/CS425>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#courseCreditsMax>",
+        "o": "\"4.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+        "status": "explicit",
+        "id": "Ee7141dcf07c814ec"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/course/CS425>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#courseCreditsMin>",
+        "o": "\"3.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+        "status": "explicit",
+        "id": "Eea0b62e219f730cc"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/course/CS425>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#courseDescription>",
+        "o": "\"Protocols, specification techniques, global states and their determination, reliable broadcast, transactions and commitment, security, and real-time systems. Same as ECE 428. 3 or 4 undergraduate hours. 3 or 4 graduate hours. Prerequisite: Credit or concurrent enrollment in one of CS 240, CS 241, CS 340, CS 341 or ECE 391.\"",
+        "status": "explicit",
+        "id": "Eae3583ded950f9e2"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/course/CS425>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#courseNumber>",
+        "o": "\"425\"^^<http://www.w3.org/2001/XMLSchema#integer>",
+        "status": "explicit",
+        "id": "Ee94f8824255c34bf"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/course/CS425>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#courseTitle>",
+        "o": "\"Distributed Systems\"",
+        "status": "explicit",
+        "id": "E24c496c99f666da5"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/course/CS425>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#crossListedWith>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/ECE428>",
+        "status": "explicit",
+        "id": "E18e2a014c444dcd9"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/course/CS425>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#inDepartment>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/department/CS>",
+        "status": "explicit",
+        "id": "Efcea5f8517b1cc1a"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/course/CS425>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#sourceURL>",
+        "o": "\"https://discovery.cs.illinois.edu/dataset/course-catalog/\"^^<http://www.w3.org/2001/XMLSchema#anyURI>",
+        "status": "explicit",
+        "id": "Ee7b5e85a695b4954"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425>",
+        "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+        "o": "<https://example.org/uiuc-course-advisor/ontology#PrerequisiteExpression>",
+        "status": "explicit",
+        "id": "Ec502ec06ca38560f"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425>",
+        "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+        "o": "\"Prerequisites of CS 425\"",
+        "status": "explicit",
+        "id": "E86cfd0b8859501c5"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#parseStatus>",
+        "o": "\"parsed\"",
+        "status": "explicit",
+        "id": "Ed768f00fb3380135"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#prerequisiteSourceText>",
+        "o": "\"Credit or concurrent enrollment in one of CS 240, CS 241, CS 340, CS 341 or ECE 391.\"",
+        "status": "explicit",
+        "id": "E064aff264fd7c0c0"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425/option/1>",
+        "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+        "o": "<https://example.org/uiuc-course-advisor/ontology#PrerequisiteOption>",
+        "status": "explicit",
+        "id": "Ed785f6245668f524"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425/option/1>",
+        "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+        "o": "\"CS 425 prerequisite option 1\"",
+        "status": "explicit",
+        "id": "E865b87ff692a1275"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425/option/1/condition/1>",
+        "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+        "o": "<https://example.org/uiuc-course-advisor/ontology#CourseChoiceCondition>",
+        "status": "explicit",
+        "id": "Ec0a01609ba71dc78"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425/option/1/condition/1>",
+        "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+        "o": "\"CS 425 opt 1 cond 1: one of CS 240, CS 241, CS 340, CS 341, ECE 391\"",
+        "status": "explicit",
+        "id": "Ef28ae9abaf4f2979"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425/option/1/condition/1>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allowsConcurrent>",
+        "o": "\"true\"^^<http://www.w3.org/2001/XMLSchema#boolean>",
+        "status": "explicit",
+        "id": "E6bce1c29eada477e"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425/option/1/condition/1>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#alternativeCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/CS240>",
+        "status": "explicit",
+        "id": "Ef5c67079ba765a66"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425/option/1/condition/1>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#alternativeCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/CS241>",
+        "status": "explicit",
+        "id": "E045cf21be075509c"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425/option/1/condition/1>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#alternativeCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/CS340>",
+        "status": "explicit",
+        "id": "Ef5ae3537f787fc9e"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425/option/1/condition/1>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#alternativeCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/ECE391>",
+        "status": "explicit",
+        "id": "E973e6ffd6e861e4e"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425/option/1/condition/1>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#conditionSourceText>",
+        "o": "\"Credit or concurrent enrollment in one of CS 240, CS 241, CS 340, CS 341 or ECE 391\"",
+        "status": "explicit",
+        "id": "E27ae2c56f286bd9b"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/offering/CS425/2026-fa>",
+        "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+        "o": "<https://example.org/uiuc-course-advisor/ontology#CourseOffering>",
+        "status": "explicit",
+        "id": "E3911e821eb0816f4"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/offering/CS425/2026-fa>",
+        "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+        "o": "\"CS 425 (Fall 2026)\"",
+        "status": "explicit",
+        "id": "E64fec73ef8f0ab7b"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+        "o": "<https://example.org/uiuc-course-advisor/ontology#Student>",
+        "status": "explicit",
+        "id": "Eb7cd4ec3a97e52e2"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<http://www.w3.org/2000/01/rdf-schema#comment>",
+        "o": "\"SYNTHETIC test persona created by the team to exercise transcript-based competency questions. Not a real student; the source dataset contains no student records.\"",
+        "status": "explicit",
+        "id": "Ee44505002ee6f329"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+        "o": "\"Synthetic persona S004 (senior)\"",
+        "status": "explicit",
+        "id": "E413a3cc6aa8a817c"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS124>",
+        "status": "explicit",
+        "id": "E1f4d9787d5a9d93e"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS128>",
+        "status": "explicit",
+        "id": "E2ba43ce7816ce8ed"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS173>",
+        "status": "explicit",
+        "id": "Efe5af3425389f000"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS210>",
+        "status": "explicit",
+        "id": "Ed5bb655acd1d8194"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS222>",
+        "status": "explicit",
+        "id": "Ed156767299bbc165"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS225>",
+        "status": "explicit",
+        "id": "Ee8ab81ebe7db80f2"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS233>",
+        "status": "explicit",
+        "id": "E1f43719950c7aac9"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS357>",
+        "status": "explicit",
+        "id": "E2cf7047a530e1c18"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS361>",
+        "status": "explicit",
+        "id": "E4230845309da5dff"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS374>",
+        "status": "explicit",
+        "id": "E6746ebb03e22202d"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS411>",
+        "status": "explicit",
+        "id": "E28efd07b332a59f1"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS440>",
+        "status": "explicit",
+        "id": "E05e610c1ab9264a9"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/ENG100>",
+        "status": "explicit",
+        "id": "Efda1540547d46089"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH221>",
+        "status": "explicit",
+        "id": "Ec13355730b38864c"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH231>",
+        "status": "explicit",
+        "id": "E354f0edefaa772bf"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH241>",
+        "status": "explicit",
+        "id": "E6cc355ad68557d5f"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH257>",
+        "status": "explicit",
+        "id": "E0d452c6516a36882"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/PHYS211>",
+        "status": "explicit",
+        "id": "Eafd90c61ad895675"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/PHYS212>",
+        "status": "explicit",
+        "id": "E773d6cab61237387"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/STAT400>",
+        "status": "explicit",
+        "id": "E9bd026965fd56357"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasPlannedEnrollment>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/plan/S004/CS421/2026-fa>",
+        "status": "explicit",
+        "id": "E89e452210b471c70"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasPlannedEnrollment>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/plan/S004/CS425/2026-fa>",
+        "status": "explicit",
+        "id": "E2bc3ba47b3f9c949"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#hasPlannedEnrollment>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/plan/S004/CS446/2026-fa>",
+        "status": "explicit",
+        "id": "Ee2e4d814facc9afb"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#standingRank>",
+        "o": "\"4\"^^<http://www.w3.org/2001/XMLSchema#integer>",
+        "status": "explicit",
+        "id": "Eb1debccc3f958948"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#studentIdentifier>",
+        "o": "\"S004\"",
+        "status": "explicit",
+        "id": "Ede198562d921d740"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS124>",
+        "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+        "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+        "status": "explicit",
+        "id": "E51a5fc9a09ddb65f"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS124>",
+        "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+        "o": "\"S004 completed CS 124\"",
+        "status": "explicit",
+        "id": "Edf88138d79181f49"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS124>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical>",
+        "status": "explicit",
+        "id": "E900848ab860f04c7"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS124>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/CS124>",
+        "status": "explicit",
+        "id": "E8518acfad50a3d5a"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS124>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/term/2024-fa>",
+        "status": "explicit",
+        "id": "Edadf5d69a986665e"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS124>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+        "o": "\"3.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+        "status": "explicit",
+        "id": "Ebcb4bb7d7e5064b6"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS124>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+        "o": "\"A\"",
+        "status": "explicit",
+        "id": "Eb37a4cf0ee97d252"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS128>",
+        "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+        "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+        "status": "explicit",
+        "id": "E804b4ae77a54903f"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS128>",
+        "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+        "o": "\"S004 completed CS 128\"",
+        "status": "explicit",
+        "id": "E2826ab55dee924fd"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS128>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical>",
+        "status": "explicit",
+        "id": "E70d407852c353517"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS128>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/CS128>",
+        "status": "explicit",
+        "id": "E827c5a260b39e6e0"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS128>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/term/2024-fa>",
+        "status": "explicit",
+        "id": "Ebf069a44217409fc"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS128>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+        "o": "\"3.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+        "status": "explicit",
+        "id": "E3cbfcd7012d1b1f9"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS128>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+        "o": "\"A\"",
+        "status": "explicit",
+        "id": "E971f81cf1497fbd6"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS173>",
+        "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+        "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+        "status": "explicit",
+        "id": "E8e44b625c0d4e5a3"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS173>",
+        "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+        "o": "\"S004 completed CS 173\"",
+        "status": "explicit",
+        "id": "E479a107e0a5cdbc0"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS173>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical>",
+        "status": "explicit",
+        "id": "E83b753efd353f151"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS173>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/CS173>",
+        "status": "explicit",
+        "id": "E17c561e19fd80dd7"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS173>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/term/2024-fa>",
+        "status": "explicit",
+        "id": "E85613c330b667c4d"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS173>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+        "o": "\"3.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+        "status": "explicit",
+        "id": "E4b24cf5df3a56302"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS173>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+        "o": "\"A\"",
+        "status": "explicit",
+        "id": "E2432c0913745ea21"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS210>",
+        "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+        "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+        "status": "explicit",
+        "id": "E46f838d8414d7b0b"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS210>",
+        "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+        "o": "\"S004 completed CS 210\"",
+        "status": "explicit",
+        "id": "E88ed1455bb65e6c4"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS210>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-EthicsProfessional>",
+        "status": "explicit",
+        "id": "Ea6e6db01a2d69fc1"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS210>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/CS210>",
+        "status": "explicit",
+        "id": "Eedc2c5e5b2fc1850"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS210>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/term/2025-fa>",
+        "status": "explicit",
+        "id": "Eacd5cc8820803555"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS210>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+        "o": "\"2.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+        "status": "explicit",
+        "id": "E2b3f8eb87ae037a0"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS210>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+        "o": "\"A\"",
+        "status": "explicit",
+        "id": "Ed71e77790d1c6103"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS222>",
+        "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+        "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+        "status": "explicit",
+        "id": "E44762dcd997b0a1d"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS222>",
+        "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+        "o": "\"S004 completed CS 222\"",
+        "status": "explicit",
+        "id": "E48bb89ba54fd69b8"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS222>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical>",
+        "status": "explicit",
+        "id": "Ec84c32686d2245fa"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS222>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/CS222>",
+        "status": "explicit",
+        "id": "Ec599d88ecafc3d6e"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS222>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/term/2025-sp>",
+        "status": "explicit",
+        "id": "Ea914bef9b62a72b7"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS222>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+        "o": "\"1.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+        "status": "explicit",
+        "id": "Ec7d8cd5960b665ff"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS222>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+        "o": "\"A\"",
+        "status": "explicit",
+        "id": "E2d7e7c8172d1e7fe"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS225>",
+        "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+        "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+        "status": "explicit",
+        "id": "E12411a2aca128ee5"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS225>",
+        "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+        "o": "\"S004 completed CS 225\"",
+        "status": "explicit",
+        "id": "E914f386b1af815bf"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS225>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical>",
+        "status": "explicit",
+        "id": "E6be4c841217461d7"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS225>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/CS225>",
+        "status": "explicit",
+        "id": "E91bafd2c64c63bdb"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS225>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/term/2025-sp>",
+        "status": "explicit",
+        "id": "Eb8adbb4746813be9"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS225>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+        "o": "\"4.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+        "status": "explicit",
+        "id": "Ef14705dc5b1d103c"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS225>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+        "o": "\"A\"",
+        "status": "explicit",
+        "id": "E4b8dbf908b312e12"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS233>",
+        "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+        "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+        "status": "explicit",
+        "id": "E534cf176c4fe5daf"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS233>",
+        "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+        "o": "\"S004 completed CS 233\"",
+        "status": "explicit",
+        "id": "E2e38f9c2f14d4ddc"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS233>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical>",
+        "status": "explicit",
+        "id": "Eb50aeafcacf5d1e7"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS233>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/CS233>",
+        "status": "explicit",
+        "id": "Ecd019d8f8e1a1438"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS233>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/term/2025-fa>",
+        "status": "explicit",
+        "id": "Ec9bc574b90756869"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS233>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+        "o": "\"4.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+        "status": "explicit",
+        "id": "E2bf1b47186fd3491"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS233>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+        "o": "\"B+\"",
+        "status": "explicit",
+        "id": "E3252aa292bc760fc"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS341>",
+        "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+        "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+        "status": "explicit",
+        "id": "E49fe62c0e26c267a"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS341>",
+        "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+        "o": "\"S004 completed CS 341\"",
+        "status": "explicit",
+        "id": "E1a6c9af13c172b11"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS341>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical>",
+        "status": "explicit",
+        "id": "Ec3d1b57dbdbf81d2"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS341>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/term/2026-sp>",
+        "status": "explicit",
+        "id": "E91ccd44c2b95ec3e"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS341>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+        "o": "\"4.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+        "status": "explicit",
+        "id": "Ec5c6e040e1e24b7f"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS341>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+        "o": "\"B\"",
+        "status": "explicit",
+        "id": "Ea3a7b008ff2d8b90"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS357>",
+        "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+        "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+        "status": "explicit",
+        "id": "E173b3edd1e204129"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS357>",
+        "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+        "o": "\"S004 completed CS 357\"",
+        "status": "explicit",
+        "id": "E8bdd476a1d9a8474"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS357>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical>",
+        "status": "explicit",
+        "id": "E68f57fae173afca1"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS357>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/CS357>",
+        "status": "explicit",
+        "id": "E7c0868d2f69e6759"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS357>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/term/2026-sp>",
+        "status": "explicit",
+        "id": "Ed6c70d831fdadb3a"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS357>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+        "o": "\"3.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+        "status": "explicit",
+        "id": "Eefe068760b654901"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS357>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+        "o": "\"A-\"",
+        "status": "explicit",
+        "id": "Ea5171589ecdba7d8"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS361>",
+        "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+        "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+        "status": "explicit",
+        "id": "Ed11b95f52088c52d"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS361>",
+        "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+        "o": "\"S004 completed CS 361\"",
+        "status": "explicit",
+        "id": "E9dd7acd12756166b"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS361>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical>",
+        "status": "explicit",
+        "id": "E35e3c9f93573ac31"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS361>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/CS361>",
+        "status": "explicit",
+        "id": "Ea776a8ac2edbaa8d"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS361>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/term/2026-sp>",
+        "status": "explicit",
+        "id": "E283888e2ff15ad20"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS361>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+        "o": "\"3.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+        "status": "explicit",
+        "id": "E137737a2f85b1f64"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS361>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+        "o": "\"B+\"",
+        "status": "explicit",
+        "id": "E5581c7c88f575f1e"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS374>",
+        "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+        "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+        "status": "explicit",
+        "id": "Ef8e56b7ef9561c02"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS374>",
+        "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+        "o": "\"S004 completed CS 374\"",
+        "status": "explicit",
+        "id": "E5612f8bf36bbe7d3"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS374>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CSTechnical>",
+        "status": "explicit",
+        "id": "E138e783d57c0aa57"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS374>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/CS374>",
+        "status": "explicit",
+        "id": "Ef2fe4113c70dae09"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS374>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/term/2026-sp>",
+        "status": "explicit",
+        "id": "E18e9a6fee1e471f2"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS374>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+        "o": "\"4.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+        "status": "explicit",
+        "id": "Ef552a20a9d412616"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS374>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+        "o": "\"B\"",
+        "status": "explicit",
+        "id": "Ebfecd56efa4e9ab8"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS411>",
+        "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+        "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+        "status": "explicit",
+        "id": "E748ec08957359660"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS411>",
+        "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+        "o": "\"S004 completed CS 411\"",
+        "status": "explicit",
+        "id": "E572b35c803b4a572"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS411>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Elective-Advanced>",
+        "status": "explicit",
+        "id": "E90de2396a943af94"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS411>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Elective-Technical>",
+        "status": "explicit",
+        "id": "E0a5091300b1dad78"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS411>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/CS411>",
+        "status": "explicit",
+        "id": "Efbcc1dd7896449ad"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS411>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/term/2026-sp>",
+        "status": "explicit",
+        "id": "E8adb700860eff39a"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS411>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+        "o": "\"3.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+        "status": "explicit",
+        "id": "E6e22ab2890920aa0"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS411>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+        "o": "\"A\"",
+        "status": "explicit",
+        "id": "E8b13a0fbca94d14a"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS440>",
+        "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+        "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+        "status": "explicit",
+        "id": "Efa762c35b2b14c20"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS440>",
+        "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+        "o": "\"S004 completed CS 440\"",
+        "status": "explicit",
+        "id": "Ebd7c2ce065713cac"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS440>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Elective-Technical>",
+        "status": "explicit",
+        "id": "Edafa48567cb53515"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS440>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/CS440>",
+        "status": "explicit",
+        "id": "Ea0f976de0a33238f"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS440>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/term/2026-sp>",
+        "status": "explicit",
+        "id": "E3ebfadadc101c6b5"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS440>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+        "o": "\"3.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+        "status": "explicit",
+        "id": "E2adeea5bb8fdb408"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS440>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+        "o": "\"A-\"",
+        "status": "explicit",
+        "id": "Eab443fbe161084cd"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/ENG100>",
+        "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+        "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+        "status": "explicit",
+        "id": "E293cfa6dbcbeb2ee"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/ENG100>",
+        "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+        "o": "\"S004 completed ENG 100\"",
+        "status": "explicit",
+        "id": "Ecea02daca8496fc9"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/ENG100>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-ENG100>",
+        "status": "explicit",
+        "id": "Ef552768ae75888f5"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/ENG100>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/ENG100>",
+        "status": "explicit",
+        "id": "Ebd4ab08815add3c4"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/ENG100>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/term/2024-fa>",
+        "status": "explicit",
+        "id": "Ed4c298a5a42bdfb0"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/ENG100>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+        "o": "\"1.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+        "status": "explicit",
+        "id": "E829628552dd04f04"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/ENG100>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+        "o": "\"A\"",
+        "status": "explicit",
+        "id": "E5ce0c693a3e950ca"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH221>",
+        "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+        "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+        "status": "explicit",
+        "id": "E0dbd7e7820fe0758"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH221>",
+        "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+        "o": "\"S004 completed MATH 221\"",
+        "status": "explicit",
+        "id": "Ea9b885abc83903e9"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH221>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-CalculusI>",
+        "status": "explicit",
+        "id": "E6467ab501ec14337"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH221>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/MATH221>",
+        "status": "explicit",
+        "id": "E382d0fd9e8c36f63"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH221>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/term/2024-fa>",
+        "status": "explicit",
+        "id": "Ec9667cae17bd4872"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH221>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+        "o": "\"4.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+        "status": "explicit",
+        "id": "Eb5756e3289a7aa4c"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH221>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+        "o": "\"A\"",
+        "status": "explicit",
+        "id": "E9a6fa8fa3a78554b"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH231>",
+        "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+        "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+        "status": "explicit",
+        "id": "Eb9566272f766d521"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH231>",
+        "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+        "o": "\"S004 completed MATH 231\"",
+        "status": "explicit",
+        "id": "E01c926621949f215"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH231>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-MathScienceFixed>",
+        "status": "explicit",
+        "id": "Ebae8d15b8a338800"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH231>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/MATH231>",
+        "status": "explicit",
+        "id": "E622da44fa36b5a88"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH231>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/term/2025-sp>",
+        "status": "explicit",
+        "id": "E3ff9562b44050fce"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH231>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+        "o": "\"3.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+        "status": "explicit",
+        "id": "E075519fb8f2834ef"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH231>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+        "o": "\"A\"",
+        "status": "explicit",
+        "id": "Eb51da35efb129746"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH241>",
+        "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+        "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+        "status": "explicit",
+        "id": "Ee44ffc262ef7643c"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH241>",
+        "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+        "o": "\"S004 completed MATH 241\"",
+        "status": "explicit",
+        "id": "Eb020bde9c59fe827"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH241>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-MathScienceFixed>",
+        "status": "explicit",
+        "id": "E3dd911d37abf2940"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH241>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/MATH241>",
+        "status": "explicit",
+        "id": "E5ce4c6faf1ee9ecd"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH241>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/term/2025-fa>",
+        "status": "explicit",
+        "id": "Eda8693bbd45dca4e"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH241>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+        "o": "\"4.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+        "status": "explicit",
+        "id": "E2b0ef32cff340d9f"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH241>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+        "o": "\"B+\"",
+        "status": "explicit",
+        "id": "E22c87e5ff0c1e239"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH257>",
+        "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+        "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+        "status": "explicit",
+        "id": "Ec28bf793e364432f"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH257>",
+        "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+        "o": "\"S004 completed MATH 257\"",
+        "status": "explicit",
+        "id": "Ef27edea15765a817"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH257>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-LinearAlgebra>",
+        "status": "explicit",
+        "id": "E849381179fbb91e5"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH257>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/MATH257>",
+        "status": "explicit",
+        "id": "E1cde967d4f71e398"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH257>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/term/2025-fa>",
+        "status": "explicit",
+        "id": "E66962e91af99d441"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH257>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+        "o": "\"3.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+        "status": "explicit",
+        "id": "Ee48b0b20e6855ead"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/MATH257>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+        "o": "\"A\"",
+        "status": "explicit",
+        "id": "E8b44d914afdbe3cd"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/PHYS211>",
+        "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+        "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+        "status": "explicit",
+        "id": "E02db727aec86f928"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/PHYS211>",
+        "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+        "o": "\"S004 completed PHYS 211\"",
+        "status": "explicit",
+        "id": "E293b0e5c69a2eeb4"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/PHYS211>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-MathScienceFixed>",
+        "status": "explicit",
+        "id": "E8e495dfa41a94728"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/PHYS211>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/PHYS211>",
+        "status": "explicit",
+        "id": "E53b1ae3dafe86461"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/PHYS211>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/term/2025-sp>",
+        "status": "explicit",
+        "id": "Ebb3707582ad2000a"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/PHYS211>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+        "o": "\"4.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+        "status": "explicit",
+        "id": "Ec842c0b043e957e8"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/PHYS211>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+        "o": "\"A-\"",
+        "status": "explicit",
+        "id": "E60ac0e1c3f837149"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/PHYS212>",
+        "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+        "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+        "status": "explicit",
+        "id": "Ec0d2d4cf3c98fdcb"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/PHYS212>",
+        "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+        "o": "\"S004 completed PHYS 212\"",
+        "status": "explicit",
+        "id": "E01c7412f80141c29"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/PHYS212>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#allocatedToRequirement>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/requirement/UIUC-BS-CS-2026/Core-MathScienceFixed>",
+        "status": "explicit",
+        "id": "Eeea6f0e0016c3ff0"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/PHYS212>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/PHYS212>",
+        "status": "explicit",
+        "id": "E915a6bfc0f180b8d"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/PHYS212>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/term/2025-fa>",
+        "status": "explicit",
+        "id": "E27f6ec086c501c7c"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/PHYS212>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+        "o": "\"4.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+        "status": "explicit",
+        "id": "E44b90912ae13fae4"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/PHYS212>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+        "o": "\"B\"",
+        "status": "explicit",
+        "id": "E1f258605b623c075"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/STAT400>",
+        "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+        "o": "<https://example.org/uiuc-course-advisor/ontology#CourseCompletion>",
+        "status": "explicit",
+        "id": "Ebcd623d34348f0e7"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/STAT400>",
+        "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+        "o": "\"S004 completed STAT 400\"",
+        "status": "explicit",
+        "id": "Ea800c94b38c4a4d3"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/STAT400>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/STAT400>",
+        "status": "explicit",
+        "id": "Ef45b66650854186d"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/STAT400>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#completionTerm>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/term/2026-sp>",
+        "status": "explicit",
+        "id": "E53a773c1677bc9cd"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/STAT400>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#creditsEarned>",
+        "o": "\"4.0\"^^<http://www.w3.org/2001/XMLSchema#decimal>",
+        "status": "explicit",
+        "id": "E14c1ee5d324bdac0"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/STAT400>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#gradeAwarded>",
+        "o": "\"A\"",
+        "status": "explicit",
+        "id": "E062992bd31a1b570"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/plan/S004/CS421/2026-fa>",
+        "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+        "o": "<https://example.org/uiuc-course-advisor/ontology#PlannedEnrollment>",
+        "status": "explicit",
+        "id": "E1bf2198d71d2f486"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/plan/S004/CS421/2026-fa>",
+        "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+        "o": "\"S004 plans CS 421 in Fall 2026\"",
+        "status": "explicit",
+        "id": "E8dcb2f8b6a9512ea"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/plan/S004/CS421/2026-fa>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#plannedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/CS421>",
+        "status": "explicit",
+        "id": "Ed26f0fa2e0b64afe"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/plan/S004/CS421/2026-fa>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#plannedTerm>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/term/2026-fa>",
+        "status": "explicit",
+        "id": "E6208ed1f2c00ddb1"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/plan/S004/CS425/2026-fa>",
+        "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+        "o": "<https://example.org/uiuc-course-advisor/ontology#PlannedEnrollment>",
+        "status": "explicit",
+        "id": "E1289ce95361a2f82"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/plan/S004/CS425/2026-fa>",
+        "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+        "o": "\"S004 plans CS 425 in Fall 2026\"",
+        "status": "explicit",
+        "id": "E1858f8eb90049d1a"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/plan/S004/CS425/2026-fa>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#plannedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/CS425>",
+        "status": "explicit",
+        "id": "Ec4d660b8f30f2f2c"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/plan/S004/CS425/2026-fa>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#plannedTerm>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/term/2026-fa>",
+        "status": "explicit",
+        "id": "E5cb28f2ecc24b1e8"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/plan/S004/CS446/2026-fa>",
+        "p": "<http://www.w3.org/1999/02/22-rdf-syntax-ns#type>",
+        "o": "<https://example.org/uiuc-course-advisor/ontology#PlannedEnrollment>",
+        "status": "explicit",
+        "id": "E41c7ec17f454f676"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/plan/S004/CS446/2026-fa>",
+        "p": "<http://www.w3.org/2000/01/rdf-schema#label>",
+        "o": "\"S004 plans CS 446 in Fall 2026\"",
+        "status": "explicit",
+        "id": "E8e4edc584308c5ff"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/plan/S004/CS446/2026-fa>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#plannedCourse>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/course/CS446>",
+        "status": "explicit",
+        "id": "E4ee801fee3beb6eb"
+      },
+      {
+        "s": "<https://example.org/uiuc-course-advisor/resource/plan/S004/CS446/2026-fa>",
+        "p": "<https://example.org/uiuc-course-advisor/ontology#plannedTerm>",
+        "o": "<https://example.org/uiuc-course-advisor/resource/term/2026-fa>",
+        "status": "explicit",
+        "id": "E1d871b8a2d0f9944"
+      }
+    ],
+    "reasoning": [
+      {
+        "answer": "CS 425: encoded prerequisites satisfied for S004.",
+        "paths": [
+          [
+            {
+              "s": "<https://example.org/uiuc-course-advisor/resource/course/CS425>",
+              "p": "<https://example.org/uiuc-course-advisor/ontology#hasPrerequisiteExpression>",
+              "o": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425>",
+              "status": "explicit",
+              "id": "E1a98709116c63a8e"
+            },
+            {
+              "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425>",
+              "p": "<https://example.org/uiuc-course-advisor/ontology#hasOption>",
+              "o": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425/option/1>",
+              "status": "explicit",
+              "id": "E66249c24e6dcf9af"
+            },
+            {
+              "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425/option/1>",
+              "p": "<https://example.org/uiuc-course-advisor/ontology#hasCondition>",
+              "o": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425/option/1/condition/1>",
+              "status": "explicit",
+              "id": "Ee5090e5183a8d38b"
+            },
+            {
+              "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425/option/1/condition/1>",
+              "p": "<https://example.org/uiuc-course-advisor/ontology#alternativeCourse>",
+              "o": "<https://example.org/uiuc-course-advisor/resource/course/CS341>",
+              "status": "explicit",
+              "id": "Ee5f5f59f4c2199e6"
+            }
+          ],
+          [
+            {
+              "s": "<https://example.org/uiuc-course-advisor/resource/course/CS425>",
+              "p": "<https://example.org/uiuc-course-advisor/ontology#hasPrerequisiteExpression>",
+              "o": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425>",
+              "status": "explicit",
+              "id": "E1a98709116c63a8e"
+            },
+            {
+              "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425>",
+              "p": "<https://example.org/uiuc-course-advisor/ontology#hasOption>",
+              "o": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425/option/1>",
+              "status": "explicit",
+              "id": "E66249c24e6dcf9af"
+            },
+            {
+              "s": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425/option/1>",
+              "p": "<https://example.org/uiuc-course-advisor/ontology#hasCondition>",
+              "o": "<https://example.org/uiuc-course-advisor/resource/prereq/CS425/option/1/condition/1>",
+              "status": "explicit",
+              "id": "Ee5090e5183a8d38b"
+            }
+          ],
+          [
+            {
+              "s": "<https://example.org/uiuc-course-advisor/resource/student/S004>",
+              "p": "<https://example.org/uiuc-course-advisor/ontology#hasCompletion>",
+              "o": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS341>",
+              "status": "explicit",
+              "id": "Eb58b09c2dfd9d542"
+            }
+          ],
+          [
+            {
+              "s": "<https://example.org/uiuc-course-advisor/resource/completion/S004/CS341>",
+              "p": "<https://example.org/uiuc-course-advisor/ontology#completedCourse>",
+              "o": "<https://example.org/uiuc-course-advisor/resource/course/CS341>",
+              "status": "explicit",
+              "id": "E83650a98ac44f357"
+            }
+          ],
+          [
+            {
+              "s": "<https://example.org/uiuc-course-advisor/resource/course/CS425>",
+              "p": "<https://example.org/uiuc-course-advisor/ontology#hasOffering>",
+              "o": "<https://example.org/uiuc-course-advisor/resource/offering/CS425/2026-fa>",
+              "status": "explicit",
+              "id": "Ea322659268f0dbe4"
+            },
+            {
+              "s": "<https://example.org/uiuc-course-advisor/resource/offering/CS425/2026-fa>",
+              "p": "<https://example.org/uiuc-course-advisor/ontology#offeredInTerm>",
+              "o": "<https://example.org/uiuc-course-advisor/resource/term/2026-fa>",
+              "status": "explicit",
+              "id": "E4427dc768f2b1bc6"
+            }
+          ]
+        ],
+        "verdict": "satisfied",
+        "unmet": [],
+        "options": [
+          {
+            "option": "https://example.org/uiuc-course-advisor/resource/prereq/CS425/option/1",
+            "met": true,
+            "conditions": [
+              {
+                "condition": "https://example.org/uiuc-course-advisor/resource/prereq/CS425/option/1/condition/1",
+                "text": "Credit or concurrent enrollment in one of CS 240, CS 241, CS 340, CS 341 or ECE 391",
+                "met": true,
+                "basis": "completed",
+                "status": "inferred",
+                "candidates": [
+                  "CS 240",
+                  "CS 241",
+                  "CS 340",
+                  "CS 341",
+                  "ECE 391"
+                ]
+              }
+            ]
+          }
+        ],
+        "assumptions": [],
+        "warnings": [],
+        "offered_in_term": true,
+        "already_completed": false,
+        "registration_ready": true,
+        "has_recorded_prerequisites": true,
+        "student_is_synthetic": true,
+        "template": "eligibility",
+        "graph_sha256": "ac0352a0246d3e67fae34d3fd27f3847bb9a3d7897478f19e865478f2a1ea2a8",
+        "runtime_ms": 0.7916239992482588,
+        "predictions": [],
+        "knowledge_type": "verified traversal and application rules"
+      }
+    ],
+    "sufficient": true,
+    "limitations": [],
+    "graph_sha256": "ac0352a0246d3e67fae34d3fd27f3847bb9a3d7897478f19e865478f2a1ea2a8",
+    "query": "# AI-3001 Iteration 1 - SPARQL queries (Q01-Q15 = CQ01-CQ15, INF1-INF6 = inference demos)\n# Team: Hassan Tariq (24i-2555), Afaan Sohail (24i-0081), Diya Hurmat (24i-0094)\n# Queries marked [needs reasoning] return rows only with OWL2-RL inference enabled.\nBASE <https://example.org/uiuc-course-advisor/resource/>\nPREFIX uca:  <https://example.org/uiuc-course-advisor/ontology#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl:  <http://www.w3.org/2002/07/owl#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n\n# CQ03 | which options/conditions of CS 421 S003 meets\n# Features: two subqueries joined on ?option, OPTIONAL, BIND/IF, EXISTS, aggregation (MIN, GROUP BY), STRAFTER\nSELECT ?option ?optionStatus ?conditionType ?conditionText ?conditionStatus WHERE {\n  { SELECT ?option ?k ?type ?met WHERE {\n      BIND(<student/S004> AS ?s) BIND(<course/CS425> AS ?course)\n      ?course uca:hasPrerequisiteExpression/uca:hasOption ?option .\n      ?option uca:hasCondition ?k .\n      ?k a ?type . FILTER(?type IN (uca:CourseCondition, uca:CourseChoiceCondition, uca:StandingCondition,\n                                    uca:ConsentCondition, uca:OtherCondition))\n      OPTIONAL { ?k a uca:CourseCondition . BIND(true AS ?isCourse) }\n      OPTIONAL { ?k a uca:CourseChoiceCondition . BIND(true AS ?isChoice) }\n      OPTIONAL { ?k a uca:StandingCondition ; uca:minimumStandingRank ?min . BIND(true AS ?isStanding) }\n      OPTIONAL { ?k a uca:ConsentCondition . BIND(true AS ?isConsent) }\n      BIND(IF(BOUND(?isCourse) || BOUND(?isChoice),\n              IF(EXISTS { ?k uca:requiredCourse|uca:alternativeCourse ?rc . ?s uca:hasCompletion/uca:completedCourse ?rc }\n                 || EXISTS { ?k uca:allowsConcurrent true ; uca:requiredCourse|uca:alternativeCourse ?rc .\n                             ?s uca:hasPlannedEnrollment/uca:plannedCourse ?rc }, 1, 0),\n           IF(BOUND(?isStanding), IF(EXISTS { ?s uca:standingRank ?r . FILTER(?r >= ?min) }, 1, 0),\n           IF(BOUND(?isConsent), IF(EXISTS { ?s uca:hasPermissionFor ?course }, 1, 0), 0))) AS ?met)\n  } }\n  { SELECT ?option (MIN(?m2) AS ?optMin) WHERE {\n      BIND(<student/S004> AS ?s) BIND(<course/CS425> AS ?course)\n      ?course uca:hasPrerequisiteExpression/uca:hasOption ?option .\n      ?option uca:hasCondition ?k .\n      OPTIONAL { ?k a uca:CourseCondition . BIND(true AS ?isCourse) }\n      OPTIONAL { ?k a uca:CourseChoiceCondition . BIND(true AS ?isChoice) }\n      OPTIONAL { ?k a uca:StandingCondition ; uca:minimumStandingRank ?min . BIND(true AS ?isStanding) }\n      OPTIONAL { ?k a uca:ConsentCondition . BIND(true AS ?isConsent) }\n      BIND(IF(BOUND(?isCourse) || BOUND(?isChoice),\n              IF(EXISTS { ?k uca:requiredCourse|uca:alternativeCourse ?rc . ?s uca:hasCompletion/uca:completedCourse ?rc }\n                 || EXISTS { ?k uca:allowsConcurrent true ; uca:requiredCourse|uca:alternativeCourse ?rc .\n                             ?s uca:hasPlannedEnrollment/uca:plannedCourse ?rc }, 1, 0),\n           IF(BOUND(?isStanding), IF(EXISTS { ?s uca:standingRank ?r . FILTER(?r >= ?min) }, 1, 0),\n           IF(BOUND(?isConsent), IF(EXISTS { ?s uca:hasPermissionFor ?course }, 1, 0), 0))) AS ?m2)\n    } GROUP BY ?option }\n  ?k uca:conditionSourceText ?conditionText .\n  BIND(STRAFTER(STR(?type), \"#\") AS ?conditionType)\n  BIND(IF(?met = 1, \"met\", \"UNMET / needs review\") AS ?conditionStatus)\n  BIND(IF(?optMin = 1, \"FULLY MET\", \"not met\") AS ?optionStatus)\n}\nORDER BY ?option ?conditionType\n",
+    "query_uses_closure": false
+  },
+  "llm_called": false,
+  "config": {
+    "provider": "openai_compatible",
+    "base_url": "http://localhost:11434/v1",
+    "model": "SET_MODEL_NAME",
+    "api_key_env": "COURSE_LLM_API_KEY",
+    "require_api_key": false,
+    "temperature": 0.0,
+    "max_tokens": 2048,
+    "timeout_seconds": 180,
+    "context_max_chars": 120000
+  }
+}

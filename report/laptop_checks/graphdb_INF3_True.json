@@ -1,0 +1,77 @@
+{
+  "query": "# AI-3001 Iteration 1 - SPARQL queries (Q01-Q15 = CQ01-CQ15, INF1-INF6 = inference demos)\n# Team: Hassan Tariq (24i-2555), Afaan Sohail (24i-0081), Diya Hurmat (24i-0094)\n# Queries marked [needs reasoning] return rows only with OWL2-RL inference enabled.\nBASE <https://example.org/uiuc-course-advisor/resource/>\nPREFIX uca:  <https://example.org/uiuc-course-advisor/ontology#>\nPREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>\nPREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl:  <http://www.w3.org/2002/07/owl#>\nPREFIX xsd:  <http://www.w3.org/2001/XMLSchema#>\n\n\n# Inference: property chain (student hasCompletedCourse) [needs reasoning]\n# Features: BGP, aggregation (COUNT, GROUP BY)\nSELECT ?studentId (COUNT(DISTINCT ?course) AS ?completedCourses)\n       (GROUP_CONCAT(DISTINCT ?code; separator=\", \") AS ?courses) WHERE {\n  ?s uca:hasCompletedCourse ?course ; uca:studentIdentifier ?studentId .\n  ?course uca:courseCode ?code .\n}\nGROUP BY ?studentId\nORDER BY ?studentId\n",
+  "inference": true,
+  "result": {
+    "head": {
+      "vars": [
+        "studentId",
+        "completedCourses",
+        "courses"
+      ]
+    },
+    "results": {
+      "bindings": [
+        {
+          "studentId": {
+            "type": "literal",
+            "value": "S001"
+          },
+          "completedCourses": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+            "type": "literal",
+            "value": "5"
+          },
+          "courses": {
+            "type": "literal",
+            "value": "CS 124, CS 128, ENG 100, MATH 221, MATH 231"
+          }
+        },
+        {
+          "studentId": {
+            "type": "literal",
+            "value": "S002"
+          },
+          "completedCourses": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+            "type": "literal",
+            "value": "8"
+          },
+          "courses": {
+            "type": "literal",
+            "value": "CS 124, CS 128, ENG 100, MATH 221, MATH 231, CS 173, CS 222, PHYS 211"
+          }
+        },
+        {
+          "studentId": {
+            "type": "literal",
+            "value": "S003"
+          },
+          "completedCourses": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+            "type": "literal",
+            "value": "12"
+          },
+          "courses": {
+            "type": "literal",
+            "value": "CS 124, CS 128, ENG 100, MATH 221, MATH 231, CS 173, CS 222, PHYS 211, CS 225, CS 233, MATH 241, MATH 257"
+          }
+        },
+        {
+          "studentId": {
+            "type": "literal",
+            "value": "S004"
+          },
+          "completedCourses": {
+            "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+            "type": "literal",
+            "value": "21"
+          },
+          "courses": {
+            "type": "literal",
+            "value": "CS 124, CS 128, ENG 100, MATH 221, MATH 231, CS 173, CS 222, PHYS 211, CS 225, CS 233, MATH 241, MATH 257, CS 210, CS 341, CS 357, CS 361, CS 374, CS 411, CS 440, PHYS 212, STAT 400"
+          }
+        }
+      ]
+    }
+  }
+}
