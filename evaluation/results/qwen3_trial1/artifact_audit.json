@@ -1,0 +1,294 @@
+{
+  "run_id": "qwen3_trial1",
+  "manifest": {
+    "config": {
+      "provider": "ollama",
+      "base_url": "http://localhost:11434/v1",
+      "model": "course-planning-qwen3",
+      "api_key_env": "COURSE_LLM_API_KEY",
+      "require_api_key": false,
+      "temperature": 0.0,
+      "max_tokens": 2048,
+      "timeout_seconds": 1800,
+      "context_max_chars": 32000
+    },
+    "graph_sha256": "ac0352a0246d3e67fae34d3fd27f3847bb9a3d7897478f19e865478f2a1ea2a8",
+    "cqs_sha256": "d5a6320578ffe9659176d3fda434ea91a3e16b4a0fe85efd4da7a8b45073a1c7",
+    "prompt_hashes": {
+      "baseline.txt": "f8ebd877f023bb1309023b42d7ee9c5c14fcb1b2f634327751c912882976b0c7",
+      "grounded.txt": "92ed152166c185945558ef54bfe95c49a2795afa2ddb48faae2fc64d0529e9cb"
+    },
+    "model_identity": {
+      "provider": "ollama",
+      "runtime_version": "0.40.18",
+      "requested_model": "course-planning-qwen3",
+      "name": "course-planning-qwen3:latest",
+      "digest": "49dae85e3c0fa2bb7e051e99cd9e114ce759af87000515f827821ae0260115ef",
+      "details": {
+        "parent_model": "qwen3:4b-instruct",
+        "format": "gguf",
+        "family": "qwen3",
+        "families": [
+          "qwen3"
+        ],
+        "parameter_size": "4.0B",
+        "quantization_level": "Q4_K_M",
+        "context_length": 262144,
+        "embedding_length": 2560,
+        "runner": "llamacpp"
+      },
+      "model_digest_verified": true
+    },
+    "started_utc": "2026-11-24T17:44:41.272438+00:00",
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "commit": "PENDING: not a Git checkout"
+  },
+  "case_count": 10,
+  "response_records": 20,
+  "llm_calls_recorded": 20,
+  "checks": [
+    {
+      "cq": "CQ01",
+      "condition": "A",
+      "llm_called": true,
+      "finish_reason": "stop",
+      "truncated": false,
+      "unknown_citation_ids": [],
+      "issues": [],
+      "raw_sha256": "4fac39cf18eb963661924d1274d119b1d6e9a23fecc35704d7fab7bca21c5ffe",
+      "review_complete": false
+    },
+    {
+      "cq": "CQ01",
+      "condition": "B",
+      "llm_called": true,
+      "finish_reason": "stop",
+      "truncated": false,
+      "unknown_citation_ids": [],
+      "issues": [],
+      "raw_sha256": "3c27c7dc7d6b32bdafd7e4dc910d026eb25cc9f4ff6e081dced8e70c3eca009f",
+      "review_complete": false
+    },
+    {
+      "cq": "CQ02",
+      "condition": "A",
+      "llm_called": true,
+      "finish_reason": "stop",
+      "truncated": false,
+      "unknown_citation_ids": [],
+      "issues": [],
+      "raw_sha256": "3753195fe232547446e4fe6eeb7a09f4e184b500708819dedcf777293a7f8bd4",
+      "review_complete": false
+    },
+    {
+      "cq": "CQ02",
+      "condition": "B",
+      "llm_called": true,
+      "finish_reason": "length",
+      "truncated": true,
+      "unknown_citation_ids": [],
+      "issues": [],
+      "raw_sha256": "2301f1fe841e2e149dc76418bf55486bec39624f60e44551a736f7fb7c31fb6f",
+      "review_complete": false
+    },
+    {
+      "cq": "CQ03",
+      "condition": "A",
+      "llm_called": true,
+      "finish_reason": "stop",
+      "truncated": false,
+      "unknown_citation_ids": [],
+      "issues": [],
+      "raw_sha256": "714c1ada4ebfe2c33dcf8ab2d6a86911ca2822bdad15a1b891072bc3e39454c8",
+      "review_complete": false
+    },
+    {
+      "cq": "CQ03",
+      "condition": "B",
+      "llm_called": true,
+      "finish_reason": "stop",
+      "truncated": false,
+      "unknown_citation_ids": [],
+      "issues": [],
+      "raw_sha256": "c5b2bf4ca14900fd672e6c15f5d2863868a11ca780d4f60370231aac02bf08f0",
+      "review_complete": false
+    },
+    {
+      "cq": "CQ04",
+      "condition": "A",
+      "llm_called": true,
+      "finish_reason": "stop",
+      "truncated": false,
+      "unknown_citation_ids": [],
+      "issues": [],
+      "raw_sha256": "f7182cbf31e6f90144bc7a0732ea543a5ab7eacc1559aa0d48f4698b55cd3688",
+      "review_complete": false
+    },
+    {
+      "cq": "CQ04",
+      "condition": "B",
+      "llm_called": true,
+      "finish_reason": "length",
+      "truncated": true,
+      "unknown_citation_ids": [
+        "R29",
+        "R30",
+        "R31",
+        "R32",
+        "R33",
+        "R34",
+        "R35"
+      ],
+      "issues": [],
+      "raw_sha256": "02fe4ab78184483e5b5348492fe96c866ec549018ee686e0a5132362f22d42b2",
+      "review_complete": false
+    },
+    {
+      "cq": "CQ06",
+      "condition": "A",
+      "llm_called": true,
+      "finish_reason": "stop",
+      "truncated": false,
+      "unknown_citation_ids": [],
+      "issues": [],
+      "raw_sha256": "c0fcf08d8bd13cbd42a9b543a9d729bd3eec202adefe166c69788eb137de9a49",
+      "review_complete": false
+    },
+    {
+      "cq": "CQ06",
+      "condition": "B",
+      "llm_called": true,
+      "finish_reason": "stop",
+      "truncated": false,
+      "unknown_citation_ids": [],
+      "issues": [],
+      "raw_sha256": "16bd536ac0679eb32a6bab2904aa00483816a0145403ac4ddb821079046b3af6",
+      "review_complete": false
+    },
+    {
+      "cq": "CQ08",
+      "condition": "A",
+      "llm_called": true,
+      "finish_reason": "stop",
+      "truncated": false,
+      "unknown_citation_ids": [],
+      "issues": [],
+      "raw_sha256": "cf9298118fba349b9e30c05df553743c76e117a1befd785556a860a448ece094",
+      "review_complete": false
+    },
+    {
+      "cq": "CQ08",
+      "condition": "B",
+      "llm_called": true,
+      "finish_reason": "length",
+      "truncated": true,
+      "unknown_citation_ids": [],
+      "issues": [],
+      "raw_sha256": "988598702aa257109c11701be3f31bfff155a274e71492bf08c246f3799c7a09",
+      "review_complete": false
+    },
+    {
+      "cq": "CQ10",
+      "condition": "A",
+      "llm_called": true,
+      "finish_reason": "stop",
+      "truncated": false,
+      "unknown_citation_ids": [],
+      "issues": [],
+      "raw_sha256": "27293a2828687cc3cbcbb552fcdb7a447efb2eb06839c5544423a1dd1ccd17a7",
+      "review_complete": false
+    },
+    {
+      "cq": "CQ10",
+      "condition": "B",
+      "llm_called": true,
+      "finish_reason": "stop",
+      "truncated": false,
+      "unknown_citation_ids": [],
+      "issues": [],
+      "raw_sha256": "7964e7896749c91092447e3c60ba7d7bab303e69474f81cafa495ceef846f984",
+      "review_complete": false
+    },
+    {
+      "cq": "CQ11",
+      "condition": "A",
+      "llm_called": true,
+      "finish_reason": "stop",
+      "truncated": false,
+      "unknown_citation_ids": [],
+      "issues": [],
+      "raw_sha256": "f65f4e012ff526e9bae85f586fdb14a088462bba0e5cfca5e393bd90720f1a3c",
+      "review_complete": false
+    },
+    {
+      "cq": "CQ11",
+      "condition": "B",
+      "llm_called": true,
+      "finish_reason": "stop",
+      "truncated": false,
+      "unknown_citation_ids": [],
+      "issues": [],
+      "raw_sha256": "9b7233b9e556d94056b6f4711ca295a8669ce711d001020eb09b130e244bfb7a",
+      "review_complete": false
+    },
+    {
+      "cq": "CQ13",
+      "condition": "A",
+      "llm_called": true,
+      "finish_reason": "stop",
+      "truncated": false,
+      "unknown_citation_ids": [],
+      "issues": [],
+      "raw_sha256": "06ee19571631ecbd009909a8a242501cd81d3c6aed1701d53c880142c69d7752",
+      "review_complete": false
+    },
+    {
+      "cq": "CQ13",
+      "condition": "B",
+      "llm_called": true,
+      "finish_reason": "stop",
+      "truncated": false,
+      "unknown_citation_ids": [],
+      "issues": [],
+      "raw_sha256": "a81eb091d517d8c34f1b1d1612d1954397bfb3c05a486b9644564e826eb1a4e3",
+      "review_complete": false
+    },
+    {
+      "cq": "CQ15",
+      "condition": "A",
+      "llm_called": true,
+      "finish_reason": "stop",
+      "truncated": false,
+      "unknown_citation_ids": [],
+      "issues": [],
+      "raw_sha256": "1f3f33691a1fa3465e6ce7c9ca9556a0ba76f5d0d732e0d008c864b4a88ba701",
+      "review_complete": false
+    },
+    {
+      "cq": "CQ15",
+      "condition": "B",
+      "llm_called": true,
+      "finish_reason": "length",
+      "truncated": true,
+      "unknown_citation_ids": [],
+      "issues": [],
+      "raw_sha256": "1ef8b9891f11e7b820790fdd70a5a99162e3e5533f8335427891b8314c88f9ac",
+      "review_complete": false
+    }
+  ],
+  "integrity_findings": [],
+  "distinct_evidence_edges_checked": 4679,
+  "invalid_evidence_edges": 0,
+  "complete_human_reviews": 0,
+  "truncated_responses": [
+    "CQ02_B",
+    "CQ04_B",
+    "CQ08_B",
+    "CQ15_B"
+  ],
+  "records_with_unknown_citations": [
+    "CQ04_B"
+  ],
+  "note": "Internal consistency of supplied records does not independently prove provider execution or semantic correctness."
+}

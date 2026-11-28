@@ -1,0 +1,28 @@
+﻿  Model
+    architecture        qwen3                 
+    parameters          4.0B                  
+    context length      262144                
+    embedding length    2560                  
+    quantization        Q4_K_M                
+    template source     gguf_chat_template    
+
+  Capabilities
+    tools         
+    thinking      
+    completion    
+
+  Parameters
+    top_k             20                
+    top_p             0.8               
+    num_ctx           16384             
+    num_predict       2048              
+    repeat_penalty    1                 
+    stop              "<|im_start|>"    
+    stop              "<|im_end|>"      
+    temperature       0                 
+
+  License
+    Apache License               
+    Version 2.0, January 2004    
+    ...                          
+

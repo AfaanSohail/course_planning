@@ -1,0 +1,68 @@
+{
+  "question": "Given a student's completed courses and a target term, which catalog courses are offered in that term and have a satisfied prerequisite alternative? Instance: synthetic student S002; target term Fall 2026.",
+  "answer": "No catalog data or student transcript information is provided. Therefore, it is impossible to determine which courses are offered in Fall 2026 or whether their prerequisites are satisfied by the student's completed courses.\n\nTo answer the question accurately, the following are required:\n\n- The university course catalog (with course offerings by term)\n- The student’s completed course list (to evaluate prerequisite satisfaction)\n- Prerequisite rules (including alternative pathways)\n\nWithout these inputs, no valid conclusion can be drawn.\n\n**Conclusion**: Insufficient information to determine catalog courses offered in Fall 2026 with satisfied prerequisite alternatives for student S002.",
+  "evidence": [],
+  "mode": "baseline",
+  "llm_called": true,
+  "completion": {
+    "answer": "No catalog data or student transcript information is provided. Therefore, it is impossible to determine which courses are offered in Fall 2026 or whether their prerequisites are satisfied by the student's completed courses.\n\nTo answer the question accurately, the following are required:\n\n- The university course catalog (with course offerings by term)\n- The student’s completed course list (to evaluate prerequisite satisfaction)\n- Prerequisite rules (including alternative pathways)\n\nWithout these inputs, no valid conclusion can be drawn.\n\n**Conclusion**: Insufficient information to determine catalog courses offered in Fall 2026 with satisfied prerequisite alternatives for student S002.",
+    "request": {
+      "model": "course-planning-qwen3-v2",
+      "messages": [
+        {
+          "role": "system",
+          "content": "You are a university course-planning adviser. Answer the question accurately and\nexplain your reasoning. State uncertainty and missing information. Do not invent\nstudent transcripts or claim to have evidence you have not been given.\nThis condition has no retrieval tools or attached course graph.\n\nAnswer concisely. Prefer compact tables or lists; avoid repeating the question, evidence list and conclusion. Preserve requested-set completeness and prerequisite alternatives.\n"
+        },
+        {
+          "role": "user",
+          "content": "Given a student's completed courses and a target term, which catalog courses are offered in that term and have a satisfied prerequisite alternative? Instance: synthetic student S002; target term Fall 2026."
+        }
+      ],
+      "temperature": 0.0,
+      "max_tokens": 4096,
+      "stream": false
+    },
+    "raw": {
+      "id": "chatcmpl-50",
+      "object": "chat.completion",
+      "created": 1795691774,
+      "model": "course-planning-qwen3-v2",
+      "system_fingerprint": "fp_ollama",
+      "choices": [
+        {
+          "index": 0,
+          "message": {
+            "role": "assistant",
+            "content": "No catalog data or student transcript information is provided. Therefore, it is impossible to determine which courses are offered in Fall 2026 or whether their prerequisites are satisfied by the student's completed courses.\n\nTo answer the question accurately, the following are required:\n\n- The university course catalog (with course offerings by term)\n- The student’s completed course list (to evaluate prerequisite satisfaction)\n- Prerequisite rules (including alternative pathways)\n\nWithout these inputs, no valid conclusion can be drawn.\n\n**Conclusion**: Insufficient information to determine catalog courses offered in Fall 2026 with satisfied prerequisite alternatives for student S002."
+          },
+          "finish_reason": "stop"
+        }
+      ],
+      "usage": {
+        "prompt_tokens": 139,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens": 127,
+        "total_tokens": 266
+      }
+    },
+    "runtime_ms": 38852.51884899935,
+    "finish_reason": "stop",
+    "truncated": false
+  },
+  "config": {
+    "provider": "ollama",
+    "base_url": "http://127.0.0.1:11435/v1",
+    "model": "course-planning-qwen3-v2",
+    "api_key_env": "COURSE_LLM_API_KEY",
+    "require_api_key": false,
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "timeout_seconds": 7200,
+    "context_max_chars": 24000
+  },
+  "cq": "CQ01",
+  "condition": "A",
+  "recorded_utc": "2026-11-26T11:16:14.493368+00:00"
+}

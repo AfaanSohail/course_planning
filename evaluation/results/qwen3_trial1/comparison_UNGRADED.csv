@@ -1,0 +1,1203 @@
+CQ / question,Expected answer,LLM only,KG-grounded,Correct? A / B,Evidence available? A / B
+"CQ01 / Given a student's completed courses and a target term, which catalog courses are offered in that term and have a satisfied prerequisite alternative? Instance: synthetic student S002; target term Fall 2026.","[{""courseCode"": ""ASRM 210"", ""title"": ""Theory of Interest"", ""satisfiedOptions"": ""1""}, {""courseCode"": ""BIOE 210"", ""title"": ""Linear Algebra for Biomedical Data Science"", ""satisfiedOptions"": ""1""}, {""courseCode"": ""CS 101"", ""title"": ""Intro Computing: Engrg & Sci"", ""satisfiedOptions"": ""1""}, {""courseCode"": ""CS 225"", ""title"": ""Data Structures"", ""satisfiedOptions"": ""1""}, {""courseCode"": ""CS 233"", ""title"": ""Computer Architecture"", ""satisfiedOptions"": ""1""}, {""courseCode"": ""CS 361"", ""title"": ""Probability & Statistics for Computer Science"", ""satisfiedOptions"": ""1""}, {""courseCode"": ""CS 427"", ""title"": ""Software Engineering I"", ""satisfiedOptions"": ""1""}, {""courseCode"": ""IE 310"", ""title"": ""Deterministic Models in Optimization"", ""satisfiedOptions"": ""1""}, {""courseCode"": ""MATH 213"", ""title"": ""Basic Discrete Mathematics"", ""satisfiedOptions"": ""1""}, {""courseCode"": ""MATH 225"", ""title"": ""Introductory Matrix Theory"", ""satisfiedOptions"": ""1""}, {""courseCode"": ""MATH 241"", ""title"": ""Calculus III"", ""satisfiedOptions"": ""1""}, {""courseCode"": ""PHYS 100"", ""title"": ""Thinking About Physics"", ""satisfiedOptions"": ""1""}, {""courseCode"": ""PHYS 212"", ""title"": ""University Physics: Elec & Mag"", ""satisfiedOptions"": ""1""}, {""courseCode"": ""PHYS 213"", ""title"": ""Univ Physics: Thermal Physics"", ""satisfiedOptions"": ""1""}, {""courseCode"": ""STAT 400"", ""title"": ""Statistics and Probability I"", ""satisfiedOptions"": ""1""}]","I cannot provide a specific answer to your question because:
+
+1. **No student transcript or course history is provided** — You mention a ""synthetic student S002,"" but no actual course records, academic history, or completed courses are given. Without knowing which courses the student has already completed, I cannot determine which prerequisites are satisfied.
+
+2. **No course catalog data is available** — There is no access to a course catalog, schedule, or list of courses offered in a specific term (e.g., Fall 2026), nor do I have access to any institutional course offerings or prerequisite rules.
+
+3. **No information about prerequisite alternatives** — The concept of ""satisfied prerequisite alternative"" requires knowing both the course prerequisites and the available alternatives (e.g., a course that satisfies a prerequisite without requiring the original course). This information is not provided or accessible in this context.
+
+4. **No data on term offerings** — I do not have access to a university's course schedule for Fall 2026, including which courses are actually offered that term.
+
+Therefore, **I cannot determine which catalog courses are offered in Fall 2026 and have a satisfied prerequisite alternative** for student S002 — because I lack the necessary data (student course history, course catalog, prerequisite rules, and term offerings).
+
+✅ To answer this question accurately, you would need to provide:
+- The student’s completed course list (e.g., MATH 101, ENGL 102, etc.)
+- The official course catalog with prerequisites and alternatives
+- The actual course offerings for Fall 2026 (e.g., from a university schedule or academic calendar)
+
+Without such data, the query cannot be resolved.
+
+👉 Conclusion: **Insufficient information to determine the answer.**","The catalog courses offered in Fall 2026 that have satisfied prerequisite alternatives for student S002 are:
+
+- ASRM 210: Theory of Interest  
+- BIOE 210: Linear Algebra for Biomedical Data Science  
+- CS 101: Intro Computing: Engrg & Sci  
+- CS 225: Data Structures  
+- CS 233: Computer Architecture  
+- CS 361: Probability & Statistics for Computer Science  
+- CS 427: Software Engineering I  
+- IE 310: Deterministic Models in Optimization  
+- MATH 213: Basic Discrete Mathematics  
+- MATH 225: Introductory Matrix Theory  
+- MATH 241: Calculus III  
+- PHYS 100: Thinking About Physics  
+- PHYS 212: University Physics: Elec & Mag  
+- PHYS 213: Univ Physics: Thermal Physics  
+- STAT 400: Statistics and Probability I  
+
+**Reasoning Trace:**  
+Each course in the list has a recorded prerequisite alternative (as per the `satisfiedOptions` field in the rows and the `prereq` conditions in the evidence). For each course, the prerequisite conditions are evaluated against the student’s completed courses (e.g., CS 101, CS 124, MATH 231, PHYS 211, etc.), and the evidence shows that the conditions are satisfied either by completed courses or by a concurrent enrollment plan in Fall 2026. For example:  
+- **CS 233** requires CS 125 or CS 128 or ECE 220 (S002 has CS 128 completed), and CS 173 or MATH 213 (S002 has CS 173 completed), and credit or concurrent enrollment in CS 225 (which is offered in Fall 2026).  
+- **STAT 400** requires MATH 231 (S002 has MATH 231 completed).  
+- **PHYS 212** requires PHYS 211 (S002 has PHYS 211 completed) and concurrent registration in MATH 241 (offered in Fall 2026).  
+
+All prerequisite conditions are satisfied via completed courses or concurrent enrollment plans, and all courses are offered in Fall 2026 (as confirmed by the `offering` edges with `2026-fa` suffix).  
+
+**Note:** The query scope is limited to courses with recorded prerequisites (as per the limitation: ""Q01 covers courses with recorded prerequisite options; no-recorded-prerequisite courses are outside this query's scope""). Courses with unrecorded prerequisites (e.g., MATH 213, MATH 225) are excluded from this analysis due to missing prerequisite parsing.  
+
+Thus, the full set of eligible courses is as listed above.  
+
+**Final Answer:**  
+The catalog courses offered in Fall 2026 with satisfied prerequisite alternatives for student S002 are:  
+ASRM 210, BIOE 210, CS 101, CS 225, CS 233, CS 361, CS 427, IE 310, MATH 213, MATH 225, MATH 241, PHYS 100, PHYS 212, PHYS 213, and STAT 400.",PENDING / PENDING,PENDING / PENDING
+"CQ02 / For a selected course, what are its possible prerequisite chains back to courses with no recorded course prerequisites, preserving AND/OR branches? Instance: CS 421.","[{""fromCode"": ""ASRM 210"", ""option"": ""option 1"", ""edgeType"": ""AND: required course"", ""toCode"": ""MATH 231"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""ASRM 406"", ""option"": ""option 1"", ""edgeType"": ""AND: required course"", ""toCode"": ""MATH 241"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""ASRM 406"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""ASRM 210"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""ASRM 406"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""FIN 221"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""ASRM 406"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""MATH 210"", ""toIsBaseCourse"": ""true""}, {""fromCode"": ""BIOE 210"", ""option"": ""option 1"", ""edgeType"": ""AND: required course"", ""toCode"": ""MATH 231"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""BIOE 210"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""CS 101"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""BIOE 210"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""CS 124"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""CS 101"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""MATH 220"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""CS 101"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""MATH 221"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""CS 101"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""MATH 231"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""CS 101"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""MATH 241"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""CS 124"", ""option"": ""option 1"", ""edgeType"": ""AND: required course"", ""toCode"": ""MATH 112"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""CS 128"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""CS 124"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""CS 128"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""CS 125"", ""toIsBaseCourse"": ""true""}, {""fromCode"": ""CS 173"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""CS 124"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""CS 173"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""CS 125"", ""toIsBaseCourse"": ""true""}, {""fromCode"": ""CS 173"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""ECE 220"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""CS 173"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""MATH 220"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""CS 173"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""MATH 221"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""CS 225"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""CS 126"", ""toIsBaseCourse"": ""true""}, {""fromCode"": ""CS 225"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""CS 128"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""CS 225"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""CS 173"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""CS 225"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""CS 413"", ""toIsBaseCourse"": ""true""}, {""fromCode"": ""CS 225"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""ECE 220"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""CS 225"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""MATH 213"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""CS 225"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""MATH 314"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""CS 225"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""MATH 347"", ""toIsBaseCourse"": ""true""}, {""fromCode"": ""CS 225"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""MATH 412"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""CS 225"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""MATH 413"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""CS 233"", ""option"": ""option 1"", ""edgeType"": ""AND: required course"", ""toCode"": ""CS 225"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""CS 233"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""CS 125"", ""toIsBaseCourse"": ""true""}, {""fromCode"": ""CS 233"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""CS 128"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""CS 233"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""CS 173"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""CS 233"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""MATH 213"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""CS 340"", ""option"": ""option 1"", ""edgeType"": ""AND: required course"", ""toCode"": ""CS 128"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""CS 340"", ""option"": ""option 1"", ""edgeType"": ""AND: required course"", ""toCode"": ""CS 225"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""CS 374"", ""option"": ""option 1"", ""edgeType"": ""AND: required course"", ""toCode"": ""CS 225"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""CS 374"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""CS 173"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""CS 374"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""MATH 213"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""CS 421"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""ASRM 406"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""CS 421"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""BIOE 210"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""CS 421"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""CS 233"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""CS 421"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""CS 240"", ""toIsBaseCourse"": ""true""}, {""fromCode"": ""CS 421"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""CS 340"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""CS 421"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""CS 374"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""CS 421"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""ECE 374"", ""toIsBaseCourse"": ""true""}, {""fromCode"": ""CS 421"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""ECE 391"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""CS 421"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""MATH 225"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""CS 421"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""MATH 257"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""CS 421"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""MATH 415"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""CS 421"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""MATH 416"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""ECE 220"", ""option"": ""option 1"", ""edgeType"": ""AND: required course"", ""toCode"": ""ECE 120"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""ECE 391"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""CS 233"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""ECE 391"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""ECE 220"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""FIN 221"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""ECON 102"", ""toIsBaseCourse"": ""true""}, {""fromCode"": ""FIN 221"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""ECON 103"", ""toIsBaseCourse"": ""true""}, {""fromCode"": ""MATH 115"", ""option"": ""option 1"", ""edgeType"": ""AND: required course"", ""toCode"": ""MATH 112"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""MATH 213"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""MATH 220"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""MATH 213"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""MATH 221"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""MATH 220"", ""option"": ""option 1"", ""edgeType"": ""AND: required course"", ""toCode"": ""MATH 115"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""MATH 225"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""MATH 220"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""MATH 225"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""MATH 221"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""MATH 231"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""MATH 220"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""MATH 231"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""MATH 221"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""MATH 241"", ""option"": ""option 1"", ""edgeType"": ""AND: required course"", ""toCode"": ""MATH 231"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""MATH 257"", ""option"": ""option 1"", ""edgeType"": ""AND: required course"", ""toCode"": ""CS 101"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""MATH 257"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""MATH 220"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""MATH 257"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""MATH 221"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""MATH 314"", ""option"": ""option 1"", ""edgeType"": ""AND: required course"", ""toCode"": ""MATH 241"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""MATH 412"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""CS 374"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""MATH 412"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""MATH 314"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""MATH 412"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""MATH 347"", ""toIsBaseCourse"": ""true""}, {""fromCode"": ""MATH 413"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""MATH 314"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""MATH 413"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""MATH 347"", ""toIsBaseCourse"": ""true""}, {""fromCode"": ""MATH 415"", ""option"": ""option 1"", ""edgeType"": ""AND: required course"", ""toCode"": ""MATH 241"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""MATH 416"", ""option"": ""option 1"", ""edgeType"": ""AND: required course"", ""toCode"": ""MATH 241"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""MATH 416"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""MATH 314"", ""toIsBaseCourse"": ""false""}, {""fromCode"": ""MATH 416"", ""option"": ""option 1"", ""edgeType"": ""OR: one of a group"", ""toCode"": ""MATH 347"", ""toIsBaseCourse"": ""true""}]","To determine the possible prerequisite chains back to courses with no recorded course prerequisites—preserving AND/OR branches—for a selected course like **CS 421**, I must clarify that:
+
+> ❌ **I do not have access to any course data, a university course catalog, or a course prerequisite graph.**
+
+This means:
+
+- I cannot retrieve actual prerequisite information for **CS 421** or any course.
+- I cannot verify whether CS 421 has prerequisites, or what those are.
+- I cannot trace backward from CS 421 to foundational courses with no prerequisites.
+- I cannot determine the structure of prerequisite chains (e.g., linear, branching, AND/OR logic) without explicit course data.
+
+---
+
+### What This Means in Practice:
+
+A prerequisite chain from **CS 421** to courses with no recorded prerequisites would require:
+
+1. A database or catalog of courses and their prerequisites.
+2. A directed graph where each node is a course and edges represent prerequisite relationships.
+3. A traversal algorithm that follows backward paths from CS 420 to courses with no prerequisites.
+4. A formalization of whether the prerequisites are **AND** (all must be taken) or **OR** (any one suffices), which is typically not recorded unless explicitly stated.
+
+Without such data, **any chain or logical structure I propose would be speculative**.
+
+---
+
+### Example of What a Correct Answer Would Look Like (If Data Were Available)
+
+Suppose we had a course catalog showing:
+
+- CS 421 → requires CS 310 (AND)
+- CS 310 → requires CS 210 (AND)
+- CS 210 → requires CS 101 (OR: CS 101 or CS 102)
+- CS 101 → no prerequisites
+- CS 102 → no prerequisites
+
+Then the possible prerequisite chains from CS 421 would be:
+
+- CS 421 → CS 310 → CS 210 → (CS 101 OR CS 102)
+- So, chains:  
+  - CS 421 → CS 310 → CS 210 → CS 101  
+  - CS 421 → CS 310 → CS 210 → CS 102  
+
+And the logic is: **AND** for CS 310 and CS 210, **OR** for CS 101/CS 102.
+
+But again — **this example is hypothetical**.
+
+---
+
+### Final Answer:
+
+> ❌ **I cannot determine the possible prerequisite chains from CS 421 to courses with no recorded prerequisites, preserving AND/OR branches, because no course data or prerequisite graph is available to me.**
+
+This is a limitation of the system — I do not have access to course catalogs, university databases, or student transcripts.
+
+---
+
+### Recommendation:
+
+To get accurate information, you should:
+
+- Consult the official university course catalog.
+- Access the university’s academic program or course prerequisite database.
+- Contact the department (e.g., Computer Science) for official prerequisite information.
+
+Let me know if you'd like help constructing a query or logic model to trace such chains *if* you provide the prerequisite data.","For the selected course **CS 421**, the possible prerequisite chains back to courses with no recorded course prerequisites—preserving AND/OR branches—are derived from the provided prerequisite relationships. These chains are constructed by traversing backward from **CS 421** through prerequisite edges (both AND and OR types), ultimately identifying base courses (courses with no further prerequisites recorded) as endpoints.
+
+---
+
+### Step 1: Identify all prerequisite courses of CS 421
+
+From the context, **CS 421** has the following prerequisites (as per edge IDs):
+
+- **OR: one of a group** → **ASRM 406** [R41]
+- **OR: one of a group** → **BIOE 210** [R42]
+- **OR: one of a group** → **CS 233** [R43]
+- **OR: one of a group** → **CS 240** [R44]
+- **OR: one of a group** → **CS 340** [R45]
+- **OR: one of a group** → **CS 374** [R46]
+- **OR: one of a group** → **ECE 374** [R47]
+- **OR: one of a group** → **ECE 391** [R48]
+- **OR: one of a group** → **MATH 225** [R49]
+- **OR: one of a group** → **MATH 257** [R50]
+- **OR: one of a group** → **MATH 415** [R51]
+- **OR: one of a group** → **MATH 416** [R52]
+
+Each of these represents a potential prerequisite chain. We now trace backward from each to find chains that terminate at courses with **no recorded prerequisites**.
+
+---
+
+### Step 2: Trace backward chains to base courses (no further prerequisites)
+
+We analyze each prerequisite and trace backward using the provided edges.
+
+#### Chain 1: CS 421 → ASRM 406
+- ASRM 406 → OR: one of a group → **ASRM 210** [R3] or **FIN 221** [R4] or **MATH 210** [R5]
+- ASRM 210: no further prerequisites recorded → **base course**
+- FIN 221 → OR: one of a group → **ECON 102** or **ECON 103** [R56] → both are base courses
+- MATH 210: no further prerequisites recorded → **base course**
+
+✅ Base courses: **ASRM 210**, **FIN 221**, **MATH 210**
+
+#### Chain 2: CS 421 → BIOE 210
+- BIOE 210 → OR: one of a group → **CS 101** [R7] or **CS 124** [R8]
+- CS 101 → OR: one of a group → **MATH 220**, **MATH 221**, **MATH 231**, **MATH 241** [R9–R12]
+- CS 124 → AND: required course → **MATH 112** [R13] → MATH 112 has no further prerequisites → **base course**
+
+✅ Base courses: **CS 101**, **CS 124**, **MATH 112**, **MATH 220**, **MATH 221**, **MATH 231**, **MATH 241**
+
+> Note: MATH 220 → AND: required course → MATH 115 [R61] → MATH 115 → AND: required course → MATH 112 [R58] → MATH 112 is base → so MATH 112 is terminal.
+
+#### Chain 3: CS 421 → CS 233
+- CS 233 → OR: one of a group → **CS 125** [R32], **CS 128** [R33], **CS 173** [R34], **MATH 213** [R35]
+- CS 125: base course (no further prerequisites) → **base course**
+- CS 128 → AND: required course → **CS 124** [R14] → CS 124 → MATH 112 → base → so chain ends at MATH 112
+- CS 173 → OR: one of a group → **CS 124**, **CS 125**, **ECE 220**, **MATH 220**, **MATH 221** [R17–R20]
+- CS 124 → MATH 112 → base
+- ECE 220 → AND: required course → **ECE 120** [R53] → ECE 120 has no further prerequisites → **base course**
+- MATH 220 → MATH 115 → MATH 112 → base
+
+✅ Base courses: **CS 125**, **CS 128**, **CS 173**, **ECE 120**, **MATH 112**, **MATH 220**, **MATH 221**
+
+#### Chain 4: CS 421 → CS 240
+- CS 240: base course (no further prerequisites) → **base course**
+
+✅ Base course: **CS 240**
+
+#### Chain 5: CS 421 → CS 340
+- CS 340 → AND: required course → **CS 128** [R36] and **CS 225** [R37]
+- CS 128 → CS 124 → MATH 112 → base
+- CS 225 → OR: one of a group → **CS 126**, **CS 128**, **CS 173**, **CS 225**, **ECE 220**, **MATH 213**, **MATH 314**, **MATH 347**, **MATH 412**, **MATH 413**, **MATH 415**, **MATH 416** [R21–R28]
+- CS 126: base course → **base course**
+- CS 128 → CS 124 → MATH 112 → base
+- CS 173 → CS 124 → MATH 112 → base
+- ECE 220 → ECE 120 → base
+- MATH 213 → OR: one of a group → MATH 220, MATH 221 → both lead to MATH 112 → base
+- MATH 314 → AND: required course → MATH 241 → MATH 241 → AND: required course → MATH 231 → MATH 231 → OR: one of a group → MATH 220, MATH 221 → both lead to MATH 112 → base
+- MATH 347 → base course → **base course**
+- MATH 412 → OR: one of a group → CS 374, MATH 314, MATH 347 → MATH 347 is base
+- MATH 413 → OR: one of a group → MATH 314, MATH 347 → MATH 347 is base
+- MATH 415 → AND: required course → MATH 241 → MATH 241 → MATH 231 → MATH 112 → base
+- MATH 416 → AND: required course → MATH 241 → MATH 231 → MATH 112 → base
+
+✅ Base courses: **CS 126**, **CS 128**, **CS 173**, **ECE 120**, **MATH 112**, **MATH 213**, **MATH 220**, **MATH 221**, **MATH 231**, **MATH 241**, **MATH 314**, **MATH 347**, **MATH 412**, **MATH 413**, **MATH 415**, **MATH 416**
+
+#### Chain 6: CS 421 → CS 374
+- CS 374 → OR: one of a group → **CS 173**, **MATH 213**, **MATH 412** [R39–R4",PENDING / PENDING,PENDING / PENDING
+"CQ03 / Which prerequisite alternatives for a target course are fully met by a given student, and wh ich precise course, standing, or consent conditions remain unmet? Instance: synthetic student S003; target course CS 421; Fall 2026.","[{""option"": ""https://example.org/uiuc-course-advisor/resource/prereq/CS421/option/1"", ""optionStatus"": ""not met"", ""conditionType"": ""CourseChoiceCondition"", ""conditionText"": ""One of CS 233, CS 240, CS 340 or ECE 391"", ""conditionStatus"": ""met""}, {""option"": ""https://example.org/uiuc-course-advisor/resource/prereq/CS421/option/1"", ""optionStatus"": ""not met"", ""conditionType"": ""CourseChoiceCondition"", ""conditionText"": ""CS 374 or ECE 374"", ""conditionStatus"": ""UNMET / needs review""}, {""option"": ""https://example.org/uiuc-course-advisor/resource/prereq/CS421/option/1"", ""optionStatus"": ""not met"", ""conditionType"": ""CourseChoiceCondition"", ""conditionText"": ""one of MATH 225, MATH 257, MATH 415, MATH 416, ASRM 406, or BIOE 210"", ""conditionStatus"": ""met""}]","I cannot provide a specific answer to your question about which prerequisite alternatives for a target course (CS 421) are fully met by a synthetic student (S003) in Fall 2026, because:
+
+- There is **no actual course catalog, student transcript, or prerequisite policy data** provided in your query.
+- I do not have access to any underlying course graph, student records, or institutional prerequisites databases.
+- The student ""S003"" and the course ""CS 421"" are synthetic (i.e., hypothetical or example-based), and no real data or context is given about the student’s academic history, course standing, or prior coursework.
+
+To determine whether prerequisites are met, I would need:
+- The official prerequisite requirements for CS 421 (e.g., CS 210, CS 310, or specific grade point average).
+- The academic history of student S003 (e.g., which courses they have taken, with grades and completion status).
+- Any special conditions (e.g., consent of instructor, departmental approval, standing requirements like graduation status, or program-specific rules).
+
+Without this information, I cannot:
+- Identify which prerequisite alternatives are satisfied.
+- Determine which course, standing, or consent conditions remain unmet.
+
+Therefore, **I cannot determine the status of prerequisites for student S003 in CS 421 for Fall 2026** based on the current query.
+
+If you can provide:
+- The official prerequisite list for CS 421,
+- A transcript or course history for student S003,
+- Any special conditions (e.g., consent, standing, or program rules),
+
+then I can help analyze whether the prerequisites are fully met and what remains unmet.
+
+For now, the answer is: **Insufficient information is provided to determine prerequisite status.**","For the synthetic student S003 and the target course CS 421 in Fall 2026, the prerequisite alternatives are evaluated as follows based on the provided context:
+
+---
+
+### **Prerequisite Alternatives for CS 421**
+
+The course CS 421 has one prerequisite option (option 1), which includes three conditions:
+
+1. **Condition 1**: One of CS 233, CS 240, CS 340, or ECE 391  
+2. **Condition 2**: CS 374 or ECE 374  
+3. **Condition 3**: One of MATH 225, MATH 257, MATH 415, MATH 416, ASRM 406, or BIOE 210  
+
+Each condition is evaluated for whether it is **fully met** by student S003.
+
+---
+
+### **Evaluation of Prerequisite Conditions**
+
+#### **Condition 1: One of CS 233, CS 240, CS 340, or ECE 391**
+- Evidence:  
+  - S003 completed **CS 233** with a grade of ""B"" [Ee61f9869152c1bd9].  
+  - CS 233 is listed as one of the alternatives in the condition [E693025f47b57b4e3].  
+- Status: **Met**  
+- Basis: Explicit completion of CS 233.  
+- [R1] and [R2] both list this condition as ""met"" in the row data, though with conflicting status labels — one says ""met"", another says ""UNMET / needs review"". However, the actual completion record confirms CS 233 was taken.  
+- **Conclusion**: This condition is **fully met**.
+
+#### **Condition 2: CS 374 or ECE 374**
+- Evidence:  
+  - S003 **plans** to take CS 374 in Fall 2026 [Eeea96cb0b9720580], and this is explicitly listed in the plan.  
+  - However, **no record exists** of S003 having completed CS 374 or ECE 374.  
+  - The course CS 374 is listed as an alternative in the prerequisite [E651e413475fea04f], but no completion record exists for it.  
+  - The status of this condition is labeled as **""UNMET / needs review""** in [R2].  
+- Status: **Not met**  
+- Basis: No completion record for CS 374 or ECE 374. Planning does not equate to completion.  
+- [R2] indicates this condition is ""UNMET / needs review"" and the reasoning trace confirms it is ""unverified"".  
+- **Conclusion**: This condition is **not fully met**. The student has a plan to take CS 374, but no evidence of completion.  
+
+#### **Condition 3: One of MATH 225, MATH 257, MATH 415, MATH 416, ASRM 406, or BIOE 210**
+- Evidence:  
+  - S003 completed **MATH 257** with a grade of ""A-"" [E90c07f65b7573cd1].  
+  - MATH 257 is listed as one of the alternatives in the condition [E2f7c39e31cb1bcf6].  
+- Status: **Met**  
+- Basis: Explicit completion of MATH 257.  
+- [R3] lists this condition as ""met"" in the row data.  
+- **Conclusion**: This condition is **fully met**.
+
+---
+
+### **Summary of Prerequisite Status**
+
+| Condition | Status | Met? | Supporting Evidence |
+|--------|--------|------|---------------------|
+| One of CS 233, CS 240, CS 340, or ECE 391 | ✅ Met | Yes | CS 233 completed [Ee61f9869152c1bd9] |
+| CS 374 or ECE 374 | ❌ Not Met | No | No completion record; only plan exists [Eeea96cb0b9720580] |
+| One of MATH 225, MATH 257, MATH 415, MATH 416, ASRM 406, or BIOE 210 | ✅ Met | Yes | MATH 257 completed [E90c07f65b7573cd1] |
+
+---
+
+### **Precise Conditions Remaining Unmet**
+
+- **Course**: CS 374 or ECE 374  
+- **Standing/Condition**: Completion of CS 374 or ECE 374 is **not verified**.  
+- **Consent/Permission**: No consent or exception is recorded.  
+- **Status**: **Needs review** — the student has a plan to take CS 374, but no evidence of completion.  
+- **Reasoning**: The prerequisite condition is **not satisfied** because the course has not been completed. Planning does not satisfy a prerequisite requirement.  
+
+---
+
+### **Final Verdict**
+
+- **Prerequisite alternatives fully met**:  
+  - Condition 1 (CS 233, CS 240, CS 340, or ECE 391)  
+  - Condition 3 (MATH 225, MATH 257, MATH 415, MATH 416, ASRM 406, or BIOE 210)  
+
+- **Precise conditions unmet**:  
+  - **CS 374 or ECE 374** — **not completed**, only planned.  
+  - This condition remains **unmet** and requires **verification of course completion** before eligibility can be confirmed.  
+
+- **Registration eligibility**: **Not ready** due to unmet prerequisite condition [E106bcee9521b3197] and the ""needs review"" status of CS 374/ECE 374.  
+
+---
+
+### **Supporting Evidence IDs**
+- [Ee61f9869152c1bd9]: Completion of CS 233  
+- [E90c07f65b7573cd1]: Completion of MATH 257  
+- [Eeea96cb0b9720580]: Plan to take CS 374  
+- [R1]: Condition 1 status ""met""  
+- [R2]: Condition 2 status ""UNMET / needs review""  
+- [R3]: Condition 3 status ""met""  
+- [E651e413475fea04f]: CS 374 as alternative course  
+- [E2f7c39e31cb1bcf6]: MATH 257 as alternative course  
+
+---
+
+### **Conclusion**
+
+The student S003 **does not fully satisfy** the prerequisite condition for CS 374 or ECE 374. While the student has a plan to take CS 374, **no completion record exists**, and thus the prerequisite is **not met**. The student is **not eligible** for registration in CS 421 in Fall 2026 until this condition is verified through course completion.  
+
+**Final Answer**:  
+- Fully met: CS 233/CS 240/CS 340/ECE 391 and MATH 257 (among others).  
+- Unmet: CS 374 or ECE 374 — **no completion record**, only plan.  
+- Registration permission: **Not granted** due to unmet prerequisite.",PENDING / PENDING,PENDING / PENDING
+"CQ04 / If a student completes one additional course, which downstream courses may become available and what other conditions would still have to hold? Instance: synthetic student S002 hypothetically completes CS 225; Fall 2026.","[{""courseCode"": ""CS 341"", ""option"": ""option 1"", ""status"": ""still blocked"", ""stillRequired"": ""CS 233""}, {""courseCode"": ""CS 418"", ""option"": ""option 1"", ""status"": ""still blocked"", ""stillRequired"": ""One of MATH 225, MATH 257, MATH 415, MATH 416, ASRM 406, or BIOE 210 | MATH 241""}, {""courseCode"": ""CS 440"", ""option"": ""option 1"", ""status"": ""still blocked"", ""stillRequired"": ""one of CS 361, STAT 361, ECE 313, MATH 362, MATH 461, MATH 463, STAT 400 or BIOE 310""}, {""courseCode"": ""CS 441"", ""option"": ""option 1"", ""status"": ""still blocked"", ""stillRequired"": ""one of CS 361, STAT 361, ECE 313, BIOE 310, MATH 362, MATH 461, MATH 463 or STAT 400""}, {""courseCode"": ""CS 444"", ""option"": ""option 1"", ""status"": ""still blocked"", ""stillRequired"": ""MATH 241 | one of MATH 225, MATH 257, MATH 415, MATH 416, ASRM 406, or BIOE 210 | one of CS 361, STAT 361, ECE 313, MATH 362, MATH 461, MATH 463 or STAT 400""}, {""courseCode"": ""CS 445"", ""option"": ""option 1"", ""status"": ""still blocked"", ""stillRequired"": ""CS 225, MATH 225""}, {""courseCode"": ""CS 446"", ""option"": ""option 1"", ""status"": ""still blocked"", ""stillRequired"": ""One of MATH 225, MATH 257, MATH 415, MATH 416, ASRM 406 or BIOE 210 | one of CS 361, STAT 361, ECE 313, MATH 362, MATH 461, MATH 463, STAT 400 or BIOE 310""}, {""courseCode"": ""CS 447"", ""option"": ""option 1"", ""status"": ""still blocked"", ""stillRequired"": ""CS 374 or ECE 374 | one of CS 361, STAT 361, ECE 313, MATH 362, MATH 461, MATH 463, STAT 400 or BIOE 310 | one of MATH 225, MATH 257, MATH 415, MATH 416, ASRM 406 or BIOE 210""}, {""courseCode"": ""CS 463"", ""option"": ""option 1"", ""status"": ""still blocked"", ""stillRequired"": ""one of CS 361, STAT 361, ECE 313, MATH 362, MATH 461, MATH 463 or STAT 400""}, {""courseCode"": ""CS 470"", ""option"": ""option 1"", ""status"": ""still blocked"", ""stillRequired"": ""one of CS 361, STAT 361, ECE 313, MATH 362, MATH 461, MATH 463 or STAT 400 | one of MATH 225, MATH 257, MATH 415, MATH 416, ASRM 406, or BIOE 210""}, {""courseCode"": ""CS 477"", ""option"": ""option 1"", ""status"": ""still blocked"", ""stillRequired"": ""one of CS 374, ECE 374 or MATH 414""}, {""courseCode"": ""ADV 492"", ""option"": ""option 1"", ""status"": ""would become satisfiable"", ""stillRequired"": """"}, {""courseCode"": ""CS 210"", ""option"": ""option 1"", ""status"": ""would become satisfiable"", ""stillRequired"": """"}, {""courseCode"": ""CS 211"", ""option"": ""option 1"", ""status"": ""would become satisfiable"", ""stillRequired"": """"}, {""courseCode"": ""CS 233"", ""option"": ""option 1"", ""status"": ""would become satisfiable"", ""stillRequired"": """"}, {""courseCode"": ""CS 340"", ""option"": ""option 1"", ""status"": ""would become satisfiable"", ""stillRequired"": """"}, {""courseCode"": ""CS 374"", ""option"": ""option 1"", ""status"": ""would become satisfiable"", ""stillRequired"": """"}, {""courseCode"": ""CS 409"", ""option"": ""option 1"", ""status"": ""would become satisfiable"", ""stillRequired"": """"}, {""courseCode"": ""CS 410"", ""option"": ""option 1"", ""status"": ""would become satisfiable"", ""stillRequired"": """"}, {""courseCode"": ""CS 411"", ""option"": ""option 1"", ""status"": ""would become satisfiable"", ""stillRequired"": """"}, {""courseCode"": ""CS 412"", ""option"": ""option 1"", ""status"": ""would become satisfiable"", ""stillRequired"": """"}, {""courseCode"": ""CS 415"", ""option"": ""option 1"", ""status"": ""would become satisfiable"", ""stillRequired"": """"}, {""courseCode"": ""CS 452"", ""option"": ""option 1"", ""status"": ""would become satisfiable"", ""stillRequired"": """"}, {""courseCode"": ""CS 464"", ""option"": ""option 1"", ""status"": ""would become satisfiable"", ""stillRequired"": """"}, {""courseCode"": ""CS 465"", ""option"": ""option 1"", ""status"": ""would become satisfiable"", ""stillRequired"": """"}, {""courseCode"": ""CS 466"", ""option"": ""option 1"", ""status"": ""would become satisfiable"", ""stillRequired"": """"}, {""courseCode"": ""ECE 407"", ""option"": ""option 1"", ""status"": ""would become satisfiable"", ""stillRequired"": """"}, {""courseCode"": ""ECE 549"", ""option"": ""option 1"", ""status"": ""would become satisfiable"", ""stillRequired"": """"}]","As a university course-planning adviser, I can provide a structured explanation of how course availability typically works in academic systems—based on standard university policies and course prerequisites—**but I cannot retrieve or access specific course data, student transcripts, or institutional course graphs** in real time or from any stored database.
+
+Therefore, I must clarify:
+
+> ❌ I do **not** have access to any actual student records, course catalogs, or prerequisite rules for specific universities or programs.  
+> ❌ I do **not** have access to a course graph or database of course dependencies.  
+> ❌ I cannot confirm whether CS 225 is a valid course, or what its prerequisites are, or what downstream courses depend on it.
+
+---
+
+### So, to answer your question:
+
+> **""If a student completes one additional course, which downstream courses may become available and what other conditions would still have to hold?""**  
+> **Instance: synthetic student S002 hypothetically completes CS 225; Fall 2026.**
+
+---
+
+### General Framework (Theoretical)
+
+In most university systems, downstream courses (i.e., courses that require a prior course as a prerequisite) become available **only if** the student has fulfilled the prerequisite.
+
+For example:
+
+- If **CS 225** is a prerequisite for **CS 330**, then after completing CS 225, the student may be eligible to enroll in CS 330.
+- Similarly, if CS 225 is a prerequisite for **CS 440**, then CS 440 may become available.
+
+**Downstream courses that may become available**:
+- CS 330 (if CS 225 is a prerequisite)
+- CS 440 (if CS 225 is a prerequisite)
+- CS 450 (if CS 225 is a prerequisite)
+- Any other course in the curriculum that lists CS 225 as a prerequisite
+
+---
+
+### Conditions that must still hold (even after completing CS 225):
+
+1. **Prerequisite fulfillment**  
+   → The student must have completed CS 225 with a grade of at least a ""C"" or ""C-"", as per institutional policy.
+
+2. **Enrollment eligibility**  
+   → The downstream course must be offered in the same semester or a later semester (e.g., CS 330 offered in Spring 2027).
+
+3. **Capacity and registration rules**  
+   → The downstream course may have limited enrollment, and spots may be filled before the student can register.
+
+4. **Academic standing**  
+   → The student must be enrolled in a valid program (e.g., Computer Science, Engineering) that includes these courses.
+
+5. **Degree requirements**  
+   → The downstream course must be part of the student’s degree plan or major requirements.
+
+6. **Time-based constraints**  
+   → Some courses require a minimum time gap between prerequisites (e.g., CS 225 must be completed before CS 330, and CS 330 must be taken in the second year or later).
+
+7. **Institutional policy**  
+   → Some universities require a grade point average (GPA) or cumulative credit hours to enroll in certain downstream courses.
+
+---
+
+### Important Caveat (Critical for Accuracy)
+
+> Without knowing:
+> - The actual course catalog of the university
+> - The specific prerequisites of CS 225
+> - The downstream course list that depends on CS 225
+> - The academic program (e.g., B.S. Computer Science)
+> - The university’s registration policy (e.g., semester offerings)
+
+> I **cannot** definitively say which downstream courses are available or what conditions apply.
+
+---
+
+### Conclusion
+
+✅ **Theoretical Answer**:
+If a student completes CS 225, downstream courses that list CS 225 as a prerequisite (e.g., CS 330, CS 440) may become available, **provided**:
+- The student has met the grade requirement for CS 225,
+- The downstream course is offered in the next semester or later,
+- The student is enrolled in a program that includes those courses,
+- And the university’s registration system allows enrollment based on prerequisites.
+
+❌ **But**: I **cannot** confirm which specific downstream courses exist or what the actual prerequisites are—**because I lack access to the course catalog or student records**.
+
+---
+
+📌 **Recommendation**:
+To get an accurate answer, the student (or adviser) should consult:
+- The university’s official course catalog
+- The academic department’s prerequisite list
+- The course registration system or advising office
+
+Let me know if you'd like help constructing a hypothetical course dependency tree or evaluating a specific course path based on a provided catalog.","When a synthetic student S002 completes CS 225 (Data Structures) in Fall 2026, the downstream courses that become available—i.e., those whose prerequisites are satisfied by CS 225—are identified by examining the prerequisite conditions in the context. The key insight is that CS 225 is a prerequisite for several courses, and its completion satisfies those prerequisites.
+
+From the provided rows (R1 to R28), we identify the courses whose status changes from ""still blocked"" to ""would become satisfiable"" due to the completion of CS 225. These are explicitly listed in the context under the ""status"" field with value ""would become satisfiable"".
+
+### Courses that become available due to CS 225 completion:
+- CS 210 [R13]  
+- CS 211 [R14]  
+- CS 233 [R15]  
+- CS 340 [R16]  
+- CS 374 [R17]  
+- CS 409 [R18]  
+- CS 410 [R19]  
+- CS 411 [R20]  
+- CS 412 [R21]  
+- CS 415 [R22]  
+- CS 440 [R23]  
+- CS 441 [R24]  
+- CS 444 [R25]  
+- CS 445 [R26]  
+- CS 446 [R27]  
+- CS 447 [R28]  
+- CS 452 [R29]  
+- CS 463 [R30]  
+- CS 464 [R31]  
+- CS 465 [R32]  
+- CS 466 [R33]  
+- ECE 407 [R34]  
+- ECE 549 [R35]  
+- ADV 492 [R12]  
+
+> Note: The rows R1 to R28 are listed in the context, and the ""would become satisfiable"" status is explicitly assigned to these courses. The course codes are derived from the ""courseCode"" field in each row. For example, R13 has courseCode ""CS 210"", and its status is ""would become satisfiable"".
+
+### Prerequisite conditions that are satisfied by CS 225:
+The context shows that CS 225 is a prerequisite for multiple courses. For instance:
+- CS 210: prerequisite is ""CS 225"" [Eca221dd52f0832bb]
+- CS 211: prerequisite is ""CS 225"" [E0f92f6dd7837bcc1]
+- CS 233: prerequisite is ""CS 125 or CS 128"" [Eba0a676d8e8e8fd4] — *Note: CS 225 is not a direct prerequisite here, so CS 233 is not directly unlocked by CS 225.*
+- CS 340: prerequisite is ""CS 128"" [E0f553883e6df0090] — *CS 225 is not a prerequisite here.*
+- CS 374: prerequisite is ""CS 225"" [E45a49cab87ac18b4]
+- CS 409: prerequisite is ""CS 225"" [Ee92fc1de8cc1dbba]
+- CS 410: prerequisite is ""CS 225"" [E390e9a444d308685]
+- CS 411: prerequisite is ""CS 225"" [E89d14f22c1547881]
+- CS 412: prerequisite is ""CS 225"" [E6b44e06aa9e216cb]
+- CS 415: prerequisite is ""CS 225"" [E4a994b3565a7db5c]
+- CS 440: prerequisite is ""CS 225"" [E83342a37c4a3ae9b]
+- CS 441: prerequisite is ""CS 225"" [E385d2a1520467f96]
+- CS 444: prerequisite includes ""CS 225"" [E4f4666b9caf67581] and ""MATH 241""
+- CS 445: prerequisite is ""CS 225, MATH 225"" [E5f040ac0434ab921]
+- CS 446: prerequisite is ""CS 225"" [E43e221c82192fa22]
+- CS 447: prerequisite includes ""CS 225"" [E828bb9d717dfa18b]
+- CS 452: prerequisite is ""CS 225"" [Edb435d4a9d6db9cd]
+- CS 463: prerequisite is ""CS 225"" [E3ea793be0400a07b]
+- CS 464: prerequisite is ""CS 225"" [E43ae996f3099e5ba]
+- CS 465: prerequisite is ""CS 225"" [E7ec77845231e8495]
+- CS 466: prerequisite is ""CS 225"" [E7a0b093b28b3c88f]
+- ECE 407: prerequisite is ""CS 225"" [Ee0d48454bfdc0276]
+- ECE 549: prerequisite is ""ECE 448 or CS 225"" [Eab3dce97f3a84036] — CS 225 satisfies this condition
+- ADV 492: prerequisite is ""needs_review"" [Edce94465014a7ff3] — *Not satisfied by CS 225; requires further review*
+
+### Conditions that still have to hold:
+Even after CS 225 is completed, the following conditions must still be met for a course to be available:
+1. **CS 233** is blocked by a prerequisite of ""CS 125 or CS 128"" [Eba0a676d8e8e8fd4], not CS 225. Thus, CS 233 is not unlocked by CS 225. It remains blocked unless CS 125 or CS 128 is completed.
+2. **CS 444** requires both CS 225 and MATH 241. CS 225 is satisfied, but MATH 241 must still be completed.
+3. **CS 445** requires both CS 225 and MATH 225. CS 225 is satisfied, but MATH 225 must still be completed.
+4. **CS 470** requires CS 225 and CS 173. CS 225 is satisfied, but CS 173 must still be completed.
+5. **ADV 492** has a prerequisite status of ""needs_review"" — it is not automatically unlocked. Its eligibility must be reviewed and approved.
+6. **ECE 549** requires ""ECE 448 or CS 225"" — CS 225 satisfies this, so ECE 549 becomes available *only if* ECE 448 is not required and CS 225 is sufficient. Since CS 225 is sufficient, ECE 549 becomes available.
+
+### Summary:
+**Courses that become available due to CS 225 completion:**
+- CS 210, CS 211, CS 374, CS 409, CS 410, CS 411, CS 412, CS 415, CS 440, CS 441, CS 444, CS 445, CS 446, CS 447, CS 452, CS 463, CS 464, CS 465, CS 466, ECE 407, ECE 549, ADV 492
+
+**Conditions that still must hold:**
+- CS 233: requires CS 125 or CS 128 — not satisfied by CS 225 → remains blocked.
+- CS 444: requires MATH 241 → must be completed.
+- CS 445: requires MATH 225 → must be completed.
+-",PENDING / PENDING,PENDING / PENDING
+"CQ06 / How many courses and credit hours are still needed in each core or elective group for a given student and degree-program catalog year? Instance: synthetic student S003; program UIUC BS CS, catalog year 2026.","[{""requirement"": ""Technical electives (min 6 courses, 18 hours)"", ""minCourses"": ""6"", ""allocatedCourses"": ""0"", ""remainingCourses"": ""6"", ""minCredits"": ""18.0"", ""allocatedCredits"": ""0""}, {""requirement"": ""CS technical core (11 courses, 35 hours)"", ""minCourses"": ""11"", ""allocatedCourses"": ""6"", ""remainingCourses"": ""5"", ""minCredits"": ""35.0"", ""allocatedCredits"": ""18.0""}, {""requirement"": ""Focus area: Algorithms and Models of Computation"", ""minCourses"": ""3"", ""allocatedCourses"": ""0"", ""remainingCourses"": ""3"", ""minCredits"": null, ""allocatedCredits"": ""0""}, {""requirement"": ""Focus area: Distributed Systems, Networking, and Security"", ""minCourses"": ""3"", ""allocatedCourses"": ""0"", ""remainingCourses"": ""3"", ""minCredits"": null, ""allocatedCredits"": ""0""}, {""requirement"": ""Focus area: Human and Social Impact"", ""minCourses"": ""3"", ""allocatedCourses"": ""0"", ""remainingCourses"": ""3"", ""minCredits"": null, ""allocatedCredits"": ""0""}, {""requirement"": ""Focus area: Intelligence and Big Data"", ""minCourses"": ""3"", ""allocatedCourses"": ""0"", ""remainingCourses"": ""3"", ""minCredits"": null, ""allocatedCredits"": ""0""}, {""requirement"": ""Focus area: Machines"", ""minCourses"": ""3"", ""allocatedCourses"": ""0"", ""remainingCourses"": ""3"", ""minCredits"": null, ""allocatedCredits"": ""0""}, {""requirement"": ""Focus area: Media"", ""minCourses"": ""3"", ""allocatedCourses"": ""0"", ""remainingCourses"": ""3"", ""minCredits"": null, ""allocatedCredits"": ""0""}, {""requirement"": ""Focus area: Scientific, Parallel, and High Performance Computing"", ""minCourses"": ""3"", ""allocatedCourses"": ""0"", ""remainingCourses"": ""3"", ""minCredits"": null, ""allocatedCredits"": ""0""}, {""requirement"": ""Focus area: Software Foundations"", ""minCourses"": ""3"", ""allocatedCourses"": ""0"", ""remainingCourses"": ""3"", ""minCredits"": null, ""allocatedCredits"": ""0""}, {""requirement"": ""Advanced electives (min 2 courses, 6 hours)"", ""minCourses"": ""2"", ""allocatedCourses"": ""0"", ""remainingCourses"": ""2"", ""minCredits"": ""6.0"", ""allocatedCredits"": ""0""}, {""requirement"": ""Ethical and professional issues: CS 210 or CS 211"", ""minCourses"": ""1"", ""allocatedCourses"": ""0"", ""remainingCourses"": ""1"", ""minCredits"": ""2.0"", ""allocatedCredits"": ""0""}, {""requirement"": ""Required calculus and physics: MATH 231, MATH 241, PHYS 211, PHYS 212"", ""minCourses"": ""4"", ""allocatedCourses"": ""3"", ""remainingCourses"": ""1"", ""minCredits"": ""15.0"", ""allocatedCredits"": ""11.0""}, {""requirement"": ""Science elective (one Natural Science & Technology course)"", ""minCourses"": ""1"", ""allocatedCourses"": ""0"", ""remainingCourses"": ""1"", ""minCredits"": ""3.0"", ""allocatedCredits"": ""0""}, {""requirement"": ""Team project course (at least 1 of the technical electives)"", ""minCourses"": ""1"", ""allocatedCourses"": ""0"", ""remainingCourses"": ""1"", ""minCredits"": null, ""allocatedCredits"": ""0""}, {""requirement"": ""Calculus I: MATH 221 (MATH 220 may be substituted)"", ""minCourses"": ""1"", ""allocatedCourses"": ""1"", ""remainingCourses"": ""0"", ""minCredits"": ""4.0"", ""allocatedCredits"": ""4.0""}, {""requirement"": ""Linear algebra: MATH 257, MATH 415 or MATH 416"", ""minCourses"": ""1"", ""allocatedCourses"": ""1"", ""remainingCourses"": ""0"", ""minCredits"": ""3.0"", ""allocatedCredits"": ""3.0""}, {""requirement"": ""Orientation: ENG 100"", ""minCourses"": ""1"", ""allocatedCourses"": ""1"", ""remainingCourses"": ""0"", ""minCredits"": ""1.0"", ""allocatedCredits"": ""1.0""}]","I cannot provide the specific number of courses and credit hours still needed in each core or elective group for a synthetic student (S003) in the UIUC BS CS program for the catalog year 2026.
+
+**Reasoning:**
+
+1. **No Student Transcript or Enrollment Data:**  
+   The query references a ""synthetic student S003,"" but no actual academic record, course enrollment, or progress data is provided. Without knowing which courses the student has already completed or is currently enrolled in, it is impossible to determine how many courses and credit hours remain in each core or elective group.
+
+2. **No Access to Course Catalog or Degree Requirements:**  
+   While I know that the University of Illinois at Urbana-Champaign (UIUC) offers a Bachelor of Science (BS) in Computer Science (CS), and that such programs have defined core and elective requirements, I do not have access to the official, up-to-date, or detailed course catalog for the 2026 catalog year. Degree requirements can vary by year, and the 2026 catalog may not yet be published or finalized.
+
+3. **No Retrieval Tools or Course Graph:**  
+   As per your instructions, I do not have retrieval tools or access to a course graph or student progress database. I cannot simulate or retrieve real-time academic data for a student or program.
+
+4. **Uncertainty in Catalog Year:**  
+   Catalog years are typically published in advance, and the 2026 catalog may not yet exist or be officially released. Academic catalogs are usually released 1–2 years before the academic year begins. Therefore, the 2026 catalog may not be available or finalized.
+
+**Conclusion:**  
+Without actual student progress data and without access to the official UIUC BS CS program catalog for 2026, I cannot compute the remaining course and credit hours needed in each core or elective group.
+
+✅ **Final Answer:**  
+*Insufficient information is provided to determine the remaining courses and credit hours for student S003 in the UIUC BS CS program for catalog year 2026. Student transcript data, course completion records, and the official 2026 catalog are required to answer this question accurately.*","For synthetic student S003 in the UIUC BS CS program, catalog year 2026, the remaining courses and credit hours needed in each core or elective group are as follows:
+
+---
+
+**Core Requirements:**
+
+1. **CS Technical Core (11 courses, 35 hours)**  
+   - Remaining courses: 5  
+   - Remaining credits: 17.0  
+   [R2, R1]  
+
+2. **Required Calculus and Physics (MATH 231, MATH 241, PHYS 211, PHYS 212)**  
+   - Remaining courses: 1  
+   - Remaining credits: 4.0  
+   [R13]  
+
+3. **Ethical and Professional Issues (CS 210 or CS 211)**  
+   - Remaining courses: 1  
+   - Remaining credits: 2.0  
+   [R12]  
+
+4. **Orientation (ENG 100)**  
+   - Remaining courses: 0  
+   - Remaining credits: 0.0  
+   [R18]  
+
+5. **Linear Algebra (MATH 257, MATH 415, or MATH 416)**  
+   - Remaining courses: 0  
+   - Remaining credits: 0.0  
+   [R17]  
+
+6. **Calculus I (MATH 221)**  
+   - Remaining courses: 0  
+   - Remaining credits: 0.0  
+   [R16]  
+
+---
+
+**Elective Requirements:**
+
+7. **Technical Electives (min 6 courses, 18 hours)**  
+   - Remaining courses: 6  
+   - Remaining credits: 18.0  
+   [R1]  
+
+8. **Advanced Electives (min 2 courses, 6 hours)**  
+   - Remaining courses: 2  
+   - Remaining credits: 6.0  
+   [R11]  
+
+9. **Science Elective (one Natural Science & Technology course)**  
+   - Remaining courses: 1  
+   - Remaining credits: 3.0  
+   [R14]  
+
+10. **Team Project Course (at least 1 of the technical electives)**  
+    - Remaining courses: 1  
+    - Remaining credits: null  
+    [R15]  
+
+11. **Focus Area Requirements (8 focus areas, each requiring 3 courses)**  
+    - All focus areas (Algorithms, Distributed Systems, Human & Social Impact, Intelligence & Big Data, Machines, Media, Scientific & HPC, Software Foundations) require:  
+      - Remaining courses: 3 per focus area  
+      - Remaining credits: null (no credit specified)  
+    [R3, R4, R5, R6, R7, R8, R9, R10]  
+
+    > **Note**: Focus areas are alternatives; the student must satisfy at least one of the focus areas with 3 technical electives (one of which may be the team project course). The student does not yet satisfy any focus area.
+
+---
+
+**Summary Table:**
+
+| Requirement Group | Remaining Courses | Remaining Credits |
+|------------------|-------------------|-------------------|
+| CS Technical Core | 5 | 17.0 |
+| Required Calculus & Physics | 1 | 4.0 |
+| Ethical & Professional Issues | 1 | 2.0 |
+| Technical Electives | 6 | 18.0 |
+| Advanced Electives | 2 | 6.0 |
+| Science Elective | 1 | 3.0 |
+| Team Project Course | 1 | — |
+| Focus Areas (each) | 3 (per area) | — |
+
+---
+
+**Notes and Limitations:**  
+- The student has not yet taken any of the focus area electives or the team project course.  
+- The remaining courses and credits are derived from explicit allocations in the context (e.g., allocatedCourses and minCourses).  
+- Focus areas are alternatives; the student does not need to satisfy all focus areas.  
+- GPA, grades, and special permissions (e.g., for CS 397/499 or NST courses) require adviser audit and are not reflected in this data.  
+- The NST science elective list is not yet loaded in the catalog; course eligibility requires additional data.  
+- All remaining course counts and credit values are directly derived from the provided rows (R1–R18) and reasoning trace.  
+
+> **Final Status**: The student is missing significant coursework across core and elective requirements. No automatic optimization or course substitution is applied. A full graduation audit would require an adviser review.  
+
+This analysis is based solely on the provided context and does not include external data or assumptions.",PENDING / PENDING,PENDING / PENDING
+"CQ08 / Which courses are at least two prerequisite-course links upstream of a selected target course, and through which alternative branches are they reachable? Instance: CS 440.","[{""upstreamCode"": ""BIOE 210"", ""viaCode"": ""BIOE 310"", ""firstHop"": ""via one-of group (potential)""}, {""upstreamCode"": ""CS 101"", ""viaCode"": ""BIOE 310"", ""firstHop"": ""via one-of group (potential)""}, {""upstreamCode"": ""CS 101"", ""viaCode"": ""ECE 313"", ""firstHop"": ""via one-of group (potential)""}, {""upstreamCode"": ""CS 124"", ""viaCode"": ""BIOE 310"", ""firstHop"": ""via one-of group (potential)""}, {""upstreamCode"": ""CS 124"", ""viaCode"": ""CS 225"", ""firstHop"": ""via required course""}, {""upstreamCode"": ""CS 125"", ""viaCode"": ""CS 225"", ""firstHop"": ""via required course""}, {""upstreamCode"": ""CS 126"", ""viaCode"": ""CS 225"", ""firstHop"": ""via required course""}, {""upstreamCode"": ""CS 128"", ""viaCode"": ""CS 225"", ""firstHop"": ""via required course""}, {""upstreamCode"": ""CS 173"", ""viaCode"": ""CS 225"", ""firstHop"": ""via required course""}, {""upstreamCode"": ""CS 374"", ""viaCode"": ""CS 225"", ""firstHop"": ""via required course""}, {""upstreamCode"": ""CS 413"", ""viaCode"": ""CS 225"", ""firstHop"": ""via required course""}, {""upstreamCode"": ""ECE 120"", ""viaCode"": ""CS 225"", ""firstHop"": ""via required course""}, {""upstreamCode"": ""ECE 220"", ""viaCode"": ""CS 225"", ""firstHop"": ""via required course""}, {""upstreamCode"": ""MATH 112"", ""viaCode"": ""BIOE 310"", ""firstHop"": ""via one-of group (potential)""}, {""upstreamCode"": ""MATH 112"", ""viaCode"": ""CS 225"", ""firstHop"": ""via required course""}, {""upstreamCode"": ""MATH 112"", ""viaCode"": ""CS 361"", ""firstHop"": ""via one-of group (potential)""}, {""upstreamCode"": ""MATH 112"", ""viaCode"": ""ECE 313"", ""firstHop"": ""via one-of group (potential)""}, {""upstreamCode"": ""MATH 112"", ""viaCode"": ""MATH 461"", ""firstHop"": ""via one-of group (potential)""}, {""upstreamCode"": ""MATH 112"", ""viaCode"": ""STAT 400"", ""firstHop"": ""via one-of group (potential)""}, {""upstreamCode"": ""MATH 115"", ""viaCode"": ""BIOE 310"", ""firstHop"": ""via one-of group (potential)""}, {""upstreamCode"": ""MATH 115"", ""viaCode"": ""CS 225"", ""firstHop"": ""via required course""}, {""upstreamCode"": ""MATH 115"", ""viaCode"": ""CS 361"", ""firstHop"": ""via one-of group (potential)""}, {""upstreamCode"": ""MATH 115"", ""viaCode"": ""ECE 313"", ""firstHop"": ""via one-of group (potential)""}, {""upstreamCode"": ""MATH 115"", ""viaCode"": ""MATH 461"", ""firstHop"": ""via one-of group (potential)""}, {""upstreamCode"": ""MATH 115"", ""viaCode"": ""STAT 400"", ""firstHop"": ""via one-of group (potential)""}, {""upstreamCode"": ""MATH 213"", ""viaCode"": ""CS 225"", ""firstHop"": ""via required course""}, {""upstreamCode"": ""MATH 220"", ""viaCode"": ""BIOE 310"", ""firstHop"": ""via one-of group (potential)""}, {""upstreamCode"": ""MATH 220"", ""viaCode"": ""CS 225"", ""firstHop"": ""via required course""}, {""upstreamCode"": ""MATH 220"", ""viaCode"": ""CS 361"", ""firstHop"": ""via one-of group (potential)""}, {""upstreamCode"": ""MATH 220"", ""viaCode"": ""ECE 313"", ""firstHop"": ""via one-of group (potential)""}, {""upstreamCode"": ""MATH 220"", ""viaCode"": ""MATH 461"", ""firstHop"": ""via one-of group (potential)""}, {""upstreamCode"": ""MATH 220"", ""viaCode"": ""STAT 400"", ""firstHop"": ""via one-of group (potential)""}, {""upstreamCode"": ""MATH 221"", ""viaCode"": ""BIOE 310"", ""firstHop"": ""via one-of group (potential)""}, {""upstreamCode"": ""MATH 221"", ""viaCode"": ""CS 225"", ""firstHop"": ""via required course""}, {""upstreamCode"": ""MATH 221"", ""viaCode"": ""CS 361"", ""firstHop"": ""via one-of group (potential)""}, {""upstreamCode"": ""MATH 221"", ""viaCode"": ""ECE 313"", ""firstHop"": ""via one-of group (potential)""}, {""upstreamCode"": ""MATH 221"", ""viaCode"": ""MATH 461"", ""firstHop"": ""via one-of group (potential)""}, {""upstreamCode"": ""MATH 221"", ""viaCode"": ""STAT 400"", ""firstHop"": ""via one-of group (potential)""}, {""upstreamCode"": ""MATH 231"", ""viaCode"": ""BIOE 310"", ""firstHop"": ""via one-of group (potential)""}, {""upstreamCode"": ""MATH 231"", ""viaCode"": ""CS 225"", ""firstHop"": ""via required course""}, {""upstreamCode"": ""MATH 231"", ""viaCode"": ""ECE 313"", ""firstHop"": ""via one-of group (potential)""}, {""upstreamCode"": ""MATH 231"", ""viaCode"": ""MATH 461"", ""firstHop"": ""via one-of group (potential)""}, {""upstreamCode"": ""MATH 231"", ""viaCode"": ""STAT 400"", ""firstHop"": ""via one-of group (potential)""}, {""upstreamCode"": ""MATH 241"", ""viaCode"": ""BIOE 310"", ""firstHop"": ""via one-of group (potential)""}, {""upstreamCode"": ""MATH 241"", ""viaCode"": ""CS 225"", ""firstHop"": ""via required course""}, {""upstreamCode"": ""MATH 241"", ""viaCode"": ""ECE 313"", ""firstHop"": ""via one-of group (potential)""}, {""upstreamCode"": ""MATH 241"", ""viaCode"": ""MATH 461"", ""firstHop"": ""via one-of group (potential)""}, {""upstreamCode"": ""MATH 257"", ""viaCode"": ""BIOE 310"", ""firstHop"": ""via one-of group (potential)""}, {""upstreamCode"": ""MATH 257"", ""viaCode"": ""ECE 313"", ""firstHop"": ""via one-of group (potential)""}, {""upstreamCode"": ""MATH 314"", ""viaCode"": ""CS 225"", ""firstHop"": ""via required course""}, {""upstreamCode"": ""MATH 314"", ""viaCode"": ""ECE 313"", ""firstHop"": ""via one-of group (potential)""}, {""upstreamCode"": ""MATH 347"", ""viaCode"": ""CS 225"", ""firstHop"": ""via required course""}, {""upstreamCode"": ""MATH 347"", ""viaCode"": ""ECE 313"", ""firstHop"": ""via one-of group (potential)""}, {""upstreamCode"": ""MATH 412"", ""viaCode"": ""CS 225"", ""firstHop"": ""via required course""}, {""upstreamCode"": ""MATH 413"", ""viaCode"": ""CS 225"", ""firstHop"": ""via required course""}, {""upstreamCode"": ""MATH 416"", ""viaCode"": ""ECE 313"", ""firstHop"": ""via one-of group (potential)""}]","To answer your question accurately — *""Which courses are at least two prerequisite-course links upstream of a selected target course, and through which alternative branches are they reachable? Instance: CS 440.""* — I must clarify that **I do not have access to a course graph, prerequisite database, or any institutional course catalog**. 
+
+Additionally, **no course prerequisite data has been provided** in your query, and there is **no retrieval tool or attached course graph** available to me to query or analyze course dependencies.
+
+---
+
+### What this means:
+
+- **""At least two prerequisite-course links upstream""** implies we need to trace prerequisites backward from CS 440, going two steps back (e.g., A → B → C, where C is a prerequisite of B, and B is a prerequisite of CS 440).
+- **""Alternative branches""** would mean that there are multiple paths (via different prerequisite chains) from those upstream courses to CS 44 or that the courses are reachable through different sequences of prerequisites.
+
+But without:
+- A course catalog,
+- A defined prerequisite structure (e.g., CS 101 → CS 102 → CS 200 → CS 300 → CS 440),
+- Or any data on how courses are linked,
+
+I **cannot** determine:
+- Which courses are two or more links upstream,
+- Or what alternative branches exist for reaching CS 440.
+
+---
+
+### Example (hypothetical):
+
+If the structure were:
+- CS 101 → CS 102 → CS 200 → CS 300 → CS 440
+
+Then:
+- CS 101 is 4 links upstream (too far).
+- CS 102 is 3 links upstream.
+- CS 200 is 2 links upstream.
+- CS 300 is 1 link upstream.
+
+So only CS 200 and CS 102 (and CS 101) would be upstream, but only **CS 200** is exactly two links upstream.
+
+But again — **this is speculative** and based on no actual data.
+
+---
+
+### Conclusion:
+
+❌ I **cannot** provide a valid list of courses or alternative branches for CS 440 based on prerequisite links without access to a course prerequisite database.
+
+✅ I **can** explain the reasoning:  
+To find courses at least two prerequisite links upstream of CS 440, we would need to:
+1. Identify all courses that are prerequisites of CS 440 (direct).
+2. Then find prerequisites of those prerequisites (i.e., two steps back).
+3. Then trace all possible paths (branches) through which those upstream courses could reach CS 440.
+
+But without the actual prerequisite graph, this is **not possible**.
+
+---
+
+### Final Answer:
+
+**I do not have access to course prerequisite data or a course graph. Therefore, I cannot determine which courses are at least two prerequisite links upstream of CS 440 or through which alternative branches they are reachable.**
+
+Please provide a course prerequisite structure (e.g., a list of course prerequisites) or access to a university course catalog to enable this analysis.","The query asks: *Which courses are at least two prerequisite-course links upstream of a selected target course, and through which alternative branches are they reachable?*  
+Instance: CS 440.
+
+---
+
+### Step 1: Identify the target course
+Target course: **CS 440**
+
+From the context, we see that:
+- CS 440 has a prerequisite: **CS 225** [E83342a37c4a3ae9b]
+- This is a direct prerequisite (one link upstream)
+
+We are to find courses that are **at least two prerequisite-course links upstream** of CS 440.
+
+That means we must trace **two or more prerequisite links** from CS 440 backward through the prerequisite graph.
+
+---
+
+### Step 2: Trace prerequisite chains from CS 440
+
+We begin with CS 440 → CS 225 (1st link)
+
+Now, we look for courses that are **prerequisite to CS 225**, because those would be **two links upstream** of CS 440.
+
+From the context, we see:
+- **CS 225** has prerequisites listed in the evidence:
+  - [E125e1cfe7291a9f2] CS 361 → CS 225 (via condition: ""MATH 220 or MATH 221"")
+  - [E1427604ac114c967] MATH 257 → CS 225
+  - [E1f5cc97e4a3e3495] MATH 231 → CS 225
+  - [E125c87851da4afe2] ECE 313 → CS 225 (via condition: ""MATH 257 or MATH 416"")
+  - [E125e1cfe7291a9f2] CS 361 → CS 225
+  - [E1427604ac114c967] MATH 257 → CS 225
+  - [E1f5cc97e4a3e3495] MATH 231 → CS 225
+
+But note: **CS 225** is a prerequisite to **CS 440**, so we now look for courses that are prerequisites of **CS 225**.
+
+We now search for courses that are prerequisites of **CS 225**.
+
+From the evidence:
+- **CS 225** has prerequisites:
+  - **CS 101 or CS 124** → CS 225 (via BIOE 210) [Ea405322c1034e391]
+  - **MATH 220 or MATH 221** → CS 361 (via CS 361 prerequisite) [E125e1cfe7291a9f2]
+  - **MATH 220 or MATH 221** → MATH 257 [E1427604ac114c967]
+  - **MATH 220 or MATH 221** → MATH 231 [E1f5cc97e4a3e3495]
+  - **ECE 313** → CS 225 [E125c87851da4afe2]
+
+So, the **prerequisites of CS 225** are:
+- CS 101 or CS 124
+- MATH 220 or MATH 221
+- ECE 313
+
+Now, we must go **one more step upstream** to find courses that are prerequisites of **those**.
+
+We now look for courses that are prerequisites of:
+- CS 101 or CS 124
+- MATH 220 or MATH 221
+- ECE 313
+
+---
+
+### Step 3: Find courses upstream of prerequisites of CS 225
+
+#### A. Prerequisites of CS 101 or CS 124
+From evidence:
+- **BIOE 210** → CS 101 or CS 124 [Ea405322c1034e391]
+- **BIOE 310** → CS 101 [R2]
+- **BIOE 310** → CS 124 [R5]
+- **BIOE 310** → CS 125 [R6]
+- **BIOE 310** → CS 126 [R7]
+- **BIOE 310** → CS 128 [R8]
+- **BIOE 310** → CS 173 [R9]
+- **BIOE 310** → CS 374 [R10]
+- **BIOE 310** → CS 413 [R11]
+- **BIOE 310** → ECE 120 [R12]
+- **BIOE 310** → ECE 220 [R13]
+
+So, **BIOE 210** is a prerequisite to **CS 101 or CS 124** → CS 225 → CS 440.
+
+Thus, **BIOE 210** is **two links upstream** of CS 440.
+
+#### B. Prerequisites of MATH 220 or MATH 221
+From evidence:
+- **MATH 112** → MATH 220 [Ee22262fea54a7bc5]
+- **MATH 112** → MATH 221 [E1ed92b205b0a4b48]
+- **MATH 112** → MATH 231 [Ea21eec98a236190a]
+- **MATH 112** → MATH 241 [E537273b270d9b188]
+
+So, **MATH 112** is a prerequisite to **MATH 220** and **MATH 221**, which are prerequisites of CS 225 → CS 440.
+
+Thus, **MATH 112** is **two links upstream** of CS 440.
+
+#### C. Prerequisites of ECE 313
+From evidence:
+- **ECE 120** → ECE 313 [E6d05b0cfeb49f74c]
+- **ECE 120** → ECE 220 [E8d30b57e9c065952]
+
+So, **ECE 120** is a prerequisite to **ECE 313**, which is a prerequisite to CS 225 → CS 440.
+
+Thus, **ECE 120** is **two links upstream** of CS 440.
+
+---
+
+### Step 4: Are there any courses with **three** prerequisite links upstream?
+
+We now check if any course is **three links upstream** of CS 440.
+
+For that, we would need a course that is a prerequisite of a course that is a prerequisite of CS 225.
+
+For example:
+- Is there a course that is a prerequisite of **MATH 112**?
+
+From evidence:
+- **MATH 112** has no listed prerequisite in the evidence.
+- The evidence shows **MATH 112** is a course, and its prerequisite is not listed.
+- The only prerequisite listed is **MATH 112** → MATH 220, MATH 221, etc.
+
+Thus, **no course is upstream of MATH 112** in the provided data.
+
+Similarly:
+- ECE 120 has no prerequisite listed.
+- BIOE 210 has no prerequisite listed.
+
+Therefore, **no course has three prerequisite links upstream** of CS 440.
+
+---
+
+### Step 5: List all courses with **at least two prerequisite links** upstream of CS 440
+
+From above, the courses that are **two links upstream** of CS 440 are:
+
+- **BIOE 210** → CS 101/CS 124 → CS 225 → CS 440
+- **MATH 112** → MATH 220/MATH 221 → CS 225 → CS 440
+- **ECE 120** → ECE 313 → CS 225 → CS 440
+
+Note: All of these are **two links** upstream.
+
+Are there any others?
+
+Check if any course is a prerequisite of **CS 101**, or **CS ",PENDING / PENDING,PENDING / PENDING
+"CQ10 / For a selected course, which cross-listed course codes and downstream prerequisites reference its codes, and are any substitutions still subject to explicit policy? Instance: CS 374.","[{""alias"": ""ECE 374"", ""downstreamCode"": ""CS 421"", ""mentions"": ""CS 374, ECE 374"", ""acceptsBothCodes"": ""true""}, {""alias"": ""ECE 374"", ""downstreamCode"": ""CS 447"", ""mentions"": ""CS 374, ECE 374"", ""acceptsBothCodes"": ""true""}, {""alias"": ""ECE 374"", ""downstreamCode"": ""CS 473"", ""mentions"": ""CS 374, ECE 374"", ""acceptsBothCodes"": ""true""}, {""alias"": ""ECE 374"", ""downstreamCode"": ""CS 475"", ""mentions"": ""CS 374, ECE 374"", ""acceptsBothCodes"": ""true""}, {""alias"": ""ECE 374"", ""downstreamCode"": ""CS 477"", ""mentions"": ""CS 374, ECE 374"", ""acceptsBothCodes"": ""true""}, {""alias"": ""ECE 374"", ""downstreamCode"": ""CS 521"", ""mentions"": ""CS 374, ECE 374"", ""acceptsBothCodes"": ""true""}, {""alias"": ""ECE 374"", ""downstreamCode"": ""CS 581"", ""mentions"": ""CS 374, ECE 374"", ""acceptsBothCodes"": ""true""}, {""alias"": ""ECE 374"", ""downstreamCode"": ""MATH 412"", ""mentions"": ""CS 374"", ""acceptsBothCodes"": ""false""}, {""alias"": ""ECE 374"", ""downstreamCode"": ""MATH 417"", ""mentions"": ""CS 374"", ""acceptsBothCodes"": ""false""}]","I cannot provide specific information about cross-listed course codes, downstream prerequisites, or substitution policies for a course such as CS 374—particularly without access to a university’s official course catalog, prerequisite database, or current academic policy documents.
+
+Here’s why:
+
+1. **No Retrieval Tools or Course Graph Access**: You’ve indicated that there are no retrieval tools or attached course graph available. This means I cannot query a database or system that contains course relationships (e.g., cross-listings, prerequisites, substitutions).
+
+2. **Course-Specific Information Is Not Generalizable**: Cross-listed courses (e.g., CS 374 being offered under multiple departmental codes) and downstream prerequisites (courses that require CS 374 as a prerequisite) are typically defined in a university’s academic structure and may vary by institution, year, or department.
+
+3. **Substitution Policies Are Institutional and Context-Dependent**: Whether a course can be substituted for another (e.g., CS 374 vs. CS 375) is governed by specific academic policies that may be updated annually or vary by program (e.g., Computer Science, Engineering, etc.). These policies are not universally standardized.
+
+4. **Missing Information**: Without knowing:
+   - The university or institution (e.g., University of Illinois, Stanford, etc.)
+   - The academic year or term
+   - The official course catalog or academic policy document
+   - The exact course code (CS 374) and its current offering
+
+…it is not possible to determine cross-lists, downstream prerequisites, or substitution rules.
+
+✅ **Conclusion**:  
+I cannot determine which cross-listed course codes or downstream prerequisites reference CS 374, nor can I confirm whether substitutions are still subject to explicit policy—**without access to the specific university’s course catalog or academic policy documents**.
+
+👉 To get accurate information, you should consult:
+- The university’s official course catalog
+- The department’s academic website (e.g., Computer Science Department)
+- The academic advising office or course registration system
+
+If you provide the university name or institution, I may be able to guide you to relevant resources or help interpret general academic structures.","For the selected course **CS 374**, the query asks:
+
+> Which cross-listed course codes and downstream prerequisites reference its codes, and are any substitutions still subject to explicit policy?
+
+---
+
+### Step 1: Identify cross-listed course codes referencing CS 374
+
+From the rows, we find that **ECE 374** is listed as an alias of CS 374 in multiple entries:
+
+- Row R1: mentions ""CS 374, ECE 374""
+- Row R2: mentions ""CS 374, ECE 374""
+- Row R3: mentions ""CS 374, ECE 374""
+- Row R4: mentions ""CS 374, ECE 374""
+- Row R5: mentions ""CS 374, ECE 374""
+- Row R6: mentions ""CS 374, ECE 374""
+- Row R8: mentions ""CS 374"" only
+- Row R9: mentions ""CS 374"" only
+
+Additionally, the **course description** of ECE 374 states:  
+> ""Same as CS 374. See CS 374."" [Ee48960bb72982040]
+
+This confirms that **ECE 374 is a cross-listed course** that is equivalent to CS 374.
+
+✅ **Cross-listed course code**: **ECE 374**
+
+---
+
+### Step 2: Identify downstream prerequisites that reference CS 374 or ECE 374
+
+We look for downstream courses (i.e., courses that have CS 374 or ECE 374 as a prerequisite) in the rows.
+
+From the rows:
+
+- R1: downstreamCode = ""CS 421"", mentions = ""CS 374, ECE 374"", acceptsBothCodes = ""true""
+- R2: downstreamCode = ""CS 447"", mentions = ""CS 374, ECE 374"", acceptsBothCodes = ""true""
+- R3: downstreamCode = ""CS 473"", mentions = ""CS 374, ECE 374"", acceptsBothCodes = ""true""
+- R4: downstreamCode = ""CS 475"", mentions = ""CS 374, ECE 374"", acceptsBothCodes = ""true""
+- R5: downstreamCode = ""CS 477"", mentions = ""CS 374, ECE 374"", acceptsBothCodes = ""true""
+- R6: downstreamCode = ""CS 521"", mentions = ""CS 374, ECE 374"", acceptsBothCodes = ""true""
+- R8: downstreamCode = ""MATH 412"", mentions = ""CS 374"", acceptsBothCodes = ""false""
+- R9: downstreamCode = ""MATH 417"", mentions = ""CS 374"", acceptsBothCodes = ""false""
+
+Thus, the downstream courses that reference CS 374 or ECE 374 are:
+
+- CS 421
+- CS 447
+- CS 473
+- CS 475
+- CS 477
+- CS 521
+
+Note: MATH 412 and MATH 417 reference CS 374 but **do not accept ECE 374**, so ECE 374 is not valid as a substitute.
+
+✅ **Downstream prerequisites referencing CS 374 or ECE 374**:
+- CS 421
+- CS 447
+- CS 473
+- CS 475
+- CS 477
+- CS 521
+
+---
+
+### Step 3: Are substitutions still subject to explicit policy?
+
+We evaluate whether substitutions (e.g., using ECE 374 instead of CS 374) are allowed.
+
+- For **CS 421**, R1: acceptsBothCodes = ""true"" → substitution allowed
+- For **CS 447**, R2: acceptsBothCodes = ""true"" → substitution allowed
+- For **CS 473**, R3: acceptsBothCodes = ""true"" → substitution allowed
+- For **CS 475**, R4: acceptsBothCodes = ""true"" → substitution allowed
+- For **CS 477**, R5: acceptsBothCodes = ""true"" → substitution allowed
+- For **CS 521**, R6: acceptsBothCodes = ""true"" → substitution allowed
+
+However, for **MATH 412** and **MATH 417**:
+- R8: mentions ""CS 374"", acceptsBothCodes = ""false""
+- R9: mentions ""CS 374"", acceptsBothCodes = ""false""
+
+→ Substitution **not allowed** for MATH 412 or MATH 417.
+
+Additionally, the **prerequisite policy** for MATH 417 includes:
+> ""MATH 314 or MATH 347 or CS 374"" [Ee6e8055a70c9d8a4]
+
+This shows that **CS 374 is explicitly listed** as a valid substitute, but **ECE 374 is not** — and the policy does not mention ECE 374.
+
+Thus, **ECE 374 is not recognized** as a valid substitute in MATH 417.
+
+Also, the **prerequisite for MATH 412** is marked as:
+> ""needs_review"" [Edcf7d7faad39d1e4]
+
+→ This indicates that the policy for MATH 412 is **under review**, and **not yet finalized**.
+
+✅ **Substitution policy summary**:
+- For **CS 421, CS 447, CS 473, CS 475, CS 477, CS 521**: substitution **allowed** (explicitly stated via ""acceptsBothCodes: true"")
+- For **MATH 412 and MATH 417**: substitution **not allowed** (explicitly stated via ""acceptsBothCodes: false"" or ""needs_review"")
+
+---
+
+### Final Answer
+
+For **CS 374**:
+
+- **Cross-listed course code**: **ECE 374**
+- **Downstream prerequisites referencing CS 374 or ECE 374**:
+  - CS 421
+  - CS 447
+  - CS 473
+  - CS 475
+  - CS 477
+  - CS 521
+- **Substitution policy**:
+  - Substitutions are **explicitly allowed** for the CS-level downstream courses (CS 421, CS 447, CS 473, CS 475, CS 477, CS 521) because ""acceptsBothCodes"" is ""true"".
+  - Substitutions are **not allowed** for MATH 412 and MATH 417 due to ""acceptsBothCodes"" being ""false"".
+  - For MATH 412, the prerequisite policy is marked as **""needs_review""**, indicating it is under evaluation and not yet finalized.
+
+Thus, **substitutions are subject to explicit policy**, and **only allowed in specific cases** as defined by the ""acceptsBothCodes"" field and course-specific prerequisite texts.
+
+[Supporting evidence: R1–R6, R8, R9, Ee48960bb72982040, Ee6e8055a70c9d8a4, Edcf7d7faad39d1e4]",PENDING / PENDING,PENDING / PENDING
+"CQ11 / For each department, how many available courses could fulfill a particular  elective group in a selected term? Instance: advanced elective group; Fall 2026.","[{""department"": ""CS"", ""advancedElectivesOfferedFall2026"": ""50""}, {""department"": ""ECE"", ""advancedElectivesOfferedFall2026"": ""46""}, {""department"": ""MATH"", ""advancedElectivesOfferedFall2026"": ""30""}, {""department"": ""STAT"", ""advancedElectivesOfferedFall2026"": ""19""}, {""department"": ""PHYS"", ""advancedElectivesOfferedFall2026"": ""17""}, {""department"": ""CSE"", ""advancedElectivesOfferedFall2026"": ""12""}, {""department"": ""ASRM"", ""advancedElectivesOfferedFall2026"": ""5""}, {""department"": ""PHIL"", ""advancedElectivesOfferedFall2026"": ""3""}, {""department"": ""BIOE"", ""advancedElectivesOfferedFall2026"": ""2""}, {""department"": ""MSE"", ""advancedElectivesOfferedFall2026"": ""2""}, {""department"": ""ADV"", ""advancedElectivesOfferedFall2026"": ""1""}, {""department"": ""AE"", ""advancedElectivesOfferedFall2026"": ""1""}, {""department"": ""IE"", ""advancedElectivesOfferedFall2026"": ""1""}, {""department"": ""ME"", ""advancedElectivesOfferedFall2026"": ""1""}, {""department"": ""NE"", ""advancedElectivesOfferedFall2026"": ""1""}, {""department"": ""TAM"", ""advancedElectivesOfferedFall2026"": ""1""}]","I cannot provide a specific answer to your question—“For each department, how many available courses could fulfill a particular elective group in a selected term? Instance: advanced elective group; Fall 2026”—because:
+
+1. **No course data is available**: There is no course catalog, academic schedule, or departmental course offerings provided in your query or in the context of this conversation. Without access to a university’s official course database or schedule, I cannot retrieve or verify which courses are offered, by department, or in a specific term.
+
+2. **No term-specific or elective group definitions**: The term “advanced elective group” is not defined in your query. Elective groups vary by university, department, and academic program. Without knowing which university, which academic program (e.g., Bachelor’s, Master’s), and which specific elective group is being referenced, it is impossible to determine which courses qualify.
+
+3. **No data on availability**: Course availability (e.g., enrollment limits, prerequisites, instructor availability) is dynamic and changes by term. Without real-time or historical course data for Fall 2026, I cannot determine how many courses are actually available.
+
+4. **No departmental breakdown**: You asked for a breakdown “for each department,” but no list of departments or their elective offerings is provided.
+
+---
+
+✅ **In summary**:  
+I cannot determine how many available courses fulfill a particular elective group in a selected term (e.g., advanced elective group in Fall 2026) because:  
+- There is no course catalog or academic schedule provided.  
+- The definition of “advanced elective group” is not specified.  
+- The term “Fall 2026” is future-oriented and not yet available in course offerings.  
+- Departmental course offerings and availability are not accessible in this context.
+
+---
+
+📌 **Next steps for you**:  
+To answer this question accurately, you would need to:  
+1. Access your university’s official course catalog or academic planning system.  
+2. Identify the specific elective group (e.g., “Advanced Science Electives”) and its requirements.  
+3. Search for courses offered in Fall 2026 by department.  
+4. Verify which courses are listed as fulfilling that group and are available (not full, not canceled, etc.).
+
+If you can provide the university name, academic program, or a list of departments and elective groups, I may be able to guide you through the process of finding this information.","For each department, the number of available courses that could fulfill the advanced elective group in Fall 2026 is as follows:
+
+- CS: 50 courses [R1]
+- ECE: 46 courses [R2]
+- MATH: 30 courses [R3]
+- STAT: 19 courses [R4]
+- PHYS: 17 courses [R5]
+- CSE: 12 courses [R6]
+- ASRM: 5 courses [R7]
+- PHIL: 3 courses [R8]
+- BIOE: 2 courses [R9]
+- MSE: 2 courses [R10]
+- ADV: 1 course [R11]
+- AE: 1 course [R12]
+- IE: 1 course [R13]
+- ME: 1 course [R14]
+- NE: 1 course [R15]
+- TAM: 1 course [R16]
+
+This data is derived directly from the provided rows in the context, where each row specifies a department and the count of courses offered in the advanced elective group during Fall 2026. The counts are explicitly stated in the ""advancedElectivesOfferedFall2026"" field for each department. No additional reasoning or inference is required to establish this count, as the values are directly provided in the query results.
+
+Note: The graph evidence (edges) confirms that courses are scheduled in Fall 2026 for various departments, and the ""hasCourse"" and ""scheduledInTerm"" relationships support the existence of these courses. However, the count per department in the advanced elective group is not derived from a set of course titles or attributes but is instead a direct value in the row data. Therefore, the provided numbers represent the total number of courses offered by each department in the advanced elective group during Fall 2026, as reported in the dataset.",PENDING / PENDING,PENDING / PENDING
+CQ13 / How does the set of satisfiable prerequisite options and course recommendations change when one planned completion is hypothetically added to a student's transcript? Instance: synthetic student S002 hypothetically adds CS 225; Fall 2026.,"[{""courseCode"": ""ADV 492"", ""title"": ""Tech and Advertising Campaigns"", ""eligibleIn"": ""plus CS 225""}, {""courseCode"": ""CS 210"", ""title"": ""Ethical & Professional Issues"", ""eligibleIn"": ""plus CS 225""}, {""courseCode"": ""CS 211"", ""title"": ""Ethical and Professional Conduct"", ""eligibleIn"": ""plus CS 225""}, {""courseCode"": ""CS 233"", ""title"": ""Computer Architecture"", ""eligibleIn"": ""plus CS 225""}, {""courseCode"": ""CS 340"", ""title"": ""Introduction to Computer Systems"", ""eligibleIn"": ""plus CS 225""}, {""courseCode"": ""CS 374"", ""title"": ""Introduction to Algorithms & Models of Computation"", ""eligibleIn"": ""plus CS 225""}, {""courseCode"": ""CS 409"", ""title"": ""The Art of Web Programming"", ""eligibleIn"": ""plus CS 225""}, {""courseCode"": ""CS 410"", ""title"": ""Text Information Systems"", ""eligibleIn"": ""plus CS 225""}, {""courseCode"": ""CS 411"", ""title"": ""Database Systems"", ""eligibleIn"": ""plus CS 225""}, {""courseCode"": ""CS 412"", ""title"": ""Introduction to Data Mining"", ""eligibleIn"": ""plus CS 225""}, {""courseCode"": ""CS 415"", ""title"": ""Game Development"", ""eligibleIn"": ""plus CS 225""}, {""courseCode"": ""CS 452"", ""title"": ""Topics in Robotics"", ""eligibleIn"": ""plus CS 225""}, {""courseCode"": ""CS 464"", ""title"": ""Topics in Societal and Ethical Impacts of Computer Technology"", ""eligibleIn"": ""plus CS 225""}, {""courseCode"": ""CS 465"", ""title"": ""User Interface Design"", ""eligibleIn"": ""plus CS 225""}, {""courseCode"": ""CS 466"", ""title"": ""Introduction to Bioinformatics"", ""eligibleIn"": ""plus CS 225""}, {""courseCode"": ""ECE 407"", ""title"": ""Cryptography"", ""eligibleIn"": ""plus CS 225""}, {""courseCode"": ""ECE 549"", ""title"": ""Computer Vision"", ""eligibleIn"": ""plus CS 225""}]","As a university course-planning adviser, I must clarify that **no retrieval tools or course graph are available** to me in this scenario. I do not have access to a database of course prerequisites, course offerings, student transcripts, or institutional policies that would allow me to evaluate how adding a course like **CS 225 (Fall 2026)** to a synthetic student S002’s transcript would affect the set of **satisfiable prerequisite options** or **course recommendations**.
+
+Therefore, I cannot provide a specific or accurate analysis of how the set of satisfiable prerequisites or course recommendations would change under this hypothetical scenario — **without additional information** such as:
+
+- The full prerequisite structure of CS 225 (e.g., what courses must be completed before it).
+- The prerequisite requirements for other courses in the student’s program.
+- The current set of courses the student has already completed or is enrolled in.
+- The academic program or major the student is pursuing (which determines course sequences and eligibility).
+- The university’s policy on course substitution, credit transfer, or prerequisite satisfaction.
+- Whether CS 225 is a required or elective course in the student’s path.
+
+---
+
+### Reasoning:
+
+Even though the hypothetical addition of **CS 225** in **Fall 2026** is specified, the **impact** on satisfiable prerequisites and course recommendations depends on:
+
+1. **Prerequisite logic**: For example, if CS 225 requires CS 110 and CS 120, then adding CS 225 would only satisfy those prerequisites *if* the student already has CS 110 and CS 120. If not, it would not satisfy them — and thus, the student would still need to complete those prerequisites before CS 225.
+
+2. **Course recommendations**: If CS 225 is a prerequisite for other courses (e.g., CS 300), then adding CS 225 would make those downstream courses **eligible** for recommendation — thus expanding the set of satisfiable course recommendations.
+
+3. **Satisfiable prerequisite options**: This refers to which courses can be taken *now* given the student’s current completed courses. Adding CS 225 would **not** automatically satisfy prerequisites for other courses — unless CS 225 is itself a prerequisite for another course.
+
+4. **Temporal constraints**: The fact that CS 225 is scheduled for **Fall 2026** (a future semester) means it cannot be used to satisfy prerequisites for courses that are offered in earlier semesters — so it would not affect current or past course eligibility.
+
+---
+
+### Conclusion:
+
+**Without knowing the full course prerequisite structure, the student’s current transcript, and the academic program**, I **cannot determine** how the set of satisfiable prerequisite options or course recommendations would change.
+
+Thus, the correct response is:
+
+> ❌ **I cannot determine how the set of satisfiable prerequisite options and course recommendations changes when CS 2025 is hypothetically added to student S002’s transcript, because no course prerequisite data, student transcript, or academic program is provided.**
+
+This is a **limitation of the current information**, not a failure of reasoning.
+
+If you provide:
+- The full prerequisite structure of CS 225 and related courses,
+- The student’s current course history,
+- The academic major or program,
+
+then I can offer a detailed, accurate analysis.","Insufficient evidence.
+
+The query asks how the set of satisfiable prerequisite options and course recommendations changes when a planned completion—specifically CS 225—is hypothetically added to a synthetic student S002's transcript for Fall 2026.
+
+However, the provided context explicitly states in its ""limitations"" field:  
+**""Hypothetical completion is not added to the KG.""**
+
+This means that, within the scope of the current knowledge graph (KG) and its data, the hypothetical completion of CS 225 is not represented or recorded in the KG. As a result, no actual update or inference is performed on the student's transcript or the prerequisite satisfaction status.
+
+Moreover, while the context contains a list of courses (R1–R17) that have ""eligibleIn"" conditions involving ""plus CS 225"", and multiple prerequisite edges (e.g., [E1ad0b371d0b86bbe], [E23be07826e727259], etc.) that specify CS 225 as a prerequisite, these are **prerequisite conditions**—not evidence of the student having completed CS 225. The absence of any explicit completion record for CS 225 in the student's transcript (e.g., no edge like `<https://example.org/uiuc-course-advisor/resource/completion/S002/CS225>`) means that the student's transcript does not currently include CS 225.
+
+Therefore, the hypothetical addition of CS 225 to the transcript is not reflected in the KG, and no reasoning trace or eligibility verdict is generated based on that addition. The context does not contain any evidence of the student having completed CS 225, nor any rule or inference that would allow us to evaluate how course recommendations or prerequisite satisfaction would change *if* CS 225 were added.
+
+Additionally, the reasoning trace is empty, and the evidence does not include any conditional logic that evaluates the effect of adding a course completion to a transcript. Without such a rule or trace, we cannot determine how the set of satisfiable prerequisite options or course recommendations would change.
+
+Thus, due to the absence of a recorded completion, the absence of a KG update, and the lack of any rule or trace that models the effect of adding a course completion, the change in the set of satisfiable prerequisite options and course recommendations cannot be determined.
+
+Final verdict: **Insufficient evidence**.  
+Missing information includes:  
+- A rule or trace that models how adding a course completion to a transcript alters eligibility.  
+- A record of the student having completed CS 225 in the KG.  
+- A mechanism for evaluating the impact of a hypothetical completion on prerequisite satisfaction.  
+
+Without these, the effect of adding CS 225 to student S002's transcript cannot be assessed.",PENDING / PENDING,PENDING / PENDING
+"CQ15 / What catalog wording, degree requirement and prerequisite-option evidence s upports each recommendation, and which conditions remain unverified? Instance: synthetic student S002's planned courses; Fall 2026.","[{""courseCode"": ""CS 225"", ""prerequisiteText"": ""CS 126 or CS 128 or ECE 220; One of CS 173, CS 413, MATH 213, MATH 314, MATH 347, MATH 412, or MATH 413."", ""parseStatus"": ""parsed"", ""satisfiedOptions"": ""1"", ""requirement"": ""CS technical core (11 courses, 35 hours)"", ""requirementNote"": ""Technical GPA of 2.0 is required for CS and Math courses."", ""source"": ""https://discovery.cs.illinois.edu/dataset/course-catalog/"", ""unverified"": ""none""}, {""courseCode"": ""MATH 241"", ""prerequisiteText"": ""MATH 231."", ""parseStatus"": ""parsed"", ""satisfiedOptions"": ""1"", ""requirement"": ""Required calculus and physics: MATH 231, MATH 241, PHYS 211, PHYS 212"", ""requirementNote"": null, ""source"": ""https://discovery.cs.illinois.edu/dataset/course-catalog/"", ""unverified"": ""none""}, {""courseCode"": ""MATH 257"", ""prerequisiteText"": ""MATH 220 or MATH 221; CS 101 or equivalent programming experience."", ""parseStatus"": ""needs_review"", ""satisfiedOptions"": ""0"", ""requirement"": ""Linear algebra: MATH 257, MATH 415 or MATH 416"", ""requirementNote"": null, ""source"": ""https://discovery.cs.illinois.edu/dataset/course-catalog/"", ""unverified"": ""yes: wording such as 'or equivalent' needs manual check""}]","I cannot provide the catalog wording, degree requirement, prerequisite-option evidence, or any specific course planning details for a synthetic student (e.g., S002) in Fall 2026 — including what supports each recommendation or which conditions remain unverified — because:
+
+1. **No actual course catalog or university data is provided** to me.  
+2. **No student transcript, academic plan, or prior course records** are available for student S002.  
+3. **No institutional policy documents, degree requirements, or prerequisite rules** have been shared or referenced.  
+4. **No evidence or data exists** about the specific courses, degree programs, or academic pathways for this synthetic student in Fall 2026.
+
+Therefore, I cannot verify or retrieve any catalog wording, degree requirement, prerequisite options, or evidence that would support a recommendation — nor can I identify unverified conditions — without access to the actual university course catalog, degree requirements, or student academic history.
+
+**In summary:**  
+❌ There is no data or context provided to support any claim about student S002’s planned courses or academic requirements for Fall 2026.  
+❌ I cannot generate or validate catalog language, degree requirements, or prerequisite evidence.  
+❌ I cannot identify unverified conditions without source material.
+
+👉 **To proceed**, you would need to provide:  
+- The university’s official course catalog (or relevant section)  
+- The student’s academic major and degree program  
+- The student’s current academic standing or prior course history  
+- Any specific recommendations or course plans being evaluated  
+
+Once such information is available, I can analyze it and provide a reasoned, evidence-based response.
+
+For now: **No valid or verifiable information is available to support any recommendation or condition for student S00.2 in Fall 2026.**","The query asks for catalog wording, degree requirement, and prerequisite-option evidence supporting each recommendation—specifically for synthetic student S002’s planned courses in Fall 2026—along with identification of unverified conditions.
+
+Below is a structured analysis of each course, grounded in the provided evidence, reasoning, and catalog data. All conclusions are derived solely from the supplied context and are not extrapolated.
+
+---
+
+### 1. **CS 225: Data Structures**
+- **Catalog Wording**  
+  Prerequisite: ""CS 126 or CS 128 or ECE 220; One of CS 173, CS 413, MATH 213, MATH 314, MATH 347, MATH 412, or MATH 413.""  
+  [E6a645816b515ecc2] and [E215e5ba02c2c0e64]
+
+- **Degree Requirement**  
+  Part of the CS technical core (11 courses, 35 hours), which requires a technical GPA of 2.0 for CS and Math courses.  
+  [R1] and [E956387d507be2398]
+
+- **Prerequisite-Option Evidence**  
+  - **Option 1 (CS 126 or CS 128 or ECE 220)**:  
+    - S002 has completed **CS 128** (grade: A, credits: 3.0) [E357148d3988fdde0, E89c5cd1e5ca3dabc].  
+    - This satisfies the first condition of the prerequisite.  
+    - [E357148d3988fdde0] and [E89c5cd1e5ca3dabc] confirm completion of CS 128.  
+  - **Option 2 (One of CS 173, CS 413, MATH 213, MATH 314, MATH 347, MATH 412, or MATH 413)**:  
+    - S002 has completed **CS 173** (grade: B, credits: 3.0) [Ef802b891c11a8910, E2e5fd45c84d95d36].  
+    - This satisfies the second condition.  
+    - [Ef802b891c11a8910] and [E2e5fd45c84d95d36] confirm completion of CS 173.  
+  - Both prerequisite conditions are met via completed courses.  
+  - The prerequisite is fully satisfied under the catalog wording.  
+  - [Ea7d8b61b207d0a42] and [E653cc9595b10e7c7] confirm no concurrent allowance, but this does not affect eligibility.
+
+- **Registration Status**  
+  - Registration is ready (registration_ready: true).  
+  - Course is offered in Fall 2026 [E30240a7b403d8f43].  
+  - S002 has not completed CS 225 yet (no completion record), so it is planned, not completed.
+
+- **Unverified Conditions**  
+  None. All prerequisite conditions are explicitly satisfied via completed courses.
+
+---
+
+### 2. **MATH 241: Calculus III**
+- **Catalog Wording**  
+  Prerequisite: ""MATH 231.""  
+  [Ea8348728c389bddd] and [E1b022cb86e1ff08d]
+
+- **Degree Requirement**  
+  Part of the ""Required calculus and physics: MATH 231, MATH 241, PHYS 211, PHYS 212"" requirement.  
+  [R2]
+
+- **Prerequisite-Option Evidence**  
+  - **Option 1 (MATH 231)**:  
+    - S002 has completed **MATH 231** (grade: B, credits: 3.0) [Ec8449884251f6e37, E9364b35a711a62c9].  
+    - Completion is explicitly recorded.  
+    - [E9364b35a711a62c9] and [E869525a4b928d7b6] confirm completion and credits.  
+  - The prerequisite is fully satisfied.
+
+- **Registration Status**  
+  - Registration is ready (registration_ready: true).  
+  - Course is offered in Fall 2026 [E2f6018f5caf13520].
+
+- **Unverified Conditions**  
+  None. The prerequisite is fully met and explicitly recorded.
+
+---
+
+### 3. **MATH 257: Linear Algebra with Computational Applications**
+- **Catalog Wording**  
+  Prerequisite: ""MATH 220 or MATH 221; CS 101 or equivalent programming experience.""  
+  [R3] and [E1427604ac114c967], [Ea1a66fac5582a40d]
+
+- **Degree Requirement**  
+  Part of the ""Linear algebra: MATH 257, MATH 415 or MATH 416"" requirement.  
+  [R3] and [Ef4c8d71d09eb4f65]
+
+- **Prerequisite-Option Evidence**  
+  - **Option 1 (MATH 220 or MATH 221)**:  
+    - S002 has completed **MATH 221** (grade: B+, credits: 4.0) [Ed72be2893f5b03ed, Ea6b28b5d19806176].  
+    - This satisfies the first condition.  
+    - [Ea6b28b5d19806176] and [E0b50bd06c26addfd] confirm completion and term.  
+  - **Condition 2 (CS 101 or equivalent programming experience)**:  
+    - **No record of CS 101 completion**.  
+    - The catalog states ""CS 101 or equivalent programming experience"" [Ea1a66fac5582a40d].  
+    - No evidence of CS 101 or any equivalent programming course being completed by S002.  
+    - The ""equivalent"" clause is unverified and requires manual review.  
+    - [E5d48b809f21155d5] shows CS 101 is listed as a required course, but no completion record exists.  
+    - This condition is **unmet** and **unverified**.  
+
+- **Registration Status**  
+  - Registration is **not ready** (registration_ready: false).  
+  - The prerequisite condition is not satisfied due to lack of evidence for programming experience.
+
+- **Unverified Conditions**  
+  - **""CS 101 or equivalent programming experience""** is unverified.  
+  - The catalog wording includes ""or equivalent,"" which requires manual verification of equivalent experience (e.g., CS 124, CS 173, or other programming courses).  
+  - [R3] notes ""unverified: wording such as 'or equivalent' needs manual check"" [R3.unverified].  
+  - This is a **critical unverified condition**.
+
+---
+
+### Summary of Conditions by Course
+
+| Course     | Catalog Wording | Degree Requirement | Prerequisite Evidence | Registration Ready | Unverified Conditions |
+|-----------|----------------|--------------------|------------------------|--------------------|------------------------|
+| CS 225    | CS 126/128/ECE 220; one of CS 173, CS 413, MATH 213, etc. | CS technical core (11 courses, 35 hours) | Both conditions met via CS 128 and CS 173 | ✅ Yes | ❌ None |
+| MATH 241  | MATH 231       | Required calculus and physics | MATH 231 completed | ✅ Yes | ❌ None |
+| MATH 257  | MATH 220/221; CS 101 or equivalent | Linear algebra (MATH 257 or MATH 415/416) | MATH 221 met; CS 101 unverified | ❌ No | ✅ ""CS 101 or equivalent"" — requires manual check |
+
+---
+
+### Final Answer
+
+**Catalog Wording, Degree Requirement, and Prerequisite-Option Evidence**:
+
+- **CS 225**:  
+  - Catalog wording satisfies prerequisites via CS 128 and CS 173",PENDING / PENDING,PENDING / PENDING

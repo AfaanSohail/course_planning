@@ -1,0 +1,64 @@
+{
+  "config": {
+    "provider": "ollama",
+    "base_url": "http://127.0.0.1:11435/v1",
+    "model": "course-planning-qwen3-v2",
+    "api_key_env": "COURSE_LLM_API_KEY",
+    "require_api_key": false,
+    "temperature": 0.0,
+    "max_tokens": 4096,
+    "timeout_seconds": 7200,
+    "context_max_chars": 24000
+  },
+  "graph_sha256": "ac0352a0246d3e67fae34d3fd27f3847bb9a3d7897478f19e865478f2a1ea2a8",
+  "cqs_sha256": "8fb76ed1d227a693a92d7650399f0ac935bc64ec6eb5710e2c8125f973d7a2d6",
+  "prompt_hashes": {
+    "baseline.txt": "fbe1333788c212a448ca96ee83a24b421d66aac88834322a46caa9fc40a3c33c",
+    "grounded.txt": "1c1c04f0a5ab7220941440023817313098a04eb21539fd50b2352c5db9a6dc5f"
+  },
+  "model_identity": {
+    "provider": "ollama",
+    "runtime_version": "0.40.18",
+    "requested_model": "course-planning-qwen3-v2",
+    "name": "course-planning-qwen3-v2:latest",
+    "digest": "16ea59a13663d9124a91b91701862c0f171cbda5c00ca6a226aaee0a265cf3b6",
+    "details": {
+      "parent_model": "qwen3:4b-instruct",
+      "format": "gguf",
+      "family": "qwen3",
+      "families": [
+        "qwen3"
+      ],
+      "parameter_size": "4.0B",
+      "quantization_level": "Q4_K_M",
+      "context_length": 262144,
+      "embedding_length": 2560,
+      "runner": "llamacpp"
+    },
+    "model_digest_verified": true
+  },
+  "source_sha256": {
+    "app/__init__.py": "550e068cf64aa837e602fc7f990aff9f96879e92d7e23d1ce9e3fc22fec45626",
+    "app/__main__.py": "c089ff971a7795755079d0565b3dfd3c98ec108b2ec877b27579eb9f9d0aac57",
+    "app/config.py": "a46473b29485242d85a93ee60ccffa36f9c5c88e79b77f05c2a297c6aff30070",
+    "app/linking.py": "eed8c99aca72a784650ad17068af12c2337283ad5571dd78c97910293131b027",
+    "app/llm.py": "3d9f975e98fa0f4e9bf26c9bd8aeae7d7941820053cf23ca927f0b1413eb3a36",
+    "app/retrieval.py": "df20567d89bd555b02ce30e5a63fe46ab1014045823879c8080d473c5856449b",
+    "app/service.py": "3eedc91f883c258aeda916065d96ade96d133bee21941e2bc46cb59afaa71db1",
+    "reasoning/__init__.py": "f99fbcf150c1ff74eb1374c3822637af76b00efb7dc309b980e18490f3a9f966",
+    "reasoning/__main__.py": "15832ce511e498ba5a7b21ee0ed23bac23fcfe710f6174c9abe36203240da148",
+    "reasoning/engine.py": "196c755b4ae95e102686071ef12e7c9a3700b15fdb9f0839f291d1c85a987f5d",
+    "reasoning/evaluate.py": "a7819f5511a71c07ed5b3fa2515c47745f11b5dcd26aaec710aa62f14f2662ae",
+    "reasoning/examples.py": "1df9f46f637c7f4e3f697892d9077537da2c2cf66b1acc470b3ad361e69371ab",
+    "reasoning/kg.py": "dcf7f559ea2aee89d066fd943edbf65c24776db36e4cb101da2d65e3d62015d2",
+    "evaluation/__init__.py": "86dd8235757b900bc91e347dba44db67f5fba047a7e5444f076972f84ca8720b",
+    "evaluation/prepare.py": "216976db2fbd6a0336699ff9de2d816677f17de23c1e542ff6e70e79b6c389a7",
+    "evaluation/queries.py": "0702cc578153d429b614911932476b3f08b8b20b0132addba92ac3866b70b17b",
+    "evaluation/run.py": "4666e3bd9640fdc6334c3ca3b85ba4587584f5afc6639e305b73e128d0ecd181",
+    "evaluation/score.py": "9a1cf4daa8c17335f9590d4a3212a2f6b32c9f5257ca28b1b124a6a35d1162e4"
+  },
+  "started_utc": "2026-11-26T11:15:35.638915+00:00",
+  "python": "3.11.7",
+  "platform": "Linux-7.0.0-43-generic-x86_64-with-glibc2.39",
+  "commit": "PENDING: not a Git checkout"
+}
