@@ -1,0 +1,18 @@
+flowchart TD
+    CSV[Supplied catalog CSV and curated requirements] --> ETL[Original ETL and prerequisite parser]
+    ETL --> KG[Explicit RDF KG and unchanged ontology IRIs]
+    KG --> OWL[OWL RL schema closure]
+    Q[Student question] --> LINK[Entity and intent linking]
+    LINK --> QUERY[Parameterized SPARQL]
+    LINK --> REASON[AND/OR multi-hop Python reasoner]
+    KG --> QUERY
+    OWL --> QUERY
+    KG --> REASON
+    QUERY --> CONTEXT[Rows + paths + labelled edge evidence]
+    REASON --> CONTEXT
+    CONTEXT --> CHECK{Enough supported context?}
+    CHECK -->|yes| LLM[Local Qwen3 via Ollama]
+    CHECK -->|no| ABSTAIN[Insufficient evidence]
+    LLM --> OUT[Actual answer + full provenance + citation checks]
+    OUT --> REVIEW[Human-scored A/B evaluation]
+    BASE[Same question and same LLM without retrieval] --> REVIEW
