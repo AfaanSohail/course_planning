@@ -1,0 +1,18 @@
+{
+  "status": "human_review_complete",
+  "questions": 10,
+  "conditions": {
+    "A": {
+      "correct": 0,
+      "evidence": 0,
+      "unsupported_claims": 6,
+      "llm_called": 10
+    },
+    "B": {
+      "correct": 6,
+      "evidence": 9,
+      "unsupported_claims": 1,
+      "llm_called": 10
+    }
+  }
+}
